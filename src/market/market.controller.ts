@@ -1,0 +1,37 @@
+import { Controller, Get, Query } from '@nestjs/common';
+import { MarketService } from './market.service';
+import { Event, OrderBook, TokenPrices } from '@forkastgg/forkast-sdk';
+
+@Controller('market')
+export class MarketController {
+  constructor(private readonly marketService: MarketService) {}
+
+  @Get('event')
+  async getEvent(@Query('id') id: number): Promise<Event> {
+    if (!id) {
+      throw new Error('Event ID is required');
+    }
+    return this.marketService.getEventDetails(Number(id));
+  }
+
+  @Get('orderbook')
+  async getOrderBook(
+    @Query('marketId') mid: number, 
+    @Query('outcomeId') oid: number, 
+    @Query('outcomeType') otype: number ): Promise<OrderBook> {
+    if (!mid || !oid || !otype) {
+      throw new Error('Market ID, Outcome ID, and Outcome Type are required');
+    }
+    return this.marketService.getOrderBook(Number(mid), Number(oid), otype);
+  }
+
+  @Get('token-prices')
+  async getTokenPrices(
+    @Query('marketId') mid: number, 
+    @Query('side') side: number): Promise<TokenPrices> {
+    if (!mid || !side) {
+      throw new Error('Market ID and Side are required');
+    }
+    return this.marketService.getTokenPrices(Number(mid), side);
+  }
+}
