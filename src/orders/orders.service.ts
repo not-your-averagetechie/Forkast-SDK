@@ -1,14 +1,12 @@
-import { ForkastSDK, Network, Event, OrderBook, TokenPrices, MarketOutcome } from '@forkastgg/forkast-sdk';
-import { OrderResponse } from '@forkastgg/forkast-sdk/dist/src/types/orders';
+import { ForkastSDK, Network } from '@forkastgg/client';
+import { OrderResponse } from '@forkastgg/client/dist/src/types/orders';
 import { Injectable } from '@nestjs/common';
 import { CancelOrderDto, PlaceOrderDto } from './order.types';
-
-
 
 @Injectable()
 export class OrderService {
 
-  private readonly sdk = new ForkastSDK(Network.TESTNET);
+  private readonly sdk = new ForkastSDK(Network.TESTNET, process.env.API_KEY);
   private readonly orderService = this.sdk.getOrderService();  
 
   async getAllOrders(address: string, outcomeId: number, accessToken: string, status?: number, limit?: number, page?: number): Promise<OrderResponse> {

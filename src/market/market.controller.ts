@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { MarketService } from './market.service';
-import { Event, OrderBook, TokenPrices } from '@forkastgg/forkast-sdk';
+import { Event, OrderBook, TokenPrices } from '@forkastgg/client';
 
 @Controller('market')
 export class MarketController {

@@ -1,10 +1,10 @@
-import { ForkastSDK, Network, Event, OrderBook, TokenPrices } from '@forkastgg/forkast-sdk';
+import { ForkastSDK, Network, Event, OrderBook, TokenPrices } from '@forkastgg/client';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class MarketService {
 
-  private readonly sdk = new ForkastSDK(Network.TESTNET);
+  private readonly sdk = new ForkastSDK(Network.TESTNET, process.env.API_KEY);
   private readonly marketService = this.sdk.getMarketService();  
 
   async getEventDetails(id: number): Promise<Event> {

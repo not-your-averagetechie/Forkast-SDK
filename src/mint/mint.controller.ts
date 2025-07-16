@@ -1,6 +1,5 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { MintService } from './mint.service';
-import { BalanceResponse, LoginResponse } from '@forkastgg/forkast-sdk';
 
 interface MintPCDto {
   wallet: "";

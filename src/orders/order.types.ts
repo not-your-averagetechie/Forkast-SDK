@@ -1,4 +1,4 @@
-import { MarketOutcome } from "@forkastgg/forkast-sdk";
+import { MarketOutcome } from "@forkastgg/client";
 
 interface Account {
   wallet: string;

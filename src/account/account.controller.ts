@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { AccountService } from './account.service';
-import { BalanceResponse, LoginResponse } from '@forkastgg/forkast-sdk';
+import { BalanceResponse, LoginResponse } from '@forkastgg/client';
 
 @Controller('account')
 export class AccountController {

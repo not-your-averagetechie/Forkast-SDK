@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { OrderService } from './orders.service';
-import { OrderResponse } from '@forkastgg/forkast-sdk/dist/src/types/orders';
+import { OrderResponse } from '@forkastgg/client/dist/src/types/orders';
 import { CancelOrderDto, PlaceOrderDto } from './order.types';
 
 @Controller('orders')

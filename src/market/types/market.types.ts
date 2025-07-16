@@ -1,4 +1,4 @@
-import { MarketOutcome, MarketPosition, MarketStatus } from "@forkastgg/forkast-sdk";
+import { MarketOutcome, MarketPosition, MarketStatus } from "@forkastgg/client";
 
 export interface Event {
   id: number;
