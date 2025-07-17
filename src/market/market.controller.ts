@@ -7,11 +7,11 @@ export class MarketController {
   constructor(private readonly marketService: MarketService) {}
 
   @Get('event')
-  async getEvent(@Query('id') id: number): Promise<Event> {
+  async getEvent(@Query('id') id: string): Promise<Event> {
     if (!id) {
       throw new Error('Event ID is required');
     }
-    return this.marketService.getEventDetails(Number(id));
+    return this.marketService.getEventDetails(id);
   }
 
   @Get('orderbook')

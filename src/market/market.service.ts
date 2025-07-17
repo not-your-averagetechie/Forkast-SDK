@@ -7,7 +7,7 @@ export class MarketService {
   private readonly sdk = new ForkastSDK(Network.TESTNET, process.env.API_KEY);
   private readonly marketService = this.sdk.getMarketService();  
 
-  async getEventDetails(id: number): Promise<Event> {
+  async getEventDetails(id: string): Promise<Event> {
     const eventDetails =  await this.marketService.getEventData(id);
     return eventDetails;
   }
