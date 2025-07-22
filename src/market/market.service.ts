@@ -14,8 +14,13 @@ export class MarketService {
     this.marketService = this.sdk.getMarketService();
   }
 
+<<<<<<< HEAD
   async getEventDetails(id: number): Promise<Event> {
     const eventDetails =  await this.marketService.getEventData(String(id));
+=======
+  async getEventDetails(id: string): Promise<Event> {
+    const eventDetails =  await this.marketService.getEventData(id);
+>>>>>>> ab93898865dea7a8a039c3b941640ce24ef27345
     return eventDetails;
   }
 
