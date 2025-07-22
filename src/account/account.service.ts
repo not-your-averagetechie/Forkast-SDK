@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AccountService {
 
-  private readonly sdk = new ForkastSDK(Network.TESTNET, process.env.API_KEY);
+  private readonly sdk = new ForkastSDK(Network.MAINNET, process.env.API_KEY);
 
   async createWallet(): Promise<WalletDetails> {
     const walletDetails = this.sdk.getAccountService().generateWallet();

@@ -6,7 +6,7 @@ import { CancelOrderDto, PlaceOrderDto } from './order.types';
 @Injectable()
 export class OrderService {
 
-  private readonly sdk = new ForkastSDK(Network.TESTNET, process.env.API_KEY);
+  private readonly sdk = new ForkastSDK(Network.MAINNET, process.env.API_KEY);
   private readonly orderService = this.sdk.getOrderService();  
 
   async getAllOrders(address: string, outcomeId: number, accessToken: string, status?: number, limit?: number, page?: number): Promise<OrderResponse> {
