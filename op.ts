@@ -68,10 +68,10 @@ async function getMarketAndOutcomeFromEvent(eventId: number, outcomeTitle: strin
     // Print available outcome titles for debugging
     console.log('Available outcomes:', market.outcomes.map((o: any) => o.title));
 
-    // Map "yes"/"no" to "Y"/"N" if needed
+    // Map "yes"/"no" to "Yes"/"No" for matching
     let normalizedTitle = outcomeTitle.trim().toLowerCase();
-    if (normalizedTitle === 'yes') normalizedTitle = 'y';
-    if (normalizedTitle === 'no') normalizedTitle = 'n';
+    if (normalizedTitle === 'yes') normalizedTitle = 'yes';
+    if (normalizedTitle === 'no') normalizedTitle = 'no';
 
     const outcome = market.outcomes.find((o: any) =>
       o.title.trim().toLowerCase() === normalizedTitle
