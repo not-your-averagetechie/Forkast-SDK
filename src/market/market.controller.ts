@@ -5,14 +5,18 @@ import { Event, OrderBook, TokenPrices } from '@forkastgg/client';
 @Controller('market')
 export class MarketController {
   constructor(private readonly marketService: MarketService) {}
-
-  @Get('event')
-  async getEvent(@Query('id') id: string): Promise<Event> {
-    if (!id) {
-      throw new Error('Event ID is required');
-    }
-    return this.marketService.getEventDetails(id);
+@Get('event')
+async getEvent(@Query('id') id: string): Promise<Event> {
+  if (!id) {
+    throw new Error('Event ID is required');
   }
+  const eventId = Number(id);
+  if (isNaN(eventId)) {
+    throw new Error('Event ID must be a number');
+  }
+  return this.marketService.getEventDetails(eventId);
+}
+
 
   @Get('orderbook')
   async getOrderBook(

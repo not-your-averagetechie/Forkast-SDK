@@ -53,15 +53,6 @@ function getYesAccount(accessToken: string) {
   };
 }
 
-function getNoAccount(accessToken: string) {
-  return {
-    wallet: CONFIG[NETWORK].WALLET_ADDRESS_2,
-    private_key: CONFIG[NETWORK].PRIVATE_KEY_2,
-    proxy_wallet: CONFIG[NETWORK].PROXY_WALLET_2,
-    accessToken
-  };
-}
-
 function getUserInput(question: string): Promise<string> {
   return new Promise((resolve) => {
     rl.question(question, (answer) => resolve(answer));
@@ -69,7 +60,7 @@ function getUserInput(question: string): Promise<string> {
 }
 
 async function fetchEvent(eventId: number) {
-  const response = await axios.get(EVENT_API_URL, { params: { id: eventId } });
+  const response = await axios.get(EVENT_API_URL, { params: { eventId } });
   return response.data;
 }
 
@@ -115,7 +106,7 @@ function adjustOrdersToMaxBudget(orders: any[], maxBudget: number) {
   return adjustedOrders;
 }
 
-function generateYesOrders(startDigit: number) {
+function generateLiquidityOrders(startDigit: number) {
   const startPrice = startDigit / 100;
   const orders = [];
   orders.push({ price: startPrice, amount: getRandomAmount(80, 60, 50, 65) });
@@ -143,36 +134,6 @@ function generateYesOrders(startDigit: number) {
   return adjustOrdersToMaxBudget(orders, 80);
 }
 
-function generateNoOrders(startDigit: number) {
-  const startPrice = startDigit / 100;
-  const orders = [];
-  const noStartPrice = 0.99 - startPrice;
-  if (noStartPrice >= 0.10 && noStartPrice <= 0.90) orders.push({ price: noStartPrice, amount: getRandomAmount(80, 60, 50, 65) });
-  let currentNoPrice = Math.floor(noStartPrice * 20) * 0.05;
-  if (currentNoPrice >= noStartPrice) currentNoPrice -= 0.05;
-  while (currentNoPrice >= 0.10) {
-    if (currentNoPrice >= 0.50) orders.push({ price: currentNoPrice, amount: getRandomAmount(35, 45, 30, 20, 25, 22, 24) });
-    else if (currentNoPrice >= 0.30) orders.push({ price: currentNoPrice, amount: getRandomAmount(20, 24, 26, 28, 30, 25) });
-    else if (currentNoPrice >= 0.20) orders.push({ price: currentNoPrice, amount: getRandomAmount(26, 28, 25, 30, 35, 40) });
-    else if (currentNoPrice >= 0.10) orders.push({ price: currentNoPrice, amount: getRandomAmount(30, 35, 40, 45, 50, 55, 65, 70, 45) });
-    currentNoPrice -= 0.05;
-  }
-  orders.push(
-    { price: 0.09, amount: getRandomAmount(50, 55, 60, 65, 45, 64, 40) },
-    { price: 0.08, amount: getRandomAmount(50, 55, 60, 65, 45, 64, 40) },
-    { price: 0.07, amount: getRandomAmount(30, 55, 60, 65, 45, 64, 40) },
-    { price: 0.06, amount: getRandomAmount(80, 85, 95, 70, 65, 60) },
-    { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
-    { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
-    { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
-    { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
-    { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
-  );
-  
-  const adjustedOrders = adjustOrdersToMaxBudget(orders, 80);
-  return adjustedOrders.sort((a, b) => b.price - a.price);
-}
-
 async function placeOrder(orderBody: any) {
   const response = await axios.post(ORDER_API_URL, orderBody, {
     headers: {
@@ -185,7 +146,7 @@ async function placeOrder(orderBody: any) {
 
 async function main() {
   console.log('='.repeat(60));
-  console.log('💰 MULTI-MARKET AUTOMATED LIQUIDITY PROVISION (MAX $80 BUDGET)');
+  console.log('💰 MULTI-OUTCOME MARKET YES-SIDE LIQUIDITY PROVISION (3 OUTCOMES)');
   console.log('='.repeat(60));
 
   const eventIdStr = await getUserInput('Enter event ID: ');
@@ -206,8 +167,18 @@ async function main() {
   console.log(`\nEvent: ${event.title}`);
   console.log(`Markets found: ${event.markets.length}\n`);
 
-  // Display all markets first
-  for (const market of event.markets) {
+  // Find multi-outcome markets and display them
+  const multiOutcomeMarkets = event.markets.filter(market => market.outcomes && market.outcomes.length > 2);
+  
+  if (multiOutcomeMarkets.length === 0) {
+    console.error('No multi-outcome markets found in this event.');
+    process.exit(1);
+  }
+
+  console.log('🎯 MULTI-OUTCOME MARKETS FOUND:');
+  console.log('='.repeat(40));
+  
+  for (const market of multiOutcomeMarkets) {
     console.log(`Market ID: ${market.id}`);
     console.log(`Title: ${market.title}`);
     console.log(`Question: ${market.question}`);
@@ -215,150 +186,157 @@ async function main() {
     console.log(`Volume: ${market.volume}`);
     console.log('Outcomes:');
     for (const outcome of market.outcomes) {
-      console.log(`  - Outcome: ${outcome.title} (ID: ${outcome.id}) | Token ID: ${outcome.tokenId} | Price: ${outcome.price}`);
+      console.log(`  - ${outcome.title} (ID: ${outcome.id}) | Token ID: ${outcome.tokenId} | Price: ${outcome.price}`);
     }
     console.log('-'.repeat(40));
   }
 
-  // **COLLECT ALL ODDS AT THE BEGINNING**
-  console.log('\n📋 COLLECTING ALL STARTING ODDS');
-  console.log('='.repeat(40));
+  // **SELECT TARGET MARKET AND OUTCOMES**
+  const marketIdStr = await getUserInput('\nEnter the Market ID you want to add liquidity to: ');
+  const targetMarketId = parseInt(marketIdStr.trim());
+  const targetMarket = multiOutcomeMarkets.find(m => m.id === targetMarketId);
   
-  const marketOdds: { marketId: number, title: string, startDigit: number }[] = [];
+  if (!targetMarket) {
+    console.error('Invalid market ID or market not found.');
+    process.exit(1);
+  }
+
+  console.log(`\n📋 Selected Market: ${targetMarket.title}`);
+  console.log('Available outcomes:');
+  targetMarket.outcomes.forEach((outcome, index) => {
+    console.log(`  ${index + 1}. ${outcome.title} (ID: ${outcome.id})`);
+  });
+
+  // **SELECT 3 OUTCOMES**
+  console.log('\n🎯 SELECT 3 OUTCOMES TO ADD LIQUIDITY FOR:');
+  const selectedOutcomes = [];
   
-  for (const market of event.markets) {
-    const startDigitStr = await getUserInput(`Enter starting digit for YES outcome for Market ${market.id} (${market.title}): `);
-    const startDigit = parseInt(startDigitStr.trim());
-    if (isNaN(startDigit) || startDigit < 10 || startDigit > 90) {
-      console.log('❌ Invalid start digit, skipping this market.');
+  for (let i = 1; i <= 3; i++) {
+    const outcomeIdxStr = await getUserInput(`Select outcome ${i} (enter number 1-${targetMarket.outcomes.length}): `);
+    const outcomeIdx = parseInt(outcomeIdxStr.trim()) - 1;
+    
+    if (outcomeIdx < 0 || outcomeIdx >= targetMarket.outcomes.length) {
+      console.log('❌ Invalid outcome number, skipping.');
       continue;
     }
-    marketOdds.push({
-      marketId: market.id,
-      title: market.title,
+    
+    const outcome = targetMarket.outcomes[outcomeIdx];
+    if (selectedOutcomes.find(o => o.id === outcome.id)) {
+      console.log('❌ Outcome already selected, skipping.');
+      continue;
+    }
+    
+    selectedOutcomes.push(outcome);
+    console.log(`✅ Selected: ${outcome.title}`);
+  }
+
+  if (selectedOutcomes.length === 0) {
+    console.error('No valid outcomes selected.');
+    process.exit(1);
+  }
+
+  // **COLLECT STARTING ODDS FOR SELECTED OUTCOMES**
+  console.log('\n📊 COLLECTING STARTING ODDS FOR SELECTED OUTCOMES');
+  console.log('='.repeat(50));
+  
+  const outcomeOdds = [];
+  
+  for (const outcome of selectedOutcomes) {
+    const startDigitStr = await getUserInput(`Enter starting digit (10-90) for "${outcome.title}": `);
+    const startDigit = parseInt(startDigitStr.trim());
+    if (isNaN(startDigit) || startDigit < 10 || startDigit > 90) {
+      console.log('❌ Invalid start digit, skipping this outcome.');
+      continue;
+    }
+    outcomeOdds.push({
+      outcome: outcome,
       startDigit: startDigit
     });
   }
 
-  if (marketOdds.length === 0) {
-    console.error('No valid markets to process.');
+  if (outcomeOdds.length === 0) {
+    console.error('No valid outcomes with odds configured.');
     process.exit(1);
   }
 
-  // Display summary of all odds
-  console.log('\n📊 ODDS SUMMARY:');
+  // Display summary
+  console.log('\n📈 LIQUIDITY SUMMARY:');
   console.log('='.repeat(40));
-  for (const { marketId, title, startDigit } of marketOdds) {
-    console.log(`Market ${marketId}: ${title} | YES: ${startDigit}¢ | NO: ${99 - startDigit}¢`);
+  console.log(`Market: ${targetMarket.title}`);
+  for (const { outcome, startDigit } of outcomeOdds) {
+    console.log(`  ${outcome.title}: ${startDigit}¢`);
   }
 
   // Confirm before proceeding
-  const confirmStr = await getUserInput('\n✅ Proceed with automated liquidity provision? (y/n): ');
+  const confirmStr = await getUserInput('\n✅ Proceed with YES-side liquidity provision? (y/n): ');
   if (confirmStr.toLowerCase() !== 'y' && confirmStr.toLowerCase() !== 'yes') {
     console.log('❌ Operation cancelled.');
     rl.close();
     return;
   }
 
-  // Login both accounts
-  console.log('\n🔐 Logging in accounts...');
+  // Login account (only need one account for YES-side only)
+  console.log('\n🔐 Logging in account...');
   const yesAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
-  const noAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_2);
   const yesAccount = getYesAccount(yesAccessToken);
-  const noAccount = getNoAccount(noAccessToken);
-  console.log('✅ Both accounts logged in successfully.');
+  console.log('✅ Account logged in successfully.');
 
-  // **AUTOMATED PROCESSING OF ALL MARKETS**
-  console.log('\n🚀 STARTING AUTOMATED LIQUIDITY PROVISION');
+  // **AUTOMATED PROCESSING OF SELECTED OUTCOMES**
+  console.log('\n🚀 STARTING YES-SIDE LIQUIDITY PROVISION');
   console.log('='.repeat(60));
 
-  for (const { marketId, title, startDigit } of marketOdds) {
+  let totalSpent = 0;
+
+  for (const { outcome, startDigit } of outcomeOdds) {
     try {
-      const market = event.markets.find(m => m.id === marketId);
-      if (!market) {
-        console.error(`❌ Market ${marketId} not found, skipping.`);
-        continue;
-      }
+      console.log(`\n🎯 Processing Outcome: ${outcome.title}`);
+      console.log(`📈 Starting Price: ${startDigit}¢`);
 
-      console.log(`\n🎯 Processing Market ${marketId}: ${title}`);
-      console.log(`📈 YES Start: ${startDigit}¢ | NO Start: ${99 - startDigit}¢`);
-
-      // Place YES orders
-      const yesOrders = generateYesOrders(startDigit);
-      let yesTotalCost = 0;
+      // Generate orders for this outcome
+      const orders = generateLiquidityOrders(startDigit);
+      let outcomeTotalCost = 0;
       
-      console.log(`\n📊 YES Orders (Budget: $80):`);
-      for (const order of yesOrders) {
+      console.log(`\n📊 Orders for ${outcome.title} (Budget: $80):`);
+      for (const order of orders) {
         const cost = order.price * order.amount;
-        yesTotalCost += cost;
+        outcomeTotalCost += cost;
       }
-      console.log(`  Total YES Cost: $${yesTotalCost.toFixed(2)} | Orders: ${yesOrders.length}`);
+      console.log(`  Total Cost: $${outcomeTotalCost.toFixed(2)} | Orders: ${orders.length}`);
       
-      for (const order of yesOrders) {
-        const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
-        if (!yesOutcome) continue;
+      // Place orders for this outcome
+      for (const order of orders) {
         const orderBody = {
-          marketId: market.id,
-          token: yesOutcome,
+          marketId: targetMarket.id,
+          token: outcome,
           account: yesAccount,
           price: order.price,
           amount: order.amount,
-          side: 0,
+          side: 0, // 0 for buy orders
           accessToken: yesAccount.accessToken
         };
+        
         try {
           await placeOrder(orderBody);
-          console.log(`✅ YES $${order.price} (${order.amount} shares)`);
-          await new Promise(res => setTimeout(res, 500)); // Reduced delay for automation
+          console.log(`✅ ${outcome.title} $${order.price.toFixed(2)} (${order.amount} shares)`);
+          await new Promise(res => setTimeout(res, 500)); // Small delay between orders
         } catch (e) {
-          console.error(`❌ Failed YES $${order.price}: ${e.message}`);
-        }
-      }
-
-      // Place NO orders
-      const noOrders = generateNoOrders(startDigit);
-      let noTotalCost = 0;
-      
-      console.log(`\n📊 NO Orders (Budget: $80):`);
-      for (const order of noOrders) {
-        const cost = order.price * order.amount;
-        noTotalCost += cost;
-      }
-      console.log(`  Total NO Cost: $${noTotalCost.toFixed(2)} | Orders: ${noOrders.length}`);
-      
-      for (const order of noOrders) {
-        const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
-        if (!noOutcome) continue;
-        const orderBody = {
-          marketId: market.id,
-          token: noOutcome,
-          account: noAccount,
-          price: order.price,
-          amount: order.amount,
-          side: 0,
-          accessToken: noAccount.accessToken
-        };
-        try {
-          await placeOrder(orderBody);
-          console.log(`✅ NO $${order.price} (${order.amount} shares)`);
-          await new Promise(res => setTimeout(res, 500)); // Reduced delay for automation
-        } catch (e) {
-          console.error(`❌ Failed NO $${order.price}: ${e.message}`);
+          console.error(`❌ Failed ${outcome.title} $${order.price.toFixed(2)}: ${e.message}`);
         }
       }
       
-      console.log(`\n💰 Market ${marketId} Complete:`);
-      console.log(`  YES: $${yesTotalCost.toFixed(2)} | NO: $${noTotalCost.toFixed(2)} | Total: $${(yesTotalCost + noTotalCost).toFixed(2)}`);
-      console.log(`✅ Finished Market ${marketId}: ${title}`);
+      totalSpent += outcomeTotalCost;
+      console.log(`\n💰 ${outcome.title} Complete: $${outcomeTotalCost.toFixed(2)}`);
       
     } catch (err) {
-      console.error(`❌ Error processing Market ${marketId}: ${err.message}`);
+      console.error(`❌ Error processing ${outcome.title}: ${err.message}`);
     }
   }
 
   rl.close();
-  console.log('\n🏁 AUTOMATED MULTI-MARKET LIQUIDITY PROVISION COMPLETED');
-  console.log(`📈 Processed ${marketOdds.length} markets successfully!`);
+  console.log('\n🏁 YES-SIDE LIQUIDITY PROVISION COMPLETED');
+  console.log(`📈 Processed ${outcomeOdds.length} outcomes successfully!`);
+  console.log(`💰 Total Spent: $${totalSpent.toFixed(2)}`);
+  console.log(`🎯 Market: ${targetMarket.title}`);
 }
 
 main();

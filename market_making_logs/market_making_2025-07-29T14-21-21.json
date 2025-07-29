@@ -1,0 +1,4916 @@
+{
+  "session_info": {
+    "start_time": "2025-07-29T14:21:21.175Z",
+    "network": "mainnet",
+    "script_version": "1.0.0"
+  },
+  "expenses": [
+    {
+      "timestamp": "2025-07-29T14:23:31.599Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.66,
+      "amount": 50,
+      "cost": 33,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:34.918Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.65,
+      "amount": 5,
+      "cost": 3.25,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:38.119Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.6,
+      "amount": 8,
+      "cost": 4.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:41.609Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.5499999999999999,
+      "amount": 10,
+      "cost": 5.499999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:44.674Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.49999999999999994,
+      "amount": 4,
+      "cost": 1.9999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:48.355Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.44999999999999996,
+      "amount": 6,
+      "cost": 2.6999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:51.366Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.39999999999999997,
+      "amount": 3,
+      "cost": 1.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:54.471Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.35,
+      "amount": 4,
+      "cost": 1.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:23:57.307Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.3,
+      "amount": 6,
+      "cost": 1.7999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:00.204Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.25,
+      "amount": 3,
+      "cost": 0.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:02.991Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.2,
+      "amount": 6,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:05.780Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.15000000000000002,
+      "amount": 10,
+      "cost": 1.5000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:08.540Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.10000000000000002,
+      "amount": 14,
+      "cost": 1.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:11.481Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 19,
+      "cost": 1.71,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:14.256Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 20,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:17.013Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 29,
+      "cost": 2.0300000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:20.335Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 35,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:23.754Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 66,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:26.595Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 63,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:29.464Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 95,
+      "cost": 2.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:32.467Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 116,
+      "cost": 2.32,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:35.277Z",
+      "market_id": "733",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 168,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:38.080Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.32999999999999996,
+      "amount": 60,
+      "cost": 19.799999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:40.993Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 15,
+      "cost": 4.500000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:43.768Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 14,
+      "cost": 3.500000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:46.571Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 22,
+      "cost": 4.400000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:49.342Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 15,
+      "cost": 2.2500000000000013,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:52.108Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 25,
+      "cost": 2.5000000000000018,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:54.866Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 32,
+      "cost": 2.88,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:24:57.622Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 30,
+      "cost": 2.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:00.440Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 65,
+      "cost": 4.550000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:03.219Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 85,
+      "cost": 5.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:05.986Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 110,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:08.754Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 102,
+      "cost": 4.08,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:12.074Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 110,
+      "cost": 3.3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:14.862Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 140,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:17.611Z",
+      "market_id": "733",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 380,
+      "cost": 3.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:18.615Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "733",
+      "market_title": "Tatsuro Taira Beat HyungSung Park on Aug 2 UFC?",
+      "yes_total_cost": 80.60999999999999,
+      "no_total_cost": 71.36,
+      "combined_total": 151.96999999999997
+    },
+    {
+      "timestamp": "2025-07-29T14:25:20.830Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.74,
+      "amount": 65,
+      "cost": 48.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:23.647Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.7000000000000001,
+      "amount": 8,
+      "cost": 5.6000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:26.410Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.65,
+      "amount": 8,
+      "cost": 5.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:29.225Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.6,
+      "amount": 4,
+      "cost": 2.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:32.023Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.5499999999999999,
+      "amount": 4,
+      "cost": 2.1999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:34.851Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.49999999999999994,
+      "amount": 5,
+      "cost": 2.4999999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:37.608Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.44999999999999996,
+      "amount": 2,
+      "cost": 0.8999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:40.398Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.39999999999999997,
+      "amount": 4,
+      "cost": 1.5999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:43.175Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.35,
+      "amount": 2,
+      "cost": 0.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:45.971Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.3,
+      "amount": 7,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:49.995Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.25,
+      "amount": 4,
+      "cost": 1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:52.859Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.2,
+      "amount": 6,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:55.663Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.15000000000000002,
+      "amount": 10,
+      "cost": 1.5000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:25:58.444Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.10000000000000002,
+      "amount": 10,
+      "cost": 1.0000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:01.254Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 15,
+      "cost": 1.3499999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:04.021Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 12,
+      "cost": 0.96,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:06.807Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 14,
+      "cost": 0.9800000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:09.587Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 41,
+      "cost": 2.46,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:12.412Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 54,
+      "cost": 2.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:15.175Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 46,
+      "cost": 1.84,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:17.969Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 63,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:20.754Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 70,
+      "cost": 1.4000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:23.526Z",
+      "market_id": "734",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 157,
+      "cost": 1.57,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:26.480Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.25,
+      "amount": 60,
+      "cost": 15,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:29.231Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.2,
+      "amount": 10,
+      "cost": 2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:31.984Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.15000000000000002,
+      "amount": 30,
+      "cost": 4.500000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:34.833Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.10000000000000002,
+      "amount": 28,
+      "cost": 2.8000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:37.592Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 32,
+      "cost": 2.88,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:40.360Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 38,
+      "cost": 3.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:43.134Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 55,
+      "cost": 3.8500000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:45.917Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 80,
+      "cost": 4.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:48.684Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 110,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:51.441Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 105,
+      "cost": 4.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:54.219Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 100,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:57.183Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 160,
+      "cost": 3.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:26:59.963Z",
+      "market_id": "734",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 250,
+      "cost": 2.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:00.966Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "734",
+      "market_title": "Team Liquid PH Beat Aurora Türkiye on July 30 MLBB EWC?",
+      "yes_total_cost": 91.14999999999999,
+      "no_total_cost": 57.27,
+      "combined_total": 148.42
+    },
+    {
+      "timestamp": "2025-07-29T14:27:03.203Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.42,
+      "amount": 65,
+      "cost": 27.3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:05.987Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 7,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:08.982Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 8,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:11.822Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 9,
+      "cost": 2.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:14.692Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:17.476Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 9,
+      "cost": 1.8000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:20.212Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 11,
+      "cost": 1.6500000000000008,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:22.975Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 5,
+      "cost": 0.5000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:25.756Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 15,
+      "cost": 1.3499999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:28.533Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 20,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:31.313Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 36,
+      "cost": 2.5200000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:34.083Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 48,
+      "cost": 2.88,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:36.847Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 60,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:39.680Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 51,
+      "cost": 2.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:42.469Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 87,
+      "cost": 2.61,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:45.240Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 112,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:48.515Z",
+      "market_id": "735",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 210,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:51.292Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.5700000000000001,
+      "amount": 80,
+      "cost": 45.60000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:54.063Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.55,
+      "amount": 10,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:56.821Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 6,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:27:59.615Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 6,
+      "cost": 2.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:02.387Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:05.142Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 6,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:07.906Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 4,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:10.688Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 3,
+      "cost": 0.7500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:13.462Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 8,
+      "cost": 1.6000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:16.274Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 8,
+      "cost": 1.2000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:19.035Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 7,
+      "cost": 0.7000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:21.815Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 18,
+      "cost": 1.6199999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:24.586Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 15,
+      "cost": 1.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:27.460Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 33,
+      "cost": 2.31,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:30.240Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 50,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:33.011Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 62,
+      "cost": 3.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:35.763Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 53,
+      "cost": 2.12,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:38.533Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 54,
+      "cost": 1.6199999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:41.284Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 95,
+      "cost": 1.9000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:44.051Z",
+      "market_id": "735",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 144,
+      "cost": 1.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:45.054Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "735",
+      "market_title": "Mythic SEAL Beat ONIC on July 30 MLBB EWC?",
+      "yes_total_cost": 61.640000000000015,
+      "no_total_cost": 85.06000000000003,
+      "combined_total": 146.70000000000005
+    },
+    {
+      "timestamp": "2025-07-29T14:28:47.264Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.55,
+      "amount": 65,
+      "cost": 35.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:50.025Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.5,
+      "amount": 10,
+      "cost": 5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:52.834Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 6,
+      "cost": 2.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:55.590Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 4,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:28:58.336Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 7,
+      "cost": 2.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:01.503Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 3,
+      "cost": 0.9000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:04.282Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 5,
+      "cost": 1.2500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:07.062Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 7,
+      "cost": 1.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:09.823Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 5,
+      "cost": 0.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:12.642Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 10,
+      "cost": 1.0000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:15.457Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 28,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:18.231Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 21,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:21.009Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 36,
+      "cost": 2.5200000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:24.184Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 45,
+      "cost": 2.6999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:27.123Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 66,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:29.932Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 73,
+      "cost": 2.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:33.424Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 66,
+      "cost": 1.98,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:36.610Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 87,
+      "cost": 1.74,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:39.379Z",
+      "market_id": "736",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 186,
+      "cost": 1.86,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:42.243Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.43999999999999995,
+      "amount": 80,
+      "cost": 35.199999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:45.031Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 5,
+      "cost": 2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:47.781Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 7,
+      "cost": 2.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:51.248Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 4,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:54.017Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:56.809Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 7,
+      "cost": 1.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:29:59.579Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 9,
+      "cost": 1.3500000000000008,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:02.342Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 4,
+      "cost": 0.4000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:05.138Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 10,
+      "cost": 0.8999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:07.950Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 23,
+      "cost": 1.84,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:10.719Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 38,
+      "cost": 2.66,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:13.480Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 56,
+      "cost": 3.36,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:16.255Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 57,
+      "cost": 2.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:19.031Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 73,
+      "cost": 2.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:21.799Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 87,
+      "cost": 2.61,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:24.564Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 99,
+      "cost": 1.98,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:27.343Z",
+      "market_id": "736",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 224,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:28.346Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "736",
+      "market_title": "RRQ Hoshi Beat SRG.OG on July 31 MLBB EWC?",
+      "yes_total_cost": 74.02000000000001,
+      "no_total_cost": 67.11,
+      "combined_total": 141.13
+    },
+    {
+      "timestamp": "2025-07-29T14:30:30.682Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.48,
+      "amount": 50,
+      "cost": 24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:33.435Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 5,
+      "cost": 2.25,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:36.227Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:39.010Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 6,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:41.776Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:44.604Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 5,
+      "cost": 1.2500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:47.389Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 5,
+      "cost": 1.0000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:50.132Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 8,
+      "cost": 1.2000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:52.887Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 8,
+      "cost": 0.8000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:55.645Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 28,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:30:58.418Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 26,
+      "cost": 2.08,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:01.164Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 38,
+      "cost": 2.66,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:04.147Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 42,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:06.926Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 62,
+      "cost": 3.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:09.706Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 59,
+      "cost": 2.36,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:12.471Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 87,
+      "cost": 2.61,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:15.216Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 105,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:17.966Z",
+      "market_id": "737",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 192,
+      "cost": 1.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:20.708Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.51,
+      "amount": 50,
+      "cost": 25.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:23.519Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 11,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:26.289Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 7,
+      "cost": 3.15,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:29.147Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 3,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:31.898Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 5,
+      "cost": 1.7500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:34.668Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:37.433Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:40.313Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 9,
+      "cost": 1.8000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:43.105Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 3,
+      "cost": 0.45000000000000023,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:45.945Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 4,
+      "cost": 0.4000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:48.714Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 22,
+      "cost": 1.98,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:51.482Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 21,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:54.253Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 38,
+      "cost": 2.66,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:57.085Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 39,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:31:59.887Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 66,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:02.738Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 66,
+      "cost": 2.64,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:05.493Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 73,
+      "cost": 2.19,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:08.320Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 112,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:11.237Z",
+      "market_id": "737",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 224,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:12.240Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "737",
+      "market_title": "Team Spirit Beat Onic Philippines on July 31 MLBB EWC?",
+      "yes_total_cost": 58.67000000000001,
+      "no_total_cost": 64.57000000000001,
+      "combined_total": 123.24000000000001
+    },
+    {
+      "timestamp": "2025-07-29T14:32:14.441Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.36,
+      "amount": 50,
+      "cost": 18,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:17.205Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 18,
+      "cost": 6.300000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:19.954Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 20,
+      "cost": 6.000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:22.698Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 20,
+      "cost": 5.000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:25.467Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 18,
+      "cost": 3.6000000000000014,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:28.258Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 18,
+      "cost": 2.7000000000000015,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:31.047Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 15,
+      "cost": 1.500000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:33.807Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 40,
+      "cost": 3.5999999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:36.558Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 38,
+      "cost": 3.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:39.417Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 30,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:42.197Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 85,
+      "cost": 5.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:44.957Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 95,
+      "cost": 4.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:47.717Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 100,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:50.563Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 100,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:53.477Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 150,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:56.258Z",
+      "market_id": "738",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 250,
+      "cost": 2.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:32:59.019Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.63,
+      "amount": 60,
+      "cost": 37.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:01.791Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.6000000000000001,
+      "amount": 10,
+      "cost": 6.000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:04.632Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.55,
+      "amount": 8,
+      "cost": 4.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:07.388Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 9,
+      "cost": 4.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:10.150Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 5,
+      "cost": 2.25,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:12.941Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 4,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:15.774Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 3,
+      "cost": 1.05,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:18.518Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 5,
+      "cost": 1.5000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:21.297Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 5,
+      "cost": 1.2500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:24.058Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 9,
+      "cost": 1.8000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:26.806Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 6,
+      "cost": 0.9000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:29.581Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 10,
+      "cost": 1.0000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:32.336Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 24,
+      "cost": 2.16,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:35.090Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 21,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:37.864Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 15,
+      "cost": 1.05,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:40.970Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 39,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:43.734Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 58,
+      "cost": 2.9000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:46.521Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 53,
+      "cost": 2.12,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:49.282Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 63,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:52.038Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 74,
+      "cost": 1.48,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:54.894Z",
+      "market_id": "738",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 210,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:33:55.898Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "738",
+      "market_title": "NS Beat HLE on July 31 LoL LCK?",
+      "yes_total_cost": 74.19000000000001,
+      "no_total_cost": 81.77000000000001,
+      "combined_total": 155.96000000000004
+    },
+    {
+      "timestamp": "2025-07-29T14:33:58.165Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.59,
+      "amount": 80,
+      "cost": 47.199999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:00.920Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.55,
+      "amount": 6,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:03.679Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.5,
+      "amount": 10,
+      "cost": 5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:06.497Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 2,
+      "cost": 0.9,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:09.327Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:12.093Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 3,
+      "cost": 1.05,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:14.849Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 4,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:17.585Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:20.444Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 8,
+      "cost": 1.6000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:23.202Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 8,
+      "cost": 1.2000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:25.938Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 10,
+      "cost": 1.0000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:28.696Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 19,
+      "cost": 1.71,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:31.460Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 17,
+      "cost": 1.36,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:34.190Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 38,
+      "cost": 2.66,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:36.949Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 38,
+      "cost": 2.28,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:39.781Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 61,
+      "cost": 3.0500000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:42.531Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 61,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:45.402Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 76,
+      "cost": 2.28,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:48.145Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 81,
+      "cost": 1.62,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:51.008Z",
+      "market_id": "739",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 157,
+      "cost": 1.57,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:53.825Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 80,
+      "cost": 32,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:56.669Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 6,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:34:59.671Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:02.693Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 3,
+      "cost": 0.7500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:40.152Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 4,
+      "cost": 0.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:44.330Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 9,
+      "cost": 1.3500000000000008,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:47.782Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 4,
+      "cost": 0.4000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:50.615Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 10,
+      "cost": 0.8999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:53.615Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 21,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:56.459Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 24,
+      "cost": 1.6800000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:35:59.236Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 39,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:02.600Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 59,
+      "cost": 2.95,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:05.361Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 77,
+      "cost": 3.08,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:08.184Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 87,
+      "cost": 2.61,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:10.968Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 105,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:13.752Z",
+      "market_id": "739",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 244,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:14.756Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "739",
+      "market_title": "England Beat India in the 5th Test on July 31 - August 4?",
+      "yes_total_cost": 85.56999999999998,
+      "no_total_cost": 58.98,
+      "combined_total": 144.54999999999998
+    },
+    {
+      "timestamp": "2025-07-29T14:36:17.158Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.46,
+      "amount": 60,
+      "cost": 27.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:20.010Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 4,
+      "cost": 1.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:22.809Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:25.571Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 4,
+      "cost": 1.4000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:28.396Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 7,
+      "cost": 2.1000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:31.169Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 6,
+      "cost": 1.5000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:33.955Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 5,
+      "cost": 1.0000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:36.713Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 14,
+      "cost": 2.100000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:39.556Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 8,
+      "cost": 0.8000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:42.372Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 19,
+      "cost": 1.71,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:45.484Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 22,
+      "cost": 1.76,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:48.304Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 42,
+      "cost": 2.9400000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:51.069Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 57,
+      "cost": 3.42,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:53.882Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 54,
+      "cost": 2.7,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:56.704Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 60,
+      "cost": 2.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:36:59.550Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 63,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:02.334Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 112,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:05.113Z",
+      "market_id": "740",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 244,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:08.092Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.53,
+      "amount": 80,
+      "cost": 42.400000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:11.195Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 8,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:14.053Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 5,
+      "cost": 2.25,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:16.838Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 4,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:19.675Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 2,
+      "cost": 0.7000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:22.515Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:25.289Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 4,
+      "cost": 1.0000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:28.074Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 6,
+      "cost": 1.2000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:30.948Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 7,
+      "cost": 1.0500000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:33.720Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 8,
+      "cost": 0.8000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:36.508Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 21,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:39.364Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 26,
+      "cost": 2.08,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:42.159Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 42,
+      "cost": 2.9400000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:45.081Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 63,
+      "cost": 3.78,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:47.898Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 52,
+      "cost": 2.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:50.679Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 57,
+      "cost": 2.2800000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:53.469Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 80,
+      "cost": 2.4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:56.318Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 110,
+      "cost": 2.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:37:59.099Z",
+      "market_id": "740",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 228,
+      "cost": 2.2800000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:00.102Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "740",
+      "market_title": "WBG Beat BLG on July 31 LoL LPL?",
+      "yes_total_cost": 62.2,
+      "no_total_cost": 79.25,
+      "combined_total": 141.45
+    },
+    {
+      "timestamp": "2025-07-29T14:38:02.366Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.57,
+      "amount": 50,
+      "cost": 28.499999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:05.134Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.55,
+      "amount": 6,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:07.993Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.5,
+      "amount": 9,
+      "cost": 4.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:10.763Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 5,
+      "cost": 2.25,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:13.557Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 9,
+      "cost": 3.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:16.364Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 4,
+      "cost": 1.4000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:19.226Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 4,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:22.012Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 10,
+      "cost": 2.5000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:24.789Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 7,
+      "cost": 1.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:27.547Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 5,
+      "cost": 0.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:30.333Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 13,
+      "cost": 1.300000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:33.213Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 22,
+      "cost": 1.98,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:36.013Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 28,
+      "cost": 2.24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:38.791Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 28,
+      "cost": 1.9600000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:41.542Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 39,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:44.326Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 66,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:47.120Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 54,
+      "cost": 2.16,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:49.949Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 78,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:52.783Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 129,
+      "cost": 2.58,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:55.604Z",
+      "market_id": "741",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 150,
+      "cost": 1.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:38:58.523Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.42000000000000004,
+      "amount": 50,
+      "cost": 21.000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:01.290Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 10,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:04.077Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 8,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:06.882Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 7,
+      "cost": 2.1000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:09.681Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 5,
+      "cost": 1.2500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:12.467Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 4,
+      "cost": 0.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:15.248Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 8,
+      "cost": 1.2000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:18.063Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 4,
+      "cost": 0.4000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:20.842Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 16,
+      "cost": 1.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:23.619Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 20,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:26.465Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 31,
+      "cost": 2.1700000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:29.230Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 45,
+      "cost": 2.6999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:32.006Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 77,
+      "cost": 3.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:34.844Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 59,
+      "cost": 2.36,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:37.619Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 78,
+      "cost": 2.34,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:40.386Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 96,
+      "cost": 1.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:43.223Z",
+      "market_id": "741",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 210,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:44.227Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "741",
+      "market_title": "EDG Beat JDG on July 31 Valorant VCT CN?",
+      "yes_total_cost": 71.1,
+      "no_total_cost": 54.03000000000001,
+      "combined_total": 125.13
+    },
+    {
+      "timestamp": "2025-07-29T14:39:46.723Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.56,
+      "amount": 50,
+      "cost": 28.000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:49.509Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.55,
+      "amount": 6,
+      "cost": 3.3000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:52.467Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.5,
+      "amount": 11,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:55.245Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 4,
+      "cost": 1.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:39:58.139Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 10,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:00.992Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 10,
+      "cost": 3.5000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:03.788Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 7,
+      "cost": 2.1000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:06.577Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:09.462Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 4,
+      "cost": 0.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:12.274Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 11,
+      "cost": 1.6500000000000008,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:15.070Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 17,
+      "cost": 1.7000000000000013,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:17.870Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 28,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:20.630Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 21,
+      "cost": 1.68,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:23.414Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 27,
+      "cost": 1.8900000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:26.190Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 48,
+      "cost": 2.88,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:28.979Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 57,
+      "cost": 2.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:31.762Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 54,
+      "cost": 2.16,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:34.548Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 66,
+      "cost": 1.98,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:37.339Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 129,
+      "cost": 2.58,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:40.181Z",
+      "market_id": "742",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 217,
+      "cost": 2.17,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:43.049Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.42999999999999994,
+      "amount": 80,
+      "cost": 34.39999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:45.849Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 3,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:48.635Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 7,
+      "cost": 2.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:51.417Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:54.194Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 3,
+      "cost": 0.7500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:56.977Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 8,
+      "cost": 1.6000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:40:59.793Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 5,
+      "cost": 0.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:02.621Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 4,
+      "cost": 0.4000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:05.389Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 12,
+      "cost": 1.08,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:08.197Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 22,
+      "cost": 1.76,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:10.993Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 42,
+      "cost": 2.9400000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:13.794Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 42,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:16.637Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 77,
+      "cost": 3.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:19.422Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 63,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:22.199Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 91,
+      "cost": 2.73,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:25.021Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 93,
+      "cost": 1.86,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:27.800Z",
+      "market_id": "742",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 244,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:28.805Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "742",
+      "market_title": "TL Beat APK on July 31 Valorant VCT EMEA?",
+      "yes_total_cost": 74.81,
+      "no_total_cost": 65.05,
+      "combined_total": 139.86
+    },
+    {
+      "timestamp": "2025-07-29T14:41:31.044Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.46,
+      "amount": 65,
+      "cost": 29.900000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:33.806Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 4,
+      "cost": 1.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:36.557Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:39.367Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 9,
+      "cost": 3.1500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:42.140Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 4,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:44.943Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:47.703Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 9,
+      "cost": 1.8000000000000007,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:50.529Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 3,
+      "cost": 0.45000000000000023,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:53.294Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 5,
+      "cost": 0.5000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:56.248Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 20,
+      "cost": 1.7999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:41:59.026Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 23,
+      "cost": 1.84,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:01.788Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 18,
+      "cost": 1.2600000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:04.577Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 45,
+      "cost": 2.6999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:07.423Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 73,
+      "cost": 3.6500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:10.203Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 70,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:12.972Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 63,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:15.752Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 102,
+      "cost": 2.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:18.521Z",
+      "market_id": "743",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 210,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:21.329Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.53,
+      "amount": 65,
+      "cost": 34.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:24.119Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 7,
+      "cost": 3.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:26.881Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 4,
+      "cost": 1.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:29.693Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 6,
+      "cost": 2.4000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:32.456Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 4,
+      "cost": 1.4000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:35.244Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 6,
+      "cost": 1.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:38.046Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 6,
+      "cost": 1.5000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:41.045Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 6,
+      "cost": 1.2000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:43.829Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 8,
+      "cost": 1.2000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:46.607Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 7,
+      "cost": 0.7000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:49.905Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 23,
+      "cost": 2.07,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:52.671Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 24,
+      "cost": 1.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:55.466Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 45,
+      "cost": 3.1500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:42:58.304Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 56,
+      "cost": 3.36,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:01.183Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 57,
+      "cost": 2.85,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:03.960Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 61,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:06.768Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 98,
+      "cost": 2.94,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:09.590Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 87,
+      "cost": 1.74,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:12.447Z",
+      "market_id": "743",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 175,
+      "cost": 1.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:13.452Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "743",
+      "market_title": "West Indies Beat Pakistan on July 31 1st T20I?",
+      "yes_total_cost": 63.03,
+      "no_total_cost": 72.17,
+      "combined_total": 135.2
+    },
+    {
+      "timestamp": "2025-07-29T14:43:15.725Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.48,
+      "amount": 50,
+      "cost": 24,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:18.504Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.45,
+      "amount": 10,
+      "cost": 4.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:21.312Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.4,
+      "amount": 4,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:24.085Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.35000000000000003,
+      "amount": 7,
+      "cost": 2.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:26.849Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.30000000000000004,
+      "amount": 5,
+      "cost": 1.5000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:29.636Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.25000000000000006,
+      "amount": 7,
+      "cost": 1.7500000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:32.427Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.20000000000000007,
+      "amount": 6,
+      "cost": 1.2000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:35.199Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.15000000000000008,
+      "amount": 6,
+      "cost": 0.9000000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:37.971Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.10000000000000007,
+      "amount": 8,
+      "cost": 0.8000000000000006,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:40.789Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 20,
+      "cost": 1.7999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:43.553Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 24,
+      "cost": 1.92,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:46.648Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 27,
+      "cost": 1.8900000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:49.431Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 45,
+      "cost": 2.6999999999999997,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:52.196Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 70,
+      "cost": 3.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:55.085Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 63,
+      "cost": 2.52,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:43:57.869Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 63,
+      "cost": 1.89,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:00.677Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 129,
+      "cost": 2.58,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:03.450Z",
+      "market_id": "744",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 210,
+      "cost": 2.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:06.457Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.51,
+      "amount": 80,
+      "cost": 40.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:09.231Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.5,
+      "amount": 11,
+      "cost": 5.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:11.993Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.45,
+      "amount": 4,
+      "cost": 1.8,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:14.980Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.4,
+      "amount": 4,
+      "cost": 1.6,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:17.771Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.35000000000000003,
+      "amount": 3,
+      "cost": 1.05,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:20.539Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.30000000000000004,
+      "amount": 5,
+      "cost": 1.5000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:23.316Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.25000000000000006,
+      "amount": 8,
+      "cost": 2.0000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:26.091Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.20000000000000007,
+      "amount": 4,
+      "cost": 0.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:28.869Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.15000000000000008,
+      "amount": 11,
+      "cost": 1.6500000000000008,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:32.728Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.10000000000000007,
+      "amount": 6,
+      "cost": 0.6000000000000004,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:35.505Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 19,
+      "cost": 1.71,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:38.319Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 25,
+      "cost": 2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:41.091Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 35,
+      "cost": 2.45,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:44.426Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 41,
+      "cost": 2.46,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:47.430Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 47,
+      "cost": 2.35,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:50.254Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 61,
+      "cost": 2.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:53.049Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 72,
+      "cost": 2.16,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:55.953Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 127,
+      "cost": 2.54,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:58.839Z",
+      "market_id": "744",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 221,
+      "cost": 2.21,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:44:59.843Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "744",
+      "market_title": "Rangers Beat Mariners on July 31?",
+      "yes_total_cost": 59.60000000000001,
+      "no_total_cost": 77.61999999999998,
+      "combined_total": 137.21999999999997
+    },
+    {
+      "timestamp": "2025-07-29T14:45:02.152Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.26,
+      "amount": 50,
+      "cost": 13,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:04.937Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.25,
+      "amount": 10,
+      "cost": 2.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:07.700Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.2,
+      "amount": 14,
+      "cost": 2.8000000000000003,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:10.533Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.15000000000000002,
+      "amount": 28,
+      "cost": 4.200000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:13.381Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.10000000000000002,
+      "amount": 10,
+      "cost": 1.0000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:16.153Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.09,
+      "amount": 38,
+      "cost": 3.42,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:19.011Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.08,
+      "amount": 38,
+      "cost": 3.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:21.802Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.07,
+      "amount": 64,
+      "cost": 4.48,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:24.606Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.06,
+      "amount": 70,
+      "cost": 4.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:27.416Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.05,
+      "amount": 80,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:30.280Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.04,
+      "amount": 100,
+      "cost": 4,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:33.102Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.03,
+      "amount": 100,
+      "cost": 3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:35.886Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.02,
+      "amount": 145,
+      "cost": 2.9,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:38.848Z",
+      "market_id": "745",
+      "order_type": "YES",
+      "price": 0.01,
+      "amount": 310,
+      "cost": 3.1,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:41.638Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.73,
+      "amount": 50,
+      "cost": 36.5,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:44.419Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.7000000000000001,
+      "amount": 6,
+      "cost": 4.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:47.190Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.65,
+      "amount": 9,
+      "cost": 5.8500000000000005,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:50.010Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.6,
+      "amount": 9,
+      "cost": 5.3999999999999995,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:53.008Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.5499999999999999,
+      "amount": 7,
+      "cost": 3.8499999999999996,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:55.791Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.49999999999999994,
+      "amount": 3,
+      "cost": 1.4999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:45:58.643Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.44999999999999996,
+      "amount": 2,
+      "cost": 0.8999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:01.446Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.39999999999999997,
+      "amount": 5,
+      "cost": 1.9999999999999998,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:04.228Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.35,
+      "amount": 5,
+      "cost": 1.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:06.993Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.3,
+      "amount": 3,
+      "cost": 0.8999999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:09.781Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.25,
+      "amount": 3,
+      "cost": 0.75,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:12.540Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.2,
+      "amount": 7,
+      "cost": 1.4000000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:15.332Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.15000000000000002,
+      "amount": 13,
+      "cost": 1.9500000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:18.137Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.10000000000000002,
+      "amount": 12,
+      "cost": 1.2000000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:20.918Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.09,
+      "amount": 18,
+      "cost": 1.6199999999999999,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:23.958Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.08,
+      "amount": 18,
+      "cost": 1.44,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:26.761Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.07,
+      "amount": 28,
+      "cost": 1.9600000000000002,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:29.554Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.06,
+      "amount": 46,
+      "cost": 2.76,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:32.330Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.05,
+      "amount": 44,
+      "cost": 2.2,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:35.183Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.04,
+      "amount": 51,
+      "cost": 2.04,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:38.018Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.03,
+      "amount": 49,
+      "cost": 1.47,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:40.831Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.02,
+      "amount": 65,
+      "cost": 1.3,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:43.596Z",
+      "market_id": "745",
+      "order_type": "NO",
+      "price": 0.01,
+      "amount": 191,
+      "cost": 1.9100000000000001,
+      "status": "SUCCESS",
+      "error": null
+    },
+    {
+      "timestamp": "2025-07-29T14:46:44.601Z",
+      "type": "MARKET_SUMMARY",
+      "market_id": "745",
+      "market_title": "$ETH Price $3.9K+ on Aug 4?",
+      "yes_total_cost": 55.64,
+      "no_total_cost": 84.85000000000001,
+      "combined_total": 140.49
+    },
+    {
+      "timestamp": "2025-07-29T14:46:44.606Z",
+      "type": "SESSION_SUMMARY",
+      "end_time": "2025-07-29T14:46:44.606Z",
+      "total_spent": 1831.320000000001,
+      "total_markets": 13,
+      "successful_orders": 478,
+      "failed_orders": 0,
+      "total_orders": 478
+    }
+  ]
+}
