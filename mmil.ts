@@ -47,6 +47,8 @@ class ExpenseLogger {
     private logFilePath: string;
     private totalYesSpent: number = 0;
     private totalNoSpent: number = 0;
+    private initialYesSpent: number = 0;
+    private initialNoSpent: number = 0;
 
     constructor() {
         // Create logs folder if it doesn't exist
@@ -78,27 +80,31 @@ class ExpenseLogger {
         console.log(`📝 Expense log created: ${this.logFilePath}`);
     }
 
+    logInitialOrder(orderType: 'YES' | 'NO', cost: number) {
+        if (orderType === 'YES') {
+            this.initialYesSpent += cost;
+        } else {
+            this.initialNoSpent += cost;
+        }
+    }
+
     logSuccessfulOrder(orderType: 'YES' | 'NO', cost: number) {
         if (orderType === 'YES') {
             this.totalYesSpent += cost;
         } else {
             this.totalNoSpent += cost;
         }
-        
         this.updateLogFile();
         console.log(`💰 ${orderType} order: $${cost.toFixed(2)} | Total ${orderType}: $${(orderType === 'YES' ? this.totalYesSpent : this.totalNoSpent).toFixed(2)}`);
     }
 
     logSessionSummary() {
         const now = new Date();
-        
-        // Update final totals
         this.updateLogFile(now.toISOString());
-        
         console.log(`\n🏁 SESSION SUMMARY:`);
-        console.log(`   Total YES Spent: $${this.totalYesSpent.toFixed(2)}`);
-        console.log(`   Total NO Spent: $${this.totalNoSpent.toFixed(2)}`);
-        console.log(`   Grand Total: $${(this.totalYesSpent + this.totalNoSpent).toFixed(2)}`);
+        console.log(`   Total YES Spent (excluding initial): $${this.totalYesSpent.toFixed(2)}`);
+        console.log(`   Total NO Spent (excluding initial): $${this.totalNoSpent.toFixed(2)}`);
+        console.log(`   Grand Total (excluding initial): $${(this.totalYesSpent + this.totalNoSpent).toFixed(2)}`);
         console.log(`   Log File: ${this.logFilePath}`);
     }
 
@@ -112,9 +118,10 @@ class ExpenseLogger {
                 },
                 total_yes_spent: parseFloat(this.totalYesSpent.toFixed(2)),
                 total_no_spent: parseFloat(this.totalNoSpent.toFixed(2)),
-                grand_total: parseFloat((this.totalYesSpent + this.totalNoSpent).toFixed(2))
+                grand_total: parseFloat((this.totalYesSpent + this.totalNoSpent).toFixed(2)),
+                initial_yes_spent: parseFloat(this.initialYesSpent.toFixed(2)),
+                initial_no_spent: parseFloat(this.initialNoSpent.toFixed(2))
             };
-            
             fs.writeFileSync(this.logFilePath, JSON.stringify(data, null, 2));
         } catch (error) {
             console.error('Error updating log file:', error.message);
@@ -160,6 +167,23 @@ function getRandomAmount(...amounts: number[]): number {
     return amounts[Math.floor(Math.random() * amounts.length)];
 }
 
+// NEW: Budget allocation based on starting odds
+function getBudgetAllocation(startDigit: number): { totalBudget: number, yesBudget: number, noBudget: number } {
+    if (startDigit >= 70 && startDigit <= 80) {
+        // For 70-80 odds: Total $90-100 split between both sides
+        const totalBudget = getRandomAmount(90, 95, 100);
+        const yesBudget = Math.floor(totalBudget * 0.5); // 50% split
+        const noBudget = totalBudget - yesBudget; // Remaining amount
+        return { totalBudget, yesBudget, noBudget };
+    } else {
+        // For all other odds: Max $45-50 per side
+        const yesBudget = getRandomAmount(45, 50);
+        const noBudget = getRandomAmount(45, 50);
+        const totalBudget = yesBudget + noBudget;
+        return { totalBudget, yesBudget, noBudget };
+    }
+}
+
 function adjustOrdersToMaxBudget(orders: any[], maxBudget: number) {
     // Calculate total cost
     let totalCost = orders.reduce((sum, order) => sum + (order.price * order.amount), 0);
@@ -168,19 +192,18 @@ function adjustOrdersToMaxBudget(orders: any[], maxBudget: number) {
         return orders;
     }
 
-    // Keep top order unchanged, adjust middle and bottom orders with new percentages
+    // Keep top order unchanged, adjust middle and bottom orders
     const adjustedOrders = [...orders];
 
     // Don't modify the first order (top order)
     for (let i = 1; i < adjustedOrders.length; i++) {
         const order = adjustedOrders[i];
 
-        // UPDATED REDUCTION STRATEGY:
         if (i < adjustedOrders.length / 2) {
-            // Middle orders: reduce by 50-70% (more aggressive than before)
+            // Middle orders: reduce by 50-70%
             order.amount = Math.max(1, Math.floor(order.amount * getRandomAmount(0.3, 0.4, 0.5)));
         } else {
-            // Bottom orders: reduce by 30-40% (less aggressive than before)
+            // Bottom orders: reduce by 30-40%
             order.amount = Math.max(1, Math.floor(order.amount * getRandomAmount(0.6, 0.7)));
         }
     }
@@ -198,12 +221,12 @@ function adjustOrdersToMaxBudget(orders: any[], maxBudget: number) {
     return adjustedOrders;
 }
 
-function generateYesOrders(startDigit: number) {
+function generateYesOrders(startDigit: number, yesBudget: number) {
     const startPrice = startDigit / 100;
     const orders = [];
 
-    // Keep top order with same shares
-    orders.push({ price: startPrice, amount: getRandomAmount(80, 60, 50, 65) });
+    // Top order shares (consistent across all budgets)
+    orders.push({ price: startPrice, amount: getRandomAmount(60, 50, 45, 55, 65) });
 
     let currentPrice = Math.floor(startPrice * 20) * 0.05;
     if (currentPrice >= startPrice) currentPrice -= 0.05;
@@ -228,17 +251,17 @@ function generateYesOrders(startDigit: number) {
         { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
     );
 
-    return adjustOrdersToMaxBudget(orders, 80);
+    return adjustOrdersToMaxBudget(orders, yesBudget);
 }
 
-function generateNoOrders(startDigit: number) {
+function generateNoOrders(startDigit: number, noBudget: number) {
     const startPrice = startDigit / 100;
     const orders = [];
     const noStartPrice = 0.99 - startPrice;
 
-    // Keep top order with same shares
+    // Top order shares (consistent across all budgets)
     if (noStartPrice >= 0.10 && noStartPrice <= 0.90) {
-        orders.push({ price: noStartPrice, amount: getRandomAmount(80, 60, 50, 65) });
+        orders.push({ price: noStartPrice, amount: getRandomAmount(60, 50, 45, 55, 65) });
     }
 
     let currentNoPrice = Math.floor(noStartPrice * 20) * 0.05;
@@ -264,7 +287,7 @@ function generateNoOrders(startDigit: number) {
         { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
     );
 
-    const adjustedOrders = adjustOrdersToMaxBudget(orders, 80);
+    const adjustedOrders = adjustOrdersToMaxBudget(orders, noBudget);
     return adjustedOrders.sort((a, b) => b.price - a.price);
 }
 
@@ -280,12 +303,13 @@ async function placeOrder(orderBody: any) {
 
 async function main() {
     console.log('='.repeat(60));
-    console.log('💰 MULTI-MARKET-ID LIQUIDITY PROVISION (MAX $80 BUDGET)');
+    console.log('💰 MULTI-MARKET-ID LIQUIDITY PROVISION (OPTIMIZED BUDGET)');
     console.log('='.repeat(60));
 
     // Initialize expense logger
     const expenseLogger = new ExpenseLogger();
 
+    // Get number of markets
     const numMarketsStr = await getUserInput('How many markets do you want to provide liquidity for? ');
     const numMarkets = parseInt(numMarketsStr.trim());
     if (isNaN(numMarkets) || numMarkets < 1) {
@@ -293,22 +317,51 @@ async function main() {
         process.exit(1);
     }
 
-    const marketConfigs: { marketId: number, startDigit: number }[] = [];
-    for (let i = 0; i < numMarkets; i++) {
-        const marketIdStr = await getUserInput(`Enter market ID for market #${i + 1}: `);
-        const marketId = parseInt(marketIdStr.trim());
-        if (isNaN(marketId)) {
-            console.error('Invalid market ID, skipping.');
-            continue;
-        }
-        const startDigitStr = await getUserInput(`Enter starting digit for YES outcome for market #${i + 1}: `);
-        const startDigit = parseInt(startDigitStr.trim());
-        if (isNaN(startDigit) || startDigit < 10 || startDigit > 90) {
-            console.error('Invalid start digit, skipping.');
-            continue;
-        }
-        marketConfigs.push({ marketId, startDigit });
+    // Get the first market ID
+    const firstMarketIdStr = await getUserInput('Enter the first market ID: ');
+    const firstMarketId = parseInt(firstMarketIdStr.trim());
+    if (isNaN(firstMarketId)) {
+        console.error('Invalid market ID.');
+        process.exit(1);
     }
+
+    // Get starting digit for the first market
+    const firstStartDigitStr = await getUserInput('Enter starting digit for YES outcome for the first market: ');
+    const firstStartDigit = parseInt(firstStartDigitStr.trim());
+    if (isNaN(firstStartDigit) || firstStartDigit < 10 || firstStartDigit > 90) {
+        console.error('Invalid start digit.');
+        process.exit(1);
+    }
+
+    // Create market configurations
+    const marketConfigs: { marketId: number, startDigit: number }[] = [];
+    
+    // Add the first market
+    marketConfigs.push({ marketId: firstMarketId, startDigit: firstStartDigit });
+
+    // For subsequent markets, auto-increment market ID and ask for starting digit
+    for (let i = 1; i < numMarkets; i++) {
+        const nextMarketId = firstMarketId + i;
+        console.log(`\nMarket #${i + 1}: Market ID will be ${nextMarketId} (auto-incremented)`);
+        
+        const startDigitStr = await getUserInput(`Enter starting digit for YES outcome for market ${nextMarketId}: `);
+        const startDigit = parseInt(startDigitStr.trim());
+        
+        if (isNaN(startDigit) || startDigit < 10 || startDigit > 90) {
+            console.error(`Invalid start digit for market ${nextMarketId}, skipping.`);
+            continue;
+        }
+        
+        marketConfigs.push({ marketId: nextMarketId, startDigit });
+    }
+
+    // Display summary of markets to be processed
+    console.log('\n📋 MARKET SUMMARY:');
+    console.log('='.repeat(40));
+    for (const config of marketConfigs) {
+        console.log(`Market ID: ${config.marketId} | Starting Digit: ${config.startDigit}`);
+    }
+    console.log('='.repeat(40));
 
     // Login both accounts
     const yesAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
@@ -324,21 +377,82 @@ async function main() {
                 continue;
             }
             const market = event.markets[0];
+
+            // Get YES/NO outcomes
+            const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
+            const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
+            if (!yesOutcome || !noOutcome) {
+                console.error(`Market ${marketId} does not have both Yes and No outcomes, skipping.`);
+                continue;
+            }
+
+            // Get budget allocation based on starting odds
+            const { totalBudget, yesBudget, noBudget } = getBudgetAllocation(startDigit);
+
+            // Place initial YES order (wallet 1)
+            const yesStartPrice = startDigit / 100;
+            const initialYesOrder = {
+                marketId: market.id,
+                token: yesOutcome,
+                account: yesAccount,
+                price: yesStartPrice,
+                amount: 300,
+                side: 0,
+                accessToken: yesAccount.accessToken
+            };
+            try {
+                await placeOrder(initialYesOrder);
+                console.log(`✅ Initial YES order placed for Market ${market.id} at $${yesStartPrice} (300 shares)`);
+                expenseLogger.logInitialOrder('YES', yesStartPrice * 300);
+            } catch (e) {
+                console.error(`❌ Failed initial YES order for Market ${market.id}:`, e.message);
+                continue;
+            }
+
+            // Place initial NO order (wallet 2)
+            const noStartPrice = 1 - yesStartPrice;
+            const initialNoOrder = {
+                marketId: market.id,
+                token: noOutcome,
+                account: noAccount,
+                price: noStartPrice,
+                amount: 300,
+                side: 0,
+                accessToken: noAccount.accessToken
+            };
+            try {
+                await placeOrder(initialNoOrder);
+                console.log(`✅ Initial NO order placed for Market ${market.id} at $${noStartPrice} (300 shares)`);
+                expenseLogger.logInitialOrder('NO', noStartPrice * 300);
+            } catch (e) {
+                console.error(`❌ Failed initial NO order for Market ${market.id}:`, e.message);
+                continue;
+            }
+            // Wait for initial orders to match before proceeding
+            console.log('⏳ Waiting 10 seconds for initial orders to match...');
+            await new Promise(res => setTimeout(res, 2000));
+
+            // ...existing liquidity provision logic...
+            // Get budget allocation based on starting odds
             console.log(`\nMarket ID: ${market.id}`);
             console.log(`Title: ${market.title}`);
             console.log(`Question: ${market.question}`);
             console.log(`Status: ${market.status}`);
             console.log(`Volume: ${market.volume}`);
+            console.log(`💰 Budget Allocation (Starting odds: ${startDigit}):`);
+            console.log(`   Total Budget: $${totalBudget}`);
+            console.log(`   YES Budget: $${yesBudget}`);
+            console.log(`   NO Budget: $${noBudget}`);
             console.log('Outcomes:');
             for (const outcome of market.outcomes) {
                 console.log(` - Outcome: ${outcome.title} (ID: ${outcome.id}) | Token ID: ${outcome.tokenId} | Price: ${outcome.price}`);
             }
 
             // Place YES orders
-            const yesOrders = generateYesOrders(startDigit);
+            const yesOrders = generateYesOrders(startDigit, yesBudget);
             let yesTotalCost = 0;
 
-            console.log(`\n📊 YES Orders (Budget: $80):`);
+            console.log(`\n📊 YES Orders (Budget: $${yesBudget}):`);
             for (const order of yesOrders) {
                 const cost = order.price * order.amount;
                 yesTotalCost += cost;
@@ -347,8 +461,6 @@ async function main() {
             console.log(` Total YES Cost: $${yesTotalCost.toFixed(2)}`);
 
             for (const order of yesOrders) {
-                const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
-                if (!yesOutcome) continue;
                 const orderBody = {
                     marketId: market.id,
                     token: yesOutcome,
@@ -370,10 +482,10 @@ async function main() {
             }
 
             // Place NO orders
-            const noOrders = generateNoOrders(startDigit);
+            const noOrders = generateNoOrders(startDigit, noBudget);
             let noTotalCost = 0;
 
-            console.log(`\n📊 NO Orders (Budget: $80):`);
+            console.log(`\n📊 NO Orders (Budget: $${noBudget}):`);
             for (const order of noOrders) {
                 const cost = order.price * order.amount;
                 noTotalCost += cost;
@@ -382,8 +494,6 @@ async function main() {
             console.log(` Total NO Cost: $${noTotalCost.toFixed(2)}`);
 
             for (const order of noOrders) {
-                const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
-                if (!noOutcome) continue;
                 const orderBody = {
                     marketId: market.id,
                     token: noOutcome,
@@ -407,8 +517,9 @@ async function main() {
             console.log(`\n💰 Market ${market.id} Summary:`);
             console.log(` YES Total: $${yesTotalCost.toFixed(2)} | NO Total: $${noTotalCost.toFixed(2)}`);
             console.log(` Combined Total: $${(yesTotalCost + noTotalCost).toFixed(2)}`);
+            console.log(` Planned Budget: $${totalBudget}`);
             console.log(`Finished liquidity for Market ${market.id}\n`);
-            
+
         } catch (err) {
             console.error(`Error processing market ID ${marketId}:`, err.message);
         }

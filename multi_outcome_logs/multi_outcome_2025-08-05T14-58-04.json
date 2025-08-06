@@ -1,0 +1,12 @@
+{
+  "session_info": {
+    "start_time": "2025-08-05T14:58:04.397Z",
+    "network": "mainnet",
+    "end_time": "2025-08-05T14:59:36.281Z"
+  },
+  "total_spent": 56.12,
+  "outcome_spending": {
+    "Yes": 19.37,
+    "No": 36.75
+  }
+}
