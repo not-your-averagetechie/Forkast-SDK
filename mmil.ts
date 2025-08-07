@@ -105,6 +105,9 @@ class ExpenseLogger {
         console.log(`   Total YES Spent (excluding initial): $${this.totalYesSpent.toFixed(2)}`);
         console.log(`   Total NO Spent (excluding initial): $${this.totalNoSpent.toFixed(2)}`);
         console.log(`   Grand Total (excluding initial): $${(this.totalYesSpent + this.totalNoSpent).toFixed(2)}`);
+        console.log(`   Initial YES Spent (300 shares orders): $${this.initialYesSpent.toFixed(2)}`);
+        console.log(`   Initial NO Spent (300 shares orders): $${this.initialNoSpent.toFixed(2)}`);
+        console.log(`   Grand Total (including initial): $${(this.totalYesSpent + this.totalNoSpent + this.initialYesSpent + this.initialNoSpent).toFixed(2)}`);
         console.log(`   Log File: ${this.logFilePath}`);
     }
 
@@ -467,7 +470,7 @@ async function main() {
                     account: yesAccount,
                     price: order.price,
                     amount: order.amount,
-                    side: 0,
+                    side: 0, // 0 for buy
                     accessToken: yesAccount.accessToken
                 };
                 try {
@@ -500,7 +503,7 @@ async function main() {
                     account: noAccount,
                     price: order.price,
                     amount: order.amount,
-                    side: 0,
+                    side: 0, // 0 for buy
                     accessToken: noAccount.accessToken
                 };
                 try {
