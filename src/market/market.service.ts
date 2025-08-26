@@ -15,8 +15,25 @@ export class MarketService {
   }
 
   async getEventDetails(id: number): Promise<Event> {
-    const eventDetails =  await this.marketService.getEventData(String(id));
-    return eventDetails;
+    let retries = 0;
+    const maxRetries = 5;
+    const baseDelay = 1000; // 1 second
+    while (retries < maxRetries) {
+      try {
+        const eventDetails = await this.marketService.getEventData(String(id));
+        return eventDetails;
+      } catch (err: any) {
+        if (err?.message?.includes('429') || err?.response?.status === 429) {
+          // Exponential backoff
+          const delay = baseDelay * Math.pow(2, retries);
+          await new Promise(res => setTimeout(res, delay));
+          retries++;
+        } else {
+          throw err;
+        }
+      }
+    }
+    throw new Error('Failed to fetch event data after multiple retries due to rate limiting.');
   }
 
   async getOrderBook(mid: number, oid: number, otype: number): Promise<OrderBook> {

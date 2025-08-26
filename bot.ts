@@ -163,15 +163,16 @@ async function tryEventsAndFlattenMarkets(): Promise<any[]> {
 
 async function fetchActiveMarkets(): Promise<any[]> {
     console.log('🚀 Starting market discovery...');
-    // Copy MMIL/Market Spread Checker mechanism: loop over market IDs and fetch each event
+    // Use market-spread-checker.ts logic: loop over a range of market IDs and fetch each event
     console.log('🚀 Discovering active markets by looping over market IDs...');
-    const latestMarketId = 600; // You may want to fetch this dynamically or configure
+    const latestMarketId = parseInt(process.env.LATEST_MARKET_ID || '600'); // You may want to prompt for this or set via env
     const numToCheck = 30;
     let marketsWithOutcomes: any[] = [];
-    for (let marketId = latestMarketId; marketId > latestMarketId - numToCheck; marketId--) {
+    for (let eventId = latestMarketId; eventId > latestMarketId - numToCheck; eventId--) {
         try {
-            const event = await httpGetJson(EVENT_API_URL!, { id: marketId });
+            const event = await httpGetJson(EVENT_API_URL!, { id: eventId });
             if (!event || !Array.isArray(event.markets) || event.markets.length === 0) continue;
+            // Push all markets from this event that have outcomes
             for (const market of event.markets) {
                 if (Array.isArray(market.outcomes) && market.outcomes.length > 0) {
                     marketsWithOutcomes.push(market);
@@ -300,6 +301,7 @@ async function botLoop() {
                     marketReports.push({
                         marketId: market.id,
                         marketTitle: market.title,
+                slug: market.id, // Use market.id directly for the link
                         confidence,
                         momentum,
                         orders: ordersToPlace,
@@ -314,32 +316,109 @@ async function botLoop() {
             // Sort markets by confidence descending
             marketReports.sort((a, b) => b.confidence - a.confidence);
 
-            // Show full list of markets with confidence scores
+            // Show full list of markets with confidence scores and links
             console.log('\n=== MARKET CONFIDENCE LIST ===');
             for (const report of marketReports) {
-                console.log(`Market: ${report.marketTitle} (ID: ${report.marketId}) | Confidence: ${report.confidence}`);
+                // Use market.slug if available, else market.id
+            const marketLink = `https://forkast.gg/market/${report.marketId}`; // Use market.id directly for the link
+                console.log(`Market: ${report.marketTitle} (ID: ${report.marketId}) | Confidence: ${report.confidence} | Link: ${marketLink}`);
             }
 
             // Interactive order placement
             for (const report of marketReports) {
+            const marketLink = `https://forkast.gg/market/${report.marketId}`; // Use market.id directly for the link
                 console.log(`\n--- Market: ${report.marketTitle} (ID: ${report.marketId}) ---`);
                 console.log(`Confidence: ${report.confidence}`);
-                console.log(`Momentum: ${report.momentum}`);
-                if (report.orders.length === 0) {
-                    console.log('No momentum orders to place.');
-                    continue;
+                console.log(`Link: ${marketLink}`);
+                // Get current prices for YES and NO
+                const yesOrderBook = await fetchOrderBook(report.marketId, report.yesOutcome.id, report.yesOutcome.outcomeType || 0);
+                const noOrderBook = await fetchOrderBook(report.marketId, report.noOutcome.id, report.noOutcome.outcomeType || 0);
+                const yesCurrentPrice = parseFloat(yesOrderBook.asks[0]?.price || '0.5');
+                const noCurrentPrice = parseFloat(noOrderBook.asks[0]?.price || '0.5');
+                // Determine dominant side and price
+                // Ladder order logic
+                console.log(`Current YES/NO prices: ${Math.round(yesCurrentPrice*100)}/${Math.round(noCurrentPrice*100)}`);
+                // Define YES and NO ladder levels and amounts
+                const yesLadder = [
+                    { price: 0.75, amount: 60 },
+                    { price: 0.70, amount: 2 },
+                    { price: 0.65, amount: 2 },
+                    { price: 0.60, amount: 2 },
+                    { price: 0.55, amount: 2 },
+                    { price: 0.51, amount: 2 }
+                ];
+                const noLadder = [
+                    { price: 0.25, amount: 60 },
+                    { price: 0.20, amount: 4 },
+                    { price: 0.15, amount: 5 },
+                    { price: 0.13, amount: 6 }
+                ];
+
+                let yesOrders = [];
+                let noOrders = [];
+
+                if (yesCurrentPrice >= noCurrentPrice) {
+                    // Standard ladder: YES orders above NO price, NO orders below YES price
+                    yesOrders = yesLadder.filter(level => level.price > noCurrentPrice);
+
+                    let noStartPrice = 0.24;
+                    if (yesOrders.length > 0 && yesOrders[0].price !== 0.75) {
+                        noStartPrice = parseFloat((yesOrders[0].price - 0.01).toFixed(2));
+                    }
+                    noOrders = [];
+                    if (noStartPrice < yesCurrentPrice) {
+                        noOrders.push({ price: noStartPrice, amount: noLadder[0].amount });
+                    }
+                    for (let i = 1; i < noLadder.length; i++) {
+                        const level = noLadder[i];
+                        if (level.price < yesCurrentPrice) {
+                            noOrders.push({ price: level.price, amount: level.amount });
+                        }
+                    }
+                } else {
+                    // Reverse ladder: NO orders above YES price, YES orders below NO price
+                    noOrders = noLadder.filter(level => level.price > yesCurrentPrice);
+
+                    let yesStartPrice = 0.51;
+                    if (noOrders.length > 0 && noOrders[0].price !== 0.24) {
+                        yesStartPrice = parseFloat((noOrders[0].price - 0.01).toFixed(2));
+                    }
+                    yesOrders = [];
+                    if (yesStartPrice < noCurrentPrice) {
+                        yesOrders.push({ price: yesStartPrice, amount: yesLadder[yesLadder.length - 1].amount });
+                    }
+                    for (let i = yesLadder.length - 2; i >= 0; i--) {
+                        const level = yesLadder[i];
+                        if (level.price < noCurrentPrice) {
+                            yesOrders.push({ price: level.price, amount: level.amount });
+                        }
+                    }
                 }
-                console.log('Orders to place:');
-                for (const order of report.orders) {
-                    console.log(`  Price: ${order.price.toFixed(2)} | Percent of capital: ${(order.percent * 100).toFixed(1)}%`);
+                // Show order preview for every market
+                if (yesOrders.length) {
+                    console.log('YES orders to place:');
+                    yesOrders.forEach(o => console.log(`  YES at ${o.price.toFixed(2)}: ${o.amount} shares`));
+                } else {
+                    console.log('No YES ladder orders to place for this market.');
                 }
-                // Prompt user for confirmation
+                if (noOrders.length) {
+                    console.log('NO orders to place:');
+                    noOrders.forEach(o => console.log(`  NO at ${o.price.toFixed(2)}: ${o.amount} shares`));
+                } else {
+                    console.log('No NO ladder orders to place for this market.');
+                }
+                // Always prompt user for confirmation
                 const answer = await new Promise(res => {
-                    rl.question('Place these orders? (yes/no): ', (ans: string) => res(ans.trim().toLowerCase()));
+                    rl.question('Place these ladder orders? (yes/no): ', (ans) => res(ans.trim().toLowerCase()));
                 });
                 if (answer === 'yes') {
-                    // TODO: Place orders via API here (requires wallet integration)
-                    console.log('✅ Orders would be placed here (API integration needed).');
+                    // TODO: Place ladder orders via API here (requires wallet integration)
+                    if (yesOrders.length) {
+                        yesOrders.forEach(o => console.log(`✅ Would place YES order: ${o.amount} shares at ${o.price.toFixed(2)}`));
+                    }
+                    if (noOrders.length) {
+                        noOrders.forEach(o => console.log(`✅ Would place NO order: ${o.amount} shares at ${o.price.toFixed(2)}`));
+                    }
                 } else {
                     console.log('⏩ Skipping order placement for this market.');
                 }
