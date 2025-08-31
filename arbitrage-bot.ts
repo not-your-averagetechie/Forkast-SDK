@@ -363,10 +363,9 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
             totalSpread: totalSpread.toFixed(4)
         });
 
-        // Check if spread is already tight
+        // For tight spreads, we'll still place orders at the top of the book for immediate matching
         if (totalSpread <= 0.02) {
-            logger.log(`   ⏭️  Market ${market.id} already has tight spread (${totalSpread.toFixed(4)}), skipping`);
-            return false;
+            logger.log(`   📊 Market ${market.id} has tight spread (${totalSpread.toFixed(4)}), placing orders at top of book for immediate matching`);
         }
 
         // Check for very high prices (>= 0.95)
@@ -410,12 +409,22 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
         const orderAmount = getRandomElement(BOT_CONFIG.ORDER_AMOUNTS);
 
         if (yesBestBid > 0.05 && yesBestBid < 0.95) {
-            // Wallet 1 buys YES at best bid
-            const yesPrice = yesBestBid;
+            // For tight spreads, place orders at best ask for immediate matching
+            // For wide spreads, place at best bid for better prices
+            const isTightSpread = totalSpread <= 0.02;
+            const yesPrice = isTightSpread ? yesBestAsk : yesBestBid;
             const noPrice = parseFloat((1.00 - yesPrice).toFixed(4));
+            
+            if (isTightSpread) {
+                logger.log(`   🎯 Tight spread detected - placing orders at best ask for immediate matching`);
+            } else {
+                logger.log(`   🎯 Wide spread detected - placing orders at best bid for better prices`);
+            }
 
             // Check if NO price is acceptable
             if (noPrice > 0.05 && noPrice < 0.95) {
+                // For tight spreads, also place NO order at best ask for immediate matching
+                const noOrderPrice = isTightSpread ? noBestAsk : noPrice;
                 // Place YES order
                 const yesOrderBody = {
                     marketId: market.id,
@@ -438,7 +447,7 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
                     logger.log(`   ✅ YES order placed successfully`);
                     ordersPlaced++;
                 } else {
-                    logger.log(`   ❌ Failed to place YES order: ${yesResult?.message || 'Unknown error'}`);
+                    logger.log(`   ❌ Failed to place YES order: ${yesResult?.error || yesResult?.message || 'Unknown error'}`);
                     // Continue with NO order even if YES fails
                 }
 
@@ -455,22 +464,22 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
                         proxy_wallet: wallet2Config.PROXY_WALLET,
                         accessToken: wallet2AccessToken
                     },
-                    price: noPrice,
+                    price: noOrderPrice,
                     amount: orderAmount,
                     side: 0, // Buy
                     accessToken: wallet2AccessToken
                 };
 
-                logger.log(`   📉 Wallet ${wallet2Number} placing NO order: ${orderAmount} shares at $${noPrice.toFixed(4)}`);
+                logger.log(`   📉 Wallet ${wallet2Number} placing NO order: ${orderAmount} shares at $${noOrderPrice.toFixed(4)}`);
                 const noResult = await placeOrder(noOrderBody);
                 if (noResult && noResult.success === true) {
                     logger.log(`   ✅ NO order placed successfully`);
                     ordersPlaced++;
                 } else {
-                    logger.log(`   ❌ Failed to place NO order: ${noResult?.message || 'Unknown error'}`);
+                    logger.log(`   ❌ Failed to place NO order: ${noResult?.error || noResult?.message || 'Unknown error'}`);
                 }
 
-                logger.log(`   🎯 Coordinated trade: YES at $${yesPrice.toFixed(4)} + NO at $${noPrice.toFixed(4)} = $${(yesPrice + noPrice).toFixed(4)}`);
+                logger.log(`   🎯 Coordinated trade: YES at $${yesPrice.toFixed(4)} + NO at $${noOrderPrice.toFixed(4)} = $${(yesPrice + noOrderPrice).toFixed(4)}`);
             } else {
                 logger.log(`   ⚠️  NO price ${noPrice.toFixed(4)} is outside acceptable range (0.05-0.95), skipping`);
             }
@@ -479,7 +488,11 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
         }
 
         if (ordersPlaced > 0) {
-            logger.log(`   ✅ Successfully placed ${ordersPlaced} coordinated orders on market ${market.id}`);
+            if (ordersPlaced === 2) {
+                logger.log(`   ✅ Successfully placed 2 coordinated orders on market ${market.id}`);
+            } else if (ordersPlaced === 1) {
+                logger.log(`   ⚠️  Partially successful: placed ${ordersPlaced} order on market ${market.id}`);
+            }
             return true;
         }
 
@@ -576,9 +589,21 @@ async function arbitrageBot() {
     console.log(`📊 Sample of shuffled ACTIVE market IDs: ${activeMarkets.slice(0, 10).join(', ')}...`);
     console.log('');
 
-    for (const marketId of activeMarkets) {
+    // Create a copy of active markets for random selection
+    const availableMarkets = [...activeMarkets];
+
+    // Process markets in RANDOM order by picking random indices
+    while (availableMarkets.length > 0 && consecutiveErrors < maxConsecutiveErrors) {
+        // Pick a RANDOM market from the available ones
+        const randomIndex = Math.floor(Math.random() * availableMarkets.length);
+        const marketId = availableMarkets[randomIndex];
+        
+        // Remove the selected market from available markets
+        availableMarkets.splice(randomIndex, 1);
+        
         try {
             console.log(`\n🔍 Processing Market ${marketId} (${marketsProcessed + 1}/${activeMarkets.length})`);
+            console.log(`   🎲 Randomly selected from ${availableMarkets.length + 1} available markets`);
             
             // Add random market skipping for more human-like behavior (5% chance)
             if (Math.random() < 0.05) {
