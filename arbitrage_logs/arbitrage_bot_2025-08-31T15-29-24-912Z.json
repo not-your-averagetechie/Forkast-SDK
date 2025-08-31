@@ -1,0 +1,66 @@
+[
+  {
+    "timestamp": "2025-08-31T15:29:28.809Z",
+    "message": "   📊 Market 998 Analysis:",
+    "data": {
+      "yesBestBid": 0.3,
+      "yesBestAsk": 0.31,
+      "yesSpread": "0.0100",
+      "noBestBid": 0.69,
+      "noBestAsk": 0.7,
+      "noSpread": "0.0100",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-08-31T15:29:29.023Z",
+    "message": "   📉 Wallet 5 placing NO order: 10 shares at $0.6900",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:29:33.048Z",
+    "message": "   📉 Wallet 5 placing NO order: 5 shares at $0.6800",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:29:36.163Z",
+    "message": "   ✅ Successfully placed 2 orders on market 998",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:29:44.835Z",
+    "message": "   📊 Market 997 Analysis:",
+    "data": {
+      "yesBestBid": 0.4,
+      "yesBestAsk": 0.41,
+      "yesSpread": "0.0100",
+      "noBestBid": 0.59,
+      "noBestAsk": 0.6,
+      "noSpread": "0.0100",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-08-31T15:29:44.836Z",
+    "message": "   ⏭️  Market 997 already has tight spread (0.0200), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:29:52.113Z",
+    "message": "   📊 Market 996 Analysis:",
+    "data": {
+      "yesBestBid": 0.35,
+      "yesBestAsk": 0.36,
+      "yesSpread": "0.0100",
+      "noBestBid": 0.64,
+      "noBestAsk": 0.65,
+      "noSpread": "0.0100",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-08-31T15:29:52.317Z",
+    "message": "   📉 Wallet 5 placing NO order: 15 shares at $0.6400",
+    "data": null
+  }
+]

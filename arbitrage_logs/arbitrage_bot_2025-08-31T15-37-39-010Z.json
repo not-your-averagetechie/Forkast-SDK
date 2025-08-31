@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-08-31T15:37:40.923Z",
+    "message": "   📊 Market 998 Analysis:",
+    "data": {
+      "yesBestBid": 0.3,
+      "yesBestAsk": 0.31,
+      "yesSpread": "0.0100",
+      "noBestBid": 0.69,
+      "noBestAsk": 0.7,
+      "noSpread": "0.0100",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-08-31T15:37:40.924Z",
+    "message": "   🎲 Selected wallets for market 998: Wallet 5 and Wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:41.341Z",
+    "message": "   📈 Wallet 5 placing YES order: 15 shares at $0.3000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:41.351Z",
+    "message": "   ✅ YES order placed successfully",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:43.340Z",
+    "message": "   📉 Wallet 4 placing NO order: 15 shares at $0.6900",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:43.350Z",
+    "message": "   ✅ NO order placed successfully",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:43.350Z",
+    "message": "   🎯 Coordinated trade: YES at $0.3000 + NO at $0.6900 = $0.9900",
+    "data": null
+  },
+  {
+    "timestamp": "2025-08-31T15:37:43.350Z",
+    "message": "   ✅ Successfully placed 2 coordinated orders on market 998",
+    "data": null
+  }
+]
