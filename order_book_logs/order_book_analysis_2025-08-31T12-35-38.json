@@ -1,0 +1,33 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T12:35:38.994Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T12:36:01.285Z",
+      "market_id": 637,
+      "market_title": "Manchester United Beat Burnley on Aug 30 Premier League?",
+      "yes_side": {
+        "bestAsk": 0.25,
+        "bestBid": 0.01,
+        "spread": 0.24,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.24,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.99,
+        "bestBid": 0.75,
+        "spread": 0.24,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    }
+  ]
+}

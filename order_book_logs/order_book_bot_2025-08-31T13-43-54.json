@@ -1,0 +1,65 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T13:43:54.733Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MULTIPLE_ORDER_AMOUNTS": [
+        5,
+        5,
+        20
+      ],
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MIN_ACCEPTABLE_PRICE": 0.06,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 300,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 3000,
+      "DELAY_BETWEEN_MARKETS": 2000
+    }
+  },
+  "total_orders_placed": 3,
+  "total_markets_processed": 1,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T13:44:30.345Z",
+      "market_id": 647,
+      "market_title": "$BTC Price $111K+ on Sep 5?",
+      "orders_placed": 2
+    }
+  ],
+  "orders_placed": [
+    {
+      "timestamp": "2025-08-31T13:44:18.367Z",
+      "market_id": 647,
+      "outcome": "NO",
+      "price": 0.5,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.5
+    },
+    {
+      "timestamp": "2025-08-31T13:44:22.196Z",
+      "market_id": 647,
+      "outcome": "NO",
+      "price": 0.6,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 3
+    },
+    {
+      "timestamp": "2025-08-31T13:44:25.340Z",
+      "market_id": 647,
+      "outcome": "NO",
+      "price": 0.69,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 13.799999999999999
+    }
+  ]
+}

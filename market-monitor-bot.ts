@@ -806,6 +806,7 @@ async function monitorOrderBooks() {
                     
                     // Check if we should place orders
                     if (yesAnalysis.suggestedOrders.length > 0) {
+                        
                         // First, check if the current market spread is already tight
                         const currentYesSpread = Math.abs(yesAnalysis.spread);
                         const currentNoSpread = Math.abs(noAnalysis.spread);

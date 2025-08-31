@@ -1,0 +1,296 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T13:57:02.031Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MULTIPLE_ORDER_AMOUNTS": [
+        20,
+        5,
+        5,
+        5
+      ],
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MIN_ACCEPTABLE_PRICE": 0.06,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 300,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 3000,
+      "DELAY_BETWEEN_MARKETS": 2000
+    }
+  },
+  "total_orders_placed": 23,
+  "total_markets_processed": 6,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T13:57:42.371Z",
+      "market_id": 646,
+      "market_title": "$ETH Price $4.5K+ on Sep 5?",
+      "orders_placed": 2
+    },
+    {
+      "timestamp": "2025-08-31T13:58:46.391Z",
+      "market_id": 645,
+      "market_title": "$PIXEL Price $0.033+ on Sep 4?",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T14:06:37.341Z",
+      "market_id": 644,
+      "market_title": "$RON Price $0.52+ on Sep 4?",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T14:08:28.149Z",
+      "market_id": 643,
+      "market_title": "Los Angeles Sparks Beat Seattle Storm on Sep 1 WNBA?",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T14:11:13.203Z",
+      "market_id": 642,
+      "market_title": "Rangers Beat D-Backs on Sep 1?",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T14:12:30.987Z",
+      "market_id": 641,
+      "market_title": "Germany Beat Great Britain on Sep 1 EuroBasket?",
+      "orders_placed": 1
+    }
+  ],
+  "orders_placed": [
+    {
+      "timestamp": "2025-08-31T13:57:22.530Z",
+      "market_id": 646,
+      "outcome": "YES",
+      "price": 0.4,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 8
+    },
+    {
+      "timestamp": "2025-08-31T13:57:26.113Z",
+      "market_id": 646,
+      "outcome": "NO",
+      "price": 0.59,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 11.799999999999999
+    },
+    {
+      "timestamp": "2025-08-31T13:57:30.279Z",
+      "market_id": 646,
+      "outcome": "NO",
+      "price": 0.54,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.7
+    },
+    {
+      "timestamp": "2025-08-31T13:57:33.922Z",
+      "market_id": 646,
+      "outcome": "NO",
+      "price": 0.49,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.45
+    },
+    {
+      "timestamp": "2025-08-31T13:57:37.366Z",
+      "market_id": 646,
+      "outcome": "NO",
+      "price": 0.47,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.3499999999999996
+    },
+    {
+      "timestamp": "2025-08-31T13:58:27.937Z",
+      "market_id": 645,
+      "outcome": "YES",
+      "price": 0.35,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 7
+    },
+    {
+      "timestamp": "2025-08-31T13:58:31.160Z",
+      "market_id": 645,
+      "outcome": "NO",
+      "price": 0.64,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 12.8
+    },
+    {
+      "timestamp": "2025-08-31T13:58:34.815Z",
+      "market_id": 645,
+      "outcome": "NO",
+      "price": 0.59,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.9499999999999997
+    },
+    {
+      "timestamp": "2025-08-31T13:58:38.430Z",
+      "market_id": 645,
+      "outcome": "NO",
+      "price": 0.54,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.7
+    },
+    {
+      "timestamp": "2025-08-31T13:58:41.387Z",
+      "market_id": 645,
+      "outcome": "NO",
+      "price": 0.51,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 2.55
+    },
+    {
+      "timestamp": "2025-08-31T14:06:25.252Z",
+      "market_id": 644,
+      "outcome": "YES",
+      "price": 0.35,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 7
+    },
+    {
+      "timestamp": "2025-08-31T14:06:28.812Z",
+      "market_id": 644,
+      "outcome": "NO",
+      "price": 0.64,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 12.8
+    },
+    {
+      "timestamp": "2025-08-31T14:06:32.336Z",
+      "market_id": 644,
+      "outcome": "NO",
+      "price": 0.6,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 3
+    },
+    {
+      "timestamp": "2025-08-31T14:08:10.693Z",
+      "market_id": 643,
+      "outcome": "YES",
+      "price": 0.27,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 5.4
+    },
+    {
+      "timestamp": "2025-08-31T14:08:13.659Z",
+      "market_id": 643,
+      "outcome": "NO",
+      "price": 0.72,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 14.399999999999999
+    },
+    {
+      "timestamp": "2025-08-31T14:08:16.619Z",
+      "market_id": 643,
+      "outcome": "NO",
+      "price": 0.67,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 3.35
+    },
+    {
+      "timestamp": "2025-08-31T14:08:19.605Z",
+      "market_id": 643,
+      "outcome": "NO",
+      "price": 0.62,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 3.1
+    },
+    {
+      "timestamp": "2025-08-31T14:08:23.144Z",
+      "market_id": 643,
+      "outcome": "NO",
+      "price": 0.61,
+      "amount": 5,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 3.05
+    },
+    {
+      "timestamp": "2025-08-31T14:11:01.593Z",
+      "market_id": 642,
+      "outcome": "YES",
+      "price": 0.64,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 12.8
+    },
+    {
+      "timestamp": "2025-08-31T14:11:05.130Z",
+      "market_id": 642,
+      "outcome": "YES",
+      "price": 0.6,
+      "amount": 5,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 3
+    },
+    {
+      "timestamp": "2025-08-31T14:11:08.199Z",
+      "market_id": 642,
+      "outcome": "NO",
+      "price": 0.35,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 7
+    },
+    {
+      "timestamp": "2025-08-31T14:12:22.971Z",
+      "market_id": 641,
+      "outcome": "YES",
+      "price": 0.97,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 19.4
+    },
+    {
+      "timestamp": "2025-08-31T14:12:25.982Z",
+      "market_id": 641,
+      "outcome": "YES",
+      "price": 0.96,
+      "amount": 5,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 4.8
+    }
+  ]
+}

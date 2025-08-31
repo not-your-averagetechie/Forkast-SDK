@@ -1,0 +1,43 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T12:47:13.633Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T12:47:43.864Z",
+      "market_id": 647,
+      "market_title": "$BTC Price $111K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.02,
+        "spread": 0.48,
+        "gaps": [
+          {
+            "price": 0.51,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.49,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.51,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.98,
+        "bestBid": 0.5,
+        "spread": 0.48,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    }
+  ]
+}

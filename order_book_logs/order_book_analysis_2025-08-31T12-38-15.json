@@ -1,0 +1,330 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T12:38:15.351Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T12:42:15.436Z",
+      "market_id": 630,
+      "market_title": "In-N-Out Burger",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:18.059Z",
+      "market_id": 629,
+      "market_title": "Will Kai Cenat Reach 700K+ Subscribers During Mafiathon 3?",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:26.858Z",
+      "market_id": 593,
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:29.786Z",
+      "market_id": 591,
+      "market_title": "Perplexity",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:32.759Z",
+      "market_id": 589,
+      "market_title": "Canva",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:33.376Z",
+      "market_id": 588,
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:35.985Z",
+      "market_id": 587,
+      "market_title": "Will The FED Cut Interest Rates at The September FOMC Meeting?",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:41.031Z",
+      "market_id": 565,
+      "market_title": "SharpLink Gaming",
+      "yes_side": {
+        "bestAsk": 0.02,
+        "bestBid": 0.5,
+        "spread": -0.48,
+        "gaps": [
+          {
+            "price": 0.03,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.03,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.98,
+        "spread": -0.48,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:42:42.646Z",
+      "market_id": 559,
+      "market_title": "Will Ken Griffin Be #1 In Most Water Leaderboard for TeamWater on Aug 31?",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:43:03.501Z",
+      "market_id": 553,
+      "market_title": "Will Global Aircraft Fatality Count Be 10+ For Sep 2025?",
+      "yes_side": {
+        "bestAsk": 0.2,
+        "bestBid": 0.5,
+        "spread": -0.3,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.19,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.8,
+        "spread": -0.30000000000000004,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:43:12.927Z",
+      "market_id": 538,
+      "market_title": "Saint Laurent",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.88,
+        "spread": -0.38,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.12,
+        "bestBid": 0.5,
+        "spread": -0.38,
+        "gaps": [
+          {
+            "price": 0.13,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.13,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T12:43:42.307Z",
+      "market_id": 492,
+      "market_title": "ibai",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": -0.49,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": -0.49,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    }
+  ]
+}
