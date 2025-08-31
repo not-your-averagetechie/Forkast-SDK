@@ -870,6 +870,7 @@ async function monitorOrderBooks() {
                     const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
                     const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
                     
+                    
                     if (!yesOutcome || !noOutcome) {
                         console.log(`   ⚠️  Market does not have both Yes and No outcomes, skipping...`);
                         continue;

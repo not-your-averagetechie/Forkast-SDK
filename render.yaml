@@ -1,0 +1,42 @@
+services:
+  - type: worker
+    name: market-monitor-bot
+    env: node
+    buildCommand: npm install
+    startCommand: npx ts-node market-monitor-bot.ts
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NETWORK
+        value: mainnet
+      - key: MAINNET_MARKET_API_URL
+        sync: false
+      - key: MAINNET_ACCOUNT_API_URL
+        sync: false
+      - key: MAINNET_ORDER_API_URL
+        sync: false
+      - key: MAINNET_WALLET_ADDRESS_3
+        sync: false
+      - key: MAINNET_PRIVATE_KEY_3
+        sync: false
+      - key: MAINNET_PROXY_WALLET_3
+        sync: false
+      - key: MAINNET_WALLET_ADDRESS_4
+        sync: false
+      - key: MAINNET_PRIVATE_KEY_4
+        sync: false
+      - key: MAINNET_PROXY_WALLET_4
+        sync: false
+      - key: MAINNET_WALLET_ADDRESS_5
+        sync: false
+      - key: MAINNET_PRIVATE_KEY_5
+        sync: false
+      - key: MAINNET_PROXY_WALLET_5
+        sync: false
+      - key: LATEST_MARKET_ID
+        value: "650"
+      - key: ORDER_BOOK_API_URL
+        value: "https://api.forkast.gg/api/v1/orderbook"
+    plan: starter
+    healthCheckPath: /health
+    autoDeploy: false
