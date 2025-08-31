@@ -56,16 +56,35 @@ function getUserConfirmation(question: string): Promise<boolean> {
     });
 }
 
+// Function to get starting market number from user
+function getStartingMarketNumber(): Promise<number> {
+    return new Promise((resolve) => {
+        const defaultMarketId = parseInt(process.env.LATEST_MARKET_ID || '600');
+        rl.question(`🎯 Enter starting market number (e.g., ${defaultMarketId}): `, (answer) => {
+            const marketNumber = parseInt(answer.trim());
+            if (isNaN(marketNumber) || marketNumber <= 0) {
+                console.log(`⚠️  Invalid market number. Using default: ${defaultMarketId}`);
+                resolve(defaultMarketId);
+            } else {
+                resolve(marketNumber);
+            }
+        });
+    });
+}
+
 // Order book filling configuration
 const ORDER_BOOK_CONFIG = {
     TARGET_SPREAD: 0.01, // Target spread between our orders
     ORDER_AMOUNT: 20, // Default order amount in shares
+    MULTIPLE_ORDER_AMOUNTS: [20, 5, 5, 5], // Amounts for multiple orders (large, small, small, small)
     MAX_ORDERS_PER_SIDE: 2, // Maximum orders to place per side (1 strategic + 1 gap fill)
     MIN_PRICE_GAP: 0.05, // Minimum price gap to fill (significant gaps only)
+    MIN_ACCEPTABLE_PRICE: 0.06, // Minimum price we're willing to place orders at (avoid very low prices)
     MONITORING_INTERVAL: 30000, // 30 seconds between market checks
-    MAX_MARKETS_TO_CHECK: 50, // Maximum number of recent markets to check
+    MAX_MARKETS_TO_CHECK: 300, // Maximum number of markets to check in descending order
     MAX_RETRIES: 3, // Maximum retry attempts for failed operations
-    COOLDOWN_PERIOD: 30000, // 30 seconds cooldown after placing orders
+    COOLDOWN_PERIOD: 3000, // 3 seconds cooldown after placing orders
+    DELAY_BETWEEN_MARKETS: 2000, // 2 seconds delay between processing each market
 };
 
 // Enhanced logging functionality
@@ -290,6 +309,55 @@ async function fetchActiveMarkets(): Promise<any[]> {
     return filtered.length > 0 ? filtered : marketsWithOutcomes;
 }
 
+async function fetchMarketById(marketId: number) {
+    try {
+        // Use the same approach as the working implementations
+        const response = await axios.get(EVENT_API_URL, { params: { id: marketId } });
+        const event = response.data;
+        
+        if (!event || !Array.isArray(event.markets) || event.markets.length === 0) {
+            return null;
+        }
+        
+        // Find the market with matching ID, or use the first market from the event
+        // This is the same logic used in market-spread-checker.ts
+        const market = event.markets.find((m: any) => m.id === marketId) || event.markets[0];
+        
+        // Check if the market is active (same logic as fetchActiveMarkets)
+        if (market) {
+            const activeLike = ['active', 'open', 'trading', 'live'];
+            const inactiveLike = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
+            const status = String(market?.status || '').toLowerCase();
+            
+            // Skip resolved, closed, or inactive markets
+            if (status && inactiveLike.includes(status)) {
+                console.log(`   ⏭️  Market ${marketId} is not active (status: ${status}), skipping...`);
+                return null;
+            }
+            
+            // Skip markets with no status that might be resolved
+            if (status && !activeLike.includes(status) && !inactiveLike.includes(status)) {
+                console.log(`   ⏭️  Market ${marketId} has unknown status (${status}), skipping...`);
+                return null;
+            }
+            
+            // Additional checks for resolved markets - only filter by actual status, not title keywords
+            // The title-based filtering was too aggressive and was incorrectly filtering out active markets
+            // We'll rely on the actual market status and order book activity instead
+            
+            // Only log the title for debugging, but don't filter based on it
+            if (market.title) {
+                console.log(`   📋 Market: ${market.title}`);
+            }
+        }
+        
+        return market;
+    } catch (error: any) {
+        // Ignore errors for missing events (same as fetchActiveMarkets)
+        return null;
+    }
+}
+
 async function fetchOrderBook(marketId: number, outcomeId: number, outcomeType: number) {
     try {
         const response = await axios.get(ORDER_BOOK_API_URL, {
@@ -374,7 +442,21 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
         // Get best ask and best bid
         const bestAsk = parsedAsks.length > 0 ? parsedAsks[0].price : 0.5;
         const bestBid = parsedBids.length > 0 ? parsedBids[0].price : 0.5;
-        const spread = bestAsk - bestBid;
+        
+        // Calculate spread only if we have both asks and bids
+        let spread: number;
+        if (parsedAsks.length > 0 && parsedBids.length > 0) {
+            spread = bestAsk - bestBid;
+        } else if (parsedAsks.length > 0) {
+            // Only asks available - use a reasonable default spread
+            spread = 0.5; // This indicates we only have one side
+        } else if (parsedBids.length > 0) {
+            // Only bids available - use a reasonable default spread
+            spread = 0.5; // This indicates we only have one side
+        } else {
+            // No orders at all
+            spread = 1.0; // Maximum possible spread
+        }
         
         // Find gaps in the order book
         const gaps: Array<{ price: number, size: number }> = [];
@@ -465,7 +547,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
     }
 }
 
-async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis, noAnalysis: OrderBookAnalysis, logger: OrderBookLogger) {
+async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnalysis, noAnalysis: OrderBookAnalysis, logger: OrderBookLogger) {
     try {
         // Login both accounts
         const wallet1AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
@@ -485,21 +567,29 @@ async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis,
             wallet2AccessToken
         );
 
+        // Fetch market to get outcomes
+        // Note: marketId here is the event ID, we need to get the actual market
+        const market = await fetchMarketById(marketId);
+        if (!market) {
+            console.error(`❌ Market ${marketId} not found`);
+            return 0;
+        }
+
         const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
         const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
         
         if (!yesOutcome || !noOutcome) {
-            console.error(`❌ Market ${market.id} does not have both Yes and No outcomes`);
+            console.error(`❌ Market ${marketId} does not have both Yes and No outcomes`);
             return 0;
         }
 
         let totalOrdersPlaced = 0;
 
         // Place YES orders (Wallet 1)
-        console.log(`\n📝 Placing YES orders for Market ${market.id}:`);
+        console.log(`\n📝 Placing YES orders for Market ${marketId}:`);
         for (const order of yesAnalysis.suggestedOrders) {
             const orderBody = {
-                marketId: market.id,
+                marketId: market.id, // Use actual market ID, not event ID
                 token: yesOutcome,
                 account: wallet1Account,
                 price: order.price,
@@ -510,7 +600,7 @@ async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis,
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(market.id, 'YES', order.price, order.amount, wallet1Account.wallet, order.side);
+                logger.logOrderPlaced(marketId, 'YES', order.price, order.amount, wallet1Account.wallet, order.side);
                 totalOrdersPlaced++;
                 console.log(`   ✅ YES ${order.side} order at $${order.price} for ${order.amount} shares`);
             } else if (result.error === 'DUPLICATE_ORDER') {
@@ -525,10 +615,10 @@ async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis,
         }
 
         // Place NO orders (Wallet 2)
-        console.log(`\n📝 Placing NO orders for Market ${market.id}:`);
+        console.log(`\n📝 Placing NO orders for Market ${marketId}:`);
         for (const order of noAnalysis.suggestedOrders) {
             const orderBody = {
-                marketId: market.id,
+                marketId: market.id, // Use actual market ID, not event ID
                 token: noOutcome,
                 account: wallet2Account,
                 price: order.price,
@@ -539,7 +629,7 @@ async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis,
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(market.id, 'NO', order.price, order.amount, wallet2Account.wallet, order.side);
+                logger.logOrderPlaced(marketId, 'NO', order.price, order.amount, wallet2Account.wallet, order.side);
                 totalOrdersPlaced++;
                 console.log(`   ✅ NO ${order.side} order at $${order.price} for ${order.amount} shares`);
             } else if (result.error === 'DUPLICATE_ORDER') {
@@ -553,14 +643,14 @@ async function placeOrderBookOrders(market: any, yesAnalysis: OrderBookAnalysis,
             await new Promise(res => setTimeout(res, 2000));
         }
 
-        console.log(`\n✅ Order book orders placed for Market ${market.id}:`);
+        console.log(`\n✅ Order book orders placed for Market ${marketId}:`);
         console.log(`   Total Orders: ${totalOrdersPlaced}`);
         console.log(`   YES Orders: ${yesAnalysis.suggestedOrders.length}`);
         console.log(`   NO Orders: ${noAnalysis.suggestedOrders.length}`);
         
         return totalOrdersPlaced;
     } catch (error: any) {
-        console.error(`❌ Error placing order book orders for market ${market.id}:`, error.message);
+        console.error(`❌ Error placing order book orders for market ${marketId}:`, error.message);
         return 0;
     }
 }
@@ -569,17 +659,35 @@ async function monitorOrderBooks() {
     const logger = new OrderBookLogger();
     
     console.log('='.repeat(70));
-    console.log('📚 ORDER BOOK FILLING BOT - CONTINUOUS ORDER BOOK MONITORING');
+    console.log('📚 ORDER BOOK FILLING BOT - DESCENDING MARKET SCRAPING');
     console.log('='.repeat(70));
     console.log(`🎯 Target Spread: $${ORDER_BOOK_CONFIG.TARGET_SPREAD}`);
     console.log(`💰 Order Amount: ${ORDER_BOOK_CONFIG.ORDER_AMOUNT} shares`);
-    console.log(`📊 Max Orders Per Side: ${ORDER_BOOK_CONFIG.MAX_ORDERS_PER_SIDE}`);
+    console.log(`📊 Multiple Order Strategy: ${ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.join(', ')} shares with 0.05 gaps down to best bid`);
+    console.log(`🚫 Min Acceptable Price: $${ORDER_BOOK_CONFIG.MIN_ACCEPTABLE_PRICE} (skip orders ≤ $0.05)`);
     console.log(`⏱️  Monitoring Interval: ${ORDER_BOOK_CONFIG.MONITORING_INTERVAL / 1000} seconds`);
     console.log(`🌐 Network: ${NETWORK}`);
     console.log('='.repeat(70));
 
-    // Start the bot automatically
-    console.log('\n🚀 Starting market monitoring automatically...\n');
+    // Get starting market number from user
+    const startingMarketId = await getStartingMarketNumber();
+    const marketsToCheck = ORDER_BOOK_CONFIG.MAX_MARKETS_TO_CHECK;
+    const endingMarketId = Math.max(1, startingMarketId - marketsToCheck + 1);
+    
+    // Validate that the starting market ID is reasonable
+    const maxReasonableId = parseInt(process.env.LATEST_MARKET_ID || '600') + 50; // Allow some buffer
+    if (startingMarketId > maxReasonableId) {
+        console.log(`⚠️  Warning: Starting market ID ${startingMarketId} is very high.`);
+        console.log(`   Consider using a lower number around ${parseInt(process.env.LATEST_MARKET_ID || '600')}`);
+        console.log(`   Continuing anyway...\n`);
+    }
+    
+    console.log(`\n🎯 Scraping Strategy:`);
+    console.log(`   Starting Market: ${startingMarketId}`);
+    console.log(`   Ending Market: ${endingMarketId}`);
+    console.log(`   Total Markets to Check: ${marketsToCheck}`);
+    console.log(`   Direction: Descending (${startingMarketId} → ${endingMarketId})`);
+    console.log('\n🚀 Starting market scraping automatically...\n');
 
     let isRunning = true;
     
@@ -599,30 +707,32 @@ async function monitorOrderBooks() {
         console.log('─'.repeat(50));
         
         try {
-            // Fetch active markets
-            const activeMarkets = await fetchActiveMarkets();
-            if (!activeMarkets || activeMarkets.length === 0) {
-                console.log('❌ No active markets found.');
-                await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.MONITORING_INTERVAL));
-                continue;
-            }
-            
-            console.log(`📋 Found ${activeMarkets.length} active markets to monitor`);
-            
             let totalOrdersPlaced = 0;
+            let marketsProcessed = 0;
+            let marketsWithOrders = 0;
             
-            // Process each market
-            for (const market of activeMarkets) {
+            // Process markets in descending order
+            for (let currentMarketId = startingMarketId; currentMarketId >= endingMarketId; currentMarketId--) {
                 if (!isRunning) break;
                 
                 try {
-                    console.log(`\n🔍 Analyzing Market ${market.id}: ${market.title}`);
+                    console.log(`\n🔍 Processing Market ${currentMarketId} (${startingMarketId - currentMarketId + 1}/${marketsToCheck})`);
                     
                     // Check if we've already placed orders for this market in this session
-                    if (logger.hasPlacedOrdersForMarket(market.id)) {
+                    if (logger.hasPlacedOrdersForMarket(currentMarketId)) {
                         console.log(`   ⏭️  Already placed orders for this market in current session, skipping...`);
                         continue;
                     }
+                    
+                    // Fetch market by ID
+                    const market = await fetchMarketById(currentMarketId);
+                    if (!market) {
+                        console.log(`   ⚠️  Market ${currentMarketId} not found or invalid, skipping...`);
+                        continue;
+                    }
+                    
+                    console.log(`   📋 Market: ${market.title || `ID ${currentMarketId}`}`);
+                    console.log(`   🔍 Event ID: ${currentMarketId}, Market ID: ${market.id}`);
                     
                     // Get YES and NO outcomes
                     const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
@@ -634,12 +744,43 @@ async function monitorOrderBooks() {
                     }
 
                     // Fetch order books for both outcomes
-                    const yesOrderBook = await fetchOrderBook(market.id, yesOutcome.id, yesOutcome.outcomeType || 0);
-                    const noOrderBook = await fetchOrderBook(market.id, noOutcome.id, noOutcome.outcomeType || 0);
+                    // Use market.id (the actual market ID) not currentMarketId (the event ID)
+                    // According to Order.md: outcomeType 1 for Yes, 0 for No
+                    console.log(`   🔍 Fetching YES order book: marketId=${market.id}, outcomeId=${yesOutcome.id}, outcomeType=1`);
+                    const yesOrderBook = await fetchOrderBook(market.id, yesOutcome.id, 1); // 1 for Yes
+                    console.log(`   🔍 Fetching NO order book: marketId=${market.id}, outcomeId=${noOutcome.id}, outcomeType=0`);
+                    const noOrderBook = await fetchOrderBook(market.id, noOutcome.id, 0);   // 0 for No
                     
                     if (!yesOrderBook || !noOrderBook) {
                         console.log(`   ⚠️  Could not fetch order books, skipping...`);
                         continue;
+                    }
+                    
+                    // Check if order books have actual orders - be more lenient here
+                    // Only skip if both sides have absolutely no orders at all
+                    const yesHasOrders = (yesOrderBook.asks && yesOrderBook.asks.length > 0) || (yesOrderBook.bids && yesOrderBook.bids.length > 0);
+                    const noHasOrders = (noOrderBook.asks && noOrderBook.asks.length > 0) || (noOrderBook.bids && noOrderBook.bids.length > 0);
+                    
+                    // Only skip if both sides have no orders AND we have a status that indicates resolved
+                    if (!yesHasOrders && !noHasOrders) {
+                        // Check if market status indicates it's resolved
+                        const marketStatus = String(market?.status || '').toLowerCase();
+                        const resolvedStatuses = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
+                        
+                        if (resolvedStatuses.includes(marketStatus)) {
+                            console.log(`   ⏭️  Market ${currentMarketId} has no orders and status is ${marketStatus}, skipping...`);
+                            continue;
+                        } else {
+                            console.log(`   ⚠️  Market ${currentMarketId} has no orders but status is ${marketStatus || 'unknown'}, processing anyway...`);
+                        }
+                    }
+                    
+                    // Log order book status for debugging
+                    if (!yesHasOrders) {
+                        console.log(`   ⚠️  YES side has no orders`);
+                    }
+                    if (!noHasOrders) {
+                        console.log(`   ⚠️  NO side has no orders`);
                     }
                     
                     // Debug: Log order book structure
@@ -651,19 +792,25 @@ async function monitorOrderBooks() {
                     const noAnalysis = analyzeOrderBook(noOrderBook, 'NO');
                     
                     // Log order book analysis
-                    logger.logOrderBookAnalysis(market.id, market.title, yesAnalysis, noAnalysis);
+                    logger.logOrderBookAnalysis(currentMarketId, market.title || `Market ${currentMarketId}`, yesAnalysis, noAnalysis);
                     
-                    console.log(`   💰 YES: Best Ask $${yesAnalysis.bestAsk} | Best Bid $${yesAnalysis.bestBid} | Spread $${yesAnalysis.spread.toFixed(4)}`);
-                    console.log(`   💰 NO: Best Ask $${noAnalysis.bestAsk} | Best Bid $${noAnalysis.bestBid} | Spread $${noAnalysis.spread.toFixed(4)}`);
+                    // Log spread information with better formatting
+                    const yesSpreadText = yesAnalysis.spread >= 0 ? `$${yesAnalysis.spread.toFixed(4)}` : `$${Math.abs(yesAnalysis.spread).toFixed(4)} (inverted)`;
+                    const noSpreadText = noAnalysis.spread >= 0 ? `$${noAnalysis.spread.toFixed(4)}` : `$${Math.abs(noAnalysis.spread).toFixed(4)} (inverted)`;
+                    
+                    console.log(`   💰 YES: Best Ask $${yesAnalysis.bestAsk} | Best Bid $${yesAnalysis.bestBid} | Spread ${yesSpreadText}`);
+                    console.log(`   💰 NO: Best Ask $${noAnalysis.bestAsk} | Best Bid $${noAnalysis.bestBid} | Spread ${noSpreadText}`);
                     console.log(`   📊 YES Gaps: ${yesAnalysis.gaps.length} | NO Gaps: ${noAnalysis.gaps.length}`);
                     
-                                                             // Check if we should place orders
+                    marketsProcessed++;
+                    
+                    // Check if we should place orders
                     if (yesAnalysis.suggestedOrders.length > 0) {
-                        // First, check if the current market spread is already 0.01
-                        const currentYesSpread = yesAnalysis.spread;
-                        const currentNoSpread = noAnalysis.spread;
+                        // First, check if the current market spread is already tight
+                        const currentYesSpread = Math.abs(yesAnalysis.spread);
+                        const currentNoSpread = Math.abs(noAnalysis.spread);
                         
-                        // If both sides already have 0.01 spread (or very close), no need to place orders
+                        // If both sides already have tight spreads (≤ 0.015), no need to place orders
                         const spreadThreshold = 0.015; // Allow for small variations
                         if (currentYesSpread <= spreadThreshold && currentNoSpread <= spreadThreshold) {
                             console.log(`   ✅ Market already has tight spreads: YES(${currentYesSpread.toFixed(4)}) NO(${currentNoSpread.toFixed(4)})`);
@@ -673,100 +820,228 @@ async function monitorOrderBooks() {
                         
                         console.log(`   🎯 Found opportunities to fill order book gaps`);
                         
-                        // For coordinated spread strategy, we can only place 1 YES order and 1 NO order
-                        // This ensures YES + NO = 0.99 (0.01 spread)
-                        const yesPrice = yesAnalysis.suggestedOrders[0].price; // Only first YES order
-                        const noPrice = parseFloat((0.99 - yesPrice).toFixed(4)); // Coordinate to maintain 0.01 spread
+                        // Dynamic market making strategy based on which side has higher prices
+                        // Place multiple orders on the higher-priced side, single order on lower-priced side
                         
-                        // Show order summary and ask for confirmation
-                        console.log(`\n📋 ORDER SUMMARY for Market ${market.id}:`);
-                        console.log(`   YES Orders (1):`);
-                        console.log(`     1. BUY ${ORDER_BOOK_CONFIG.ORDER_AMOUNT} shares at $${yesPrice}`);
+                        // Check if prices are acceptable (avoid very low prices ≤ 0.05)
+                        const minAcceptablePrice = ORDER_BOOK_CONFIG.MIN_ACCEPTABLE_PRICE; // Minimum price we're willing to place orders at
                         
-                        console.log(`   NO Orders (1):`);
-                        console.log(`     1. BUY ${ORDER_BOOK_CONFIG.ORDER_AMOUNT} shares at $${noPrice}`);
+                        // Get current best prices from order books
+                        const yesBestAsk = yesAnalysis.bestAsk;
+                        const noBestAsk = noAnalysis.bestAsk;
                         
-                        // Validate the spread
-                        const calculatedSpread = parseFloat((yesPrice + noPrice).toFixed(4));
-                        console.log(`\n🎯 Spread Analysis:`);
-                        console.log(`   YES Price: $${yesPrice}`);
-                        console.log(`   NO Price: $${noPrice}`);
-                        console.log(`   Calculated Spread: $${calculatedSpread} (Target: 0.99 for 0.01 spread)`);
+                        // Determine which side has higher prices
+                        const noSideHigher = noBestAsk > yesBestAsk;
+                        const yesSideHigher = yesBestAsk > noBestAsk;
                         
-                        // Only place 2 orders total (1 YES + 1 NO)
-                        const totalOrders = 2;
-                        console.log(`\n💰 Total Orders to Place: ${totalOrders}`);
-                        console.log(`💵 Total Cost: $${(totalOrders * ORDER_BOOK_CONFIG.ORDER_AMOUNT * 0.5).toFixed(2)} (estimated)`);
+                        console.log(`   📊 Price Analysis:`);
+                        console.log(`      YES Best Ask: $${yesBestAsk}`);
+                        console.log(`      NO Best Ask: $${noBestAsk}`);
+                        console.log(`      Strategy: ${noSideHigher ? 'NO side higher → Multiple NO orders + Single YES' : yesSideHigher ? 'YES side higher → Multiple YES orders + Single NO' : 'Equal prices → Single orders on both sides'}`);
                         
-                        // Ask for user confirmation
-                        const shouldPlaceOrders = await getUserConfirmation(`\n❓ Press Enter to place orders, or type 'n' to skip: `);
+                        // Generate orders based on which side is higher
+                        let ordersToPlace: Array<{side: 'YES' | 'NO', price: number, amount: number}> = [];
                         
-                        if (shouldPlaceOrders) {
-                            console.log(`   📝 Placing orders...`);
+                        if (noSideHigher) {
+                            // NO side has higher prices - place multiple NO orders + single YES
+                            console.log(`   🎯 NO side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
                             
-                            // Create coordinated analyses with only 1 order each
-                            const coordinatedYesAnalysis = {
-                                ...yesAnalysis,
-                                suggestedOrders: [yesAnalysis.suggestedOrders[0]] // Only first order
-                            };
+                            // Generate NO orders from best ask down to best bid with 0.05 gaps
+                            const noBestAsk = noAnalysis.bestAsk;
+                            const noBestBid = noAnalysis.bestBid;
+                            const noOrders: Array<{price: number, amount: number}> = [];
                             
-                            const coordinatedNoAnalysis = {
-                                ...noAnalysis,
-                                suggestedOrders: [{
-                                    price: noPrice,
-                                    amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT,
-                                    side: 'BUY'
-                                }]
-                            };
+                            // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
+                            let currentPrice = parseFloat((noBestAsk - 0.01).toFixed(4));
+                            let orderIndex = 0;
                             
-                            // Place orders to fill gaps
-                            const ordersPlaced = await placeOrderBookOrders(market, coordinatedYesAnalysis, coordinatedNoAnalysis, logger);
-                            totalOrdersPlaced += ordersPlaced;
-                            
-                            if (ordersPlaced > 0) {
-                                // Mark this market as processed to avoid duplicate orders
-                                logger.markMarketAsProcessed(market.id);
-                                console.log(`   ⏳ Waiting ${ORDER_BOOK_CONFIG.COOLDOWN_PERIOD / 1000} seconds before next market...`);
-                                await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.COOLDOWN_PERIOD));
+                            while (currentPrice >= noBestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
+                                if (currentPrice >= minAcceptablePrice) {
+                                    noOrders.push({
+                                        price: currentPrice,
+                                        amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[orderIndex] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                                    });
+                                }
+                                // Move down by 0.05 for next order
+                                currentPrice = parseFloat((currentPrice - 0.05).toFixed(4));
+                                orderIndex++;
                             }
+                            
+                            // Add final order at best bid if we haven't reached it yet
+                            if (noOrders.length > 0 && noOrders[noOrders.length - 1].price > noBestBid && noBestBid >= minAcceptablePrice) {
+                                noOrders.push({
+                                    price: noBestBid,
+                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[noOrders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                                });
+                            }
+                            
+                            // YES order at current best bid
+                            const yesPrice = yesAnalysis.bestBid;
+                            
+                            // Add NO orders
+                            noOrders.forEach(order => {
+                                ordersToPlace.push({side: 'NO', price: order.price, amount: order.amount});
+                            });
+                            
+                            // Add single YES order
+                            if (yesPrice >= minAcceptablePrice) {
+                                ordersToPlace.push({side: 'YES', price: yesPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
+                            }
+                            
+                        } else if (yesSideHigher) {
+                            // YES side has higher prices - place multiple YES orders + single NO
+                            console.log(`   🎯 YES side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
+                            
+                            // Generate YES orders from best ask down to best bid with 0.05 gaps
+                            const yesBestAsk = yesAnalysis.bestAsk;
+                            const yesBestBid = yesAnalysis.bestBid;
+                            const yesOrders: Array<{price: number, amount: number}> = [];
+                            
+                            // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
+                            let currentPrice = parseFloat((yesBestAsk - 0.01).toFixed(4));
+                            let orderIndex = 0;
+                            
+                            while (currentPrice >= yesBestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
+                                if (currentPrice >= minAcceptablePrice) {
+                                    yesOrders.push({
+                                        price: currentPrice,
+                                        amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[orderIndex] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                                    });
+                                }
+                                // Move down by 0.05 for next order
+                                currentPrice = parseFloat((currentPrice - 0.05).toFixed(4));
+                                orderIndex++;
+                            }
+                            
+                            // Add final order at best bid if we haven't reached it yet
+                            if (yesOrders.length > 0 && yesOrders[yesOrders.length - 1].price > yesBestBid && yesBestBid >= minAcceptablePrice) {
+                                yesOrders.push({
+                                    price: yesBestBid,
+                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[yesOrders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                                });
+                            }
+                            
+                            // NO order at current best bid
+                            const noPrice = noAnalysis.bestBid;
+                            
+                            // Add YES orders
+                            yesOrders.forEach(order => {
+                                ordersToPlace.push({side: 'YES', price: order.price, amount: order.amount});
+                            });
+                            
+                            // Add single NO order
+                            if (noPrice >= minAcceptablePrice) {
+                                ordersToPlace.push({side: 'NO', price: noPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
+                            }
+                            
                         } else {
-                            console.log(`   ⏭️  Skipping orders for this market`);
+                            // Equal prices - place single orders on both sides (original strategy)
+                            console.log(`   🎯 Equal prices strategy: Single orders on both sides`);
+                            
+                            const yesPrice = yesAnalysis.suggestedOrders[0].price;
+                            const noPrice = parseFloat((0.99 - yesPrice).toFixed(4));
+                            
+                            if (yesPrice >= minAcceptablePrice && noPrice >= minAcceptablePrice) {
+                                ordersToPlace = [
+                                    {side: 'YES', price: yesPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT},
+                                    {side: 'NO', price: noPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT}
+                                ];
+                            }
+                        }
+                        
+                        // Check if we have any acceptable orders
+                        if (ordersToPlace.length === 0) {
+                            console.log(`   ⚠️  No acceptable orders found (all prices too low), skipping...`);
+                            continue;
+                        }
+                        
+                        // Show order summary and automatically place orders
+                        console.log(`\n📋 ORDER SUMMARY for Market ${currentMarketId}:`);
+                        
+                        // Group orders by side
+                        const yesOrders = ordersToPlace.filter(o => o.side === 'YES');
+                        const noOrders = ordersToPlace.filter(o => o.side === 'NO');
+                        
+                        if (yesOrders.length > 0) {
+                            console.log(`   YES Orders (${yesOrders.length}):`);
+                            yesOrders.forEach((order, index) => {
+                                console.log(`     ${index + 1}. BUY ${order.amount} shares at $${order.price}`);
+                            });
+                        } else {
+                            console.log(`   YES Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
+                        }
+                        
+                        if (noOrders.length > 0) {
+                            console.log(`   NO Orders (${noOrders.length}):`);
+                            noOrders.forEach((order, index) => {
+                                console.log(`     ${index + 1}. BUY ${order.amount} shares at $${order.price}`);
+                            });
+                        } else {
+                            console.log(`   NO Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
+                        }
+                        
+                        // Calculate total cost
+                        const totalCost = ordersToPlace.reduce((sum, order) => sum + (order.price * order.amount), 0);
+                        console.log(`\n💰 Total Orders to Place: ${ordersToPlace.length}`);
+                        console.log(`💵 Total Cost: $${totalCost.toFixed(2)} (estimated)`);
+                        
+                        // Automatically place orders (no user confirmation needed)
+                        console.log(`   📝 Placing orders automatically...`);
+                        
+                        // Create analyses based on the orders we want to place
+                        const coordinatedYesAnalysis = {
+                            ...yesAnalysis,
+                            suggestedOrders: yesOrders.map(order => ({
+                                price: order.price,
+                                amount: order.amount,
+                                side: 'BUY'
+                            }))
+                        };
+                        
+                        const coordinatedNoAnalysis = {
+                            ...noAnalysis,
+                            suggestedOrders: noOrders.map(order => ({
+                                price: order.price,
+                                amount: order.amount,
+                                side: 'BUY'
+                            }))
+                        };
+                        
+                        // Place orders to fill gaps
+                        const ordersPlaced = await placeOrderBookOrders(currentMarketId, coordinatedYesAnalysis, coordinatedNoAnalysis, logger);
+                        totalOrdersPlaced += ordersPlaced;
+                        
+                        if (ordersPlaced > 0) {
+                            // Mark this market as processed to avoid duplicate orders
+                            logger.markMarketAsProcessed(currentMarketId);
+                            marketsWithOrders++;
+                            console.log(`   ⏳ Waiting ${ORDER_BOOK_CONFIG.COOLDOWN_PERIOD / 1000} seconds before next market...`);
+                            await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.COOLDOWN_PERIOD));
                         }
                     } else {
                         console.log(`   ❌ No order book gaps found to fill`);
                     }
                     
                     // Log market processing
-                    logger.logMarketProcessed(market.id, market.title, yesAnalysis.suggestedOrders.length + noAnalysis.suggestedOrders.length);
+                    logger.logMarketProcessed(currentMarketId, market.title || `Market ${currentMarketId}`, yesAnalysis.suggestedOrders.length + noAnalysis.suggestedOrders.length);
                     
-                    // Small delay between markets to avoid rate limiting
-                    await new Promise(res => setTimeout(res, 2000));
+                    // Delay between markets to avoid rate limiting
+                    await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS));
                     
                 } catch (error: any) {
-                    console.error(`❌ Error processing market ${market.id}:`, error.message);
+                    console.error(`❌ Error processing market ${currentMarketId}:`, error.message);
+                    continue;
                 }
             }
             
-            console.log(`\n📊 Iteration Summary:`);
-            console.log(`   Markets Processed: ${activeMarkets.length}`);
+            console.log(`\n✅ Iteration ${iteration} completed:`);
+            console.log(`   Markets Processed: ${marketsProcessed}/${marketsToCheck}`);
+            console.log(`   Markets with Orders: ${marketsWithOrders}`);
             console.log(`   Total Orders Placed: ${totalOrdersPlaced}`);
-            console.log(`   Next Check: ${new Date(Date.now() + ORDER_BOOK_CONFIG.MONITORING_INTERVAL).toLocaleString()}`);
             
         } catch (error: any) {
-            console.error('❌ Error in order book monitoring iteration:', error.message);
-        }
-        
-        // Ask if user wants to continue to next iteration
-        if (isRunning) {
-            const continueToNext = await getUserConfirmation(`\n🔄 Continue to next iteration? (Press Enter to continue, or type 'n' to stop): `);
-            
-            if (continueToNext) {
-                console.log(`\n⏳ Waiting ${ORDER_BOOK_CONFIG.MONITORING_INTERVAL / 1000} seconds before next iteration...`);
-                await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.MONITORING_INTERVAL));
-            } else {
-                console.log(`\n🛑 User chose to stop. Shutting down...`);
-                isRunning = false;
-            }
+            console.error('❌ Error in main monitoring loop:', error.message);
+            await new Promise(res => setTimeout(res, 10000)); // Wait 10 seconds on error
         }
     }
 }
