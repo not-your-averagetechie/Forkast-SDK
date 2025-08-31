@@ -1,0 +1,44 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T12:10:21.333Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 50,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 30000
+    }
+  },
+  "total_orders_placed": 1,
+  "total_markets_processed": 2,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T12:11:48.455Z",
+      "market_id": "935",
+      "market_title": "Polygon",
+      "orders_placed": 2
+    },
+    {
+      "timestamp": "2025-08-31T12:13:00.867Z",
+      "market_id": "927",
+      "market_title": "Anthropic",
+      "orders_placed": 1
+    }
+  ],
+  "orders_placed": [
+    {
+      "timestamp": "2025-08-31T12:12:29.862Z",
+      "market_id": "927",
+      "outcome": "NO",
+      "price": 0.44,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 8.8
+    }
+  ]
+}

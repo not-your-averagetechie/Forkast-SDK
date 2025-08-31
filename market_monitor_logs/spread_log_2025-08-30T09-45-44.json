@@ -1,0 +1,17 @@
+{
+  "session_info": {
+    "start_time": "2025-08-30T09:45:44.921Z",
+    "network": "mainnet"
+  },
+  "spreads_found": [
+    {
+      "timestamp": "2025-08-30T09:45:56.912Z",
+      "market_id": "937",
+      "market_title": "Other",
+      "yes_price": 0.15,
+      "no_price": 0.9,
+      "spread": 0.75,
+      "threshold": 0.05
+    }
+  ]
+}

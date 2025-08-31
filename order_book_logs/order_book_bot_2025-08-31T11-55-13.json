@@ -1,0 +1,48 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T11:55:13.210Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 50,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 30000
+    }
+  },
+  "total_orders_placed": 2,
+  "total_markets_processed": 1,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T12:00:34.185Z",
+      "market_id": "937",
+      "market_title": "Other",
+      "orders_placed": 1
+    }
+  ],
+  "orders_placed": [
+    {
+      "timestamp": "2025-08-31T12:00:01.169Z",
+      "market_id": "937",
+      "outcome": "YES",
+      "price": 0.14,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 2.8000000000000003
+    },
+    {
+      "timestamp": "2025-08-31T12:00:03.176Z",
+      "market_id": "937",
+      "outcome": "NO",
+      "price": 0.85,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 17
+    }
+  ]
+}

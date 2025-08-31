@@ -1,3 +1,4 @@
+
 // Scrape and list all markets
 async function fetchAllMarkets() {
     let allMarkets = [];

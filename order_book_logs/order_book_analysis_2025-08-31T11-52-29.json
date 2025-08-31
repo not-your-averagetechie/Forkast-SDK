@@ -1,0 +1,39 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T11:52:29.395Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T11:53:11.137Z",
+      "market_id": "937",
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.15,
+        "bestBid": 0.1,
+        "spread": 0.04999999999999999,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.14,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.9,
+        "bestBid": 0.85,
+        "spread": 0.050000000000000044,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.89,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    }
+  ]
+}

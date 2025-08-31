@@ -1,0 +1,20 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T11:36:46.473Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 50,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 30000
+    }
+  },
+  "total_orders_placed": 0,
+  "total_markets_processed": 0,
+  "markets_processed": [],
+  "orders_placed": []
+}

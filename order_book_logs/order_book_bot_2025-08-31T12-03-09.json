@@ -1,0 +1,86 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T12:03:09.702Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MONITORING_INTERVAL": 30000,
+      "MAX_MARKETS_TO_CHECK": 50,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 30000
+    }
+  },
+  "total_orders_placed": 4,
+  "total_markets_processed": 4,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T12:03:39.826Z",
+      "market_id": "937",
+      "market_title": "Other",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T12:04:24.760Z",
+      "market_id": "934",
+      "market_title": "Arbitrum",
+      "orders_placed": 2
+    },
+    {
+      "timestamp": "2025-08-31T12:05:35.166Z",
+      "market_id": "936",
+      "market_title": "Optimism",
+      "orders_placed": 1
+    },
+    {
+      "timestamp": "2025-08-31T12:06:09.975Z",
+      "market_id": "935",
+      "market_title": "Polygon",
+      "orders_placed": 2
+    }
+  ],
+  "orders_placed": [
+    {
+      "timestamp": "2025-08-31T12:03:51.078Z",
+      "market_id": "934",
+      "outcome": "YES",
+      "price": 0.29,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 5.8
+    },
+    {
+      "timestamp": "2025-08-31T12:03:53.756Z",
+      "market_id": "934",
+      "outcome": "NO",
+      "price": 0.7,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 14
+    },
+    {
+      "timestamp": "2025-08-31T12:05:01.644Z",
+      "market_id": "936",
+      "outcome": "YES",
+      "price": 0.38,
+      "amount": 20,
+      "wallet": "0x812EF16395169897a37F2b467fa330be1f847FB4",
+      "side": "BUY",
+      "total_cost": 7.6
+    },
+    {
+      "timestamp": "2025-08-31T12:05:04.161Z",
+      "market_id": "936",
+      "outcome": "NO",
+      "price": 0.61,
+      "amount": 20,
+      "wallet": "0xc025d79d0ddC8d064Ea462fa922eeB7A830bE73c",
+      "side": "BUY",
+      "total_cost": 12.2
+    }
+  ]
+}
