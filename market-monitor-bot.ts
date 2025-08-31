@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
-import * as readline from 'readline';
+
 
 dotenv.config();
 
@@ -14,24 +14,30 @@ const CONFIG = {
         LOGIN_API_URL: process.env.TESTNET_ACCOUNT_API_URL || 'http://localhost:3000/account/login',
         ORDER_API_URL: process.env.TESTNET_ORDER_API_URL || 'http://localhost:3000/orders',
         ORDER_BOOK_API_URL: process.env.TESTNET_ORDER_BOOK_API_URL || 'https://api.forkast.gg/api/v1/orderbook',
-        WALLET_ADDRESS: process.env.TESTNET_WALLET_ADDRESS,
-        PRIVATE_KEY: process.env.TESTNET_PRIVATE_KEY,
-        PROXY_WALLET: process.env.TESTNET_PROXY_WALLET,
-        WALLET_ADDRESS_2: process.env.TESTNET_WALLET_ADDRESS_2,
-        PRIVATE_KEY_2: process.env.TESTNET_PRIVATE_KEY_2,
-        PROXY_WALLET_2: process.env.TESTNET_PROXY_WALLET_2
+        WALLET_ADDRESS_3: process.env.TESTNET_WALLET_ADDRESS_3,
+        PRIVATE_KEY_3: process.env.TESTNET_PRIVATE_KEY_3,
+        PROXY_WALLET_3: process.env.TESTNET_PROXY_WALLET_3,
+        WALLET_ADDRESS_4: process.env.TESTNET_WALLET_ADDRESS_4,
+        PRIVATE_KEY_4: process.env.TESTNET_PRIVATE_KEY_4,
+        PROXY_WALLET_4: process.env.TESTNET_PROXY_WALLET_4,
+        WALLET_ADDRESS_5: process.env.TESTNET_WALLET_ADDRESS_5,
+        PRIVATE_KEY_5: process.env.TESTNET_PRIVATE_KEY_5,
+        PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5
     },
     mainnet: {
         EVENT_API_URL: process.env.MAINNET_MARKET_API_URL,
         LOGIN_API_URL: process.env.MAINNET_ACCOUNT_API_URL,
         ORDER_API_URL: process.env.MAINNET_ORDER_API_URL,
         ORDER_BOOK_API_URL: process.env.ORDER_BOOK_API_URL || 'https://api.forkast.gg/api/v1/orderbook',
-        WALLET_ADDRESS: process.env.MAINNET_WALLET_ADDRESS,
-        PRIVATE_KEY: process.env.MAINNET_PRIVATE_KEY,
-        PROXY_WALLET: process.env.MAINNET_PROXY_WALLET,
-        WALLET_ADDRESS_2: process.env.MAINNET_WALLET_ADDRESS_2,
-        PRIVATE_KEY_2: process.env.MAINNET_PRIVATE_KEY_2,
-        PROXY_WALLET_2: process.env.MAINNET_PROXY_WALLET_2
+        WALLET_ADDRESS_3: process.env.MAINNET_WALLET_ADDRESS_3,
+        PRIVATE_KEY_3: process.env.MAINNET_PRIVATE_KEY_3,
+        PROXY_WALLET_3: process.env.MAINNET_PROXY_WALLET_3,
+        WALLET_ADDRESS_4: process.env.MAINNET_WALLET_ADDRESS_4,
+        PRIVATE_KEY_4: process.env.MAINNET_PRIVATE_KEY_4,
+        PROXY_WALLET_4: process.env.MAINNET_PROXY_WALLET_4,
+        WALLET_ADDRESS_5: process.env.MAINNET_WALLET_ADDRESS_5,
+        PRIVATE_KEY_5: process.env.MAINNET_PRIVATE_KEY_5,
+        PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5
     }
 };
 
@@ -40,36 +46,66 @@ const LOGIN_API_URL = CONFIG[NETWORK].LOGIN_API_URL;
 const ORDER_API_URL = CONFIG[NETWORK].ORDER_API_URL;
 const ORDER_BOOK_API_URL = CONFIG[NETWORK].ORDER_BOOK_API_URL;
 
-// Create readline interface for user input
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// Note: readline interface removed as it's no longer needed for user input
 
-// Function to get user confirmation
-function getUserConfirmation(question: string): Promise<boolean> {
-    return new Promise((resolve) => {
-        rl.question(question, (answer) => {
-            const isConfirmed = answer.trim().toLowerCase() === '' || answer.trim().toLowerCase() === 'y' || answer.trim().toLowerCase() === 'yes';
-            resolve(isConfirmed);
-        });
-    });
+// Function to randomly select a wallet from wallets 3, 4, and 5
+function getRandomWallet(): { walletNumber: number, walletConfig: any } {
+    const walletNumbers = [3, 4, 5];
+    const randomWalletNumber = walletNumbers[Math.floor(Math.random() * walletNumbers.length)];
+    
+    const walletConfig = {
+        WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${randomWalletNumber}`],
+        PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${randomWalletNumber}`],
+        PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${randomWalletNumber}`]
+    };
+    
+    return { walletNumber: randomWalletNumber, walletConfig };
 }
 
-// Function to get starting market number from user
-function getStartingMarketNumber(): Promise<number> {
-    return new Promise((resolve) => {
-        const defaultMarketId = parseInt(process.env.LATEST_MARKET_ID || '600');
-        rl.question(`🎯 Enter starting market number (e.g., ${defaultMarketId}): `, (answer) => {
-            const marketNumber = parseInt(answer.trim());
-            if (isNaN(marketNumber) || marketNumber <= 0) {
-                console.log(`⚠️  Invalid market number. Using default: ${defaultMarketId}`);
-                resolve(defaultMarketId);
-            } else {
-                resolve(marketNumber);
-            }
-        });
-    });
+// Function to validate wallet configuration
+function validateWalletConfig(): boolean {
+    const requiredWallets = [3, 4, 5];
+    const missingWallets = [];
+    
+    for (const walletNum of requiredWallets) {
+        if (!CONFIG[NETWORK][`WALLET_ADDRESS_${walletNum}`] || 
+            !CONFIG[NETWORK][`PRIVATE_KEY_${walletNum}`] || 
+            !CONFIG[NETWORK][`PROXY_WALLET_${walletNum}`]) {
+            missingWallets.push(walletNum);
+        }
+    }
+    
+    if (missingWallets.length > 0) {
+        console.error(`❌ Missing configuration for wallets: ${missingWallets.join(', ')}`);
+        console.error(`   Please ensure all required environment variables are set:`);
+        for (const walletNum of missingWallets) {
+            console.error(`   - MAINNET_WALLET_ADDRESS_${walletNum}`);
+            console.error(`   - MAINNET_PRIVATE_KEY_${walletNum}`);
+            console.error(`   - MAINNET_PROXY_WALLET_${walletNum}`);
+        }
+        return false;
+    }
+    
+    console.log(`✅ All three wallets (3, 4, 5) are properly configured`);
+    return true;
+}
+
+// Function to automatically fetch the latest market ID
+async function getLatestMarketId(): Promise<number> {
+    try {
+        console.log('🔍 Automatically fetching latest market ID...');
+        
+        // Use a more conservative approach - start with a known working market ID
+        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
+        console.log(`✅ Using configured market ID: ${fallbackId}`);
+        return fallbackId;
+        
+    } catch (error: any) {
+        console.log(`⚠️  Error in market ID logic: ${error.message}`);
+        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
+        console.log(`   Using fallback: ${fallbackId}`);
+        return fallbackId;
+    }
 }
 
 // Order book filling configuration
@@ -80,11 +116,14 @@ const ORDER_BOOK_CONFIG = {
     MAX_ORDERS_PER_SIDE: 2, // Maximum orders to place per side (1 strategic + 1 gap fill)
     MIN_PRICE_GAP: 0.05, // Minimum price gap to fill (significant gaps only)
     MIN_ACCEPTABLE_PRICE: 0.06, // Minimum price we're willing to place orders at (avoid very low prices)
-    MONITORING_INTERVAL: 30000, // 30 seconds between market checks
-    MAX_MARKETS_TO_CHECK: 300, // Maximum number of markets to check in descending order
+    MONITORING_INTERVAL: 3600000, // 1 hour between iterations (changed from 30 seconds)
+    MAX_MARKETS_TO_CHECK: 1000, // Check all available markets
     MAX_RETRIES: 3, // Maximum retry attempts for failed operations
-    COOLDOWN_PERIOD: 3000, // 3 seconds cooldown after placing orders
-    DELAY_BETWEEN_MARKETS: 2000, // 2 seconds delay between processing each market
+    COOLDOWN_PERIOD: 10000, // 10 seconds cooldown after placing orders (increased from 5)
+    DELAY_BETWEEN_MARKETS: 15000, // 15 seconds delay between processing each market (increased from 3)
+    RATE_LIMIT_DELAY: 10000, // 10 seconds delay when rate limited (increased from 5)
+    MAX_CONSECUTIVE_429: 3, // Maximum consecutive 429 errors before increasing delay
+    ITERATION_DELAY: 3600000, // 1 hour delay between iterations (24 iterations per day)
 };
 
 // Enhanced logging functionality
@@ -228,6 +267,11 @@ class OrderBookLogger {
         console.log(`     Main Log: ${this.logFilePath}`);
         console.log(`     Order Book Analysis: ${this.orderBookLogFilePath}`);
     }
+    
+    // Public method to get session start time
+    getSessionStartTime(): Date {
+        return this.sessionStartTime;
+    }
 }
 
 // Utility functions
@@ -353,8 +397,18 @@ async function fetchMarketById(marketId: number) {
         
         return market;
     } catch (error: any) {
-        // Ignore errors for missing events (same as fetchActiveMarkets)
-        return null;
+        // Handle specific error types
+        if (error.response?.status === 404) {
+            // Market not found - this is expected for many market IDs
+            return null;
+        } else if (error.response?.status === 429) {
+            // Rate limited - rethrow to be handled by caller
+            throw error;
+        } else {
+            // Other errors - log but don't fail
+            console.log(`   ⚠️  Error fetching market ${marketId}: ${error.message}`);
+            return null;
+        }
     }
 }
 
@@ -549,22 +603,30 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
 
 async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnalysis, noAnalysis: OrderBookAnalysis, logger: OrderBookLogger) {
     try {
-        // Login both accounts
-        const wallet1AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
-        const wallet2AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_2);
+        // Login all three wallets (3, 4, 5)
+        const wallet3AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_3);
+        const wallet4AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_4);
+        const wallet5AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_5);
         
-        const wallet1Account = getAccount(
-            CONFIG[NETWORK].WALLET_ADDRESS,
-            CONFIG[NETWORK].PRIVATE_KEY,
-            CONFIG[NETWORK].PROXY_WALLET,
-            wallet1AccessToken
+        const wallet3Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_3,
+            CONFIG[NETWORK].PRIVATE_KEY_3,
+            CONFIG[NETWORK].PROXY_WALLET_3,
+            wallet3AccessToken
         );
         
-        const wallet2Account = getAccount(
-            CONFIG[NETWORK].WALLET_ADDRESS_2,
-            CONFIG[NETWORK].PRIVATE_KEY_2,
-            CONFIG[NETWORK].PROXY_WALLET_2,
-            wallet2AccessToken
+        const wallet4Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_4,
+            CONFIG[NETWORK].PRIVATE_KEY_4,
+            CONFIG[NETWORK].PROXY_WALLET_4,
+            wallet4AccessToken
+        );
+        
+        const wallet5Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_5,
+            CONFIG[NETWORK].PRIVATE_KEY_5,
+            CONFIG[NETWORK].PROXY_WALLET_5,
+            wallet5AccessToken
         );
 
         // Fetch market to get outcomes
@@ -585,24 +647,33 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
 
         let totalOrdersPlaced = 0;
 
-        // Place YES orders (Wallet 1)
+        // Place YES orders (Random Wallet from 3, 4, 5)
         console.log(`\n📝 Placing YES orders for Market ${marketId}:`);
         for (const order of yesAnalysis.suggestedOrders) {
+            // Randomly select a wallet for each YES order
+            const { walletNumber, walletConfig } = getRandomWallet();
+            const randomWalletAccount = getAccount(
+                walletConfig.WALLET_ADDRESS,
+                walletConfig.PRIVATE_KEY,
+                walletConfig.PROXY_WALLET,
+                walletNumber === 3 ? wallet3AccessToken : walletNumber === 4 ? wallet4AccessToken : wallet5AccessToken
+            );
+            
             const orderBody = {
                 marketId: market.id, // Use actual market ID, not event ID
                 token: yesOutcome,
-                account: wallet1Account,
+                account: randomWalletAccount,
                 price: order.price,
                 amount: order.amount,
                 side: 0, // 0 for buy
-                accessToken: wallet1Account.accessToken
+                accessToken: randomWalletAccount.accessToken
             };
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(marketId, 'YES', order.price, order.amount, wallet1Account.wallet, order.side);
+                logger.logOrderPlaced(marketId, 'YES', order.price, order.amount, randomWalletAccount.wallet, order.side);
                 totalOrdersPlaced++;
-                console.log(`   ✅ YES ${order.side} order at $${order.price} for ${order.amount} shares`);
+                console.log(`   ✅ YES ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
                 console.log(`   ⚠️  YES order at $${order.price} already exists, skipping...`);
                 // Don't count duplicate orders as failures
@@ -614,24 +685,33 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             await new Promise(res => setTimeout(res, 2000));
         }
 
-        // Place NO orders (Wallet 2)
+        // Place NO orders (Random Wallet from 3, 4, 5)
         console.log(`\n📝 Placing NO orders for Market ${marketId}:`);
         for (const order of noAnalysis.suggestedOrders) {
+            // Randomly select a wallet for each NO order
+            const { walletNumber, walletConfig } = getRandomWallet();
+            const randomWalletAccount = getAccount(
+                walletConfig.WALLET_ADDRESS,
+                walletConfig.PRIVATE_KEY,
+                walletConfig.PROXY_WALLET,
+                walletNumber === 3 ? wallet3AccessToken : walletNumber === 4 ? wallet4AccessToken : wallet5AccessToken
+            );
+            
             const orderBody = {
                 marketId: market.id, // Use actual market ID, not event ID
                 token: noOutcome,
-                account: wallet2Account,
+                account: randomWalletAccount,
                 price: order.price,
                 amount: order.amount,
                 side: 0, // 0 for buy
-                accessToken: wallet2Account.accessToken
+                accessToken: randomWalletAccount.accessToken
             };
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(marketId, 'NO', order.price, order.amount, wallet2Account.wallet, order.side);
+                logger.logOrderPlaced(marketId, 'NO', order.price, order.amount, randomWalletAccount.wallet, order.side);
                 totalOrdersPlaced++;
-                console.log(`   ✅ NO ${order.side} order at $${order.price} for ${order.amount} shares`);
+                console.log(`   ✅ NO ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
                 console.log(`   ⚠️  NO order at $${order.price} already exists, skipping...`);
                 // Don't count duplicate orders as failures
@@ -665,12 +745,21 @@ async function monitorOrderBooks() {
     console.log(`💰 Order Amount: ${ORDER_BOOK_CONFIG.ORDER_AMOUNT} shares`);
     console.log(`📊 Multiple Order Strategy: ${ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.join(', ')} shares with 0.05 gaps down to best bid`);
     console.log(`🚫 Min Acceptable Price: $${ORDER_BOOK_CONFIG.MIN_ACCEPTABLE_PRICE} (skip orders ≤ $0.05)`);
-    console.log(`⏱️  Monitoring Interval: ${ORDER_BOOK_CONFIG.MONITORING_INTERVAL / 1000} seconds`);
+    console.log(`⏱️  Iteration Interval: ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minutes (1 hour)`);
+    console.log(`🐌 Market Processing: ${ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS / 1000}s delay between markets`);
+    console.log(`⏳ Cooldown Period: ${ORDER_BOOK_CONFIG.COOLDOWN_PERIOD / 1000}s after placing orders`);
+    console.log(`📅 Daily Iterations: 24 iterations per day (every hour)`);
     console.log(`🌐 Network: ${NETWORK}`);
     console.log('='.repeat(70));
+    
+    // Validate wallet configuration before starting
+    if (!validateWalletConfig()) {
+        console.error('❌ Wallet configuration validation failed. Exiting...');
+        process.exit(1);
+    }
 
-    // Get starting market number from user
-    const startingMarketId = await getStartingMarketNumber();
+    // Automatically fetch the latest market ID
+    const startingMarketId = await getLatestMarketId();
     const marketsToCheck = ORDER_BOOK_CONFIG.MAX_MARKETS_TO_CHECK;
     const endingMarketId = Math.max(1, startingMarketId - marketsToCheck + 1);
     
@@ -696,6 +785,19 @@ async function monitorOrderBooks() {
         console.log('\n🛑 Shutting down order book filling bot...');
         isRunning = false;
         logger.logSessionSummary();
+        
+        // Calculate session statistics
+        const sessionDuration = Date.now() - logger.getSessionStartTime().getTime();
+        const sessionHours = Math.floor(sessionDuration / 3600000);
+        const sessionMinutes = Math.floor((sessionDuration % 3600000) / 60000);
+        const estimatedIterationsPerDay = Math.floor(24 * 60 * 60 * 1000 / ORDER_BOOK_CONFIG.ITERATION_DELAY);
+        
+        console.log(`\n📊 SESSION STATISTICS:`);
+        console.log(`   ⏱️  Total Session Time: ${sessionHours}h ${sessionMinutes}m`);
+        console.log(`   🔄 Iterations Completed: ${iteration}`);
+        console.log(`   📅 Estimated Daily Iterations: ${estimatedIterationsPerDay}`);
+        console.log(`   ⏰ Next Iteration Would Be: ${new Date(Date.now() + ORDER_BOOK_CONFIG.ITERATION_DELAY).toLocaleString()}`);
+        
         process.exit(0);
     });
 
@@ -703,6 +805,7 @@ async function monitorOrderBooks() {
     
     while (isRunning) {
         iteration++;
+        const iterationStartTime = Date.now();
         console.log(`\n🔄 Iteration ${iteration} - ${new Date().toLocaleString()}`);
         console.log('─'.repeat(50));
         
@@ -710,6 +813,7 @@ async function monitorOrderBooks() {
             let totalOrdersPlaced = 0;
             let marketsProcessed = 0;
             let marketsWithOrders = 0;
+            let consecutive429Errors = 0; // Track consecutive rate limit errors
             
             // Process markets in descending order
             for (let currentMarketId = startingMarketId; currentMarketId >= endingMarketId; currentMarketId--) {
@@ -724,10 +828,38 @@ async function monitorOrderBooks() {
                         continue;
                     }
                     
-                    // Fetch market by ID
-                    const market = await fetchMarketById(currentMarketId);
+                    // Fetch market by ID with retry logic
+                    let market = null;
+                    let retryCount = 0;
+                    const maxRetries = 3;
+                    
+                    while (retryCount < maxRetries && !market) {
+                        try {
+                            market = await fetchMarketById(currentMarketId);
+                            if (!market) {
+                                console.log(`   ⚠️  Market ${currentMarketId} not found or invalid, skipping...`);
+                                break;
+                            }
+                        } catch (error: any) {
+                            retryCount++;
+                            if (error.message?.includes('404') || error.message?.includes('Not Found')) {
+                                console.log(`   ⚠️  Market ${currentMarketId} not found (404), skipping...`);
+                                break;
+                            } else if (error.message?.includes('429') || error.message?.includes('rate limit')) {
+                                consecutive429Errors++;
+                                const waitTime = Math.min(1000 * Math.pow(2, retryCount), 10000); // Exponential backoff, max 10s
+                                console.log(`   ⏳ Rate limited (429), waiting ${waitTime/1000}s before retry ${retryCount}/${maxRetries}... (consecutive: ${consecutive429Errors})`);
+                                await new Promise(res => setTimeout(res, waitTime));
+                            } else {
+                                console.log(`   ⚠️  Error fetching market ${currentMarketId}: ${error.message}, retry ${retryCount}/${maxRetries}`);
+                                if (retryCount < maxRetries) {
+                                    await new Promise(res => setTimeout(res, 2000));
+                                }
+                            }
+                        }
+                    }
+                    
                     if (!market) {
-                        console.log(`   ⚠️  Market ${currentMarketId} not found or invalid, skipping...`);
                         continue;
                     }
                     
@@ -743,16 +875,59 @@ async function monitorOrderBooks() {
                         continue;
                     }
 
-                    // Fetch order books for both outcomes
+                    // Fetch order books for both outcomes with retry logic
                     // Use market.id (the actual market ID) not currentMarketId (the event ID)
                     // According to Order.md: outcomeType 1 for Yes, 0 for No
-                    console.log(`   🔍 Fetching YES order book: marketId=${market.id}, outcomeId=${yesOutcome.id}, outcomeType=1`);
-                    const yesOrderBook = await fetchOrderBook(market.id, yesOutcome.id, 1); // 1 for Yes
-                    console.log(`   🔍 Fetching NO order book: marketId=${market.id}, outcomeId=${noOutcome.id}, outcomeType=0`);
-                    const noOrderBook = await fetchOrderBook(market.id, noOutcome.id, 0);   // 0 for No
+                    let yesOrderBook = null;
+                    let noOrderBook = null;
+                    let orderBookRetryCount = 0;
+                    const maxOrderBookRetries = 3;
+                    
+                    // Fetch YES order book with retries
+                    while (orderBookRetryCount < maxOrderBookRetries && !yesOrderBook) {
+                        try {
+                            console.log(`   🔍 Fetching YES order book: marketId=${market.id}, outcomeId=${yesOutcome.id}, outcomeType=1`);
+                            yesOrderBook = await fetchOrderBook(market.id, yesOutcome.id, 1); // 1 for Yes
+                        } catch (error: any) {
+                            orderBookRetryCount++;
+                            if (error.message?.includes('429') || error.message?.includes('rate limit')) {
+                                consecutive429Errors++;
+                                const waitTime = Math.min(2000 * Math.pow(2, orderBookRetryCount), 15000); // Exponential backoff, max 15s
+                                console.log(`   ⏳ Rate limited (429) fetching YES order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
+                                await new Promise(res => setTimeout(res, waitTime));
+                            } else {
+                                console.log(`   ⚠️  Error fetching YES order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
+                                if (orderBookRetryCount < maxOrderBookRetries) {
+                                    await new Promise(res => setTimeout(res, 3000));
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Fetch NO order book with retries
+                    orderBookRetryCount = 0;
+                    while (orderBookRetryCount < maxOrderBookRetries && !noOrderBook) {
+                        try {
+                            console.log(`   🔍 Fetching NO order book: marketId=${market.id}, outcomeId=${noOutcome.id}, outcomeType=0`);
+                            noOrderBook = await fetchOrderBook(market.id, noOutcome.id, 0);   // 0 for No
+                        } catch (error: any) {
+                            orderBookRetryCount++;
+                            if (error.message?.includes('429') || error.message?.includes('rate limit')) {
+                                consecutive429Errors++;
+                                const waitTime = Math.min(2000 * Math.pow(2, orderBookRetryCount), 15000); // Exponential backoff, max 15s
+                                console.log(`   ⏳ Rate limited (429) fetching NO order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
+                                await new Promise(res => setTimeout(res, waitTime));
+                            } else {
+                                console.log(`   ⚠️  Error fetching NO order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
+                                if (orderBookRetryCount < maxOrderBookRetries) {
+                                    await new Promise(res => setTimeout(res, 3000));
+                                }
+                            }
+                        }
+                    }
                     
                     if (!yesOrderBook || !noOrderBook) {
-                        console.log(`   ⚠️  Could not fetch order books, skipping...`);
+                        console.log(`   ⚠️  Could not fetch order books after retries, skipping...`);
                         continue;
                     }
                     
@@ -830,6 +1005,20 @@ async function monitorOrderBooks() {
                         // Get current best prices from order books
                         const yesBestAsk = yesAnalysis.bestAsk;
                         const noBestAsk = noAnalysis.bestAsk;
+                        const yesBestBid = yesAnalysis.bestBid;
+                        const noBestBid = noAnalysis.bestBid;
+                        
+                        // Check if one side is at very high prices (≥ 0.95) - if so, don't place orders on the other side
+                        const yesSideVeryHigh = yesBestBid >= 0.95 || yesBestAsk >= 0.95;
+                        const noSideVeryHigh = noBestBid >= 0.95 || noBestAsk >= 0.95;
+                        
+                        if (yesSideVeryHigh || noSideVeryHigh) {
+                            console.log(`   ⚠️  One side has very high prices (≥ $0.95):`);
+                            if (yesSideVeryHigh) console.log(`      YES side: Best Bid $${yesBestBid}, Best Ask $${yesBestAsk}`);
+                            if (noSideVeryHigh) console.log(`      NO side: Best Bid $${noBestBid}, Best Ask $${noBestAsk}`);
+                            console.log(`   ⏭️  Skipping order placement - high-priced side should not trigger orders on opposite side`);
+                            continue;
+                        }
                         
                         // Determine which side has higher prices
                         const noSideHigher = noBestAsk > yesBestAsk;
@@ -1026,8 +1215,26 @@ async function monitorOrderBooks() {
                     // Log market processing
                     logger.logMarketProcessed(currentMarketId, market.title || `Market ${currentMarketId}`, yesAnalysis.suggestedOrders.length + noAnalysis.suggestedOrders.length);
                     
+                    // Dynamic delay based on rate limiting
+                    let delayTime = ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS;
+                    
+                    // Increase delay if we've hit consecutive rate limits
+                    if (consecutive429Errors > 0) {
+                        delayTime = Math.min(
+                            ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS + (consecutive429Errors * ORDER_BOOK_CONFIG.RATE_LIMIT_DELAY),
+                            30000 // Max 30 seconds
+                        );
+                        console.log(`   ⏳ Rate limit detected, increasing delay to ${delayTime/1000}s (consecutive 429s: ${consecutive429Errors})`);
+                    }
+                    
                     // Delay between markets to avoid rate limiting
-                    await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS));
+                    await new Promise(res => setTimeout(res, delayTime));
+                    
+                    // Reset consecutive 429 counter if we successfully processed a market
+                    if (consecutive429Errors > 0) {
+                        consecutive429Errors = 0;
+                        console.log(`   ✅ Rate limit counter reset - successful market processing`);
+                    }
                     
                 } catch (error: any) {
                     console.error(`❌ Error processing market ${currentMarketId}:`, error.message);
@@ -1035,10 +1242,44 @@ async function monitorOrderBooks() {
                 }
             }
             
+            const iterationEndTime = Date.now();
+            const iterationDuration = iterationEndTime - iterationStartTime;
+            const iterationMinutes = Math.floor(iterationDuration / 60000);
+            const iterationSeconds = Math.floor((iterationDuration % 60000) / 1000);
+            
             console.log(`\n✅ Iteration ${iteration} completed:`);
+            console.log(`   ⏱️  Duration: ${iterationMinutes}m ${iterationSeconds}s (${iterationDuration}ms)`);
             console.log(`   Markets Processed: ${marketsProcessed}/${marketsToCheck}`);
             console.log(`   Markets with Orders: ${marketsWithOrders}`);
             console.log(`   Total Orders Placed: ${totalOrdersPlaced}`);
+            console.log(`   🐌 Processing Speed: ${(marketsProcessed / (iterationDuration / 1000)).toFixed(2)} markets/second`);
+            
+            // Calculate next iteration time
+            const nextIterationTime = new Date(Date.now() + ORDER_BOOK_CONFIG.ITERATION_DELAY);
+            console.log(`\n⏰ Next iteration scheduled for: ${nextIterationTime.toLocaleString()}`);
+            console.log(`🔄 Waiting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minutes before next iteration...`);
+            
+            // Wait 1 hour before next iteration with progress indicator
+            const totalWaitTime = ORDER_BOOK_CONFIG.ITERATION_DELAY;
+            const progressInterval = 300000; // Show progress every 5 minutes
+            let elapsedTime = 0;
+            
+            console.log(`\n⏳ Starting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minute wait...`);
+            
+            while (elapsedTime < totalWaitTime) {
+                const remainingTime = totalWaitTime - elapsedTime;
+                const remainingMinutes = Math.floor(remainingTime / 60000);
+                const remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
+                
+                console.log(`   ⏰ Waiting: ${remainingMinutes}m ${remainingSeconds}s remaining...`);
+                
+                // Wait for progress interval or remaining time, whichever is shorter
+                const waitTime = Math.min(progressInterval, remainingTime);
+                await new Promise(res => setTimeout(res, waitTime));
+                elapsedTime += waitTime;
+            }
+            
+            console.log(`\n🚀 Wait completed! Starting next iteration...`);
             
         } catch (error: any) {
             console.error('❌ Error in main monitoring loop:', error.message);

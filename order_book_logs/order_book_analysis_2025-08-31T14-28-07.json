@@ -1,0 +1,100 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T14:28:07.134Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T14:28:08.633Z",
+      "market_id": 647,
+      "market_title": "$BTC Price $111K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.31,
+        "bestBid": 0.3,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.32,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.3,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.32,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.7,
+        "bestBid": 0.69,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.71,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.71,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:28:09.259Z",
+      "market_id": 646,
+      "market_title": "$ETH Price $4.5K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.41,
+        "bestBid": 0.4,
+        "spread": 0.009999999999999953,
+        "gaps": [
+          {
+            "price": 0.42,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.4,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.42,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.6,
+        "bestBid": 0.59,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.61,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.61,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    }
+  ]
+}

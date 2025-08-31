@@ -1,0 +1,44 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T14:52:31.284Z",
+    "network": "mainnet",
+    "config": {
+      "TARGET_SPREAD": 0.01,
+      "ORDER_AMOUNT": 20,
+      "MULTIPLE_ORDER_AMOUNTS": [
+        20,
+        5,
+        5,
+        5
+      ],
+      "MAX_ORDERS_PER_SIDE": 2,
+      "MIN_PRICE_GAP": 0.05,
+      "MIN_ACCEPTABLE_PRICE": 0.06,
+      "MONITORING_INTERVAL": 3600000,
+      "MAX_MARKETS_TO_CHECK": 1000,
+      "MAX_RETRIES": 3,
+      "COOLDOWN_PERIOD": 10000,
+      "DELAY_BETWEEN_MARKETS": 15000,
+      "RATE_LIMIT_DELAY": 10000,
+      "MAX_CONSECUTIVE_429": 3,
+      "ITERATION_DELAY": 3600000
+    }
+  },
+  "total_orders_placed": 0,
+  "total_markets_processed": 2,
+  "markets_processed": [
+    {
+      "timestamp": "2025-08-31T14:52:38.250Z",
+      "market_id": 638,
+      "market_title": "KT Beat NS on Aug 31 LoL LCK?",
+      "orders_placed": 0
+    },
+    {
+      "timestamp": "2025-08-31T14:52:54.796Z",
+      "market_id": 635,
+      "market_title": "Yankees Beat White Sox on Aug 30?",
+      "orders_placed": 1
+    }
+  ],
+  "orders_placed": []
+}

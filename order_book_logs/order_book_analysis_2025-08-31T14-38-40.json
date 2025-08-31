@@ -1,0 +1,1051 @@
+{
+  "session_info": {
+    "start_time": "2025-08-31T14:38:40.318Z",
+    "network": "mainnet"
+  },
+  "order_book_analysis": [
+    {
+      "timestamp": "2025-08-31T14:38:41.957Z",
+      "market_id": 647,
+      "market_title": "$BTC Price $111K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.31,
+        "bestBid": 0.3,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.32,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.3,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.32,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.7,
+        "bestBid": 0.69,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.71,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.71,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:42.592Z",
+      "market_id": 646,
+      "market_title": "$ETH Price $4.5K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.41,
+        "bestBid": 0.4,
+        "spread": 0.009999999999999953,
+        "gaps": [
+          {
+            "price": 0.42,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.4,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.42,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.6,
+        "bestBid": 0.59,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.61,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.61,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:43.164Z",
+      "market_id": 645,
+      "market_title": "$PIXEL Price $0.033+ on Sep 4?",
+      "yes_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.35,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:43.797Z",
+      "market_id": 644,
+      "market_title": "$RON Price $0.52+ on Sep 4?",
+      "yes_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.35,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:44.357Z",
+      "market_id": 643,
+      "market_title": "Los Angeles Sparks Beat Seattle Storm on Sep 1 WNBA?",
+      "yes_side": {
+        "bestAsk": 0.28,
+        "bestBid": 0.27,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.27,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.73,
+        "bestBid": 0.72,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:44.913Z",
+      "market_id": 642,
+      "market_title": "Rangers Beat D-Backs on Sep 1?",
+      "yes_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.64,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:45.463Z",
+      "market_id": 641,
+      "market_title": "Germany Beat Great Britain on Sep 1 EuroBasket?",
+      "yes_side": {
+        "bestAsk": 0.98,
+        "bestBid": 0.97,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.97,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.03,
+        "bestBid": 0.02,
+        "spread": 0.009999999999999998,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:46.057Z",
+      "market_id": 640,
+      "market_title": "Pain Beat VKS on Aug 31 LoL LTA South?",
+      "yes_side": {
+        "bestAsk": 0.75,
+        "bestBid": 0.74,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.76,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.74,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.76,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.26,
+        "bestBid": 0.25,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:46.645Z",
+      "market_id": 639,
+      "market_title": "Liverpool Beat Arsenal on Aug 31 Premier League?",
+      "yes_side": {
+        "bestAsk": 0.41,
+        "bestBid": 0.4,
+        "spread": 0.009999999999999953,
+        "gaps": [
+          {
+            "price": 0.42,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.4,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.42,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.6,
+        "bestBid": 0.59,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.61,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.61,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:47.201Z",
+      "market_id": 638,
+      "market_title": "KT Beat NS on Aug 31 LoL LCK?",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:50.986Z",
+      "market_id": 636,
+      "market_title": "Dodgers Beat D-Backs on Aug 30?",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:51.560Z",
+      "market_id": 635,
+      "market_title": "Yankees Beat White Sox on Aug 30?",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:56.233Z",
+      "market_id": 630,
+      "market_title": "In-N-Out Burger",
+      "yes_side": {
+        "bestAsk": 0.68,
+        "bestBid": 0.67,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.67,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.33,
+        "bestBid": 0.32,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:38:56.845Z",
+      "market_id": 629,
+      "market_title": "Will Kai Cenat Reach 700K+ Subscribers During Mafiathon 3?",
+      "yes_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.64,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:05.352Z",
+      "market_id": 593,
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.15,
+        "bestBid": 0.14,
+        "spread": 0.009999999999999981,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.14,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.86,
+        "bestBid": 0.85,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:06.410Z",
+      "market_id": 591,
+      "market_title": "Perplexity",
+      "yes_side": {
+        "bestAsk": 0.34,
+        "bestBid": 0.33,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.35,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.33,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.35,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.67,
+        "bestBid": 0.66,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.68,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.68,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:07.378Z",
+      "market_id": 589,
+      "market_title": "Canva",
+      "yes_side": {
+        "bestAsk": 0.35,
+        "bestBid": 0.34,
+        "spread": 0.009999999999999953,
+        "gaps": [
+          {
+            "price": 0.36,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.34,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.36,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.66,
+        "bestBid": 0.65,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:07.996Z",
+      "market_id": 588,
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.19,
+        "bestBid": 0.18,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.18,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.82,
+        "bestBid": 0.81,
+        "spread": 0.009999999999999898,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:08.590Z",
+      "market_id": 587,
+      "market_title": "Will The FED Cut Interest Rates at The September FOMC Meeting?",
+      "yes_side": {
+        "bestAsk": 0.9,
+        "bestBid": 0.89,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.89,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.11,
+        "bestBid": 0.1,
+        "spread": 0.009999999999999995,
+        "gaps": [
+          {
+            "price": 0.12,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.12,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:39:28.414Z",
+      "market_id": 559,
+      "market_title": "Will Ken Griffin Be #1 In Most Water Leaderboard for TeamWater on Aug 31?",
+      "yes_side": {
+        "bestAsk": 0.02,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.98,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:40:22.323Z",
+      "market_id": 492,
+      "market_title": "ibai",
+      "yes_side": {
+        "bestAsk": 0.05,
+        "bestBid": 0.01,
+        "spread": 0.04,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.04,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.99,
+        "bestBid": 0.95,
+        "spread": 0.040000000000000036,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:41:08.184Z",
+      "market_id": 417,
+      "market_title": "Other",
+      "yes_side": {
+        "bestAsk": 0.16,
+        "bestBid": 0.01,
+        "spread": 0.15,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.15,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.99,
+        "bestBid": 0.84,
+        "spread": 0.15000000000000002,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:44:55.001Z",
+      "market_id": 54,
+      "market_title": "Will Speed Stream with Ronaldo in 2025?",
+      "yes_side": {
+        "bestAsk": 0.35,
+        "bestBid": 0.3,
+        "spread": 0.04999999999999999,
+        "gaps": [
+          {
+            "price": 0.36,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.34,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.36,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.7,
+        "bestBid": 0.65,
+        "spread": 0.04999999999999993,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:18.008Z",
+      "market_id": 48,
+      "market_title": "Q1 2025",
+      "yes_side": {
+        "bestAsk": 0.49,
+        "bestBid": 0.01,
+        "spread": 0.48,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.48,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.99,
+        "bestBid": 0.51,
+        "spread": 0.48,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:19.765Z",
+      "market_id": 43,
+      "market_title": "Will RON Hit $10 in 2025?",
+      "yes_side": {
+        "bestAsk": 0.09,
+        "bestBid": 0.08,
+        "spread": 0.009999999999999995,
+        "gaps": [
+          {
+            "price": 0.1,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.08,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.1,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.92,
+        "bestBid": 0.91,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:39.279Z",
+      "market_id": 646,
+      "market_title": "$ETH Price $4.5K+ on Sep 5?",
+      "yes_side": {
+        "bestAsk": 0.41,
+        "bestBid": 0.4,
+        "spread": 0.009999999999999953,
+        "gaps": [
+          {
+            "price": 0.42,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.4,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.42,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.6,
+        "bestBid": 0.59,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.61,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.61,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:42.487Z",
+      "market_id": 644,
+      "market_title": "$RON Price $0.52+ on Sep 4?",
+      "yes_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.35,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:44.152Z",
+      "market_id": 643,
+      "market_title": "Los Angeles Sparks Beat Seattle Storm on Sep 1 WNBA?",
+      "yes_side": {
+        "bestAsk": 0.28,
+        "bestBid": 0.27,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.27,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.73,
+        "bestBid": 0.72,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:47.372Z",
+      "market_id": 641,
+      "market_title": "Germany Beat Great Britain on Sep 1 EuroBasket?",
+      "yes_side": {
+        "bestAsk": 0.98,
+        "bestBid": 0.97,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.97,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.03,
+        "bestBid": 0.02,
+        "spread": 0.009999999999999998,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:49.081Z",
+      "market_id": 640,
+      "market_title": "Pain Beat VKS on Aug 31 LoL LTA South?",
+      "yes_side": {
+        "bestAsk": 0.75,
+        "bestBid": 0.74,
+        "spread": 0.010000000000000009,
+        "gaps": [
+          {
+            "price": 0.76,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.74,
+            "amount": 20,
+            "side": "BUY"
+          },
+          {
+            "price": 0.76,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.26,
+        "bestBid": 0.25,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:52.216Z",
+      "market_id": 638,
+      "market_title": "KT Beat NS on Aug 31 LoL LCK?",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:56.001Z",
+      "market_id": 636,
+      "market_title": "Dodgers Beat D-Backs on Aug 30?",
+      "yes_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:45:56.572Z",
+      "market_id": 635,
+      "market_title": "Yankees Beat White Sox on Aug 30?",
+      "yes_side": {
+        "bestAsk": 0.5,
+        "bestBid": 0.99,
+        "spread": 0.5,
+        "gaps": [],
+        "suggestedOrders": []
+      },
+      "no_side": {
+        "bestAsk": 0.01,
+        "bestBid": 0.5,
+        "spread": 0.5,
+        "gaps": [
+          {
+            "price": 0.02,
+            "size": 20
+          }
+        ],
+        "suggestedOrders": [
+          {
+            "price": 0.02,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:46:01.160Z",
+      "market_id": 630,
+      "market_title": "In-N-Out Burger",
+      "yes_side": {
+        "bestAsk": 0.68,
+        "bestBid": 0.67,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.67,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.33,
+        "bestBid": 0.32,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    },
+    {
+      "timestamp": "2025-08-31T14:46:02.793Z",
+      "market_id": 629,
+      "market_title": "Will Kai Cenat Reach 700K+ Subscribers During Mafiathon 3?",
+      "yes_side": {
+        "bestAsk": 0.65,
+        "bestBid": 0.64,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": [
+          {
+            "price": 0.64,
+            "amount": 20,
+            "side": "BUY"
+          }
+        ]
+      },
+      "no_side": {
+        "bestAsk": 0.36,
+        "bestBid": 0.35,
+        "spread": 0.010000000000000009,
+        "gaps": [],
+        "suggestedOrders": []
+      }
+    }
+  ]
+}
