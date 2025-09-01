@@ -108,7 +108,7 @@ async function getLatestMarketId(): Promise<number> {
     }
 }
 
-// Order book filling configuration
+// Order book filling configuration with enhanced rate limiting
 const ORDER_BOOK_CONFIG = {
     TARGET_SPREAD: 0.01, // Target spread between our orders
     ORDER_AMOUNT: 20, // Default order amount in shares
@@ -118,130 +118,103 @@ const ORDER_BOOK_CONFIG = {
     MIN_ACCEPTABLE_PRICE: 0.06, // Minimum price we're willing to place orders at (avoid very low prices)
     MONITORING_INTERVAL: 3600000, // 1 hour between iterations (changed from 30 seconds)
     MAX_MARKETS_TO_CHECK: 1000, // Check all available markets
-    MAX_RETRIES: 3, // Maximum retry attempts for failed operations
-    COOLDOWN_PERIOD: 10000, // 10 seconds cooldown after placing orders (increased from 5)
-    DELAY_BETWEEN_MARKETS: 15000, // 15 seconds delay between processing each market (increased from 3)
-    RATE_LIMIT_DELAY: 10000, // 10 seconds delay when rate limited (increased from 5)
-    MAX_CONSECUTIVE_429: 3, // Maximum consecutive 429 errors before increasing delay
+    MAX_RETRIES: 5, // Increased retry attempts for failed operations
+    COOLDOWN_PERIOD: 15000, // 15 seconds cooldown after placing orders
+    DELAY_BETWEEN_MARKETS: 20000, // 20 seconds delay between processing each market
+    RATE_LIMIT_DELAY: 15000, // 15 seconds delay when rate limited
+    MAX_CONSECUTIVE_429: 5, // Maximum consecutive 429 errors before increasing delay
     ITERATION_DELAY: 3600000, // 1 hour delay between iterations (24 iterations per day)
+    // Enhanced rate limiting configuration
+    REQUEST_DELAY: 2000, // 2 seconds between individual API requests
+    EXPONENTIAL_BACKOFF_BASE: 2000, // Base delay for exponential backoff
+    MAX_BACKOFF_DELAY: 60000, // Maximum backoff delay (1 minute)
+    RATE_LIMIT_WINDOW: 60000, // 1 minute window for rate limit tracking
+    MAX_REQUESTS_PER_WINDOW: 30, // Maximum requests per minute
+    CONSECUTIVE_ERROR_THRESHOLD: 3, // Threshold for consecutive errors before backing off
+    HEALTH_CHECK_INTERVAL: 300000, // 5 minutes between health checks
 };
 
-// Enhanced logging functionality
+// Simplified logging functionality - only tracks total money spent per operation
 class OrderBookLogger {
     private logFolderPath: string;
     private logFilePath: string;
-    private orderBookLogFilePath: string;
+    private totalMoneySpent: number = 0;
     private totalOrdersPlaced: number = 0;
     private totalMarketsProcessed: number = 0;
     private sessionStartTime: Date;
     private marketsWithOrders: Set<number> = new Set(); // Track markets where we've placed orders
+    private operationSummaries: Array<{timestamp: string, marketId: number, totalCost: number, ordersCount: number}> = [];
 
     constructor() {
         this.sessionStartTime = new Date();
         
         // Create logs folder if it doesn't exist
-        this.logFolderPath = path.join(process.cwd(), 'order_book_logs');
+        this.logFolderPath = path.join(process.cwd(), 'market_monitor_logs');
         if (!fs.existsSync(this.logFolderPath)) {
             fs.mkdirSync(this.logFolderPath, { recursive: true });
         }
 
-        // Create main log file
+        // Create simplified log file
         const now = new Date();
         const dateTimeString = now.toISOString()
             .replace(/:/g, '-')
             .replace(/\./g, '-')
             .substring(0, 19);
         
-        this.logFilePath = path.join(this.logFolderPath, `order_book_bot_${dateTimeString}.json`);
-        this.orderBookLogFilePath = path.join(this.logFolderPath, `order_book_analysis_${dateTimeString}.json`);
+        this.logFilePath = path.join(this.logFolderPath, `market_monitor_${dateTimeString}.json`);
         
-        // Initialize log files
+        // Initialize log file with minimal data
         const initialData = {
-            session_info: {
-                start_time: now.toISOString(),
-                network: NETWORK,
-                config: ORDER_BOOK_CONFIG
-            },
-            total_orders_placed: 0,
-            total_markets_processed: 0,
-            markets_processed: [],
-            orders_placed: []
-        };
-        
-        const initialOrderBookData = {
             session_info: {
                 start_time: now.toISOString(),
                 network: NETWORK
             },
-            order_book_analysis: []
+            total_money_spent: 0,
+            total_orders_placed: 0,
+            total_markets_processed: 0,
+            operation_summaries: []
         };
         
         fs.writeFileSync(this.logFilePath, JSON.stringify(initialData, null, 2));
-        fs.writeFileSync(this.orderBookLogFilePath, JSON.stringify(initialOrderBookData, null, 2));
         
-        console.log(`📝 Order book bot log created: ${this.logFilePath}`);
-        console.log(`📊 Order book analysis log created: ${this.orderBookLogFilePath}`);
+        console.log(`📝 Market monitor log created: ${this.logFilePath}`);
     }
 
-    logOrderBookAnalysis(marketId: number, marketTitle: string, yesAnalysis: any, noAnalysis: any) {
-        const analysisData = {
+    logOperationSummary(marketId: number, totalCost: number, ordersCount: number) {
+        this.totalMoneySpent += totalCost;
+        this.totalOrdersPlaced += ordersCount;
+        
+        const operationData = {
             timestamp: new Date().toISOString(),
-            market_id: marketId,
-            market_title: marketTitle,
-            yes_side: yesAnalysis,
-            no_side: noAnalysis
+            marketId: marketId,
+            totalCost: totalCost,
+            ordersCount: ordersCount
         };
         
-        try {
-            const data = JSON.parse(fs.readFileSync(this.orderBookLogFilePath, 'utf8'));
-            data.order_book_analysis.push(analysisData);
-            fs.writeFileSync(this.orderBookLogFilePath, JSON.stringify(data, null, 2));
-        } catch (error: any) {
-            console.error('Error updating order book analysis log:', error.message);
-        }
-    }
-
-    logOrderPlaced(marketId: number, outcome: string, price: number, amount: number, wallet: string, side: string) {
-        this.totalOrdersPlaced++;
-        const orderData = {
-            timestamp: new Date().toISOString(),
-            market_id: marketId,
-            outcome: outcome,
-            price: price,
-            amount: amount,
-            wallet: wallet,
-            side: side,
-            total_cost: price * amount
-        };
+        this.operationSummaries.push(operationData);
         
         try {
             const data = JSON.parse(fs.readFileSync(this.logFilePath, 'utf8'));
-            data.orders_placed.push(orderData);
+            data.operation_summaries.push(operationData);
+            data.total_money_spent = this.totalMoneySpent;
             data.total_orders_placed = this.totalOrdersPlaced;
             fs.writeFileSync(this.logFilePath, JSON.stringify(data, null, 2));
         } catch (error: any) {
-            console.error('Error updating order log:', error.message);
+            console.error('Error updating operation log:', error.message);
         }
         
-        console.log(`✅ Order placed: ${outcome} ${side} at $${price} for ${amount} shares (Wallet: ${wallet.substring(0, 8)}...)`);
+        console.log(`💰 Operation Summary: Market ${marketId} - $${totalCost.toFixed(2)} spent on ${ordersCount} orders`);
     }
 
-    logMarketProcessed(marketId: number, marketTitle: string, ordersPlaced: number) {
+    logMarketProcessed(marketId: number) {
         this.totalMarketsProcessed++;
-        const marketData = {
-            timestamp: new Date().toISOString(),
-            market_id: marketId,
-            market_title: marketTitle,
-            orders_placed: ordersPlaced
-        };
         
         try {
             const data = JSON.parse(fs.readFileSync(this.logFilePath, 'utf8'));
-            data.markets_processed.push(marketData);
             data.total_markets_processed = this.totalMarketsProcessed;
             fs.writeFileSync(this.logFilePath, JSON.stringify(data, null, 2));
         } catch (error: any) {
-            console.error('Error updating market log:', error.message);
+            console.error('Error updating market count:', error.message);
         }
     }
 
@@ -262,10 +235,9 @@ class OrderBookLogger {
         console.log(`   Duration: ${durationMinutes} minutes`);
         console.log(`   Total Markets Processed: ${this.totalMarketsProcessed}`);
         console.log(`   Total Orders Placed: ${this.totalOrdersPlaced}`);
+        console.log(`   Total Money Spent: $${this.totalMoneySpent.toFixed(2)}`);
         console.log(`   Markets with Orders: ${this.marketsWithOrders.size}`);
-        console.log(`   Log Files:`);
-        console.log(`     Main Log: ${this.logFilePath}`);
-        console.log(`     Order Book Analysis: ${this.orderBookLogFilePath}`);
+        console.log(`   Log File: ${this.logFilePath}`);
     }
     
     // Public method to get session start time
@@ -274,27 +246,88 @@ class OrderBookLogger {
     }
 }
 
-// Utility functions
+// Rate limiting and request tracking
+class RateLimiter {
+    private requestTimes: number[] = [];
+    private consecutiveErrors: number = 0;
+    private lastErrorTime: number = 0;
+    
+    async waitForRateLimit(): Promise<void> {
+        const now = Date.now();
+        
+        // Remove requests older than the rate limit window
+        this.requestTimes = this.requestTimes.filter(time => now - time < ORDER_BOOK_CONFIG.RATE_LIMIT_WINDOW);
+        
+        // If we're at the limit, wait until the oldest request expires
+        if (this.requestTimes.length >= ORDER_BOOK_CONFIG.MAX_REQUESTS_PER_WINDOW) {
+            const oldestRequest = Math.min(...this.requestTimes);
+            const waitTime = ORDER_BOOK_CONFIG.RATE_LIMIT_WINDOW - (now - oldestRequest) + 1000; // Add 1 second buffer
+            console.log(`⏳ Rate limit reached, waiting ${Math.ceil(waitTime/1000)}s...`);
+            await new Promise(res => setTimeout(res, waitTime));
+        }
+        
+        // Add current request time
+        this.requestTimes.push(now);
+        
+        // Add base delay between requests
+        await new Promise(res => setTimeout(res, ORDER_BOOK_CONFIG.REQUEST_DELAY));
+    }
+    
+    async handleError(error: any): Promise<number> {
+        this.consecutiveErrors++;
+        this.lastErrorTime = Date.now();
+        
+        if (error?.response?.status === 429 || error?.response?.status === 500) {
+            // Exponential backoff for rate limit and server errors
+            const backoffDelay = Math.min(
+                ORDER_BOOK_CONFIG.EXPONENTIAL_BACKOFF_BASE * Math.pow(2, this.consecutiveErrors),
+                ORDER_BOOK_CONFIG.MAX_BACKOFF_DELAY
+            );
+            
+            console.log(`⏳ Rate limit/server error (${error?.response?.status}), backing off for ${Math.ceil(backoffDelay/1000)}s...`);
+            await new Promise(res => setTimeout(res, backoffDelay));
+            return backoffDelay;
+        } else {
+            // Regular error - shorter delay
+            const delay = Math.min(2000 * this.consecutiveErrors, 10000);
+            await new Promise(res => setTimeout(res, delay));
+            return delay;
+        }
+    }
+    
+    resetErrorCount(): void {
+        this.consecutiveErrors = 0;
+    }
+    
+    getConsecutiveErrors(): number {
+        return this.consecutiveErrors;
+    }
+}
+
+// Global rate limiter instance
+const rateLimiter = new RateLimiter();
+
+// Utility functions with enhanced rate limiting
 async function loginAndGetAccessToken(privateKey: string): Promise<string> {
     let retries = 0;
     const maxRetries = ORDER_BOOK_CONFIG.MAX_RETRIES;
-    const baseDelay = 1000;
     
     while (retries < maxRetries) {
         try {
-            const response = await axios.get(LOGIN_API_URL, { params: { privateKey } });
+            await rateLimiter.waitForRateLimit();
+            const response = await axios.get(LOGIN_API_URL, { 
+                params: { privateKey },
+                timeout: 30000 // 30 second timeout
+            });
+            rateLimiter.resetErrorCount();
             return response.data.accessToken;
         } catch (e: any) {
-            if (e?.response?.status === 429) {
-                const delay = baseDelay * Math.pow(2, retries);
-                console.error(`❌ Login rate limited (429). Retrying in ${delay}ms...`);
-                await new Promise(res => setTimeout(res, delay));
-                retries++;
-            } else {
-                console.error('❌ Login failed:', e.message);
-                retries++;
-                if (retries >= maxRetries) throw e;
-                await new Promise(res => setTimeout(res, baseDelay));
+            const delay = await rateLimiter.handleError(e);
+            retries++;
+            
+            if (retries >= maxRetries) {
+                console.error(`❌ Login failed after ${maxRetries} retries:`, e.message);
+                throw new Error(`Failed to login after ${maxRetries} retries: ${e.message}`);
             }
         }
     }
@@ -311,12 +344,34 @@ function getAccount(address: string, privateKey: string, proxy: string, accessTo
 }
 
 async function httpGetJson(url: string, params?: any) {
-    try {
-        const res = await axios.get(url, { params });
-        return res.data;
-    } catch (e: any) {
-        return null;
+    let retries = 0;
+    const maxRetries = ORDER_BOOK_CONFIG.MAX_RETRIES;
+    
+    while (retries < maxRetries) {
+        try {
+            await rateLimiter.waitForRateLimit();
+            const res = await axios.get(url, { 
+                params,
+                timeout: 30000 // 30 second timeout
+            });
+            rateLimiter.resetErrorCount();
+            return res.data;
+        } catch (e: any) {
+            if (e?.response?.status === 404) {
+                // 404 is expected for many market IDs, don't retry
+                return null;
+            }
+            
+            const delay = await rateLimiter.handleError(e);
+            retries++;
+            
+            if (retries >= maxRetries) {
+                console.error(`❌ HTTP GET failed after ${maxRetries} retries for ${url}:`, e.message);
+                return null;
+            }
+        }
     }
+    return null;
 }
 
 async function fetchActiveMarkets(): Promise<any[]> {
@@ -354,108 +409,142 @@ async function fetchActiveMarkets(): Promise<any[]> {
 }
 
 async function fetchMarketById(marketId: number) {
-    try {
-        // Use the same approach as the working implementations
-        const response = await axios.get(EVENT_API_URL, { params: { id: marketId } });
-        const event = response.data;
-        
-        if (!event || !Array.isArray(event.markets) || event.markets.length === 0) {
-            return null;
-        }
-        
-        // Find the market with matching ID, or use the first market from the event
-        // This is the same logic used in market-spread-checker.ts
-        const market = event.markets.find((m: any) => m.id === marketId) || event.markets[0];
-        
-        // Check if the market is active (same logic as fetchActiveMarkets)
-        if (market) {
-            const activeLike = ['active', 'open', 'trading', 'live'];
-            const inactiveLike = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
-            const status = String(market?.status || '').toLowerCase();
+    let retries = 0;
+    const maxRetries = ORDER_BOOK_CONFIG.MAX_RETRIES;
+    
+    while (retries < maxRetries) {
+        try {
+            await rateLimiter.waitForRateLimit();
+            const response = await axios.get(EVENT_API_URL, { 
+                params: { id: marketId },
+                timeout: 30000 // 30 second timeout
+            });
+            const event = response.data;
             
-            // Skip resolved, closed, or inactive markets
-            if (status && inactiveLike.includes(status)) {
-                console.log(`   ⏭️  Market ${marketId} is not active (status: ${status}), skipping...`);
+            if (!event || !Array.isArray(event.markets) || event.markets.length === 0) {
                 return null;
             }
             
-            // Skip markets with no status that might be resolved
-            if (status && !activeLike.includes(status) && !inactiveLike.includes(status)) {
-                console.log(`   ⏭️  Market ${marketId} has unknown status (${status}), skipping...`);
+            // Find the market with matching ID, or use the first market from the event
+            const market = event.markets.find((m: any) => m.id === marketId) || event.markets[0];
+            
+            // Check if the market is active
+            if (market) {
+                const activeLike = ['active', 'open', 'trading', 'live'];
+                const inactiveLike = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
+                const status = String(market?.status || '').toLowerCase();
+                
+                // Skip resolved, closed, or inactive markets
+                if (status && inactiveLike.includes(status)) {
+                    console.log(`   ⏭️  Market ${marketId} is not active (status: ${status}), skipping...`);
+                    return null;
+                }
+                
+                // Skip markets with no status that might be resolved
+                if (status && !activeLike.includes(status) && !inactiveLike.includes(status)) {
+                    console.log(`   ⏭️  Market ${marketId} has unknown status (${status}), skipping...`);
+                    return null;
+                }
+                
+                // Only log the title for debugging
+                if (market.title) {
+                    console.log(`   📋 Market: ${market.title}`);
+                }
+            }
+            
+            rateLimiter.resetErrorCount();
+            return market;
+        } catch (error: any) {
+            if (error.response?.status === 404) {
+                // Market not found - this is expected for many market IDs
                 return null;
             }
             
-            // Additional checks for resolved markets - only filter by actual status, not title keywords
-            // The title-based filtering was too aggressive and was incorrectly filtering out active markets
-            // We'll rely on the actual market status and order book activity instead
+            const delay = await rateLimiter.handleError(error);
+            retries++;
             
-            // Only log the title for debugging, but don't filter based on it
-            if (market.title) {
-                console.log(`   📋 Market: ${market.title}`);
+            if (retries >= maxRetries) {
+                console.log(`   ⚠️  Error fetching market ${marketId} after ${maxRetries} retries: ${error.message}`);
+                return null;
             }
-        }
-        
-        return market;
-    } catch (error: any) {
-        // Handle specific error types
-        if (error.response?.status === 404) {
-            // Market not found - this is expected for many market IDs
-            return null;
-        } else if (error.response?.status === 429) {
-            // Rate limited - rethrow to be handled by caller
-            throw error;
-        } else {
-            // Other errors - log but don't fail
-            console.log(`   ⚠️  Error fetching market ${marketId}: ${error.message}`);
-            return null;
         }
     }
+    return null;
 }
 
 async function fetchOrderBook(marketId: number, outcomeId: number, outcomeType: number) {
-    try {
-        const response = await axios.get(ORDER_BOOK_API_URL, {
-            params: { marketId, outcomeId, outcomeType }
-        });
-        return response.data;
-    } catch (e: any) {
-        console.error(`❌ Failed to fetch order book for market ${marketId}:`, e.message);
-        return null;
+    let retries = 0;
+    const maxRetries = ORDER_BOOK_CONFIG.MAX_RETRIES;
+    
+    while (retries < maxRetries) {
+        try {
+            await rateLimiter.waitForRateLimit();
+            const response = await axios.get(ORDER_BOOK_API_URL, {
+                params: { marketId, outcomeId, outcomeType },
+                timeout: 30000 // 30 second timeout
+            });
+            rateLimiter.resetErrorCount();
+            return response.data;
+        } catch (e: any) {
+            const delay = await rateLimiter.handleError(e);
+            retries++;
+            
+            if (retries >= maxRetries) {
+                console.error(`❌ Failed to fetch order book for market ${marketId} after ${maxRetries} retries:`, e.message);
+                return null;
+            }
+        }
     }
+    return null;
 }
 
 async function placeOrder(orderBody: any) {
-    try {
-        // Add unique salt to prevent duplicate order errors
-        const timestamp = Date.now();
-        const randomSalt = Math.floor(Math.random() * 1000000);
-        const uniqueSalt = `${timestamp}_${randomSalt}`;
-        
-        // Add salt to order body if not present
-        if (!orderBody.salt) {
-            orderBody.salt = uniqueSalt;
-        }
-        
-        const response = await axios.post(ORDER_API_URL, orderBody, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${orderBody.accessToken}`
+    let retries = 0;
+    const maxRetries = ORDER_BOOK_CONFIG.MAX_RETRIES;
+    
+    while (retries < maxRetries) {
+        try {
+            await rateLimiter.waitForRateLimit();
+            
+            // Add unique salt to prevent duplicate order errors
+            const timestamp = Date.now();
+            const randomSalt = Math.floor(Math.random() * 1000000);
+            const uniqueSalt = `${timestamp}_${randomSalt}`;
+            
+            // Add salt to order body if not present
+            if (!orderBody.salt) {
+                orderBody.salt = uniqueSalt;
             }
-        });
-        return response.data;
-    } catch (e: any) {
-        if (e?.response?.data?.message?.includes('salt or signature already exists')) {
-            console.error('❌ Duplicate order detected - salt/signature already exists');
-            console.error('   This usually means the order was already placed or there was a retry');
-            return { success: false, error: 'DUPLICATE_ORDER', message: 'Order already exists' };
-        } else if (e?.response?.status === 400) {
-            console.error('❌ Bad request error:', e.response.data?.message || e.message);
-            return { success: false, error: 'BAD_REQUEST', message: e.response.data?.message || e.message };
-        } else {
-            console.error('❌ Failed to place order:', e.message);
-            return { success: false, error: 'UNKNOWN_ERROR', message: e.message };
+            
+            const response = await axios.post(ORDER_API_URL, orderBody, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${orderBody.accessToken}`
+                },
+                timeout: 30000 // 30 second timeout
+            });
+            
+            rateLimiter.resetErrorCount();
+            return response.data;
+        } catch (e: any) {
+            if (e?.response?.data?.message?.includes('salt or signature already exists')) {
+                console.error('❌ Duplicate order detected - salt/signature already exists');
+                return { success: false, error: 'DUPLICATE_ORDER', message: 'Order already exists' };
+            } else if (e?.response?.status === 400) {
+                console.error('❌ Bad request error:', e.response.data?.message || e.message);
+                return { success: false, error: 'BAD_REQUEST', message: e.response.data?.message || e.message };
+            }
+            
+            const delay = await rateLimiter.handleError(e);
+            retries++;
+            
+            if (retries >= maxRetries) {
+                console.error(`❌ Failed to place order after ${maxRetries} retries:`, e.message);
+                return { success: false, error: 'UNKNOWN_ERROR', message: e.message };
+            }
         }
     }
+    return { success: false, error: 'UNKNOWN_ERROR', message: 'Failed after all retries' };
 }
 
 interface OrderBookAnalysis {
@@ -671,7 +760,6 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(marketId, 'YES', order.price, order.amount, randomWalletAccount.wallet, order.side);
                 totalOrdersPlaced++;
                 console.log(`   ✅ YES ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
@@ -709,7 +797,6 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
-                logger.logOrderPlaced(marketId, 'NO', order.price, order.amount, randomWalletAccount.wallet, order.side);
                 totalOrdersPlaced++;
                 console.log(`   ✅ NO ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
@@ -727,6 +814,15 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
         console.log(`   Total Orders: ${totalOrdersPlaced}`);
         console.log(`   YES Orders: ${yesAnalysis.suggestedOrders.length}`);
         console.log(`   NO Orders: ${noAnalysis.suggestedOrders.length}`);
+        
+        // Calculate total cost for this operation
+        const totalCost = yesAnalysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0) +
+                         noAnalysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0);
+        
+        // Log operation summary
+        if (totalOrdersPlaced > 0) {
+            logger.logOperationSummary(marketId, totalCost, totalOrdersPlaced);
+        }
         
         return totalOrdersPlaced;
     } catch (error: any) {
@@ -967,8 +1063,7 @@ async function monitorOrderBooks() {
                     const yesAnalysis = analyzeOrderBook(yesOrderBook, 'YES');
                     const noAnalysis = analyzeOrderBook(noOrderBook, 'NO');
                     
-                    // Log order book analysis
-                    logger.logOrderBookAnalysis(currentMarketId, market.title || `Market ${currentMarketId}`, yesAnalysis, noAnalysis);
+                    // Order book analysis completed
                     
                     // Log spread information with better formatting
                     const yesSpreadText = yesAnalysis.spread >= 0 ? `$${yesAnalysis.spread.toFixed(4)}` : `$${Math.abs(yesAnalysis.spread).toFixed(4)} (inverted)`;
@@ -1214,7 +1309,7 @@ async function monitorOrderBooks() {
                     }
                     
                     // Log market processing
-                    logger.logMarketProcessed(currentMarketId, market.title || `Market ${currentMarketId}`, yesAnalysis.suggestedOrders.length + noAnalysis.suggestedOrders.length);
+                    logger.logMarketProcessed(currentMarketId);
                     
                     // Dynamic delay based on rate limiting
                     let delayTime = ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS;
