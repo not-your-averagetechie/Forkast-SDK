@@ -305,7 +305,6 @@ async function placeOrder(orderBody: any): Promise<any> {
             },
             timeout: 15000
         });
-        
         console.log(`   ✅ Order placed successfully:`, response.data);
         return { success: true, data: response.data };
     } catch (error: any) {
@@ -331,6 +330,10 @@ async function placeOrder(orderBody: any): Promise<any> {
     }
 }
 
+async function arbitrageBot() {
+    // Main arbitrage logic will be implemented here
+    console.log('🚀 Starting arbitrage bot...');
+}
 // Main arbitrage logic
 async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): Promise<boolean> {
     try {
