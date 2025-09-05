@@ -5,6 +5,8 @@ import axios from 'axios';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
+import { ForkastSDK, Network } from '@forkastgg/client';
+import * as readline from 'readline';
 
 dotenv.config();
 
@@ -20,6 +22,24 @@ const CONFIG = {
         WALLET_ADDRESS_5: process.env.TESTNET_WALLET_ADDRESS_5,
         PRIVATE_KEY_5: process.env.TESTNET_PRIVATE_KEY_5,
         PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.TESTNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.TESTNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.TESTNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.TESTNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.TESTNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.TESTNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.TESTNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.TESTNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.TESTNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_9: process.env.TESTNET_WALLET_ADDRESS_9,
+        PRIVATE_KEY_9: process.env.TESTNET_PRIVATE_KEY_9,
+        PROXY_WALLET_9: process.env.TESTNET_PROXY_WALLET_9,
+        WALLET_ADDRESS_10: process.env.TESTNET_WALLET_ADDRESS_10,
+        PRIVATE_KEY_10: process.env.TESTNET_PRIVATE_KEY_10,
+        PROXY_WALLET_10: process.env.TESTNET_PROXY_WALLET_10,
+        WALLET_ADDRESS_11: process.env.TESTNET_WALLET_ADDRESS_11,
+        PRIVATE_KEY_11: process.env.TESTNET_PRIVATE_KEY_11,
+        PROXY_WALLET_11: process.env.TESTNET_PROXY_WALLET_11,
         MARKET_API_URL: process.env.TESTNET_MARKET_API_URL,
         ACCOUNT_API_URL: process.env.TESTNET_ACCOUNT_API_URL,
         ORDER_API_URL: process.env.TESTNET_ORDER_API_URL
@@ -34,6 +54,24 @@ const CONFIG = {
         WALLET_ADDRESS_5: process.env.MAINNET_WALLET_ADDRESS_5,
         PRIVATE_KEY_5: process.env.MAINNET_PRIVATE_KEY_5,
         PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.MAINNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.MAINNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.MAINNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.MAINNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.MAINNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.MAINNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.MAINNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.MAINNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.MAINNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_9: process.env.MAINNET_WALLET_ADDRESS_9,
+        PRIVATE_KEY_9: process.env.MAINNET_PRIVATE_KEY_9,
+        PROXY_WALLET_9: process.env.MAINNET_PROXY_WALLET_9,
+        WALLET_ADDRESS_10: process.env.MAINNET_WALLET_ADDRESS_10,
+        PRIVATE_KEY_10: process.env.MAINNET_PRIVATE_KEY_10,
+        PROXY_WALLET_10: process.env.MAINNET_PROXY_WALLET_10,
+        WALLET_ADDRESS_11: process.env.MAINNET_WALLET_ADDRESS_11,
+        PRIVATE_KEY_11: process.env.MAINNET_PRIVATE_KEY_11,
+        PROXY_WALLET_11: process.env.MAINNET_PROXY_WALLET_11,
         MARKET_API_URL: process.env.MAINNET_MARKET_API_URL,
         ACCOUNT_API_URL: process.env.MAINNET_ACCOUNT_API_URL,
         ORDER_API_URL: process.env.MAINNET_ORDER_API_URL
@@ -41,8 +79,11 @@ const CONFIG = {
 };
 
 const NETWORK = (process.env.NETWORK as 'testnet' | 'mainnet') || 'mainnet';
-const EVENT_API_URL = CONFIG[NETWORK].MARKET_API_URL;
-const ORDER_BOOK_API_URL = process.env.ORDER_BOOK_API_URL || 'https://api.forkast.gg/api/v1/orderbook';
+const EVENT_API_URL = 'https://api.forkast.gg/api/v1/markets';
+const ORDER_BOOK_API_URL = 'https://api.forkast.gg/api/v1/orderbook';
+
+// Initialize ForkastSDK for authentication
+const sdk = new ForkastSDK(Network.MAINNET, process.env.API_KEY);
 
 // Bot Configuration
 const BOT_CONFIG = {
@@ -53,12 +94,14 @@ const BOT_CONFIG = {
     MAX_DELAY_BETWEEN_ORDERS: 8000, // 8 seconds maximum
     MIN_DELAY_BETWEEN_ACTIONS: 1000, // 1 second minimum
     MAX_DELAY_BETWEEN_ACTIONS: 5000, // 5 seconds maximum
-    ORDER_AMOUNTS: [20, 15, 10, 5], // Random order amounts
+    ORDER_AMOUNTS: [1, 2, 3, 4, 5], // Random order amounts (1-5 shares max)
     MAX_RETRIES: 3,
     RATE_LIMIT_DELAY: 10000, // 10 seconds when rate limited
     HUMAN_LIKE_DELAYS: true, // Enable human-like random delays
     RANDOM_MARKET_SELECTION: true, // Enable random market selection
-    LOGGING_ENABLED: true
+    LOGGING_ENABLED: true,
+    SPREAD_THRESHOLD: 0.01, // Only place orders if spread > 0.01
+    TOP_OF_BOOK_STRATEGY: true // Always place orders at top of book
 };
 
 // Logger class
@@ -135,6 +178,49 @@ function shuffleArray<T>(array: T[]): T[] {
     return shuffled;
 }
 
+// Function to get user choice for market selection
+async function getUserMarketChoice(): Promise<'all' | 'specific'> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('🎯 Choose market selection:\n1. All markets (random activity)\n2. Specific markets\nEnter choice (1 or 2): ', (answer) => {
+            rl.close();
+            const choice = answer.trim();
+            if (choice === '1') {
+                resolve('all');
+            } else if (choice === '2') {
+                resolve('specific');
+            } else {
+                console.log('❌ Invalid choice. Defaulting to all markets.');
+                resolve('all');
+            }
+        });
+    });
+}
+
+// Function to get specific market IDs from user
+async function getSpecificMarketIds(): Promise<number[]> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('🎯 Enter market IDs (comma-separated, e.g., 645,646,647): ', (answer) => {
+            rl.close();
+            const marketIds = answer.trim().split(',').map(id => parseInt(id.trim())).filter(id => !isNaN(id) && id > 0);
+            if (marketIds.length === 0) {
+                console.log('❌ No valid market IDs provided. Exiting.');
+                process.exit(1);
+            }
+            resolve(marketIds);
+        });
+    });
+}
+
 async function humanLikeDelay(min: number, max: number, reason: string) {
     if (!BOT_CONFIG.HUMAN_LIKE_DELAYS) return;
     
@@ -145,7 +231,7 @@ async function humanLikeDelay(min: number, max: number, reason: string) {
 
 // Wallet management
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
-    const walletNumbers = [3, 4, 5];
+    const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
     const randomWalletNumber = getRandomElement(walletNumbers);
     
     const walletConfig = {
@@ -158,7 +244,7 @@ function getRandomWallet(): { walletNumber: number, walletConfig: any } {
 }
 
 function validateWalletConfig(): boolean {
-    const requiredWallets = [3, 4, 5];
+    const requiredWallets = [3, 4, 5, 6, 7, 8, 9, 10, 11];
     const missingWallets = [];
     
     for (const walletNum of requiredWallets) {
@@ -174,7 +260,7 @@ function validateWalletConfig(): boolean {
         return false;
     }
     
-    console.log(`✅ All three wallets (3, 4, 5) are properly configured`);
+    console.log(`✅ All nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11) are properly configured`);
     return true;
 }
 
@@ -183,14 +269,34 @@ async function getLatestMarketId(): Promise<number> {
     try {
         console.log('🔍 Automatically fetching latest market ID...');
         
-        // Use a more conservative approach - start with a known working market ID
-        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
-        console.log(`✅ Using configured market ID: ${fallbackId}`);
+        // Fetch markets from the API
+        const response = await axios.get(EVENT_API_URL, { 
+            timeout: 30000 // 30 second timeout
+        });
+        
+        if (response.data && response.data.data && response.data.data.length > 0) {
+            // Find the highest market ID (latest market)
+            const marketIds = response.data.data.map((market: any) => parseInt(market.id));
+            const highestId = Math.max(...marketIds);
+            console.log(`✅ Latest market ID found: ${highestId}`);
+            
+            // If 687 exists and is higher or equal, use it
+            if (marketIds.includes(687)) {
+                console.log(`🎯 Found target market 687, using it as latest`);
+                return 687;
+            }
+            
+            return highestId;
+        }
+        
+        // Fallback to environment variable or default
+        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '687');
+        console.log(`⚠️  Could not fetch from API, using fallback: ${fallbackId}`);
         return fallbackId;
         
     } catch (error: any) {
-        console.log(`⚠️  Error in market ID logic: ${error.message}`);
-        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
+        console.log(`⚠️  Error fetching latest market ID: ${error.message}`);
+        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '687');
         console.log(`   Using fallback: ${fallbackId}`);
         return fallbackId;
     }
@@ -198,19 +304,20 @@ async function getLatestMarketId(): Promise<number> {
 
 async function fetchMarketById(marketId: number) {
     try {
-        // Use the same approach as the working implementations
-        const response = await axios.get(EVENT_API_URL, { params: { id: marketId } });
+        // Use mainnet API format
+        const response = await axios.get(`${EVENT_API_URL}/${marketId}`, { 
+            timeout: 30000 // 30 second timeout
+        });
         const event = response.data;
         
-        if (!event || !Array.isArray(event.markets) || event.markets.length === 0) {
+        if (!event || !event.data || !Array.isArray(event.data.markets) || event.data.markets.length === 0) {
             return null;
         }
         
         // Find the market with matching ID, or use the first market from the event
-        // This is the same logic used in market-spread-checker.ts
-        const market = event.markets.find((m: any) => m.id === marketId) || event.markets[0];
+        const market = event.data.markets.find((m: any) => m.id === marketId) || event.data.markets[0];
         
-        // Check if the market is active (same logic as fetchActiveMarkets)
+        // Check if the market is active
         if (market) {
             const activeLike = ['active', 'open', 'trading', 'live'];
             const inactiveLike = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
@@ -227,10 +334,6 @@ async function fetchMarketById(marketId: number) {
                 console.log(`   ⏭️  Market ${marketId} has unknown status (${status}), skipping...`);
                 return null;
             }
-            
-            // Additional checks for resolved markets - only filter by actual status, not title keywords
-            // The title-based filtering was too aggressive and was incorrectly filtering out active markets
-            // We'll rely on the actual market status and order book activity instead
             
             // Only log the title for debugging, but don't filter based on it
             if (market.title) {
@@ -274,11 +377,9 @@ async function loginAndGetAccessToken(privateKey: string): Promise<string> {
     
     while (retries < maxRetries) {
         try {
-            const response = await axios.get(CONFIG[NETWORK].ACCOUNT_API_URL, { 
-                params: { privateKey },
-                timeout: 10000
-            });
-            return response.data.accessToken;
+            // Use ForkastSDK for authentication instead of HTTP calls
+            const loginResponse = await sdk.getAccountService().loginWithPrivateKey(privateKey);
+            return loginResponse.accessToken;
         } catch (error: any) {
             if (error?.response?.status === 429) {
                 const delay = baseDelay * Math.pow(2, retries);
@@ -296,17 +397,28 @@ async function loginAndGetAccessToken(privateKey: string): Promise<string> {
 
 async function placeOrder(orderBody: any): Promise<any> {
     try {
-        console.log(`   🔍 Placing order: Market ${orderBody.marketId}, Price $${orderBody.price}, Amount ${orderBody.amount}, Side ${orderBody.side}`);
+        // Suppress console output during SDK operations
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+        console.log = () => {};
+        console.error = () => {};
         
-        const response = await axios.post(CONFIG[NETWORK].ORDER_API_URL, orderBody, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${orderBody.accessToken}`
-            },
-            timeout: 15000
-        });
-        console.log(`   ✅ Order placed successfully:`, response.data);
-        return { success: true, data: response.data };
+        // Use ForkastSDK for order placement instead of HTTP calls
+        const response = await sdk.getOrderService().placeSingleOrder(
+            orderBody.marketId,
+            orderBody.token,
+            orderBody.account,
+            orderBody.price,
+            orderBody.amount,
+            orderBody.side,
+            orderBody.accessToken
+        );
+        
+        // Restore console output
+        console.log = originalConsoleLog;
+        console.error = originalConsoleError;
+        
+        return { success: true, data: response };
     } catch (error: any) {
         if (error.response?.data?.message?.includes('salt or signature already exists')) {
             console.log('   ⚠️  Duplicate order detected, skipping...');
@@ -330,39 +442,53 @@ async function placeOrder(orderBody: any): Promise<any> {
     }
 }
 
-async function arbitrageBot() {
-    // Main arbitrage logic will be implemented here
-    console.log('🚀 Starting arbitrage bot...');
-}
+
 // Main arbitrage logic
-async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): Promise<boolean> {
+async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, isUserSelectedMarket: boolean = false): Promise<boolean> {
     try {
-        // Fetch order books for YES and NO outcomes
-        const yesOrderBook = await fetchOrderBook(market.id, 1); // YES outcome
-        const noOrderBook = await fetchOrderBook(market.id, 0);  // NO outcome
+        // Determine if this is a YES/NO market or team-based market
+        const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
+        const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
         
-        if (!yesOrderBook.asks || !yesOrderBook.bids || !noOrderBook.asks || !noOrderBook.bids) {
+        let outcome1, outcome2, outcome1OrderBook, outcome2OrderBook;
+        
+        if (yesOutcome && noOutcome) {
+            // YES/NO market
+            outcome1 = yesOutcome;
+            outcome2 = noOutcome;
+            outcome1OrderBook = await fetchOrderBook(market.id, 1); // YES outcome
+            outcome2OrderBook = await fetchOrderBook(market.id, 0);  // NO outcome
+        } else {
+            // Team-based market (NFL, etc.)
+            outcome1 = market.outcomes[0];
+            outcome2 = market.outcomes[1];
+            outcome1OrderBook = await fetchOrderBook(market.id, outcome1.id);
+            outcome2OrderBook = await fetchOrderBook(market.id, outcome2.id);
+        }
+        
+        if (!outcome1OrderBook.asks || !outcome1OrderBook.bids || !outcome2OrderBook.asks || !outcome2OrderBook.bids) {
             logger.log(`   ⏭️  Skipping market ${market.id} - insufficient order book data`);
             return false;
         }
 
-        const yesBestAsk = parseFloat(yesOrderBook.asks[0]?.price || '0.5');
-        const yesBestBid = parseFloat(yesOrderBook.bids[0]?.price || '0.5');
-        const noBestAsk = parseFloat(noOrderBook.asks[0]?.price || '0.5');
-        const noBestBid = parseFloat(noOrderBook.bids[0]?.price || '0.5');
+        const outcome1BestAsk = parseFloat(outcome1OrderBook.asks[0]?.price || '0.5');
+        const outcome1BestBid = parseFloat(outcome1OrderBook.bids[0]?.price || '0.5');
+        const outcome2BestAsk = parseFloat(outcome2OrderBook.asks[0]?.price || '0.5');
+        const outcome2BestBid = parseFloat(outcome2OrderBook.bids[0]?.price || '0.5');
 
-        // Calculate spread
-        const yesSpread = yesBestAsk - yesBestBid;
-        const noSpread = noBestAsk - noBestBid;
-        const totalSpread = yesSpread + noSpread;
+        // Calculate spread - use the overall market spread, not sum of individual spreads
+        const outcome1Spread = outcome1BestAsk - outcome1BestBid;
+        const outcome2Spread = outcome2BestAsk - outcome2BestBid;
+        // Total spread should be the maximum of the two spreads, not the sum
+        const totalSpread = Math.max(outcome1Spread, outcome2Spread);
 
         logger.log(`   📊 Market ${market.id} Analysis:`, {
-            yesBestBid,
-            yesBestAsk,
-            yesSpread: yesSpread.toFixed(4),
-            noBestBid,
-            noBestAsk,
-            noSpread: noSpread.toFixed(4),
+            outcome1BestBid,
+            outcome1BestAsk,
+            outcome1Spread: outcome1Spread.toFixed(4),
+            outcome2BestBid,
+            outcome2BestAsk,
+            outcome2Spread: outcome2Spread.toFixed(4),
             totalSpread: totalSpread.toFixed(4)
         });
 
@@ -372,130 +498,130 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger): P
         }
 
         // Check for very high prices (>= 0.95)
-        if (yesBestBid >= 0.95 || yesBestAsk >= 0.95 || noBestBid >= 0.95 || noBestAsk >= 0.95) {
+        if (outcome1BestBid >= 0.95 || outcome1BestAsk >= 0.95 || outcome2BestBid >= 0.95 || outcome2BestAsk >= 0.95) {
             logger.log(`   ⚠️  Market ${market.id} has very high prices (≥ $0.95), skipping`);
             return false;
         }
 
         // Check for very low prices (<= 0.05)
-        if (yesBestBid <= 0.05 || yesBestAsk <= 0.05 || noBestBid <= 0.05 || noBestAsk <= 0.05) {
+        if (outcome1BestBid <= 0.05 || outcome1BestAsk <= 0.05 || outcome2BestBid <= 0.05 || outcome2BestAsk <= 0.05) {
             logger.log(`   ⚠️  Market ${market.id} has very low prices (≤ $0.05), skipping`);
             return false;
         }
 
-        // Select two random wallets for this market
-        const walletNumbers = [3, 4, 5];
-        const shuffledWallets = shuffleArray([...walletNumbers]);
-        const wallet1Number = shuffledWallets[0];
-        const wallet2Number = shuffledWallets[1];
+        // Select multiple random wallets for this market (3-4 trades)
+        const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+        const numTrades = Math.floor(Math.random() * 2) + 3; // 3-4 trades
+        
+        logger.log(`   🎲 Placing ${numTrades} trades using random wallet pairs`);
 
-        logger.log(`   🎲 Selected wallets for market ${market.id}: Wallet ${wallet1Number} and Wallet ${wallet2Number}`);
-
-        // Get access tokens for both wallets
-        const wallet1Config = {
-            WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${wallet1Number}`],
-            PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${wallet1Number}`],
-            PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${wallet1Number}`]
-        };
-
-        const wallet2Config = {
-            WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${wallet2Number}`],
-            PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${wallet2Number}`],
-            PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${wallet2Number}`]
-        };
-
-        const wallet1AccessToken = await loginAndGetAccessToken(wallet1Config.PRIVATE_KEY);
-        const wallet2AccessToken = await loginAndGetAccessToken(wallet2Config.PRIVATE_KEY);
-
-        // Strategy: Place YES order at best bid and NO order at complementary price
+        // Strategy: Place multiple orders at top of book with spread-based pricing
         let ordersPlaced = 0;
-        const orderAmount = getRandomElement(BOT_CONFIG.ORDER_AMOUNTS);
 
-        if (yesBestBid > 0.05 && yesBestBid < 0.95) {
-            // For tight spreads, place orders at best ask for immediate matching
-            // For wide spreads, place at best bid for better prices
-            const isTightSpread = totalSpread <= 0.02;
-            const yesPrice = isTightSpread ? yesBestAsk : yesBestBid;
-            const noPrice = parseFloat((1.00 - yesPrice).toFixed(4));
-            
-            if (isTightSpread) {
-                logger.log(`   🎯 Tight spread detected - placing orders at best ask for immediate matching`);
-            } else {
-                logger.log(`   🎯 Wide spread detected - placing orders at best bid for better prices`);
-            }
-
-            // Check if NO price is acceptable
-            if (noPrice > 0.05 && noPrice < 0.95) {
-                // For tight spreads, also place NO order at best ask for immediate matching
-                const noOrderPrice = isTightSpread ? noBestAsk : noPrice;
-                // Place YES order
-                const yesOrderBody = {
-                    marketId: market.id,
-                    token: market.outcomes.find((o: any) => o.title.toLowerCase() === 'yes'),
-                    account: {
-                        wallet: wallet1Config.WALLET_ADDRESS,
-                        private_key: wallet1Config.PRIVATE_KEY,
-                        proxy_wallet: wallet1Config.PROXY_WALLET,
-                        accessToken: wallet1AccessToken
-                    },
-                    price: yesPrice,
-                    amount: orderAmount,
-                    side: 0, // Buy
-                    accessToken: wallet1AccessToken
-                };
-
-                logger.log(`   📈 Wallet ${wallet1Number} placing YES order: ${orderAmount} shares at $${yesPrice.toFixed(4)}`);
-                const yesResult = await placeOrder(yesOrderBody);
-                if (yesResult && yesResult.success === true) {
-                    logger.log(`   ✅ YES order placed successfully`);
-                    ordersPlaced++;
-                } else {
-                    logger.log(`   ❌ Failed to place YES order: ${yesResult?.error || yesResult?.message || 'Unknown error'}`);
-                    // Continue with NO order even if YES fails
-                }
-
-                // Wait a bit before placing the NO order
-                await humanLikeDelay(1000, 3000, 'Processing YES order');
-
-                // Place NO order
-                const noOrderBody = {
-                    marketId: market.id,
-                    token: market.outcomes.find((o: any) => o.title.toLowerCase() === 'no'),
-                    account: {
-                        wallet: wallet2Config.WALLET_ADDRESS,
-                        private_key: wallet2Config.PRIVATE_KEY,
-                        proxy_wallet: wallet2Config.PROXY_WALLET,
-                        accessToken: wallet2AccessToken
-                    },
-                    price: noOrderPrice,
-                    amount: orderAmount,
-                    side: 0, // Buy
-                    accessToken: wallet2AccessToken
-                };
-
-                logger.log(`   📉 Wallet ${wallet2Number} placing NO order: ${orderAmount} shares at $${noOrderPrice.toFixed(4)}`);
-                const noResult = await placeOrder(noOrderBody);
-                if (noResult && noResult.success === true) {
-                    logger.log(`   ✅ NO order placed successfully`);
-                    ordersPlaced++;
-                } else {
-                    logger.log(`   ❌ Failed to place NO order: ${noResult?.error || noResult?.message || 'Unknown error'}`);
-                }
-
-                logger.log(`   🎯 Coordinated trade: YES at $${yesPrice.toFixed(4)} + NO at $${noOrderPrice.toFixed(4)} = $${(yesPrice + noOrderPrice).toFixed(4)}`);
-            } else {
-                logger.log(`   ⚠️  NO price ${noPrice.toFixed(4)} is outside acceptable range (0.05-0.95), skipping`);
-            }
+        // Always place orders regardless of spread - never skip any market
+        if (totalSpread > BOT_CONFIG.SPREAD_THRESHOLD) {
+            logger.log(`   🎯 Spread ${totalSpread.toFixed(4)} > ${BOT_CONFIG.SPREAD_THRESHOLD} - placing ${numTrades} trades`);
         } else {
-            logger.log(`   ⚠️  YES best bid ${yesBestBid.toFixed(4)} is outside acceptable range (0.05-0.95), skipping`);
+            logger.log(`   🎯 Market ${market.id} - placing orders despite tight spread (${totalSpread.toFixed(4)})`);
         }
+            
+            // Place multiple trades with completely random wallet selection for each trade
+            for (let i = 0; i < numTrades; i++) {
+                // Randomly select two different wallets for each trade
+                const availableWallets = [...walletNumbers];
+                const wallet1Number = getRandomElement(availableWallets);
+                availableWallets.splice(availableWallets.indexOf(wallet1Number), 1); // Remove first wallet
+                const wallet2Number = getRandomElement(availableWallets); // Select from remaining wallets
+                // Random order amounts for each trade
+                const orderAmount = getRandomElement(BOT_CONFIG.ORDER_AMOUNTS);
+                const orderAmount2 = getRandomElement(BOT_CONFIG.ORDER_AMOUNTS); // Different amount for NO order
+
+                // Get wallet configurations
+                const wallet1Config = {
+                    WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${wallet1Number}`],
+                    PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${wallet1Number}`],
+                    PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${wallet1Number}`]
+                };
+
+                const wallet2Config = {
+                    WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${wallet2Number}`],
+                    PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${wallet2Number}`],
+                    PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${wallet2Number}`]
+                };
+
+                const wallet1AccessToken = await loginAndGetAccessToken(wallet1Config.PRIVATE_KEY);
+                const wallet2AccessToken = await loginAndGetAccessToken(wallet2Config.PRIVATE_KEY);
+
+                // Calculate prices for this trade
+                const outcome1Price = parseFloat((outcome1BestBid + 0.01).toFixed(4));
+                const outcome2Price = parseFloat((1.00 - outcome1Price).toFixed(4));
+
+                // Check if prices are acceptable
+                if (outcome1Price > 0.05 && outcome1Price < 0.95 && outcome2Price > 0.05 && outcome2Price < 0.95) {
+                    logger.log(`   📈 Trade ${i + 1}: Wallet ${wallet1Number} placing ${outcome1.title} order: ${orderAmount} shares at $${outcome1Price}`);
+                    logger.log(`   🎲 Trade ${i + 1} wallet pair: ${wallet1Number} (${outcome1.title}) + ${wallet2Number} (${outcome2.title})`);
+                    
+                    // Place Outcome 1 order
+                    const outcome1OrderBody = {
+                        marketId: market.id,
+                        token: outcome1,
+                        account: {
+                            wallet: wallet1Config.WALLET_ADDRESS,
+                            private_key: wallet1Config.PRIVATE_KEY,
+                            proxy_wallet: wallet1Config.PROXY_WALLET,
+                            accessToken: wallet1AccessToken
+                        },
+                        price: outcome1Price,
+                        amount: orderAmount,
+                        side: 0, // Buy
+                        accessToken: wallet1AccessToken
+                    };
+
+                    const outcome1Result = await placeOrder(outcome1OrderBody);
+                    if (outcome1Result && outcome1Result.success === true) {
+                        ordersPlaced++;
+                    }
+
+                    // Wait a bit before placing the Outcome 2 order
+                    await humanLikeDelay(1000, 3000, `Processing ${outcome1.title} order`);
+
+                    logger.log(`   📉 Trade ${i + 1}: Wallet ${wallet2Number} placing ${outcome2.title} order: ${orderAmount2} shares at $${outcome2Price}`);
+
+                    // Place Outcome 2 order
+                    const outcome2OrderBody = {
+                        marketId: market.id,
+                        token: outcome2,
+                        account: {
+                            wallet: wallet2Config.WALLET_ADDRESS,
+                            private_key: wallet2Config.PRIVATE_KEY,
+                            proxy_wallet: wallet2Config.PROXY_WALLET,
+                            accessToken: wallet2AccessToken
+                        },
+                        price: outcome2Price,
+                        amount: orderAmount2,
+                        side: 0, // Buy
+                        accessToken: wallet2AccessToken
+                    };
+
+                    const outcome2Result = await placeOrder(outcome2OrderBody);
+                    if (outcome2Result && outcome2Result.success === true) {
+                        ordersPlaced++;
+                    }
+
+                    logger.log(`   🎯 Trade ${i + 1} complete: ${outcome1.title} at $${outcome1Price} + ${outcome2.title} at $${outcome2Price} = $${(outcome1Price + outcome2Price).toFixed(4)}`);
+
+                    // Wait between trades
+                    if (i < numTrades - 1) {
+                        await humanLikeDelay(2000, 5000, 'Between trades');
+                    }
+                } else {
+                    logger.log(`   ⚠️  Trade ${i + 1}: Prices out of range`);
+                }
+            }
+        // Always place orders - never skip any market regardless of spread
 
         if (ordersPlaced > 0) {
-            if (ordersPlaced === 2) {
-                logger.log(`   ✅ Successfully placed 2 coordinated orders on market ${market.id}`);
-            } else if (ordersPlaced === 1) {
-                logger.log(`   ⚠️  Partially successful: placed ${ordersPlaced} order on market ${market.id}`);
-            }
+            logger.log(`   ✅ Successfully placed ${ordersPlaced} orders on market ${market.id} (${numTrades} trades)`);
             return true;
         }
 
@@ -511,8 +637,13 @@ async function arbitrageBot() {
     const logger = new ArbitrageLogger();
     const sessionStartTime = logger.getSessionStartTime();
     
+    // Set 1-hour timeout
+    const SESSION_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
+    const sessionEndTime = new Date(sessionStartTime.getTime() + SESSION_DURATION);
+    
     console.log('🚀 Starting Arbitrage Bot with Human-Like Behavior');
     console.log(`📅 Session started at: ${sessionStartTime.toLocaleString()}`);
+    console.log(`⏰ Session will end at: ${sessionEndTime.toLocaleString()} (1 hour duration)`);
     console.log(`🌐 Network: ${NETWORK}`);
     console.log(`🎯 Target: Last ${BOT_CONFIG.MAX_MARKETS_TO_CHECK} markets`);
     console.log(`💰 Strategy: Coordinated trades between 2 random wallets per market`);
@@ -527,76 +658,124 @@ async function arbitrageBot() {
         return;
     }
 
-    // Get latest market ID
-    console.log('🔍 Discovering latest active market ID...');
-    const latestMarketId = await getLatestMarketId();
-    console.log(`🔍 Latest market ID: ${latestMarketId}`);
-    console.log(`📋 Will check markets from ${latestMarketId} down to ${Math.max(1, latestMarketId - BOT_CONFIG.MAX_MARKETS_TO_CHECK + 1)}`);
+    // Get user choice for market selection
+    const marketChoice = await getUserMarketChoice();
     console.log('');
 
     let marketsProcessed = 0;
     let marketsWithOrders = 0;
     let consecutiveErrors = 0;
     const maxConsecutiveErrors = 5;
+    let activeMarkets: number[] = [];
 
-    // Generate list of markets to check (in descending order)
-    const marketIds = Array.from({ length: BOT_CONFIG.MAX_MARKETS_TO_CHECK }, (_, i) => latestMarketId - i)
-        .filter(id => id > 0); // Ensure no negative IDs
-    
-    // ALWAYS shuffle markets for completely random processing - never process in order
-    shuffleArray(marketIds);
-    console.log('🎲 Random market selection enabled - processing markets in COMPLETELY RANDOM order');
-    console.log(`📊 Sample of shuffled market IDs: ${marketIds.slice(0, 10).join(', ')}...`);
-    console.log('');
+    if (marketChoice === 'all') {
+        // Get latest market ID - prioritize 667 if available
+        console.log('🔍 Discovering latest active market ID...');
+        const latestMarketId = await getLatestMarketId();
+        console.log(`🔍 Latest market ID: ${latestMarketId}`);
+        
+        // Always use 687 for option 1 (all markets)
+        console.log(`🎯 Using market 687 as the starting point`);
+        console.log(`📋 Will check markets from 687 down to ${Math.max(1, 687 - BOT_CONFIG.MAX_MARKETS_TO_CHECK + 1)}`);
+        console.log('');
 
-    console.log(`🔍 Fetching active markets from ${marketIds.length} potential markets...`);
-    console.log(`📊 This may take a few minutes as we check each market's status...`);
-    console.log('');
-    
-    // First, fetch and filter only ACTIVE markets
-    const activeMarkets: number[] = [];
-    let marketsChecked = 0;
-    
-    for (const marketId of marketIds) {
-        try {
-            const market = await fetchMarketById(marketId);
-            if (market && market.status === 'ACTIVE') {
-                activeMarkets.push(marketId);
-                console.log(`   ✅ Market ${marketId} is ACTIVE - added to processing queue`);
+        // Generate list of markets to check (in descending order)
+        // Always start from 687 for option 1 (all markets)
+        const startingMarketId = 687;
+        console.log(`🎯 Starting from market ${startingMarketId} as requested`);
+        const marketIds = Array.from({ length: BOT_CONFIG.MAX_MARKETS_TO_CHECK }, (_, i) => startingMarketId - i)
+            .filter(id => id > 0); // Ensure no negative IDs
+        
+        // ALWAYS shuffle markets for completely random processing - never process in order
+        shuffleArray(marketIds);
+        console.log('🎲 Random market selection enabled - processing markets in COMPLETELY RANDOM order');
+        console.log(`📊 Sample of shuffled market IDs: ${marketIds.slice(0, 10).join(', ')}...`);
+        console.log('');
+
+        console.log(`🔍 Fetching active markets from ${marketIds.length} potential markets...`);
+        console.log(`📊 This may take a few minutes as we check each market's status...`);
+        console.log('');
+        
+        // First, fetch and filter only ACTIVE markets
+        let marketsChecked = 0;
+        
+        for (const marketId of marketIds) {
+            try {
+                const market = await fetchMarketById(marketId);
+                if (market && market.status === 'ACTIVE') {
+                    activeMarkets.push(marketId);
+                    console.log(`   ✅ Market ${marketId} is ACTIVE - added to processing queue`);
+                }
+            
+                marketsChecked++;
+                if (marketsChecked % 50 === 0) {
+                    console.log(`   📊 Progress: ${marketsChecked}/${marketIds.length} markets checked, ${activeMarkets.length} active found`);
+                }
+                
+                // Small delay between market checks to avoid rate limiting
+                await new Promise(resolve => setTimeout(resolve, 100));
+                
+            } catch (error) {
+                // Skip markets that can't be fetched
+                continue;
             }
-            
-            marketsChecked++;
-            if (marketsChecked % 50 === 0) {
-                console.log(`   📊 Progress: ${marketsChecked}/${marketIds.length} markets checked, ${activeMarkets.length} active found`);
-            }
-            
-            // Small delay between market checks to avoid rate limiting
-            await new Promise(resolve => setTimeout(resolve, 100));
-            
-        } catch (error) {
-            // Skip markets that can't be fetched
-            continue;
         }
+        
+        console.log(`\n🎯 Found ${activeMarkets.length} active markets out of ${marketsChecked} checked`);
+        
+        if (activeMarkets.length === 0) {
+            console.log('❌ No active markets found. Exiting...');
+            return;
+        }
+        
+        // NOW shuffle only the ACTIVE markets for completely random processing
+        shuffleArray(activeMarkets);
+        console.log('🎲 Random market selection enabled - processing ONLY ACTIVE markets in COMPLETELY RANDOM order');
+        console.log(`📊 Sample of shuffled ACTIVE market IDs: ${activeMarkets.slice(0, 10).join(', ')}...`);
+        console.log('');
+
+    } else {
+        // Specific markets mode
+        const specificMarketIds = await getSpecificMarketIds();
+        console.log(`🎯 Processing specific markets: ${specificMarketIds.join(', ')}`);
+        
+        // Validate and filter active markets from the specific list
+        for (const marketId of specificMarketIds) {
+            try {
+                const market = await fetchMarketById(marketId);
+                if (market && market.status === 'ACTIVE') {
+                    activeMarkets.push(marketId);
+                    console.log(`   ✅ Market ${marketId} is ACTIVE`);
+                } else {
+                    console.log(`   ⚠️  Market ${marketId} is not active (${market?.status || 'not found'})`);
+                }
+            } catch (error) {
+                console.log(`   ❌ Error fetching market ${marketId}`);
+            }
+        }
+        
+        if (activeMarkets.length === 0) {
+            console.log('❌ No active markets found in the specified list. Exiting...');
+            return;
+        }
+        
+        console.log(`✅ Found ${activeMarkets.length} active markets from specified list`);
     }
-    
-    console.log(`\n🎯 Found ${activeMarkets.length} active markets out of ${marketsChecked} checked`);
-    
-    if (activeMarkets.length === 0) {
-        console.log('❌ No active markets found. Exiting...');
-        return;
-    }
-    
-    // NOW shuffle only the ACTIVE markets for completely random processing
-    shuffleArray(activeMarkets);
-    console.log('🎲 Random market selection enabled - processing ONLY ACTIVE markets in COMPLETELY RANDOM order');
-    console.log(`📊 Sample of shuffled ACTIVE market IDs: ${activeMarkets.slice(0, 10).join(', ')}...`);
-    console.log('');
 
     // Create a copy of active markets for random selection
     const availableMarkets = [...activeMarkets];
 
     // Process markets in RANDOM order by picking random indices
     while (availableMarkets.length > 0 && consecutiveErrors < maxConsecutiveErrors) {
+        // Check if session time has expired (1 hour timeout)
+        const currentTime = new Date();
+        if (currentTime.getTime() >= sessionEndTime.getTime()) {
+            console.log(`\n⏰ Session timeout reached (1 hour duration). Stopping bot...`);
+            console.log(`📅 Session started at: ${sessionStartTime.toLocaleString()}`);
+            console.log(`📅 Session ended at: ${currentTime.toLocaleString()}`);
+            break;
+        }
+        
         // Pick a RANDOM market from the available ones
         const randomIndex = Math.floor(Math.random() * availableMarkets.length);
         const marketId = availableMarkets[randomIndex];
@@ -608,11 +787,11 @@ async function arbitrageBot() {
             console.log(`\n🔍 Processing Market ${marketId} (${marketsProcessed + 1}/${activeMarkets.length})`);
             console.log(`   🎲 Randomly selected from ${availableMarkets.length + 1} available markets`);
             
-            // Add random market skipping for more human-like behavior (5% chance)
-            if (Math.random() < 0.05) {
-                console.log(`   🎲 Randomly skipping market ${marketId} for human-like behavior`);
-                continue;
-            }
+            // Disable random market skipping to ensure orders are placed
+            // if (Math.random() < 0.05) {
+            //     console.log(`   🎲 Randomly skipping market ${marketId} for human-like behavior`);
+            //     continue;
+            // }
             
             // Fetch market data
             const market = await fetchMarketById(marketId);
@@ -627,20 +806,37 @@ async function arbitrageBot() {
                 continue;
             }
 
+            // Check if this is a YES/NO market or a team-based market (NFL, etc.)
             const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
             const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
             
+            // For team-based markets (NFL), we need two team outcomes
+            const team1Outcome = market.outcomes[0];
+            const team2Outcome = market.outcomes[1];
+            
             if (!yesOutcome || !noOutcome) {
-                console.log(`   ⏭️  Market ${marketId} missing YES/NO outcomes, skipping`);
-                continue;
+                // This is likely a team-based market (NFL, etc.)
+                if (!team1Outcome || !team2Outcome || market.outcomes.length !== 2) {
+                    console.log(`   ⏭️  Market ${marketId} has invalid outcome structure, skipping`);
+                    continue;
+                }
+                
+                console.log(`   🏈 NFL/Team Market: ${team1Outcome.title} vs ${team2Outcome.title}`);
+            } else {
+                console.log(`   📊 YES/NO Market: ${market.title}`);
             }
 
             console.log(`   📝 Market: ${market.title}`);
             console.log(`   📊 Status: ${market.status}`);
-            console.log(`   🎯 Outcomes: YES (${yesOutcome.id}), NO (${noOutcome.id})`);
+            
+            if (yesOutcome && noOutcome) {
+                console.log(`   🎯 Outcomes: YES (${yesOutcome.id}), NO (${noOutcome.id})`);
+            } else {
+                console.log(`   🎯 Outcomes: ${team1Outcome.title} (${team1Outcome.id}), ${team2Outcome.title} (${team2Outcome.id})`);
+            }
 
-            // Execute arbitrage strategy
-            const ordersPlaced = await executeArbitrageStrategy(market, logger);
+            // Execute arbitrage strategy - pass isUserSelectedMarket flag for specific markets
+            const ordersPlaced = await executeArbitrageStrategy(market, logger, marketChoice === 'specific');
             if (ordersPlaced) {
                 marketsWithOrders++;
                 consecutiveErrors = 0; // Reset error counter on success
@@ -677,8 +873,8 @@ async function arbitrageBot() {
     }
 
     // Session summary
-    const sessionEndTime = new Date();
-    const sessionDuration = sessionEndTime.getTime() - sessionStartTime.getTime();
+    const actualSessionEndTime = new Date();
+    const sessionDuration = actualSessionEndTime.getTime() - sessionStartTime.getTime();
     const sessionMinutes = Math.floor(sessionDuration / 60000);
     const sessionSeconds = Math.floor((sessionDuration % 60000) / 1000);
 
@@ -686,7 +882,7 @@ async function arbitrageBot() {
     console.log('🎯 ARBITRAGE BOT SESSION COMPLETE');
     console.log('='.repeat(60));
     console.log(`📅 Session Start: ${sessionStartTime.toLocaleString()}`);
-    console.log(`📅 Session End: ${sessionEndTime.toLocaleString()}`);
+    console.log(`📅 Session End: ${actualSessionEndTime.toLocaleString()}`);
     console.log(`⏱️  Duration: ${sessionMinutes}m ${sessionSeconds}s`);
     console.log(`🔍 Markets Processed: ${marketsProcessed}/${activeMarkets.length}`);
     console.log(`📈 Markets with Orders: ${marketsWithOrders}`);
@@ -697,7 +893,7 @@ async function arbitrageBot() {
 
     logger.log('Session completed', {
         sessionStartTime: sessionStartTime.toISOString(),
-        sessionEndTime: sessionEndTime.toISOString(),
+        sessionEndTime: actualSessionEndTime.toISOString(),
         sessionDuration: sessionDuration,
         marketsProcessed,
         marketsWithOrders,

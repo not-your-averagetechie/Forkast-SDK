@@ -1,0 +1,130 @@
+[
+  {
+    "timestamp": "2025-09-04T14:22:05.817Z",
+    "message": "   📊 Using market prices for spread calculation: 0.85 - 0.15 = 0.7000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:05.818Z",
+    "message": "   📊 Market 1031 Analysis:",
+    "data": {
+      "outcome1BestBid": "0.5000",
+      "outcome1BestAsk": "0.2000",
+      "outcome1Spread": "0.0000",
+      "outcome2BestBid": "0.5000",
+      "outcome2BestAsk": "0.2000",
+      "outcome2Spread": "0.0000",
+      "totalSpread": "0.7000",
+      "spreadType": "bid-ask"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T14:22:05.818Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:05.818Z",
+    "message": "   🎯 Spread 0.7000 > 0.02 - placing 4 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:06.274Z",
+    "message": "   📈 Trade 1: Wallet 10 placing Philadelphia Eagles order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:06.274Z",
+    "message": "   🎲 Trade 1 wallet pair: 10 (Philadelphia Eagles) + 4 (Dallas Cowboys)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:09.791Z",
+    "message": "   📉 Trade 1: Wallet 4 placing Dallas Cowboys order: 5 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:11.302Z",
+    "message": "   🎯 Trade 1 complete: Philadelphia Eagles at $0.19 + Dallas Cowboys at $0.19 = $0.3800",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:15.439Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Philadelphia Eagles order: 1 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:15.440Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Philadelphia Eagles) + 8 (Dallas Cowboys)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:18.324Z",
+    "message": "   📉 Trade 2: Wallet 8 placing Dallas Cowboys order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:19.834Z",
+    "message": "   🎯 Trade 2 complete: Philadelphia Eagles at $0.19 + Dallas Cowboys at $0.19 = $0.3800",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:25.111Z",
+    "message": "   📈 Trade 3: Wallet 11 placing Philadelphia Eagles order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:25.112Z",
+    "message": "   🎲 Trade 3 wallet pair: 11 (Philadelphia Eagles) + 5 (Dallas Cowboys)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:27.358Z",
+    "message": "   📉 Trade 3: Wallet 5 placing Dallas Cowboys order: 3 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:28.876Z",
+    "message": "   🎯 Trade 3 complete: Philadelphia Eagles at $0.19 + Dallas Cowboys at $0.19 = $0.3800",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:32.351Z",
+    "message": "   📈 Trade 4: Wallet 8 placing Philadelphia Eagles order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:32.352Z",
+    "message": "   🎲 Trade 4 wallet pair: 8 (Philadelphia Eagles) + 9 (Dallas Cowboys)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:36.108Z",
+    "message": "   📉 Trade 4: Wallet 9 placing Dallas Cowboys order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:37.593Z",
+    "message": "   🎯 Trade 4 complete: Philadelphia Eagles at $0.19 + Dallas Cowboys at $0.19 = $0.3800",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:37.593Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1031 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:22:37.593Z",
+    "message": "Session completed",
+    "data": {
+      "sessionStartTime": "2025-09-04T14:22:00.720Z",
+      "sessionEndTime": "2025-09-04T14:22:37.593Z",
+      "sessionDuration": 36873,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

@@ -22,7 +22,25 @@ const CONFIG = {
         PROXY_WALLET_4: process.env.TESTNET_PROXY_WALLET_4,
         WALLET_ADDRESS_5: process.env.TESTNET_WALLET_ADDRESS_5,
         PRIVATE_KEY_5: process.env.TESTNET_PRIVATE_KEY_5,
-        PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5
+        PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.TESTNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.TESTNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.TESTNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.TESTNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.TESTNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.TESTNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.TESTNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.TESTNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.TESTNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_9: process.env.TESTNET_WALLET_ADDRESS_9,
+        PRIVATE_KEY_9: process.env.TESTNET_PRIVATE_KEY_9,
+        PROXY_WALLET_9: process.env.TESTNET_PROXY_WALLET_9,
+        WALLET_ADDRESS_10: process.env.TESTNET_WALLET_ADDRESS_10,
+        PRIVATE_KEY_10: process.env.TESTNET_PRIVATE_KEY_10,
+        PROXY_WALLET_10: process.env.TESTNET_PROXY_WALLET_10,
+        WALLET_ADDRESS_11: process.env.TESTNET_WALLET_ADDRESS_11,
+        PRIVATE_KEY_11: process.env.TESTNET_PRIVATE_KEY_11,
+        PROXY_WALLET_11: process.env.TESTNET_PROXY_WALLET_11
     },
     mainnet: {
         EVENT_API_URL: process.env.MAINNET_MARKET_API_URL,
@@ -37,7 +55,25 @@ const CONFIG = {
         PROXY_WALLET_4: process.env.MAINNET_PROXY_WALLET_4,
         WALLET_ADDRESS_5: process.env.MAINNET_WALLET_ADDRESS_5,
         PRIVATE_KEY_5: process.env.MAINNET_PRIVATE_KEY_5,
-        PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5
+        PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.MAINNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.MAINNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.MAINNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.MAINNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.MAINNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.MAINNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.MAINNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.MAINNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.MAINNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_9: process.env.MAINNET_WALLET_ADDRESS_9,
+        PRIVATE_KEY_9: process.env.MAINNET_PRIVATE_KEY_9,
+        PROXY_WALLET_9: process.env.MAINNET_PROXY_WALLET_9,
+        WALLET_ADDRESS_10: process.env.MAINNET_WALLET_ADDRESS_10,
+        PRIVATE_KEY_10: process.env.MAINNET_PRIVATE_KEY_10,
+        PROXY_WALLET_10: process.env.MAINNET_PROXY_WALLET_10,
+        WALLET_ADDRESS_11: process.env.MAINNET_WALLET_ADDRESS_11,
+        PRIVATE_KEY_11: process.env.MAINNET_PRIVATE_KEY_11,
+        PROXY_WALLET_11: process.env.MAINNET_PROXY_WALLET_11
     }
 };
 
@@ -48,9 +84,9 @@ const ORDER_BOOK_API_URL = CONFIG[NETWORK].ORDER_BOOK_API_URL;
 
 // Note: readline interface removed as it's no longer needed for user input
 
-// Function to randomly select a wallet from wallets 3, 4, and 5
+// Function to randomly select a wallet from wallets 3, 4, 5, 6, 7, 8, 9, 10, and 11
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
-    const walletNumbers = [3, 4, 5];
+    const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
     const randomWalletNumber = walletNumbers[Math.floor(Math.random() * walletNumbers.length)];
     
     const walletConfig = {
@@ -64,7 +100,7 @@ function getRandomWallet(): { walletNumber: number, walletConfig: any } {
 
 // Function to validate wallet configuration
 function validateWalletConfig(): boolean {
-    const requiredWallets = [3, 4, 5];
+    const requiredWallets = [3, 4, 5, 6, 7, 8, 9, 10, 11];
     const missingWallets = [];
     
     for (const walletNum of requiredWallets) {
@@ -86,7 +122,7 @@ function validateWalletConfig(): boolean {
         return false;
     }
     
-    console.log(`✅ All three wallets (3, 4, 5) are properly configured`);
+    console.log(`✅ All nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11) are properly configured`);
     return true;
 }
 
@@ -117,7 +153,7 @@ const ORDER_BOOK_CONFIG = {
     MIN_PRICE_GAP: 0.05, // Minimum price gap to fill (significant gaps only)
     MIN_ACCEPTABLE_PRICE: 0.06, // Minimum price we're willing to place orders at (avoid very low prices)
     MONITORING_INTERVAL: 3600000, // 1 hour between iterations (changed from 30 seconds)
-    MAX_MARKETS_TO_CHECK: 1000, // Check all available markets
+    MAX_MARKETS_TO_CHECK: 100, // Check all available markets
     MAX_RETRIES: 5, // Increased retry attempts for failed operations
     COOLDOWN_PERIOD: 15000, // 15 seconds cooldown after placing orders
     DELAY_BETWEEN_MARKETS: 20000, // 20 seconds delay between processing each market
@@ -692,10 +728,16 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
 
 async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnalysis, noAnalysis: OrderBookAnalysis, logger: OrderBookLogger) {
     try {
-        // Login all three wallets (3, 4, 5)
+        // Login all nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11)
         const wallet3AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_3);
         const wallet4AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_4);
         const wallet5AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_5);
+        const wallet6AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_6);
+        const wallet7AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_7);
+        const wallet8AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_8);
+        const wallet9AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_9);
+        const wallet10AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_10);
+        const wallet11AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_11);
         
         const wallet3Account = getAccount(
             CONFIG[NETWORK].WALLET_ADDRESS_3,
@@ -717,6 +759,48 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             CONFIG[NETWORK].PROXY_WALLET_5,
             wallet5AccessToken
         );
+        
+        const wallet6Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_6,
+            CONFIG[NETWORK].PRIVATE_KEY_6,
+            CONFIG[NETWORK].PROXY_WALLET_6,
+            wallet6AccessToken
+        );
+        
+        const wallet7Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_7,
+            CONFIG[NETWORK].PRIVATE_KEY_7,
+            CONFIG[NETWORK].PROXY_WALLET_7,
+            wallet7AccessToken
+        );
+        
+        const wallet8Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_8,
+            CONFIG[NETWORK].PRIVATE_KEY_8,
+            CONFIG[NETWORK].PROXY_WALLET_8,
+            wallet8AccessToken
+        );
+        
+        const wallet9Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_9,
+            CONFIG[NETWORK].PRIVATE_KEY_9,
+            CONFIG[NETWORK].PROXY_WALLET_9,
+            wallet9AccessToken
+        );
+        
+        const wallet10Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_10,
+            CONFIG[NETWORK].PRIVATE_KEY_10,
+            CONFIG[NETWORK].PROXY_WALLET_10,
+            wallet10AccessToken
+        );
+        
+        const wallet11Account = getAccount(
+            CONFIG[NETWORK].WALLET_ADDRESS_11,
+            CONFIG[NETWORK].PRIVATE_KEY_11,
+            CONFIG[NETWORK].PROXY_WALLET_11,
+            wallet11AccessToken
+        );
 
         // Fetch market to get outcomes
         // Note: marketId here is the event ID, we need to get the actual market
@@ -736,7 +820,7 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
 
         let totalOrdersPlaced = 0;
 
-        // Place YES orders (Random Wallet from 3, 4, 5)
+        // Place YES orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
         console.log(`\n📝 Placing YES orders for Market ${marketId}:`);
         for (const order of yesAnalysis.suggestedOrders) {
             // Randomly select a wallet for each YES order
@@ -745,7 +829,15 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
                 walletConfig.WALLET_ADDRESS,
                 walletConfig.PRIVATE_KEY,
                 walletConfig.PROXY_WALLET,
-                walletNumber === 3 ? wallet3AccessToken : walletNumber === 4 ? wallet4AccessToken : wallet5AccessToken
+                walletNumber === 3 ? wallet3AccessToken : 
+                walletNumber === 4 ? wallet4AccessToken : 
+                walletNumber === 5 ? wallet5AccessToken :
+                walletNumber === 6 ? wallet6AccessToken :
+                walletNumber === 7 ? wallet7AccessToken :
+                walletNumber === 8 ? wallet8AccessToken :
+                walletNumber === 9 ? wallet9AccessToken :
+                walletNumber === 10 ? wallet10AccessToken :
+                wallet11AccessToken
             );
             
             const orderBody = {
@@ -773,7 +865,7 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             await new Promise(res => setTimeout(res, 2000));
         }
 
-        // Place NO orders (Random Wallet from 3, 4, 5)
+        // Place NO orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
         console.log(`\n📝 Placing NO orders for Market ${marketId}:`);
         for (const order of noAnalysis.suggestedOrders) {
             // Randomly select a wallet for each NO order
@@ -782,7 +874,15 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
                 walletConfig.WALLET_ADDRESS,
                 walletConfig.PRIVATE_KEY,
                 walletConfig.PROXY_WALLET,
-                walletNumber === 3 ? wallet3AccessToken : walletNumber === 4 ? wallet4AccessToken : wallet5AccessToken
+                walletNumber === 3 ? wallet3AccessToken : 
+                walletNumber === 4 ? wallet4AccessToken : 
+                walletNumber === 5 ? wallet5AccessToken :
+                walletNumber === 6 ? wallet6AccessToken :
+                walletNumber === 7 ? wallet7AccessToken :
+                walletNumber === 8 ? wallet8AccessToken :
+                walletNumber === 9 ? wallet9AccessToken :
+                walletNumber === 10 ? wallet10AccessToken :
+                wallet11AccessToken
             );
             
             const orderBody = {

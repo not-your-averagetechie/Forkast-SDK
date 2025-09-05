@@ -1,0 +1,60 @@
+[
+  {
+    "timestamp": "2025-09-02T09:55:58.794Z",
+    "message": "   📊 Market 996 Analysis:",
+    "data": {
+      "yesBestBid": 0.1,
+      "yesBestAsk": 0.17,
+      "yesSpread": "0.0700",
+      "noBestBid": 0.83,
+      "noBestAsk": 0.9,
+      "noSpread": "0.0700",
+      "totalSpread": "0.1400"
+    }
+  },
+  {
+    "timestamp": "2025-09-02T09:55:58.794Z",
+    "message": "   🎲 Selected wallets for market 996: Wallet 7 and Wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:55:59.637Z",
+    "message": "   🎯 Spread 0.1400 > 0.01 - placing orders at top of book",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:55:59.638Z",
+    "message": "   📊 Pricing Strategy: YES at $0.11 (best bid + 0.01), NO at $0.89 (1 - YES price)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:55:59.639Z",
+    "message": "   📈 Wallet 7 placing YES order: 1 shares at $0.1100",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:56:00.637Z",
+    "message": "   ✅ YES order placed successfully",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:56:02.044Z",
+    "message": "   📉 Wallet 9 placing NO order: 1 shares at $0.8900",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:56:03.581Z",
+    "message": "   ✅ NO order placed successfully",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:56:03.581Z",
+    "message": "   🎯 Coordinated trade: YES at $0.1100 + NO at $0.8900 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T09:56:03.582Z",
+    "message": "   ✅ Successfully placed 2 coordinated orders on market 996",
+    "data": null
+  }
+]

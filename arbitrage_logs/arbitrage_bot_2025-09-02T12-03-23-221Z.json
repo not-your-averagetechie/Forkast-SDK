@@ -1,0 +1,89 @@
+[
+  {
+    "timestamp": "2025-09-02T12:03:28.357Z",
+    "message": "   📊 Market 1005 Analysis:",
+    "data": {
+      "yesBestBid": 0.49,
+      "yesBestAsk": 0.5,
+      "yesSpread": "0.0100",
+      "noBestBid": 0.5,
+      "noBestAsk": 0.51,
+      "noSpread": "0.0100",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-02T12:03:28.358Z",
+    "message": "   🎲 Placing 3 trades using wallets: 6, 11, 3, 4, 10, 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:28.359Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 3 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:28.997Z",
+    "message": "   📈 Trade 1: Wallet 6 placing YES order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:32.486Z",
+    "message": "   📉 Trade 1: Wallet 11 placing NO order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:34.172Z",
+    "message": "   🎯 Trade 1 complete: YES at $0.5 + NO at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:38.329Z",
+    "message": "   📈 Trade 2: Wallet 3 placing YES order: 4 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:44.116Z",
+    "message": "   📉 Trade 2: Wallet 4 placing NO order: 4 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:49.056Z",
+    "message": "   🎯 Trade 2 complete: YES at $0.5 + NO at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:53.710Z",
+    "message": "   📈 Trade 3: Wallet 10 placing YES order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:03:57.431Z",
+    "message": "   📉 Trade 3: Wallet 5 placing NO order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:04:02.013Z",
+    "message": "   🎯 Trade 3 complete: YES at $0.5 + NO at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:04:02.014Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1005 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T12:04:02.015Z",
+    "message": "Session completed",
+    "data": {
+      "sessionStartTime": "2025-09-02T12:03:23.221Z",
+      "sessionEndTime": "2025-09-02T12:04:02.014Z",
+      "sessionDuration": 38793,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

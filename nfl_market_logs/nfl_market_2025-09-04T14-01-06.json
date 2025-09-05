@@ -1,0 +1,13 @@
+{
+  "session_info": {
+    "start_time": "2025-09-04T14:01:06.557Z",
+    "network": "mainnet",
+    "market_type": "NFL",
+    "end_time": "2025-09-04T14:02:41.928Z"
+  },
+  "total_team1_spent": 55.71,
+  "total_team2_spent": 60.87,
+  "grand_total": 116.58,
+  "initial_team1_spent": 162,
+  "initial_team2_spent": 138
+}

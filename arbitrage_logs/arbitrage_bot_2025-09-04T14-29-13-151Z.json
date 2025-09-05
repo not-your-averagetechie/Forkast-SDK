@@ -1,0 +1,130 @@
+[
+  {
+    "timestamp": "2025-09-04T14:29:17.442Z",
+    "message": "   📊 Using market prices for spread calculation: 0.53 - 0.47 = 0.0600",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:17.442Z",
+    "message": "   📊 Market 1043 Analysis:",
+    "data": {
+      "outcome1BestBid": "0.5000",
+      "outcome1BestAsk": "0.4700",
+      "outcome1Spread": "0.0000",
+      "outcome2BestBid": "0.5000",
+      "outcome2BestAsk": "0.4700",
+      "outcome2Spread": "0.0000",
+      "totalSpread": "0.0600",
+      "spreadType": "bid-ask"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T14:29:17.443Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:17.443Z",
+    "message": "   🎯 Spread 0.0600 > 0.02 - placing 4 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:17.884Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Chicago Bears order: 5 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:17.885Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Chicago Bears) + 3 (Minnesota Vikings)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:21.598Z",
+    "message": "   📉 Trade 1: Wallet 3 placing Minnesota Vikings order: 4 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:22.583Z",
+    "message": "   🎯 Trade 1 complete: Chicago Bears at $0.47 + Minnesota Vikings at $0.47 = $0.9400",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:28.009Z",
+    "message": "   📈 Trade 2: Wallet 4 placing Chicago Bears order: 2 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:28.010Z",
+    "message": "   🎲 Trade 2 wallet pair: 4 (Chicago Bears) + 6 (Minnesota Vikings)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:32.192Z",
+    "message": "   📉 Trade 2: Wallet 6 placing Minnesota Vikings order: 4 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:33.746Z",
+    "message": "   🎯 Trade 2 complete: Chicago Bears at $0.47 + Minnesota Vikings at $0.47 = $0.9400",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:37.689Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Chicago Bears order: 2 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:37.689Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Chicago Bears) + 10 (Minnesota Vikings)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:40.307Z",
+    "message": "   📉 Trade 3: Wallet 10 placing Minnesota Vikings order: 3 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:41.826Z",
+    "message": "   🎯 Trade 3 complete: Chicago Bears at $0.47 + Minnesota Vikings at $0.47 = $0.9400",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:44.782Z",
+    "message": "   📈 Trade 4: Wallet 5 placing Chicago Bears order: 5 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:44.783Z",
+    "message": "   🎲 Trade 4 wallet pair: 5 (Chicago Bears) + 7 (Minnesota Vikings)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:48.068Z",
+    "message": "   📉 Trade 4: Wallet 7 placing Minnesota Vikings order: 3 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:49.568Z",
+    "message": "   🎯 Trade 4 complete: Chicago Bears at $0.47 + Minnesota Vikings at $0.47 = $0.9400",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:49.568Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1043 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T14:29:49.569Z",
+    "message": "Session completed",
+    "data": {
+      "sessionStartTime": "2025-09-04T14:29:13.151Z",
+      "sessionEndTime": "2025-09-04T14:29:49.569Z",
+      "sessionDuration": 36418,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "timestamp": "2025-09-02T11:59:38.189Z",
+    "message": "   📊 Market 994 Analysis:",
+    "data": {
+      "yesBestBid": 0.99,
+      "yesBestAsk": 0.5,
+      "yesSpread": "-0.4900",
+      "noBestBid": 0.5,
+      "noBestAsk": 0.01,
+      "noSpread": "-0.4900",
+      "totalSpread": "-0.9800"
+    }
+  },
+  {
+    "timestamp": "2025-09-02T11:59:38.191Z",
+    "message": "   📊 Market 994 has tight spread (-0.9800), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T11:59:38.192Z",
+    "message": "   ⚠️  Market 994 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-02T11:59:38.193Z",
+    "message": "Session completed",
+    "data": {
+      "sessionStartTime": "2025-09-02T11:59:30.690Z",
+      "sessionEndTime": "2025-09-02T11:59:38.193Z",
+      "sessionDuration": 7503,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 0,
+      "successRate": "0.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2025-09-04T16:19:46.776Z",
+    "message": "   📊 Market 1033 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.5,
+      "outcome1Spread": "0.0000",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "0.0000",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T16:19:46.777Z",
+    "message": "   📊 Market 1033 has tight spread (0.0000), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T16:19:46.777Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T16:19:46.777Z",
+    "message": "   ⚠️  Spread 0.0000 ≤ 0.01, skipping market",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-04T16:19:46.777Z",
+    "message": "Session completed",
+    "data": {
+      "sessionStartTime": "2025-09-04T16:19:38.575Z",
+      "sessionEndTime": "2025-09-04T16:19:46.777Z",
+      "sessionDuration": 8202,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 0,
+      "successRate": "0.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]
