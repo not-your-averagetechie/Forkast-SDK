@@ -82,7 +82,8 @@ const LOGIN_API_URL = CONFIG[NETWORK].LOGIN_API_URL;
 const ORDER_API_URL = CONFIG[NETWORK].ORDER_API_URL;
 const ORDER_BOOK_API_URL = CONFIG[NETWORK].ORDER_BOOK_API_URL;
 
-// Note: readline interface removed as it's no longer needed for user input
+// Import readline for user input
+import * as readline from 'readline';
 
 // Function to randomly select a wallet from wallets 3, 4, 5, 6, 7, 8, 9, 10, and 11
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
@@ -126,22 +127,28 @@ function validateWalletConfig(): boolean {
     return true;
 }
 
-// Function to automatically fetch the latest market ID
-async function getLatestMarketId(): Promise<number> {
-    try {
-        console.log('🔍 Automatically fetching latest market ID...');
-        
-        // Use a more conservative approach - start with a known working market ID
-        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
-        console.log(`✅ Using configured market ID: ${fallbackId}`);
-        return fallbackId;
-        
-    } catch (error: any) {
-        console.log(`⚠️  Error in market ID logic: ${error.message}`);
-        const fallbackId = parseInt(process.env.LATEST_MARKET_ID || '650');
-        console.log(`   Using fallback: ${fallbackId}`);
-        return fallbackId;
-    }
+// Function to get latest market ID from user input
+async function getLatestMarketIdFromUser(): Promise<number> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('🔍 Enter the latest market ID to start from (descending order): ', (answer) => {
+            rl.close();
+            
+            const marketId = parseInt(answer.trim());
+            
+            if (isNaN(marketId) || marketId <= 0) {
+                console.log('⚠️  Invalid input. Using fallback market ID: 650');
+                resolve(650);
+            } else {
+                console.log(`✅ Starting from market ID: ${marketId}`);
+                resolve(marketId);
+            }
+        });
+    });
 }
 
 // Order book filling configuration with enhanced rate limiting
@@ -591,7 +598,7 @@ interface OrderBookAnalysis {
     suggestedOrders: Array<{ price: number, amount: number, side: string }>;
 }
 
-function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis {
+function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO' | 'TEAM1' | 'TEAM2'): OrderBookAnalysis {
     try {
         /*
          * STRATEGY: Place orders to maintain 0.01 spread and fill significant gaps only
@@ -641,8 +648,8 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
         const gaps: Array<{ price: number, size: number }> = [];
         const suggestedOrders: Array<{ price: number, amount: number, side: string }> = [];
         
-        if (side === 'YES') {
-            // For YES side: place order below the best ask to maintain tight spread
+        if (side === 'YES' || side === 'TEAM1') {
+            // For YES/Team1 side: place order below the best ask to maintain tight spread
             if (parsedAsks.length > 0) {
                 // Place order at bestAsk - 0.01 to maintain 0.01 spread
                 const strategicPrice = parseFloat((bestAsk - 0.01).toFixed(4));
@@ -654,7 +661,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
                     });
                     
                     // Log the strategy
-                    console.log(`   📊 YES Strategy: Best Ask $${bestAsk} → Place order at $${strategicPrice} (spread: 0.01)`);
+                    console.log(`   📊 ${side === 'YES' ? 'YES' : 'Team1'} Strategy: Best Ask $${bestAsk} → Place order at $${strategicPrice} (spread: 0.01)`);
                 }
             }
             
@@ -676,16 +683,16 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
                         amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT, 
                         side: 'BUY' 
                     });
-                    console.log(`   📊 YES Gap Fill: Gap between $${currentPrice} and $${nextPrice} → Place order at $${gapPrice}`);
+                    console.log(`   📊 ${side === 'YES' ? 'YES' : 'Team1'} Gap Fill: Gap between $${currentPrice} and $${nextPrice} → Place order at $${gapPrice}`);
                     additionalOrdersPlaced++;
                 }
             }
         } else {
-            // For NO side: we need to coordinate with YES side to maintain 0.01 spread
-            // This will be handled in the main function after we know both YES and NO prices
+            // For NO/Team2 side: we need to coordinate with YES/Team1 side to maintain 0.01 spread
+            // This will be handled in the main function after we know both prices
             if (parsedAsks.length > 0) {
                 // For now, just log that we'll coordinate the price
-                console.log(`   📊 NO Strategy: Will coordinate with YES side to maintain 0.01 spread`);
+                console.log(`   📊 ${side === 'NO' ? 'NO' : 'Team2'} Strategy: Will coordinate with ${side === 'NO' ? 'YES' : 'Team1'} side to maintain 0.01 spread`);
             }
             
             // Only place additional orders if there are significant gaps (0.05 or more)
@@ -706,7 +713,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
                         amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT, 
                         side: 'BUY' 
                     });
-                    console.log(`   📊 NO Gap Fill: Gap between $${currentPrice} and $${nextPrice} → Place order at $${gapPrice}`);
+                    console.log(`   📊 ${side === 'NO' ? 'NO' : 'Team2'} Gap Fill: Gap between $${currentPrice} and $${nextPrice} → Place order at $${gapPrice}`);
                     additionalOrdersPlaced++;
                 }
             }
@@ -726,7 +733,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO'): OrderBookAnalysis
     }
 }
 
-async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnalysis, noAnalysis: OrderBookAnalysis, logger: OrderBookLogger) {
+async function placeOrderBookOrders(marketId: number, outcome1Analysis: OrderBookAnalysis, outcome2Analysis: OrderBookAnalysis, logger: OrderBookLogger, marketType: string, outcome1: any, outcome2: any) {
     try {
         // Login all nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11)
         const wallet3AccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_3);
@@ -810,20 +817,12 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             return 0;
         }
 
-        const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
-        const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
-        
-        if (!yesOutcome || !noOutcome) {
-            console.error(`❌ Market ${marketId} does not have both Yes and No outcomes`);
-            return 0;
-        }
-
         let totalOrdersPlaced = 0;
 
-        // Place YES orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
-        console.log(`\n📝 Placing YES orders for Market ${marketId}:`);
-        for (const order of yesAnalysis.suggestedOrders) {
-            // Randomly select a wallet for each YES order
+        // Place Outcome 1 orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
+        console.log(`\n📝 Placing ${marketType === 'YES/NO' ? 'YES' : 'Team1'} orders for Market ${marketId}:`);
+        for (const order of outcome1Analysis.suggestedOrders) {
+            // Randomly select a wallet for each Outcome 1 order
             const { walletNumber, walletConfig } = getRandomWallet();
             const randomWalletAccount = getAccount(
                 walletConfig.WALLET_ADDRESS,
@@ -842,7 +841,7 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             
             const orderBody = {
                 marketId: market.id, // Use actual market ID, not event ID
-                token: yesOutcome,
+                token: outcome1,
                 account: randomWalletAccount,
                 price: order.price,
                 amount: order.amount,
@@ -853,22 +852,22 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
                 totalOrdersPlaced++;
-                console.log(`   ✅ YES ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
+                console.log(`   ✅ ${marketType === 'YES/NO' ? 'YES' : 'Team1'} ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
-                console.log(`   ⚠️  YES order at $${order.price} already exists, skipping...`);
+                console.log(`   ⚠️  ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order at $${order.price} already exists, skipping...`);
                 // Don't count duplicate orders as failures
             } else {
-                console.error(`   ❌ Failed to place YES order at $${order.price}: ${result.message}`);
+                console.error(`   ❌ Failed to place ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order at $${order.price}: ${result.message}`);
             }
             
             // Longer delay between orders to prevent duplicates
             await new Promise(res => setTimeout(res, 2000));
         }
 
-        // Place NO orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
-        console.log(`\n📝 Placing NO orders for Market ${marketId}:`);
-        for (const order of noAnalysis.suggestedOrders) {
-            // Randomly select a wallet for each NO order
+        // Place Outcome 2 orders (Random Wallet from 3, 4, 5, 6, 7, 8, 9, 10, 11)
+        console.log(`\n📝 Placing ${marketType === 'YES/NO' ? 'NO' : 'Team2'} orders for Market ${marketId}:`);
+        for (const order of outcome2Analysis.suggestedOrders) {
+            // Randomly select a wallet for each Outcome 2 order
             const { walletNumber, walletConfig } = getRandomWallet();
             const randomWalletAccount = getAccount(
                 walletConfig.WALLET_ADDRESS,
@@ -887,7 +886,7 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             
             const orderBody = {
                 marketId: market.id, // Use actual market ID, not event ID
-                token: noOutcome,
+                token: outcome2,
                 account: randomWalletAccount,
                 price: order.price,
                 amount: order.amount,
@@ -898,12 +897,12 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
             const result = await placeOrder(orderBody);
             if (result.success !== false) {
                 totalOrdersPlaced++;
-                console.log(`   ✅ NO ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
+                console.log(`   ✅ ${marketType === 'YES/NO' ? 'NO' : 'Team2'} ${order.side} order at $${order.price} for ${order.amount} shares (Wallet ${walletNumber}: ${randomWalletAccount.wallet.substring(0, 8)}...)`);
             } else if (result.error === 'DUPLICATE_ORDER') {
-                console.log(`   ⚠️  NO order at $${order.price} already exists, skipping...`);
+                console.log(`   ⚠️  ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order at $${order.price} already exists, skipping...`);
                 // Don't count duplicate orders as failures
             } else {
-                console.error(`   ❌ Failed to place NO order at $${order.price}: ${result.message}`);
+                console.error(`   ❌ Failed to place ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order at $${order.price}: ${result.message}`);
             }
             
             // Longer delay between orders to prevent duplicates
@@ -912,12 +911,12 @@ async function placeOrderBookOrders(marketId: number, yesAnalysis: OrderBookAnal
 
         console.log(`\n✅ Order book orders placed for Market ${marketId}:`);
         console.log(`   Total Orders: ${totalOrdersPlaced}`);
-        console.log(`   YES Orders: ${yesAnalysis.suggestedOrders.length}`);
-        console.log(`   NO Orders: ${noAnalysis.suggestedOrders.length}`);
+        console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Orders: ${outcome1Analysis.suggestedOrders.length}`);
+        console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Orders: ${outcome2Analysis.suggestedOrders.length}`);
         
         // Calculate total cost for this operation
-        const totalCost = yesAnalysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0) +
-                         noAnalysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0);
+        const totalCost = outcome1Analysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0) +
+                         outcome2Analysis.suggestedOrders.reduce((sum, order) => sum + (order.price * order.amount), 0);
         
         // Log operation summary
         if (totalOrdersPlaced > 0) {
@@ -954,16 +953,16 @@ async function monitorOrderBooks() {
         process.exit(1);
     }
 
-    // Automatically fetch the latest market ID
-    const startingMarketId = await getLatestMarketId();
+    // Get latest market ID from user input
+    const startingMarketId = await getLatestMarketIdFromUser();
     const marketsToCheck = ORDER_BOOK_CONFIG.MAX_MARKETS_TO_CHECK;
     const endingMarketId = Math.max(1, startingMarketId - marketsToCheck + 1);
     
     // Validate that the starting market ID is reasonable
-    const maxReasonableId = parseInt(process.env.LATEST_MARKET_ID || '600') + 50; // Allow some buffer
+    const maxReasonableId = 1000; // Allow up to 1000 as reasonable
     if (startingMarketId > maxReasonableId) {
         console.log(`⚠️  Warning: Starting market ID ${startingMarketId} is very high.`);
-        console.log(`   Consider using a lower number around ${parseInt(process.env.LATEST_MARKET_ID || '600')}`);
+        console.log(`   Consider using a lower number (typically 600-800 range)`);
         console.log(`   Continuing anyway...\n`);
     }
     
@@ -1062,38 +1061,53 @@ async function monitorOrderBooks() {
                     console.log(`   📋 Market: ${market.title || `ID ${currentMarketId}`}`);
                     console.log(`   🔍 Event ID: ${currentMarketId}, Market ID: ${market.id}`);
                     
-                    // Get YES and NO outcomes
+                    // Get YES and NO outcomes (for YES/NO markets) or Team outcomes (for NFL/MLB markets)
                     const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
                     const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
                     
+                    // For NFL/MLB markets, use the first two outcomes as Team 1 and Team 2
+                    const team1Outcome = market.outcomes[0];
+                    const team2Outcome = market.outcomes[1];
                     
-                    if (!yesOutcome || !noOutcome) {
-                        console.log(`   ⚠️  Market does not have both Yes and No outcomes, skipping...`);
+                    // Determine market type and set outcomes accordingly
+                    let outcome1, outcome2, marketType;
+                    if (yesOutcome && noOutcome) {
+                        outcome1 = yesOutcome;
+                        outcome2 = noOutcome;
+                        marketType = 'YES/NO';
+                        console.log(`   📊 YES/NO Market: ${market.title}`);
+                    } else if (team1Outcome && team2Outcome) {
+                        outcome1 = team1Outcome;
+                        outcome2 = team2Outcome;
+                        marketType = 'TEAM';
+                        console.log(`   🏈 NFL/Team Market: ${team1Outcome.title} vs ${team2Outcome.title}`);
+                    } else {
+                        console.log(`   ⚠️  Market does not have valid outcomes (need YES/NO or 2 teams), skipping...`);
                         continue;
                     }
 
                     // Fetch order books for both outcomes with retry logic
                     // Use market.id (the actual market ID) not currentMarketId (the event ID)
-                    // According to Order.md: outcomeType 1 for Yes, 0 for No
-                    let yesOrderBook = null;
-                    let noOrderBook = null;
+                    // According to Order.md: outcomeType 1 for Yes/Team1, 0 for No/Team2
+                    let outcome1OrderBook = null;
+                    let outcome2OrderBook = null;
                     let orderBookRetryCount = 0;
                     const maxOrderBookRetries = 3;
                     
-                    // Fetch YES order book with retries
-                    while (orderBookRetryCount < maxOrderBookRetries && !yesOrderBook) {
+                    // Fetch Outcome 1 order book with retries
+                    while (orderBookRetryCount < maxOrderBookRetries && !outcome1OrderBook) {
                         try {
-                            console.log(`   🔍 Fetching YES order book: marketId=${market.id}, outcomeId=${yesOutcome.id}, outcomeType=1`);
-                            yesOrderBook = await fetchOrderBook(market.id, yesOutcome.id, 1); // 1 for Yes
+                            console.log(`   🔍 Fetching ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order book: marketId=${market.id}, outcomeId=${outcome1.id}, outcomeType=1`);
+                            outcome1OrderBook = await fetchOrderBook(market.id, outcome1.id, 1); // 1 for Yes/Team1
                         } catch (error: any) {
                             orderBookRetryCount++;
                             if (error.message?.includes('429') || error.message?.includes('rate limit')) {
                                 consecutive429Errors++;
                                 const waitTime = Math.min(2000 * Math.pow(2, orderBookRetryCount), 15000); // Exponential backoff, max 15s
-                                console.log(`   ⏳ Rate limited (429) fetching YES order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
+                                console.log(`   ⏳ Rate limited (429) fetching ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
                                 await new Promise(res => setTimeout(res, waitTime));
                             } else {
-                                console.log(`   ⚠️  Error fetching YES order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
+                                console.log(`   ⚠️  Error fetching ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
                                 if (orderBookRetryCount < maxOrderBookRetries) {
                                     await new Promise(res => setTimeout(res, 3000));
                                 }
@@ -1101,21 +1115,21 @@ async function monitorOrderBooks() {
                         }
                     }
                     
-                    // Fetch NO order book with retries
+                    // Fetch Outcome 2 order book with retries
                     orderBookRetryCount = 0;
-                    while (orderBookRetryCount < maxOrderBookRetries && !noOrderBook) {
+                    while (orderBookRetryCount < maxOrderBookRetries && !outcome2OrderBook) {
                         try {
-                            console.log(`   🔍 Fetching NO order book: marketId=${market.id}, outcomeId=${noOutcome.id}, outcomeType=0`);
-                            noOrderBook = await fetchOrderBook(market.id, noOutcome.id, 0);   // 0 for No
+                            console.log(`   🔍 Fetching ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order book: marketId=${market.id}, outcomeId=${outcome2.id}, outcomeType=0`);
+                            outcome2OrderBook = await fetchOrderBook(market.id, outcome2.id, 0);   // 0 for No/Team2
                         } catch (error: any) {
                             orderBookRetryCount++;
                             if (error.message?.includes('429') || error.message?.includes('rate limit')) {
                                 consecutive429Errors++;
                                 const waitTime = Math.min(2000 * Math.pow(2, orderBookRetryCount), 15000); // Exponential backoff, max 15s
-                                console.log(`   ⏳ Rate limited (429) fetching NO order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
+                                console.log(`   ⏳ Rate limited (429) fetching ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order book, waiting ${waitTime/1000}s before retry ${orderBookRetryCount}/${maxOrderBookRetries}... (consecutive: ${consecutive429Errors})`);
                                 await new Promise(res => setTimeout(res, waitTime));
                             } else {
-                                console.log(`   ⚠️  Error fetching NO order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
+                                console.log(`   ⚠️  Error fetching ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order book: ${error.message}, retry ${orderBookRetryCount}/${maxOrderBookRetries}`);
                                 if (orderBookRetryCount < maxOrderBookRetries) {
                                     await new Promise(res => setTimeout(res, 3000));
                                 }
@@ -1123,18 +1137,18 @@ async function monitorOrderBooks() {
                         }
                     }
                     
-                    if (!yesOrderBook || !noOrderBook) {
+                    if (!outcome1OrderBook || !outcome2OrderBook) {
                         console.log(`   ⚠️  Could not fetch order books after retries, skipping...`);
                         continue;
                     }
                     
                     // Check if order books have actual orders - be more lenient here
                     // Only skip if both sides have absolutely no orders at all
-                    const yesHasOrders = (yesOrderBook.asks && yesOrderBook.asks.length > 0) || (yesOrderBook.bids && yesOrderBook.bids.length > 0);
-                    const noHasOrders = (noOrderBook.asks && noOrderBook.asks.length > 0) || (noOrderBook.bids && noOrderBook.bids.length > 0);
+                    const outcome1HasOrders = (outcome1OrderBook.asks && outcome1OrderBook.asks.length > 0) || (outcome1OrderBook.bids && outcome1OrderBook.bids.length > 0);
+                    const outcome2HasOrders = (outcome2OrderBook.asks && outcome2OrderBook.asks.length > 0) || (outcome2OrderBook.bids && outcome2OrderBook.bids.length > 0);
                     
                     // Only skip if both sides have no orders AND we have a status that indicates resolved
-                    if (!yesHasOrders && !noHasOrders) {
+                    if (!outcome1HasOrders && !outcome2HasOrders) {
                         // Check if market status indicates it's resolved
                         const marketStatus = String(market?.status || '').toLowerCase();
                         const resolvedStatuses = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
@@ -1148,44 +1162,44 @@ async function monitorOrderBooks() {
                     }
                     
                     // Log order book status for debugging
-                    if (!yesHasOrders) {
-                        console.log(`   ⚠️  YES side has no orders`);
+                    if (!outcome1HasOrders) {
+                        console.log(`   ⚠️  ${marketType === 'YES/NO' ? 'YES' : 'Team1'} side has no orders`);
                     }
-                    if (!noHasOrders) {
-                        console.log(`   ⚠️  NO side has no orders`);
+                    if (!outcome2HasOrders) {
+                        console.log(`   ⚠️  ${marketType === 'YES/NO' ? 'NO' : 'Team2'} side has no orders`);
                     }
                     
                     // Debug: Log order book structure
-                    console.log(`   🔍 YES Order Book: ${JSON.stringify(yesOrderBook).substring(0, 100)}...`);
-                    console.log(`   🔍 NO Order Book: ${JSON.stringify(noOrderBook).substring(0, 100)}...`);
+                    console.log(`   🔍 ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Order Book: ${JSON.stringify(outcome1OrderBook).substring(0, 100)}...`);
+                    console.log(`   🔍 ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Order Book: ${JSON.stringify(outcome2OrderBook).substring(0, 100)}...`);
 
                     // Analyze order books
-                    const yesAnalysis = analyzeOrderBook(yesOrderBook, 'YES');
-                    const noAnalysis = analyzeOrderBook(noOrderBook, 'NO');
+                    const outcome1Analysis = analyzeOrderBook(outcome1OrderBook, marketType === 'YES/NO' ? 'YES' : 'TEAM1');
+                    const outcome2Analysis = analyzeOrderBook(outcome2OrderBook, marketType === 'YES/NO' ? 'NO' : 'TEAM2');
                     
                     // Order book analysis completed
                     
                     // Log spread information with better formatting
-                    const yesSpreadText = yesAnalysis.spread >= 0 ? `$${yesAnalysis.spread.toFixed(4)}` : `$${Math.abs(yesAnalysis.spread).toFixed(4)} (inverted)`;
-                    const noSpreadText = noAnalysis.spread >= 0 ? `$${noAnalysis.spread.toFixed(4)}` : `$${Math.abs(noAnalysis.spread).toFixed(4)} (inverted)`;
+                    const outcome1SpreadText = outcome1Analysis.spread >= 0 ? `$${outcome1Analysis.spread.toFixed(4)}` : `$${Math.abs(outcome1Analysis.spread).toFixed(4)} (inverted)`;
+                    const outcome2SpreadText = outcome2Analysis.spread >= 0 ? `$${outcome2Analysis.spread.toFixed(4)}` : `$${Math.abs(outcome2Analysis.spread).toFixed(4)} (inverted)`;
                     
-                    console.log(`   💰 YES: Best Ask $${yesAnalysis.bestAsk} | Best Bid $${yesAnalysis.bestBid} | Spread ${yesSpreadText}`);
-                    console.log(`   💰 NO: Best Ask $${noAnalysis.bestAsk} | Best Bid $${noAnalysis.bestBid} | Spread ${noSpreadText}`);
-                    console.log(`   📊 YES Gaps: ${yesAnalysis.gaps.length} | NO Gaps: ${noAnalysis.gaps.length}`);
+                    console.log(`   💰 ${marketType === 'YES/NO' ? 'YES' : 'Team1'}: Best Ask $${outcome1Analysis.bestAsk} | Best Bid $${outcome1Analysis.bestBid} | Spread ${outcome1SpreadText}`);
+                    console.log(`   💰 ${marketType === 'YES/NO' ? 'NO' : 'Team2'}: Best Ask $${outcome2Analysis.bestAsk} | Best Bid $${outcome2Analysis.bestBid} | Spread ${outcome2SpreadText}`);
+                    console.log(`   📊 ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Gaps: ${outcome1Analysis.gaps.length} | ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Gaps: ${outcome2Analysis.gaps.length}`);
                     
                     marketsProcessed++;
                     
                     // Check if we should place orders
-                    if (yesAnalysis.suggestedOrders.length > 0) {
+                    if (outcome1Analysis.suggestedOrders.length > 0) {
                         
                         // First, check if the current market spread is already tight
-                        const currentYesSpread = Math.abs(yesAnalysis.spread);
-                        const currentNoSpread = Math.abs(noAnalysis.spread);
+                        const currentOutcome1Spread = Math.abs(outcome1Analysis.spread);
+                        const currentOutcome2Spread = Math.abs(outcome2Analysis.spread);
                         
                         // If both sides already have tight spreads (≤ 0.015), no need to place orders
                         const spreadThreshold = 0.015; // Allow for small variations
-                        if (currentYesSpread <= spreadThreshold && currentNoSpread <= spreadThreshold) {
-                            console.log(`   ✅ Market already has tight spreads: YES(${currentYesSpread.toFixed(4)}) NO(${currentNoSpread.toFixed(4)})`);
+                        if (currentOutcome1Spread <= spreadThreshold && currentOutcome2Spread <= spreadThreshold) {
+                            console.log(`   ✅ Market already has tight spreads: ${marketType === 'YES/NO' ? 'YES' : 'Team1'}(${currentOutcome1Spread.toFixed(4)}) ${marketType === 'YES/NO' ? 'NO' : 'Team2'}(${currentOutcome2Spread.toFixed(4)})`);
                             console.log(`   ⏭️  No orders needed - market is already balanced (≤ ${spreadThreshold})`);
                             continue;
                         }
@@ -1199,51 +1213,51 @@ async function monitorOrderBooks() {
                         const minAcceptablePrice = ORDER_BOOK_CONFIG.MIN_ACCEPTABLE_PRICE; // Minimum price we're willing to place orders at
                         
                         // Get current best prices from order books
-                        const yesBestAsk = yesAnalysis.bestAsk;
-                        const noBestAsk = noAnalysis.bestAsk;
-                        const yesBestBid = yesAnalysis.bestBid;
-                        const noBestBid = noAnalysis.bestBid;
+                        const outcome1BestAsk = outcome1Analysis.bestAsk;
+                        const outcome2BestAsk = outcome2Analysis.bestAsk;
+                        const outcome1BestBid = outcome1Analysis.bestBid;
+                        const outcome2BestBid = outcome2Analysis.bestBid;
                         
                         // Check if one side is at very high prices (≥ 0.95) - if so, don't place orders on the other side
-                        const yesSideVeryHigh = yesBestBid >= 0.95 || yesBestAsk >= 0.95;
-                        const noSideVeryHigh = noBestBid >= 0.95 || noBestAsk >= 0.95;
+                        const outcome1SideVeryHigh = outcome1BestBid >= 0.95 || outcome1BestAsk >= 0.95;
+                        const outcome2SideVeryHigh = outcome2BestBid >= 0.95 || outcome2BestAsk >= 0.95;
                         
-                        if (yesSideVeryHigh || noSideVeryHigh) {
+                        if (outcome1SideVeryHigh || outcome2SideVeryHigh) {
                             console.log(`   ⚠️  One side has very high prices (≥ $0.95):`);
-                            if (yesSideVeryHigh) console.log(`      YES side: Best Bid $${yesBestBid}, Best Ask $${yesBestAsk}`);
-                            if (noSideVeryHigh) console.log(`      NO side: Best Bid $${noBestBid}, Best Ask $${noBestAsk}`);
+                            if (outcome1SideVeryHigh) console.log(`      ${marketType === 'YES/NO' ? 'YES' : 'Team1'} side: Best Bid $${outcome1BestBid}, Best Ask $${outcome1BestAsk}`);
+                            if (outcome2SideVeryHigh) console.log(`      ${marketType === 'YES/NO' ? 'NO' : 'Team2'} side: Best Bid $${outcome2BestBid}, Best Ask $${outcome2BestAsk}`);
                             console.log(`   ⏭️  Skipping order placement - high-priced side should not trigger orders on opposite side`);
                             continue;
                         }
                         
                         // Determine which side has higher prices
-                        const noSideHigher = noBestAsk > yesBestAsk;
-                        const yesSideHigher = yesBestAsk > noBestAsk;
+                        const outcome2SideHigher = outcome2BestAsk > outcome1BestAsk;
+                        const outcome1SideHigher = outcome1BestAsk > outcome2BestAsk;
                         
                         console.log(`   📊 Price Analysis:`);
-                        console.log(`      YES Best Ask: $${yesBestAsk}`);
-                        console.log(`      NO Best Ask: $${noBestAsk}`);
-                        console.log(`      Strategy: ${noSideHigher ? 'NO side higher → Multiple NO orders + Single YES' : yesSideHigher ? 'YES side higher → Multiple YES orders + Single NO' : 'Equal prices → Single orders on both sides'}`);
+                        console.log(`      ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Best Ask: $${outcome1BestAsk}`);
+                        console.log(`      ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Best Ask: $${outcome2BestAsk}`);
+                        console.log(`      Strategy: ${outcome2SideHigher ? `${marketType === 'YES/NO' ? 'NO' : 'Team2'} side higher → Multiple ${marketType === 'YES/NO' ? 'NO' : 'Team2'} orders + Single ${marketType === 'YES/NO' ? 'YES' : 'Team1'}` : outcome1SideHigher ? `${marketType === 'YES/NO' ? 'YES' : 'Team1'} side higher → Multiple ${marketType === 'YES/NO' ? 'YES' : 'Team1'} orders + Single ${marketType === 'YES/NO' ? 'NO' : 'Team2'}` : 'Equal prices → Single orders on both sides'}`);
                         
                         // Generate orders based on which side is higher
-                        let ordersToPlace: Array<{side: 'YES' | 'NO', price: number, amount: number}> = [];
+                        let ordersToPlace: Array<{side: 'OUTCOME1' | 'OUTCOME2', price: number, amount: number}> = [];
                         
-                        if (noSideHigher) {
-                            // NO side has higher prices - place multiple NO orders + single YES
-                            console.log(`   🎯 NO side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
+                        if (outcome2SideHigher) {
+                            // Outcome 2 side has higher prices - place multiple Outcome 2 orders + single Outcome 1
+                            console.log(`   🎯 ${marketType === 'YES/NO' ? 'NO' : 'Team2'} side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
                             
-                            // Generate NO orders from best ask down to best bid with 0.05 gaps
-                            const noBestAsk = noAnalysis.bestAsk;
-                            const noBestBid = noAnalysis.bestBid;
-                            const noOrders: Array<{price: number, amount: number}> = [];
+                            // Generate Outcome 2 orders from best ask down to best bid with 0.05 gaps
+                            const outcome2BestAsk = outcome2Analysis.bestAsk;
+                            const outcome2BestBid = outcome2Analysis.bestBid;
+                            const outcome2Orders: Array<{price: number, amount: number}> = [];
                             
                             // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
-                            let currentPrice = parseFloat((noBestAsk - 0.01).toFixed(4));
+                            let currentPrice = parseFloat((outcome2BestAsk - 0.01).toFixed(4));
                             let orderIndex = 0;
                             
-                            while (currentPrice >= noBestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
+                            while (currentPrice >= outcome2BestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
                                 if (currentPrice >= minAcceptablePrice) {
-                                    noOrders.push({
+                                    outcome2Orders.push({
                                         price: currentPrice,
                                         amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[orderIndex] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                     });
@@ -1254,42 +1268,42 @@ async function monitorOrderBooks() {
                             }
                             
                             // Add final order at best bid if we haven't reached it yet
-                            if (noOrders.length > 0 && noOrders[noOrders.length - 1].price > noBestBid && noBestBid >= minAcceptablePrice) {
-                                noOrders.push({
-                                    price: noBestBid,
-                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[noOrders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                            if (outcome2Orders.length > 0 && outcome2Orders[outcome2Orders.length - 1].price > outcome2BestBid && outcome2BestBid >= minAcceptablePrice) {
+                                outcome2Orders.push({
+                                    price: outcome2BestBid,
+                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[outcome2Orders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                 });
                             }
                             
-                            // YES order at current best bid
-                            const yesPrice = yesAnalysis.bestBid;
+                            // Outcome 1 order at current best bid
+                            const outcome1Price = outcome1Analysis.bestBid;
                             
-                            // Add NO orders
-                            noOrders.forEach(order => {
-                                ordersToPlace.push({side: 'NO', price: order.price, amount: order.amount});
+                            // Add Outcome 2 orders
+                            outcome2Orders.forEach(order => {
+                                ordersToPlace.push({side: 'OUTCOME2', price: order.price, amount: order.amount});
                             });
                             
-                            // Add single YES order
-                            if (yesPrice >= minAcceptablePrice) {
-                                ordersToPlace.push({side: 'YES', price: yesPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
+                            // Add single Outcome 1 order
+                            if (outcome1Price >= minAcceptablePrice) {
+                                ordersToPlace.push({side: 'OUTCOME1', price: outcome1Price, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
                             }
                             
-                        } else if (yesSideHigher) {
-                            // YES side has higher prices - place multiple YES orders + single NO
-                            console.log(`   🎯 YES side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
+                        } else if (outcome1SideHigher) {
+                            // Outcome 1 side has higher prices - place multiple Outcome 1 orders + single Outcome 2
+                            console.log(`   🎯 ${marketType === 'YES/NO' ? 'YES' : 'Team1'} side strategy (higher prices): Multiple orders with 0.05 gaps down to best bid`);
                             
-                            // Generate YES orders from best ask down to best bid with 0.05 gaps
-                            const yesBestAsk = yesAnalysis.bestAsk;
-                            const yesBestBid = yesAnalysis.bestBid;
-                            const yesOrders: Array<{price: number, amount: number}> = [];
+                            // Generate Outcome 1 orders from best ask down to best bid with 0.05 gaps
+                            const outcome1BestAsk = outcome1Analysis.bestAsk;
+                            const outcome1BestBid = outcome1Analysis.bestBid;
+                            const outcome1Orders: Array<{price: number, amount: number}> = [];
                             
                             // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
-                            let currentPrice = parseFloat((yesBestAsk - 0.01).toFixed(4));
+                            let currentPrice = parseFloat((outcome1BestAsk - 0.01).toFixed(4));
                             let orderIndex = 0;
                             
-                            while (currentPrice >= yesBestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
+                            while (currentPrice >= outcome1BestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
                                 if (currentPrice >= minAcceptablePrice) {
-                                    yesOrders.push({
+                                    outcome1Orders.push({
                                         price: currentPrice,
                                         amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[orderIndex] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                     });
@@ -1300,37 +1314,37 @@ async function monitorOrderBooks() {
                             }
                             
                             // Add final order at best bid if we haven't reached it yet
-                            if (yesOrders.length > 0 && yesOrders[yesOrders.length - 1].price > yesBestBid && yesBestBid >= minAcceptablePrice) {
-                                yesOrders.push({
-                                    price: yesBestBid,
-                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[yesOrders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
+                            if (outcome1Orders.length > 0 && outcome1Orders[outcome1Orders.length - 1].price > outcome1BestBid && outcome1BestBid >= minAcceptablePrice) {
+                                outcome1Orders.push({
+                                    price: outcome1BestBid,
+                                    amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[outcome1Orders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                 });
                             }
                             
-                            // NO order at current best bid
-                            const noPrice = noAnalysis.bestBid;
+                            // Outcome 2 order at current best bid
+                            const outcome2Price = outcome2Analysis.bestBid;
                             
-                            // Add YES orders
-                            yesOrders.forEach(order => {
-                                ordersToPlace.push({side: 'YES', price: order.price, amount: order.amount});
+                            // Add Outcome 1 orders
+                            outcome1Orders.forEach(order => {
+                                ordersToPlace.push({side: 'OUTCOME1', price: order.price, amount: order.amount});
                             });
                             
-                            // Add single NO order
-                            if (noPrice >= minAcceptablePrice) {
-                                ordersToPlace.push({side: 'NO', price: noPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
+                            // Add single Outcome 2 order
+                            if (outcome2Price >= minAcceptablePrice) {
+                                ordersToPlace.push({side: 'OUTCOME2', price: outcome2Price, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT});
                             }
                             
                         } else {
                             // Equal prices - place single orders on both sides (original strategy)
                             console.log(`   🎯 Equal prices strategy: Single orders on both sides`);
                             
-                            const yesPrice = yesAnalysis.suggestedOrders[0].price;
-                            const noPrice = parseFloat((0.99 - yesPrice).toFixed(4));
+                            const outcome1Price = outcome1Analysis.suggestedOrders[0].price;
+                            const outcome2Price = parseFloat((0.99 - outcome1Price).toFixed(4));
                             
-                            if (yesPrice >= minAcceptablePrice && noPrice >= minAcceptablePrice) {
+                            if (outcome1Price >= minAcceptablePrice && outcome2Price >= minAcceptablePrice) {
                                 ordersToPlace = [
-                                    {side: 'YES', price: yesPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT},
-                                    {side: 'NO', price: noPrice, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT}
+                                    {side: 'OUTCOME1', price: outcome1Price, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT},
+                                    {side: 'OUTCOME2', price: outcome2Price, amount: ORDER_BOOK_CONFIG.ORDER_AMOUNT}
                                 ];
                             }
                         }
@@ -1345,25 +1359,25 @@ async function monitorOrderBooks() {
                         console.log(`\n📋 ORDER SUMMARY for Market ${currentMarketId}:`);
                         
                         // Group orders by side
-                        const yesOrders = ordersToPlace.filter(o => o.side === 'YES');
-                        const noOrders = ordersToPlace.filter(o => o.side === 'NO');
+                        const outcome1Orders = ordersToPlace.filter(o => o.side === 'OUTCOME1');
+                        const outcome2Orders = ordersToPlace.filter(o => o.side === 'OUTCOME2');
                         
-                        if (yesOrders.length > 0) {
-                            console.log(`   YES Orders (${yesOrders.length}):`);
-                            yesOrders.forEach((order, index) => {
+                        if (outcome1Orders.length > 0) {
+                            console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Orders (${outcome1Orders.length}):`);
+                            outcome1Orders.forEach((order, index) => {
                                 console.log(`     ${index + 1}. BUY ${order.amount} shares at $${order.price}`);
                             });
                         } else {
-                            console.log(`   YES Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
+                            console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
                         }
                         
-                        if (noOrders.length > 0) {
-                            console.log(`   NO Orders (${noOrders.length}):`);
-                            noOrders.forEach((order, index) => {
+                        if (outcome2Orders.length > 0) {
+                            console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Orders (${outcome2Orders.length}):`);
+                            outcome2Orders.forEach((order, index) => {
                                 console.log(`     ${index + 1}. BUY ${order.amount} shares at $${order.price}`);
                             });
                         } else {
-                            console.log(`   NO Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
+                            console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Orders: ⏭️  No orders (prices too low or strategy doesn't require)`);
                         }
                         
                         // Calculate total cost
@@ -1375,18 +1389,18 @@ async function monitorOrderBooks() {
                         console.log(`   📝 Placing orders automatically...`);
                         
                         // Create analyses based on the orders we want to place
-                        const coordinatedYesAnalysis = {
-                            ...yesAnalysis,
-                            suggestedOrders: yesOrders.map(order => ({
+                        const coordinatedOutcome1Analysis = {
+                            ...outcome1Analysis,
+                            suggestedOrders: outcome1Orders.map(order => ({
                                 price: order.price,
                                 amount: order.amount,
                                 side: 'BUY'
                             }))
                         };
                         
-                        const coordinatedNoAnalysis = {
-                            ...noAnalysis,
-                            suggestedOrders: noOrders.map(order => ({
+                        const coordinatedOutcome2Analysis = {
+                            ...outcome2Analysis,
+                            suggestedOrders: outcome2Orders.map(order => ({
                                 price: order.price,
                                 amount: order.amount,
                                 side: 'BUY'
@@ -1394,7 +1408,7 @@ async function monitorOrderBooks() {
                         };
                         
                         // Place orders to fill gaps
-                        const ordersPlaced = await placeOrderBookOrders(currentMarketId, coordinatedYesAnalysis, coordinatedNoAnalysis, logger);
+                        const ordersPlaced = await placeOrderBookOrders(currentMarketId, coordinatedOutcome1Analysis, coordinatedOutcome2Analysis, logger, marketType, outcome1, outcome2);
                         totalOrdersPlaced += ordersPlaced;
                         
                         if (ordersPlaced > 0) {
