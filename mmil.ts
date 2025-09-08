@@ -45,10 +45,11 @@ const rl = readline.createInterface({
 class ExpenseLogger {
     private logFolderPath: string;
     private logFilePath: string;
-    private totalYesSpent: number = 0;
-    private totalNoSpent: number = 0;
-    private initialYesSpent: number = 0;
-    private initialNoSpent: number = 0;
+    private totalOutcome1Spent: number = 0;
+    private totalOutcome2Spent: number = 0;
+    private initialOutcome1Spent: number = 0;
+    private initialOutcome2Spent: number = 0;
+    private marketType: string = 'YES/NO'; // Track current market type
 
     constructor() {
         // Create logs folder if it doesn't exist
@@ -72,42 +73,51 @@ class ExpenseLogger {
                 start_time: now.toISOString(),
                 network: NETWORK
             },
-            total_yes_spent: 0,
-            total_no_spent: 0
+            total_outcome1_spent: 0,
+            total_outcome2_spent: 0
         };
         
         fs.writeFileSync(this.logFilePath, JSON.stringify(initialData, null, 2));
         console.log(`📝 Expense log created: ${this.logFilePath}`);
     }
 
-    logInitialOrder(orderType: 'YES' | 'NO', cost: number) {
-        if (orderType === 'YES') {
-            this.initialYesSpent += cost;
+    setMarketType(marketType: string) {
+        this.marketType = marketType;
+    }
+
+    logInitialOrder(orderType: 'OUTCOME1' | 'OUTCOME2', cost: number) {
+        if (orderType === 'OUTCOME1') {
+            this.initialOutcome1Spent += cost;
         } else {
-            this.initialNoSpent += cost;
+            this.initialOutcome2Spent += cost;
         }
     }
 
-    logSuccessfulOrder(orderType: 'YES' | 'NO', cost: number) {
-        if (orderType === 'YES') {
-            this.totalYesSpent += cost;
+    logSuccessfulOrder(orderType: 'OUTCOME1' | 'OUTCOME2', cost: number) {
+        if (orderType === 'OUTCOME1') {
+            this.totalOutcome1Spent += cost;
         } else {
-            this.totalNoSpent += cost;
+            this.totalOutcome2Spent += cost;
         }
         this.updateLogFile();
-        console.log(`💰 ${orderType} order: $${cost.toFixed(2)} | Total ${orderType}: $${(orderType === 'YES' ? this.totalYesSpent : this.totalNoSpent).toFixed(2)}`);
+        const outcomeName = this.marketType === 'YES/NO' ? (orderType === 'OUTCOME1' ? 'YES' : 'NO') : (orderType === 'OUTCOME1' ? 'Team1' : 'Team2');
+        const totalSpent = orderType === 'OUTCOME1' ? this.totalOutcome1Spent : this.totalOutcome2Spent;
+        console.log(`💰 ${outcomeName} order: $${cost.toFixed(2)} | Total ${outcomeName}: $${totalSpent.toFixed(2)}`);
     }
 
     logSessionSummary() {
         const now = new Date();
         this.updateLogFile(now.toISOString());
+        const outcome1Name = this.marketType === 'YES/NO' ? 'YES' : 'Team1';
+        const outcome2Name = this.marketType === 'YES/NO' ? 'NO' : 'Team2';
+        
         console.log(`\n🏁 SESSION SUMMARY:`);
-        console.log(`   Total YES Spent (excluding initial): $${this.totalYesSpent.toFixed(2)}`);
-        console.log(`   Total NO Spent (excluding initial): $${this.totalNoSpent.toFixed(2)}`);
-        console.log(`   Grand Total (excluding initial): $${(this.totalYesSpent + this.totalNoSpent).toFixed(2)}`);
-        console.log(`   Initial YES Spent (300 shares orders): $${this.initialYesSpent.toFixed(2)}`);
-        console.log(`   Initial NO Spent (300 shares orders): $${this.initialNoSpent.toFixed(2)}`);
-        console.log(`   Grand Total (including initial): $${(this.totalYesSpent + this.totalNoSpent + this.initialYesSpent + this.initialNoSpent).toFixed(2)}`);
+        console.log(`   Total ${outcome1Name} Spent (excluding initial): $${this.totalOutcome1Spent.toFixed(2)}`);
+        console.log(`   Total ${outcome2Name} Spent (excluding initial): $${this.totalOutcome2Spent.toFixed(2)}`);
+        console.log(`   Grand Total (excluding initial): $${(this.totalOutcome1Spent + this.totalOutcome2Spent).toFixed(2)}`);
+        console.log(`   Initial ${outcome1Name} Spent (300 shares orders): $${this.initialOutcome1Spent.toFixed(2)}`);
+        console.log(`   Initial ${outcome2Name} Spent (300 shares orders): $${this.initialOutcome2Spent.toFixed(2)}`);
+        console.log(`   Grand Total (including initial): $${(this.totalOutcome1Spent + this.totalOutcome2Spent + this.initialOutcome1Spent + this.initialOutcome2Spent).toFixed(2)}`);
         console.log(`   Log File: ${this.logFilePath}`);
     }
 
@@ -119,11 +129,11 @@ class ExpenseLogger {
                     network: NETWORK,
                     ...(endTime && { end_time: endTime })
                 },
-                total_yes_spent: parseFloat(this.totalYesSpent.toFixed(2)),
-                total_no_spent: parseFloat(this.totalNoSpent.toFixed(2)),
-                grand_total: parseFloat((this.totalYesSpent + this.totalNoSpent).toFixed(2)),
-                initial_yes_spent: parseFloat(this.initialYesSpent.toFixed(2)),
-                initial_no_spent: parseFloat(this.initialNoSpent.toFixed(2))
+                total_outcome1_spent: parseFloat(this.totalOutcome1Spent.toFixed(2)),
+                total_outcome2_spent: parseFloat(this.totalOutcome2Spent.toFixed(2)),
+                grand_total: parseFloat((this.totalOutcome1Spent + this.totalOutcome2Spent).toFixed(2)),
+                initial_outcome1_spent: parseFloat(this.initialOutcome1Spent.toFixed(2)),
+                initial_outcome2_spent: parseFloat(this.initialOutcome2Spent.toFixed(2))
             };
             fs.writeFileSync(this.logFilePath, JSON.stringify(data, null, 2));
         } catch (error) {
@@ -135,6 +145,15 @@ class ExpenseLogger {
 function getUserInput(question: string): Promise<string> {
     return new Promise((resolve) => {
         rl.question(question, (answer) => resolve(answer));
+    });
+}
+
+async function getUserConfirmation(question: string): Promise<boolean> {
+    return new Promise((resolve) => {
+        rl.question(question, (answer) => {
+            const response = answer.trim().toLowerCase();
+            resolve(response === 'y' || response === 'yes' || response === '1');
+        });
     });
 }
 
@@ -381,92 +400,156 @@ async function main() {
             }
             const market = event.markets[0];
 
-            // Get YES/NO outcomes
+            // Get YES/NO outcomes (for YES/NO markets) or Team outcomes (for NFL/MLB markets)
             const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
             const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
-            if (!yesOutcome || !noOutcome) {
-                console.error(`Market ${marketId} does not have both Yes and No outcomes, skipping.`);
+            
+            // For NFL/MLB markets, use the first two outcomes as Team 1 and Team 2
+            const team1Outcome = market.outcomes[0];
+            const team2Outcome = market.outcomes[1];
+            
+            // Determine market type and set outcomes accordingly
+            let outcome1, outcome2, marketType;
+            if (yesOutcome && noOutcome) {
+                outcome1 = yesOutcome;
+                outcome2 = noOutcome;
+                marketType = 'YES/NO';
+                console.log(`📊 YES/NO Market: ${market.title}`);
+            } else if (team1Outcome && team2Outcome) {
+                outcome1 = team1Outcome;
+                outcome2 = team2Outcome;
+                marketType = 'TEAM';
+                console.log(`🏈 NFL/Team Market: ${team1Outcome.title} vs ${team2Outcome.title}`);
+            } else {
+                console.error(`Market ${marketId} does not have valid outcomes (need YES/NO or 2 teams), skipping.`);
                 continue;
             }
+
+            // Set market type for logging
+            expenseLogger.setMarketType(marketType);
 
             // Get budget allocation based on starting odds
             const { totalBudget, yesBudget, noBudget } = getBudgetAllocation(startDigit);
 
-            // Place initial YES order (wallet 1)
-            const yesStartPrice = startDigit / 100;
-            const initialYesOrder = {
+            // Place initial Outcome 1 order (wallet 1)
+            const outcome1StartPrice = startDigit / 100;
+            const initialOutcome1Order = {
                 marketId: market.id,
-                token: yesOutcome,
+                token: outcome1,
                 account: yesAccount,
-                price: yesStartPrice,
+                price: outcome1StartPrice,
                 amount: 300,
                 side: 0,
                 accessToken: yesAccount.accessToken
             };
+            
+            console.log(`🚀 Placing initial ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order for Market ${market.id}...`);
             try {
-                await placeOrder(initialYesOrder);
-                console.log(`✅ Initial YES order placed for Market ${market.id} at $${yesStartPrice} (300 shares)`);
-                expenseLogger.logInitialOrder('YES', yesStartPrice * 300);
+                const result1 = await placeOrder(initialOutcome1Order);
+                const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
+                console.log(`✅ Initial ${outcome1Name} order placed for Market ${market.id} at $${outcome1StartPrice} (300 shares)`);
+                console.log(`   Order Result:`, result1);
+                expenseLogger.logInitialOrder('OUTCOME1', outcome1StartPrice * 300);
             } catch (e) {
-                console.error(`❌ Failed initial YES order for Market ${market.id}:`, e.message);
+                console.error(`❌ Failed initial ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order for Market ${market.id}:`, e.message);
+                console.error(`   Full error:`, e);
                 continue;
             }
 
-            // Place initial NO order (wallet 2)
-            const noStartPrice = 1 - yesStartPrice;
-            const initialNoOrder = {
+            // Wait 2 seconds before placing the second initial order
+            console.log('⏳ Waiting 2 seconds before placing second initial order...');
+            await new Promise(res => setTimeout(res, 2000));
+
+            // Place initial Outcome 2 order (wallet 2)
+            const outcome2StartPrice = 1 - outcome1StartPrice;
+            const initialOutcome2Order = {
                 marketId: market.id,
-                token: noOutcome,
+                token: outcome2,
                 account: noAccount,
-                price: noStartPrice,
+                price: outcome2StartPrice,
                 amount: 300,
                 side: 0,
                 accessToken: noAccount.accessToken
             };
+            
+            console.log(`🚀 Placing initial ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order for Market ${market.id}...`);
             try {
-                await placeOrder(initialNoOrder);
-                console.log(`✅ Initial NO order placed for Market ${market.id} at $${noStartPrice} (300 shares)`);
-                expenseLogger.logInitialOrder('NO', noStartPrice * 300);
+                const result2 = await placeOrder(initialOutcome2Order);
+                const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
+                console.log(`✅ Initial ${outcome2Name} order placed for Market ${market.id} at $${outcome2StartPrice} (300 shares)`);
+                console.log(`   Order Result:`, result2);
+                expenseLogger.logInitialOrder('OUTCOME2', outcome2StartPrice * 300);
             } catch (e) {
-                console.error(`❌ Failed initial NO order for Market ${market.id}:`, e.message);
+                console.error(`❌ Failed initial ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order for Market ${market.id}:`, e.message);
+                console.error(`   Full error:`, e);
                 continue;
             }
+            
             // Wait for initial orders to match before proceeding
             console.log('⏳ Waiting 10 seconds for initial orders to match...');
-            await new Promise(res => setTimeout(res, 2000));
+            await new Promise(res => setTimeout(res, 10000));
 
-            // ...existing liquidity provision logic...
             // Get budget allocation based on starting odds
             console.log(`\nMarket ID: ${market.id}`);
             console.log(`Title: ${market.title}`);
             console.log(`Question: ${market.question}`);
             console.log(`Status: ${market.status}`);
             console.log(`Volume: ${market.volume}`);
+            console.log(`Market Type: ${marketType}`);
             console.log(`💰 Budget Allocation (Starting odds: ${startDigit}):`);
             console.log(`   Total Budget: $${totalBudget}`);
-            console.log(`   YES Budget: $${yesBudget}`);
-            console.log(`   NO Budget: $${noBudget}`);
+            console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Budget: $${yesBudget}`);
+            console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Budget: $${noBudget}`);
             console.log('Outcomes:');
             for (const outcome of market.outcomes) {
                 console.log(` - Outcome: ${outcome.title} (ID: ${outcome.id}) | Token ID: ${outcome.tokenId} | Price: ${outcome.price}`);
             }
 
-            // Place YES orders
-            const yesOrders = generateYesOrders(startDigit, yesBudget);
-            let yesTotalCost = 0;
+            // Generate Outcome 1 orders
+            const outcome1Orders = generateYesOrders(startDigit, yesBudget);
+            let outcome1TotalCost = 0;
 
-            console.log(`\n📊 YES Orders (Budget: $${yesBudget}):`);
-            for (const order of yesOrders) {
+            console.log(`\n📊 ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Orders (Budget: $${yesBudget}):`);
+            for (const order of outcome1Orders) {
                 const cost = order.price * order.amount;
-                yesTotalCost += cost;
+                outcome1TotalCost += cost;
                 console.log(` Price: $${order.price} | Shares: ${order.amount} | Cost: $${cost.toFixed(2)}`);
             }
-            console.log(` Total YES Cost: $${yesTotalCost.toFixed(2)}`);
+            console.log(` Total ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Cost: $${outcome1TotalCost.toFixed(2)}`);
 
-            for (const order of yesOrders) {
+            // Generate Outcome 2 orders
+            const outcome2Orders = generateNoOrders(startDigit, noBudget);
+            let outcome2TotalCost = 0;
+
+            console.log(`\n📊 ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Orders (Budget: $${noBudget}):`);
+            for (const order of outcome2Orders) {
+                const cost = order.price * order.amount;
+                outcome2TotalCost += cost;
+                console.log(` Price: $${order.price} | Shares: ${order.amount} | Cost: $${cost.toFixed(2)}`);
+            }
+            console.log(` Total ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Cost: $${outcome2TotalCost.toFixed(2)}`);
+
+            // Show total summary and get confirmation
+            console.log(`\n💰 ORDER SUMMARY FOR MARKET ${market.id}:`);
+            console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Total: $${outcome1TotalCost.toFixed(2)}`);
+            console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Total: $${outcome2TotalCost.toFixed(2)}`);
+            console.log(`   Combined Total: $${(outcome1TotalCost + outcome2TotalCost).toFixed(2)}`);
+            console.log(`   Planned Budget: $${totalBudget}`);
+
+            // Get user confirmation before placing orders
+            const confirm = await getUserConfirmation(`\n❓ Do you want to place these orders for Market ${market.id}? (y/n): `);
+            if (!confirm) {
+                console.log(`⏭️  Skipping Market ${market.id} - orders not confirmed`);
+                continue;
+            }
+
+            console.log(`\n🚀 Placing orders for Market ${market.id}...`);
+
+            // Place Outcome 1 orders
+            for (const order of outcome1Orders) {
                 const orderBody = {
                     marketId: market.id,
-                    token: yesOutcome,
+                    token: outcome1,
                     account: yesAccount,
                     price: order.price,
                     amount: order.amount,
@@ -476,30 +559,21 @@ async function main() {
                 try {
                     await placeOrder(orderBody);
                     const cost = order.price * order.amount;
-                    console.log(`✅ YES order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
-                    expenseLogger.logSuccessfulOrder('YES', cost);
+                    const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
+                    console.log(`✅ ${outcome1Name} order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
+                    expenseLogger.logSuccessfulOrder('OUTCOME1', cost);
                     await new Promise(res => setTimeout(res, 1000));
                 } catch (e) {
-                    console.error(`❌ Failed YES order for Market ${market.id} at $${order.price}:`, e.message);
+                    const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
+                    console.error(`❌ Failed ${outcome1Name} order for Market ${market.id} at $${order.price}:`, e.message);
                 }
             }
 
-            // Place NO orders
-            const noOrders = generateNoOrders(startDigit, noBudget);
-            let noTotalCost = 0;
-
-            console.log(`\n📊 NO Orders (Budget: $${noBudget}):`);
-            for (const order of noOrders) {
-                const cost = order.price * order.amount;
-                noTotalCost += cost;
-                console.log(` Price: $${order.price} | Shares: ${order.amount} | Cost: $${cost.toFixed(2)}`);
-            }
-            console.log(` Total NO Cost: $${noTotalCost.toFixed(2)}`);
-
-            for (const order of noOrders) {
+            // Place Outcome 2 orders
+            for (const order of outcome2Orders) {
                 const orderBody = {
                     marketId: market.id,
-                    token: noOutcome,
+                    token: outcome2,
                     account: noAccount,
                     price: order.price,
                     amount: order.amount,
@@ -509,17 +583,19 @@ async function main() {
                 try {
                     await placeOrder(orderBody);
                     const cost = order.price * order.amount;
-                    console.log(`✅ NO order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
-                    expenseLogger.logSuccessfulOrder('NO', cost);
+                    const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
+                    console.log(`✅ ${outcome2Name} order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
+                    expenseLogger.logSuccessfulOrder('OUTCOME2', cost);
                     await new Promise(res => setTimeout(res, 1000));
                 } catch (e) {
-                    console.error(`❌ Failed NO order for Market ${market.id} at $${order.price}:`, e.message);
+                    const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
+                    console.error(`❌ Failed ${outcome2Name} order for Market ${market.id} at $${order.price}:`, e.message);
                 }
             }
 
             console.log(`\n💰 Market ${market.id} Summary:`);
-            console.log(` YES Total: $${yesTotalCost.toFixed(2)} | NO Total: $${noTotalCost.toFixed(2)}`);
-            console.log(` Combined Total: $${(yesTotalCost + noTotalCost).toFixed(2)}`);
+            console.log(` ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Total: $${outcome1TotalCost.toFixed(2)} | ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Total: $${outcome2TotalCost.toFixed(2)}`);
+            console.log(` Combined Total: $${(outcome1TotalCost + outcome2TotalCost).toFixed(2)}`);
             console.log(` Planned Budget: $${totalBudget}`);
             console.log(`Finished liquidity for Market ${market.id}\n`);
 
@@ -536,3 +612,4 @@ async function main() {
 }
 
 main();
+

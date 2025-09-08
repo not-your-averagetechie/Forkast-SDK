@@ -201,6 +201,28 @@ async function getUserMarketChoice(): Promise<'all' | 'specific'> {
     });
 }
 
+// Function to get latest market ID from user
+async function getLatestMarketIdFromUser(): Promise<number> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('🔍 Enter the latest market ID to start from (descending order): ', (answer) => {
+            rl.close();
+            const marketId = parseInt(answer.trim());
+            if (isNaN(marketId) || marketId <= 0) {
+                console.log('⚠️  Invalid input. Using fallback market ID: 650');
+                resolve(650);
+            } else {
+                console.log(`✅ Starting from market ID: ${marketId}`);
+                resolve(marketId);
+            }
+        });
+    });
+}
+
 // Function to get specific market IDs from user
 async function getSpecificMarketIds(): Promise<number[]> {
     const rl = readline.createInterface({
@@ -669,19 +691,13 @@ async function arbitrageBot() {
     let activeMarkets: number[] = [];
 
     if (marketChoice === 'all') {
-        // Get latest market ID - prioritize 667 if available
-        console.log('🔍 Discovering latest active market ID...');
-        const latestMarketId = await getLatestMarketId();
-        console.log(`🔍 Latest market ID: ${latestMarketId}`);
-        
-        // Always use 687 for option 1 (all markets)
-        console.log(`🎯 Using market 687 as the starting point`);
-        console.log(`📋 Will check markets from 687 down to ${Math.max(1, 687 - BOT_CONFIG.MAX_MARKETS_TO_CHECK + 1)}`);
+        // Get latest market ID from user input
+        const startingMarketId = await getLatestMarketIdFromUser();
+        console.log(`🎯 Using market ${startingMarketId} as the starting point`);
+        console.log(`📋 Will check markets from ${startingMarketId} down to ${Math.max(1, startingMarketId - BOT_CONFIG.MAX_MARKETS_TO_CHECK + 1)}`);
         console.log('');
 
         // Generate list of markets to check (in descending order)
-        // Always start from 687 for option 1 (all markets)
-        const startingMarketId = 687;
         console.log(`🎯 Starting from market ${startingMarketId} as requested`);
         const marketIds = Array.from({ length: BOT_CONFIG.MAX_MARKETS_TO_CHECK }, (_, i) => startingMarketId - i)
             .filter(id => id > 0); // Ensure no negative IDs

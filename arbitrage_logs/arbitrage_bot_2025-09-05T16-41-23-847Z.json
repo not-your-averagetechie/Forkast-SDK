@@ -1,0 +1,223 @@
+[
+  {
+    "timestamp": "2025-09-05T16:43:05.215Z",
+    "message": "   📊 Market 1036 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.55,
+      "outcome1Spread": "0.0500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0500",
+      "totalSpread": "0.0500"
+    }
+  },
+  {
+    "timestamp": "2025-09-05T16:43:05.216Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:05.217Z",
+    "message": "   🎯 Spread 0.0500 > 0.01 - placing 4 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:05.659Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Bolaji Oki order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:05.660Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Bolaji Oki) + 7 (Mason Jones)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:10.017Z",
+    "message": "   📉 Trade 1: Wallet 7 placing Mason Jones order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:11.673Z",
+    "message": "   🎯 Trade 1 complete: Bolaji Oki at $0.51 + Mason Jones at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:15.329Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Bolaji Oki order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:15.330Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Bolaji Oki) + 9 (Mason Jones)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:18.696Z",
+    "message": "   📉 Trade 2: Wallet 9 placing Mason Jones order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:20.314Z",
+    "message": "   🎯 Trade 2 complete: Bolaji Oki at $0.51 + Mason Jones at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:24.298Z",
+    "message": "   📈 Trade 3: Wallet 4 placing Bolaji Oki order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:24.299Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (Bolaji Oki) + 6 (Mason Jones)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:27.497Z",
+    "message": "   📉 Trade 3: Wallet 6 placing Mason Jones order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:29.664Z",
+    "message": "   🎯 Trade 3 complete: Bolaji Oki at $0.51 + Mason Jones at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:32.400Z",
+    "message": "   📈 Trade 4: Wallet 11 placing Bolaji Oki order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:32.401Z",
+    "message": "   🎲 Trade 4 wallet pair: 11 (Bolaji Oki) + 3 (Mason Jones)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:35.826Z",
+    "message": "   📉 Trade 4: Wallet 3 placing Mason Jones order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:36.855Z",
+    "message": "   🎯 Trade 4 complete: Bolaji Oki at $0.51 + Mason Jones at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:36.856Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1036 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.297Z",
+    "message": "   📊 Market 1011 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.06,
+      "outcome1BestAsk": 0.07,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.93,
+      "outcome2BestAsk": 0.94,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.299Z",
+    "message": "   📊 Market 1011 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.300Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.300Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.682Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 4 shares at $0.07",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:43:59.684Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:03.916Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 3 shares at $0.93",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:04.968Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.07 + No at $0.93 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:10.555Z",
+    "message": "   📈 Trade 2: Wallet 4 placing Yes order: 2 shares at $0.07",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:10.577Z",
+    "message": "   🎲 Trade 2 wallet pair: 4 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:13.775Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 5 shares at $0.93",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:14.683Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.07 + No at $0.93 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:18.207Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 4 shares at $0.07",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:18.208Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:21.363Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 1 shares at $0.93",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:23.041Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.07 + No at $0.93 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:27.516Z",
+    "message": "   📈 Trade 4: Wallet 7 placing Yes order: 4 shares at $0.07",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:27.517Z",
+    "message": "   🎲 Trade 4 wallet pair: 7 (Yes) + 9 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:30.265Z",
+    "message": "   📉 Trade 4: Wallet 9 placing No order: 3 shares at $0.93",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:31.217Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.07 + No at $0.93 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-05T16:44:31.218Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1011 (4 trades)",
+    "data": null
+  }
+]

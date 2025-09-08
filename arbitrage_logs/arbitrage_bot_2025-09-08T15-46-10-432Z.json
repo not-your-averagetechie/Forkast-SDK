@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-09-08T15:46:31.125Z",
+    "message": "   📊 Market 1064 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.53,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.47,
+      "outcome2BestAsk": 0.48,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T15:46:31.126Z",
+    "message": "   📊 Market 1064 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:31.126Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:31.127Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:31.978Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 5 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:31.979Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:36.536Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 2 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-08T15:46:38.622Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.53 + No at $0.47 = $1.0000",
+    "data": null
+  }
+]
