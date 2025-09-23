@@ -1,0 +1,17 @@
+{
+  "session_info": {
+    "start_time": "2025-09-08T16:31:13.444Z",
+    "network": "mainnet"
+  },
+  "total_money_spent": 5.779999999999999,
+  "total_orders_placed": 4,
+  "total_markets_processed": 1,
+  "operation_summaries": [
+    {
+      "timestamp": "2025-09-08T16:31:43.692Z",
+      "marketId": 703,
+      "totalCost": 5.779999999999999,
+      "ordersCount": 4
+    }
+  ]
+}

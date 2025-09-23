@@ -1,0 +1,67 @@
+[
+  {
+    "timestamp": "2025-09-23T11:34:50.446Z",
+    "message": "   ⏭️  Skipping market 1155 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:35:15.169Z",
+    "message": "   ⏭️  Skipping market 1145 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:35:43.717Z",
+    "message": "   ⏭️  Skipping market 1083 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:36:11.897Z",
+    "message": "   ⏭️  Skipping market 1156 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:36:42.621Z",
+    "message": "   ⏭️  Skipping market 1136 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:37:08.034Z",
+    "message": "   ⏭️  Skipping market 1144 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:37:28.715Z",
+    "message": "   ⏭️  Skipping market 1147 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:37:50.990Z",
+    "message": "   ⏭️  Skipping market 1151 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:38:15.273Z",
+    "message": "   ⏭️  Skipping market 1143 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:38:42.664Z",
+    "message": "   ⏭️  Skipping market 1142 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:39:04.422Z",
+    "message": "   ⏭️  Skipping market 1135 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:39:23.473Z",
+    "message": "   ⏭️  Skipping market 1159 - insufficient order book data",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T11:39:49.816Z",
+    "message": "   ⏭️  Skipping market 1148 - insufficient order book data",
+    "data": null
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-09-23T07:30:51.248Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.49,
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.49,
+      "combinedBestBidSum": "1.0000",
+      "combinedBestAskSum": "0.9800",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T07:30:51.251Z",
+    "message": "   🎯 Spread 0.0200 > 0.015 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T07:30:51.661Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Seattle Mariners order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T07:30:51.661Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Seattle Mariners) + 9 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T07:30:54.546Z",
+    "message": "   📉 Trade 1: Wallet 9 placing Los Angeles Dodgers order: 5 shares at $0.49",
+    "data": null
+  }
+]

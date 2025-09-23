@@ -1,0 +1,87 @@
+[
+  {
+    "timestamp": "2025-09-23T09:48:37.388Z",
+    "message": "   📊 Market 1146 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9500",
+      "combinedBestAskSum": "1.0500",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.389Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9500",
+      "combinedAskSum": "1.0500",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0500",
+      "oneMinusBidSum": "0.0500",
+      "arbitrageSpread": "0.0500"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.389Z",
+    "message": "   🎯 Spread 0.0500 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.813Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.813Z",
+    "message": "      Yes: $0.52 (bid 0.5 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.814Z",
+    "message": "      No: $0.48 (bid 0.45 / ask 0.5)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:37.814Z",
+    "message": "   👛 Maker (SELL): Wallet 10 | Taker (BUY): Wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:40.574Z",
+    "message": "   ✅ Internal match complete at $0.52 for 2 shares",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:40.575Z",
+    "message": "   🔁 Complementary internal match on No at $0.48 for 2 shares",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:43.512Z",
+    "message": "   ✅ Complementary internal match complete at $0.48 for 2 shares",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:43.513Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1146 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T09:48:43.514Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-23T09:48:31.782Z",
+      "iterationEndTime": "2025-09-23T09:48:43.513Z",
+      "iterationDuration": 11731,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

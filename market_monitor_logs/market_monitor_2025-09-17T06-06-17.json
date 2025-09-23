@@ -1,0 +1,89 @@
+{
+  "session_info": {
+    "start_time": "2025-09-17T06:06:17.877Z",
+    "network": "mainnet"
+  },
+  "total_money_spent": 71.62,
+  "total_orders_placed": 42,
+  "total_markets_processed": 13,
+  "operation_summaries": [
+    {
+      "timestamp": "2025-09-17T06:08:01.438Z",
+      "marketId": 762,
+      "totalCost": 10.749999999999998,
+      "ordersCount": 6
+    },
+    {
+      "timestamp": "2025-09-17T06:09:17.183Z",
+      "marketId": 761,
+      "totalCost": 6.04,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-09-17T06:10:28.254Z",
+      "marketId": 760,
+      "totalCost": 4.390000000000001,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-17T06:11:43.571Z",
+      "marketId": 759,
+      "totalCost": 6.9,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-09-17T06:14:03.542Z",
+      "marketId": 749,
+      "totalCost": 4.199999999999999,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-17T06:15:43.828Z",
+      "marketId": 745,
+      "totalCost": 6.859999999999999,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-09-17T06:17:01.854Z",
+      "marketId": 743,
+      "totalCost": 4.58,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-17T06:18:21.414Z",
+      "marketId": 736,
+      "totalCost": 1.5,
+      "ordersCount": 1
+    },
+    {
+      "timestamp": "2025-09-17T06:19:26.480Z",
+      "marketId": 734,
+      "totalCost": 2.97,
+      "ordersCount": 1
+    },
+    {
+      "timestamp": "2025-09-17T06:20:54.342Z",
+      "marketId": 733,
+      "totalCost": 10.34,
+      "ordersCount": 5
+    },
+    {
+      "timestamp": "2025-09-17T06:22:11.438Z",
+      "marketId": 731,
+      "totalCost": 4.51,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-17T06:23:43.196Z",
+      "marketId": 722,
+      "totalCost": 4.18,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-09-17T06:33:24.346Z",
+      "marketId": 755,
+      "totalCost": 4.4,
+      "ordersCount": 3
+    }
+  ]
+}

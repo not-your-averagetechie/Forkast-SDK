@@ -32,9 +32,38 @@ const CONFIG = {
     }
 };
 
-const EVENT_API_URL = CONFIG[NETWORK].EVENT_API_URL;
-const LOGIN_API_URL = CONFIG[NETWORK].LOGIN_API_URL;
-const ORDER_API_URL = CONFIG[NETWORK].ORDER_API_URL;
+// Use safe fallbacks so missing MAINNET envs don't break local runs
+const EVENT_API_URL = CONFIG[NETWORK].EVENT_API_URL || CONFIG.testnet.EVENT_API_URL;
+const LOGIN_API_URL = CONFIG[NETWORK].LOGIN_API_URL || CONFIG.testnet.LOGIN_API_URL;
+const ORDER_API_URL = CONFIG[NETWORK].ORDER_API_URL || CONFIG.testnet.ORDER_API_URL;
+
+// Public API base for fallback (same source arbitrage-bot uses)
+const PUBLIC_EVENT_API_BASE = process.env.PUBLIC_EVENT_API_BASE || 'https://api.forkast.gg/api/v1/markets';
+
+// Enforce using ONLY these two proxy wallets for auth/access
+const EXPECTED_PROXY_WALLET_1 = '0x9C4bF6f7F2B80dfE689E211a09f19B9E5321b5cd';
+const EXPECTED_PROXY_WALLET_2 = '0xF2d31fe600b6BA1683C75Dcd10dE77A16f78B387';
+
+function validateAllowedProxyWallets() {
+    const proxy1 = CONFIG[NETWORK].PROXY_WALLET;
+    const proxy2 = CONFIG[NETWORK].PROXY_WALLET_2;
+    if (NETWORK === 'mainnet') {
+        if (proxy1 !== EXPECTED_PROXY_WALLET_1 || proxy2 !== EXPECTED_PROXY_WALLET_2) {
+            console.error('❌ Proxy wallets do not match the allowed mainnet wallets.');
+            console.error(`   Expected: ${EXPECTED_PROXY_WALLET_1} and ${EXPECTED_PROXY_WALLET_2}`);
+            console.error(`   Got:      ${proxy1} and ${proxy2}`);
+            process.exit(1);
+        }
+    }
+}
+
+// Ensure all prices are clamped to [0.01, 0.99] and rounded to 2 decimals
+function toCents(value: number): number {
+    const rounded = Math.round(value * 100) / 100;
+    if (rounded < 0.01) return 0.01;
+    if (rounded > 0.99) return 0.99;
+    return rounded;
+}
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -180,9 +209,52 @@ function getNoAccount(accessToken: string) {
     };
 }
 
-async function fetchMarket(marketId: number) {
-    const response = await axios.get(EVENT_API_URL, { params: { id: marketId } });
-    return response.data;
+async function fetchMarket(marketId: number, accessToken?: string) {
+    // 1) Try local Nest endpoint first
+    try {
+        const response = await axios.get(EVENT_API_URL, { params: { id: marketId, accessToken }, timeout: 30000 });
+        return response.data;
+    } catch (error: any) {
+        const status = error?.response?.status;
+        if (status === 404) {
+            console.log(`⏭️  Market ${marketId} not found (404) on local endpoint, skipping`);
+            return null;
+        }
+        if (status === 429) {
+            console.log(`⏳ Rate limited on local endpoint for market ${marketId}, retrying after delay...`);
+            await new Promise(res => setTimeout(res, 2000));
+            return fetchMarket(marketId, accessToken);
+        }
+        console.log(`⚠️  Local endpoint failed for market ${marketId}: ${error?.message || 'unknown error'}${status ? ` (status ${status})` : ''} — trying public API`);
+    }
+
+    // 2) Fallback to public Forkast API and normalize shape
+    try {
+        const resp = await axios.get(`${PUBLIC_EVENT_API_BASE}/${marketId}`, { timeout: 30000 });
+        const event = resp?.data;
+        const data = event?.data;
+        if (!data || !Array.isArray(data.markets) || data.markets.length === 0) {
+            return null;
+        }
+        // Normalize to local shape: { markets: [...] , ... }
+        return {
+            ...data,
+            markets: data.markets
+        };
+    } catch (error: any) {
+        const status = error?.response?.status;
+        if (status === 404) {
+            console.log(`⏭️  Market ${marketId} not found (404) on public API, skipping`);
+            return null;
+        }
+        if (status === 429) {
+            console.log(`⏳ Rate limited on public API for market ${marketId}, retrying after delay...`);
+            await new Promise(res => setTimeout(res, 2000));
+            return fetchMarket(marketId);
+        }
+        console.log(`⚠️  Failed to fetch market ${marketId} from public API: ${error?.message || 'unknown error'}${status ? ` (status ${status})` : ''}`);
+        return null;
+    }
 }
 
 function getRandomAmount(...amounts: number[]): number {
@@ -244,21 +316,22 @@ function adjustOrdersToMaxBudget(orders: any[], maxBudget: number) {
 }
 
 function generateYesOrders(startDigit: number, yesBudget: number) {
-    const startPrice = startDigit / 100;
+    const startPrice = toCents(startDigit / 100);
     const orders = [];
 
     // Top order shares (consistent across all budgets)
-    orders.push({ price: startPrice, amount: getRandomAmount(60, 50, 45, 55, 65) });
+    orders.push({ price: toCents(startPrice), amount: getRandomAmount(60, 50, 45, 55, 65) });
 
     let currentPrice = Math.floor(startPrice * 20) * 0.05;
-    if (currentPrice >= startPrice) currentPrice -= 0.05;
+    if (currentPrice >= startPrice) currentPrice = toCents(currentPrice - 0.05);
+    currentPrice = toCents(currentPrice);
 
     while (currentPrice >= 0.10) {
-        if (currentPrice >= 0.50) orders.push({ price: currentPrice, amount: getRandomAmount(20, 25, 22, 24) });
-        else if (currentPrice >= 0.30) orders.push({ price: currentPrice, amount: getRandomAmount(10, 15, 14, 18, 20) });
-        else if (currentPrice >= 0.20) orders.push({ price: currentPrice, amount: getRandomAmount(10, 15, 14, 18, 20, 22, 24) });
-        else if (currentPrice >= 0.10) orders.push({ price: currentPrice, amount: getRandomAmount(10, 15, 14, 18, 22, 25, 28, 30, 20) });
-        currentPrice -= 0.05;
+        if (currentPrice >= 0.50) orders.push({ price: toCents(currentPrice), amount: getRandomAmount(20, 25, 22, 24) });
+        else if (currentPrice >= 0.30) orders.push({ price: toCents(currentPrice), amount: getRandomAmount(10, 15, 14, 18, 20) });
+        else if (currentPrice >= 0.20) orders.push({ price: toCents(currentPrice), amount: getRandomAmount(10, 15, 14, 18, 20, 22, 24) });
+        else if (currentPrice >= 0.10) orders.push({ price: toCents(currentPrice), amount: getRandomAmount(10, 15, 14, 18, 22, 25, 28, 30, 20) });
+        currentPrice = toCents(currentPrice - 0.05);
     }
 
     orders.push(
@@ -277,24 +350,25 @@ function generateYesOrders(startDigit: number, yesBudget: number) {
 }
 
 function generateNoOrders(startDigit: number, noBudget: number) {
-    const startPrice = startDigit / 100;
+    const startPrice = toCents(startDigit / 100);
     const orders = [];
-    const noStartPrice = 0.99 - startPrice;
+    const noStartPrice = toCents(0.99 - startPrice);
 
     // Top order shares (consistent across all budgets)
     if (noStartPrice >= 0.10 && noStartPrice <= 0.90) {
-        orders.push({ price: noStartPrice, amount: getRandomAmount(60, 50, 45, 55, 65) });
+        orders.push({ price: toCents(noStartPrice), amount: getRandomAmount(60, 50, 45, 55, 65) });
     }
 
     let currentNoPrice = Math.floor(noStartPrice * 20) * 0.05;
-    if (currentNoPrice >= noStartPrice) currentNoPrice -= 0.05;
+    if (currentNoPrice >= noStartPrice) currentNoPrice = toCents(currentNoPrice - 0.05);
+    currentNoPrice = toCents(currentNoPrice);
 
     while (currentNoPrice >= 0.10) {
-        if (currentNoPrice >= 0.50) orders.push({ price: currentNoPrice, amount: getRandomAmount(20, 25, 22, 24) });
-        else if (currentNoPrice >= 0.30) orders.push({ price: currentNoPrice, amount: getRandomAmount(10, 15, 14, 18, 20) });
-        else if (currentNoPrice >= 0.20) orders.push({ price: currentNoPrice, amount: getRandomAmount(10, 15, 14, 18, 20, 22, 24) });
-        else if (currentNoPrice >= 0.10) orders.push({ price: currentNoPrice, amount: getRandomAmount(10, 15, 14, 18, 22, 25, 28, 30, 20) });
-        currentNoPrice -= 0.05;
+        if (currentNoPrice >= 0.50) orders.push({ price: toCents(currentNoPrice), amount: getRandomAmount(20, 25, 22, 24) });
+        else if (currentNoPrice >= 0.30) orders.push({ price: toCents(currentNoPrice), amount: getRandomAmount(10, 15, 14, 18, 20) });
+        else if (currentNoPrice >= 0.20) orders.push({ price: toCents(currentNoPrice), amount: getRandomAmount(10, 15, 14, 18, 20, 22, 24) });
+        else if (currentNoPrice >= 0.10) orders.push({ price: toCents(currentNoPrice), amount: getRandomAmount(10, 15, 14, 18, 22, 25, 28, 30, 20) });
+        currentNoPrice = toCents(currentNoPrice - 0.05);
     }
 
     orders.push(
@@ -323,58 +397,77 @@ async function placeOrder(orderBody: any) {
     return response.data;
 }
 
+// Function to get number of markets to scrape from user
+async function getMarketsToScrape(): Promise<number> {
+    return new Promise((resolve) => {
+        rl.question('📊 How many markets to scrape? (default: 5, max: 50): ', (answer) => {
+            const numMarkets = parseInt(answer.trim());
+            if (isNaN(numMarkets) || numMarkets <= 0) {
+                console.log('⚠️  Invalid input. Using default: 5 markets');
+                resolve(5);
+            } else if (numMarkets > 50) {
+                console.log('⚠️  Too many markets. Using maximum: 50 markets');
+                resolve(50);
+            } else {
+                console.log(`✅ Will scrape ${numMarkets} markets`);
+                resolve(numMarkets);
+            }
+        });
+    });
+}
+
+// Function to get latest market ID from user input
+async function getLatestMarketIdFromUser(): Promise<number> {
+    return new Promise((resolve) => {
+        rl.question('🔍 Enter the latest market ID to start from (descending order): ', (answer) => {
+            const marketId = parseInt(answer.trim());
+            if (isNaN(marketId) || marketId <= 0) {
+                console.log('⚠️  Invalid input. Using fallback market ID: 650');
+                resolve(650);
+            } else {
+                console.log(`✅ Starting from market ID: ${marketId}`);
+                resolve(marketId);
+            }
+        });
+    });
+}
+
 async function main() {
     console.log('='.repeat(60));
-    console.log('💰 MULTI-MARKET-ID LIQUIDITY PROVISION (OPTIMIZED BUDGET)');
+    console.log('💰 MULTI-MARKET-ID LIQUIDITY PROVISION (AUTOMATED MODE)');
     console.log('='.repeat(60));
+
+    // Enforce allowed proxy wallets
+    validateAllowedProxyWallets();
 
     // Initialize expense logger
     const expenseLogger = new ExpenseLogger();
 
-    // Get number of markets
-    const numMarketsStr = await getUserInput('How many markets do you want to provide liquidity for? ');
-    const numMarkets = parseInt(numMarketsStr.trim());
-    if (isNaN(numMarkets) || numMarkets < 1) {
-        console.error('Invalid number.');
-        process.exit(1);
-    }
+    // Get number of markets to scrape
+    const numMarkets = await getMarketsToScrape();
+    
+    // Get the starting market ID
+    const firstMarketId = await getLatestMarketIdFromUser();
 
-    // Get the first market ID
-    const firstMarketIdStr = await getUserInput('Enter the first market ID: ');
-    const firstMarketId = parseInt(firstMarketIdStr.trim());
-    if (isNaN(firstMarketId)) {
-        console.error('Invalid market ID.');
-        process.exit(1);
-    }
-
-    // Get starting digit for the first market
-    const firstStartDigitStr = await getUserInput('Enter starting digit for YES outcome for the first market: ');
-    const firstStartDigit = parseInt(firstStartDigitStr.trim());
-    if (isNaN(firstStartDigit) || firstStartDigit < 10 || firstStartDigit > 90) {
-        console.error('Invalid start digit.');
-        process.exit(1);
-    }
-
-    // Create market configurations
+    // Create market configurations with user input for each starting digit
     const marketConfigs: { marketId: number, startDigit: number }[] = [];
     
-    // Add the first market
-    marketConfigs.push({ marketId: firstMarketId, startDigit: firstStartDigit });
-
-    // For subsequent markets, auto-increment market ID and ask for starting digit
-    for (let i = 1; i < numMarkets; i++) {
-        const nextMarketId = firstMarketId + i;
-        console.log(`\nMarket #${i + 1}: Market ID will be ${nextMarketId} (auto-incremented)`);
+    console.log(`\n🎯 Configuring ${numMarkets} markets - please provide starting digit for each...`);
+    
+    // Get starting digit for each market
+    for (let i = 0; i < numMarkets; i++) {
+        const marketId = firstMarketId - i; // Descending order
         
-        const startDigitStr = await getUserInput(`Enter starting digit for YES outcome for market ${nextMarketId}: `);
+        const startDigitStr = await getUserInput(`Enter starting digit for Market ${marketId} (20-80): `);
         const startDigit = parseInt(startDigitStr.trim());
         
-        if (isNaN(startDigit) || startDigit < 10 || startDigit > 90) {
-            console.error(`Invalid start digit for market ${nextMarketId}, skipping.`);
-            continue;
+        if (isNaN(startDigit) || startDigit < 20 || startDigit > 80) {
+            console.log(`⚠️  Invalid start digit for market ${marketId}, using default: 50`);
+            marketConfigs.push({ marketId, startDigit: 50 });
+        } else {
+            marketConfigs.push({ marketId, startDigit });
+            console.log(`✅ Market ${marketId}: Starting Digit ${startDigit}`);
         }
-        
-        marketConfigs.push({ marketId: nextMarketId, startDigit });
     }
 
     // Display summary of markets to be processed
@@ -386,6 +479,7 @@ async function main() {
     console.log('='.repeat(40));
 
     // Login both accounts
+    // Login strictly using the two allowed proxy wallets' corresponding private keys
     const yesAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
     const noAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_2);
     const yesAccount = getYesAccount(yesAccessToken);
@@ -393,8 +487,8 @@ async function main() {
 
     for (const { marketId, startDigit } of marketConfigs) {
         try {
-            const event = await fetchMarket(marketId);
-            if (!event.markets || event.markets.length === 0) {
+            const event = await fetchMarket(marketId, yesAccessToken);
+            if (!event || !event.markets || event.markets.length === 0) {
                 console.error(`No markets found for market ID ${marketId}, skipping.`);
                 continue;
             }
@@ -432,7 +526,7 @@ async function main() {
             const { totalBudget, yesBudget, noBudget } = getBudgetAllocation(startDigit);
 
             // Place initial Outcome 1 order (wallet 1)
-            const outcome1StartPrice = startDigit / 100;
+            const outcome1StartPrice = toCents(startDigit / 100);
             const initialOutcome1Order = {
                 marketId: market.id,
                 token: outcome1,
@@ -461,7 +555,8 @@ async function main() {
             await new Promise(res => setTimeout(res, 2000));
 
             // Place initial Outcome 2 order (wallet 2)
-            const outcome2StartPrice = 1 - outcome1StartPrice;
+            // Place the second initial order at the exact complementary price to 1.00
+            const outcome2StartPrice = toCents(1.00 - outcome1StartPrice);
             const initialOutcome2Order = {
                 marketId: market.id,
                 token: outcome2,
@@ -529,21 +624,14 @@ async function main() {
             }
             console.log(` Total ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Cost: $${outcome2TotalCost.toFixed(2)}`);
 
-            // Show total summary and get confirmation
+            // Show total summary
             console.log(`\n💰 ORDER SUMMARY FOR MARKET ${market.id}:`);
             console.log(`   ${marketType === 'YES/NO' ? 'YES' : 'Team1'} Total: $${outcome1TotalCost.toFixed(2)}`);
             console.log(`   ${marketType === 'YES/NO' ? 'NO' : 'Team2'} Total: $${outcome2TotalCost.toFixed(2)}`);
             console.log(`   Combined Total: $${(outcome1TotalCost + outcome2TotalCost).toFixed(2)}`);
             console.log(`   Planned Budget: $${totalBudget}`);
 
-            // Get user confirmation before placing orders
-            const confirm = await getUserConfirmation(`\n❓ Do you want to place these orders for Market ${market.id}? (y/n): `);
-            if (!confirm) {
-                console.log(`⏭️  Skipping Market ${market.id} - orders not confirmed`);
-                continue;
-            }
-
-            console.log(`\n🚀 Placing orders for Market ${market.id}...`);
+            console.log(`\n🚀 Automatically placing orders for Market ${market.id}...`);
 
             // Place Outcome 1 orders
             for (const order of outcome1Orders) {

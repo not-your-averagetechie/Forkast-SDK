@@ -1,0 +1,169 @@
+[
+  {
+    "timestamp": "2025-09-23T12:44:00.409Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.54,
+      "outcome1BestAsk": 0.56,
+      "outcome2BestBid": 0.44,
+      "outcome2BestAsk": 0.46,
+      "combinedBestBidSum": "0.9800",
+      "combinedBestAskSum": "1.0200",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.410Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9800",
+      "combinedAskSum": "1.0200",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0200",
+      "oneMinusBidSum": "0.0200",
+      "arbitrageSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.411Z",
+    "message": "   🎯 Spread 0.0200 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.852Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.853Z",
+    "message": "      Seattle Mariners: $0.55 (bid 0.54 / ask 0.56)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.854Z",
+    "message": "      Los Angeles Dodgers: $0.45 (bid 0.44 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:00.854Z",
+    "message": "   🛒 Placing BUY on Seattle Mariners at $0.55 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:01.863Z",
+    "message": "   ✅ BUY placed on Seattle Mariners",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:03.866Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.45 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:04.932Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:05.356Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:05.357Z",
+    "message": "      Seattle Mariners: $0.55 (bid 0.54 / ask 0.56)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:05.357Z",
+    "message": "      Los Angeles Dodgers: $0.45 (bid 0.44 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:05.358Z",
+    "message": "   🛒 Placing BUY on Seattle Mariners at $0.55 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:06.471Z",
+    "message": "   ✅ BUY placed on Seattle Mariners",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:08.474Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.45 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:09.513Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:09.924Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:09.924Z",
+    "message": "      Seattle Mariners: $0.55 (bid 0.54 / ask 0.56)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:09.924Z",
+    "message": "      Los Angeles Dodgers: $0.45 (bid 0.44 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:09.924Z",
+    "message": "   🛒 Placing BUY on Seattle Mariners at $0.55 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:10.852Z",
+    "message": "   ✅ BUY placed on Seattle Mariners",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:12.854Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.45 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:13.841Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-23T12:44:13.842Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1152 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T12:44:13.842Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-23T12:43:54.011Z",
+      "iterationEndTime": "2025-09-23T12:44:13.842Z",
+      "iterationDuration": 19831,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

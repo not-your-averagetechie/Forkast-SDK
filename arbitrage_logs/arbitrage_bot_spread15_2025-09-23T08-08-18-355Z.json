@@ -1,0 +1,222 @@
+[
+  {
+    "timestamp": "2025-09-23T08:08:47.788Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.51,
+      "outcome1BestAsk": 0.56,
+      "outcome2BestBid": 0.44,
+      "outcome2BestAsk": 0.49,
+      "combinedBestBidSum": "0.9500",
+      "combinedBestAskSum": "1.0500",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:08:47.789Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9500",
+      "combinedAskSum": "1.0500",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0500",
+      "oneMinusBidSum": "0.0500",
+      "arbitrageSpread": "0.0500"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:08:47.790Z",
+    "message": "   🎯 Spread 0.0500 > 0.015 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:48.229Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Seattle Mariners order: 4 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:48.230Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Seattle Mariners) + 4 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:51.077Z",
+    "message": "   📉 Trade 1: Wallet 4 placing Los Angeles Dodgers order: 4 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:52.289Z",
+    "message": "   🎯 Trade 1 complete: Seattle Mariners at $0.52 + Los Angeles Dodgers at $0.48 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:55.580Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Seattle Mariners order: 3 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:55.581Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Seattle Mariners) + 11 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:58.100Z",
+    "message": "   📉 Trade 2: Wallet 11 placing Los Angeles Dodgers order: 2 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:08:59.659Z",
+    "message": "   🎯 Trade 2 complete: Seattle Mariners at $0.52 + Los Angeles Dodgers at $0.48 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:04.896Z",
+    "message": "   📈 Trade 3: Wallet 7 placing Seattle Mariners order: 3 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:04.897Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (Seattle Mariners) + 8 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:07.432Z",
+    "message": "   📉 Trade 3: Wallet 8 placing Los Angeles Dodgers order: 2 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:08.363Z",
+    "message": "   🎯 Trade 3 complete: Seattle Mariners at $0.52 + Los Angeles Dodgers at $0.48 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:13.572Z",
+    "message": "   📈 Trade 4: Wallet 6 placing Seattle Mariners order: 2 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:13.573Z",
+    "message": "   🎲 Trade 4 wallet pair: 6 (Seattle Mariners) + 3 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:16.415Z",
+    "message": "   📉 Trade 4: Wallet 3 placing Los Angeles Dodgers order: 1 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:17.446Z",
+    "message": "   🎯 Trade 4 complete: Seattle Mariners at $0.52 + Los Angeles Dodgers at $0.48 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:17.447Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1152 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:17.447Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-23T08:08:18.355Z",
+      "iterationEndTime": "2025-09-23T08:09:17.447Z",
+      "iterationDuration": 59092,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:09:48.768Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.56,
+      "outcome2BestBid": 0.44,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9600",
+      "combinedBestAskSum": "1.0400",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:09:48.773Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9600",
+      "combinedAskSum": "1.0400",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0400",
+      "oneMinusBidSum": "0.0400",
+      "arbitrageSpread": "0.0400"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:09:48.775Z",
+    "message": "   🎯 Spread 0.0400 > 0.015 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:49.156Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Seattle Mariners order: 4 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:49.157Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Seattle Mariners) + 10 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:51.604Z",
+    "message": "   📉 Trade 1: Wallet 10 placing Los Angeles Dodgers order: 3 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:52.704Z",
+    "message": "   🎯 Trade 1 complete: Seattle Mariners at $0.53 + Los Angeles Dodgers at $0.47 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:56.924Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Seattle Mariners order: 5 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:56.925Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Seattle Mariners) + 10 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:09:59.047Z",
+    "message": "   📉 Trade 2: Wallet 10 placing Los Angeles Dodgers order: 1 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:10:00.024Z",
+    "message": "   🎯 Trade 2 complete: Seattle Mariners at $0.53 + Los Angeles Dodgers at $0.47 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:10:00.025Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1152 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:10:00.026Z",
+    "message": "Iteration 2 completed",
+    "data": {
+      "iterationNumber": 2,
+      "iterationStartTime": "2025-09-23T08:08:18.355Z",
+      "iterationEndTime": "2025-09-23T08:10:00.025Z",
+      "iterationDuration": 101670,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

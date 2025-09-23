@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-09-23T06:56:59.075Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.49,
+      "outcome1Spread": "-0.0100",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.49,
+      "outcome2Spread": "-0.0100",
+      "totalSpread": "-0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T06:56:59.076Z",
+    "message": "   ⏭️  Skipping market 1152 - spread -0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T06:56:59.078Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-23T06:56:54.079Z",
+      "iterationEndTime": "2025-09-23T06:56:59.077Z",
+      "iterationDuration": 4998,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 0,
+      "successRate": "0.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

@@ -85,6 +85,14 @@ const ORDER_BOOK_API_URL = 'https://api.forkast.gg/api/v1/orderbook';
 // Initialize ForkastSDK for authentication
 const sdk = new ForkastSDK(Network.MAINNET, process.env.API_KEY);
 
+// Price helper: clamp to [0.01, 0.99] and round to 2 decimals
+function toCents(value: number): number {
+    const rounded = Math.round(value * 100) / 100;
+    if (rounded < 0.01) return 0.01;
+    if (rounded > 0.99) return 0.99;
+    return rounded;
+}
+
 // Bot Configuration
 const BOT_CONFIG = {
     MAX_MARKETS_TO_CHECK: 300, // Check last 300 markets
@@ -218,6 +226,31 @@ async function getLatestMarketIdFromUser(): Promise<number> {
             } else {
                 console.log(`✅ Starting from market ID: ${marketId}`);
                 resolve(marketId);
+            }
+        });
+    });
+}
+
+// Function to get number of markets to scrape from user
+async function getMarketsToScrape(): Promise<number> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise((resolve) => {
+        rl.question('📊 How many markets to scrape? (default: 300, max: 1000): ', (answer) => {
+            rl.close();
+            const numMarkets = parseInt(answer.trim());
+            if (isNaN(numMarkets) || numMarkets <= 0) {
+                console.log('⚠️  Invalid input. Using default: 300 markets');
+                resolve(300);
+            } else if (numMarkets > 1000) {
+                console.log('⚠️  Too many markets. Using maximum: 1000 markets');
+                resolve(1000);
+            } else {
+                console.log(`✅ Will scrape ${numMarkets} markets`);
+                resolve(numMarkets);
             }
         });
     });
@@ -531,20 +564,20 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
             return false;
         }
 
-        // Select multiple random wallets for this market (3-4 trades)
+        // Select multiple random wallets for this market (1-4 trades max)
         const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
-        const numTrades = Math.floor(Math.random() * 2) + 3; // 3-4 trades
+        const numTrades = Math.floor(Math.random() * 4) + 1; // 1-4 trades (2-8 orders total)
         
-        logger.log(`   🎲 Placing ${numTrades} trades using random wallet pairs`);
+        logger.log(`   🎲 Placing ${numTrades} trade${numTrades === 1 ? '' : 's'} using random wallet pairs`);
 
         // Strategy: Place multiple orders at top of book with spread-based pricing
         let ordersPlaced = 0;
 
         // Always place orders regardless of spread - never skip any market
         if (totalSpread > BOT_CONFIG.SPREAD_THRESHOLD) {
-            logger.log(`   🎯 Spread ${totalSpread.toFixed(4)} > ${BOT_CONFIG.SPREAD_THRESHOLD} - placing ${numTrades} trades`);
+            logger.log(`   🎯 Spread ${totalSpread.toFixed(4)} > ${BOT_CONFIG.SPREAD_THRESHOLD} - placing ${numTrades} trade${numTrades === 1 ? '' : 's'} (${numTrades * 2} orders)`);
         } else {
-            logger.log(`   🎯 Market ${market.id} - placing orders despite tight spread (${totalSpread.toFixed(4)})`);
+            logger.log(`   🎯 Market ${market.id} - placing ${numTrades} trade${numTrades === 1 ? '' : 's'} (${numTrades * 2} orders) despite tight spread (${totalSpread.toFixed(4)})`);
         }
             
             // Place multiple trades with completely random wallet selection for each trade
@@ -574,9 +607,9 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
                 const wallet1AccessToken = await loginAndGetAccessToken(wallet1Config.PRIVATE_KEY);
                 const wallet2AccessToken = await loginAndGetAccessToken(wallet2Config.PRIVATE_KEY);
 
-                // Calculate prices for this trade
-                const outcome1Price = parseFloat((outcome1BestBid + 0.01).toFixed(4));
-                const outcome2Price = parseFloat((1.00 - outcome1Price).toFixed(4));
+                // Calculate prices for this trade with strict two-decimal precision
+                const outcome1Price = toCents(outcome1BestBid + 0.01);
+                const outcome2Price = toCents(1.00 - outcome1Price);
 
                 // Check if prices are acceptable
                 if (outcome1Price > 0.05 && outcome1Price < 0.95 && outcome2Price > 0.05 && outcome2Price < 0.95) {
@@ -659,15 +692,10 @@ async function arbitrageBot() {
     const logger = new ArbitrageLogger();
     const sessionStartTime = logger.getSessionStartTime();
     
-    // Set 1-hour timeout
-    const SESSION_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
-    const sessionEndTime = new Date(sessionStartTime.getTime() + SESSION_DURATION);
-    
-    console.log('🚀 Starting Arbitrage Bot with Human-Like Behavior');
+    console.log('🚀 Starting Arbitrage Bot with Human-Like Behavior (CONTINUOUS MODE)');
     console.log(`📅 Session started at: ${sessionStartTime.toLocaleString()}`);
-    console.log(`⏰ Session will end at: ${sessionEndTime.toLocaleString()} (1 hour duration)`);
+    console.log(`🔄 Running continuously until manually stopped (Ctrl+C)`);
     console.log(`🌐 Network: ${NETWORK}`);
-    console.log(`🎯 Target: Last ${BOT_CONFIG.MAX_MARKETS_TO_CHECK} markets`);
     console.log(`💰 Strategy: Coordinated trades between 2 random wallets per market`);
     console.log(`🎲 YES at best bid + NO at complementary price (1.00 - YES price)`);
     console.log(`⏱️  Human-like delays: ${BOT_CONFIG.HUMAN_LIKE_DELAYS ? 'Enabled' : 'Disabled'}`);
@@ -684,22 +712,22 @@ async function arbitrageBot() {
     const marketChoice = await getUserMarketChoice();
     console.log('');
 
-    let marketsProcessed = 0;
-    let marketsWithOrders = 0;
-    let consecutiveErrors = 0;
-    const maxConsecutiveErrors = 5;
     let activeMarkets: number[] = [];
 
     if (marketChoice === 'all') {
         // Get latest market ID from user input
         const startingMarketId = await getLatestMarketIdFromUser();
+        
+        // Get number of markets to scrape from user
+        const marketsToScrape = await getMarketsToScrape();
+        
         console.log(`🎯 Using market ${startingMarketId} as the starting point`);
-        console.log(`📋 Will check markets from ${startingMarketId} down to ${Math.max(1, startingMarketId - BOT_CONFIG.MAX_MARKETS_TO_CHECK + 1)}`);
+        console.log(`📋 Will check ${marketsToScrape} markets from ${startingMarketId} down to ${Math.max(1, startingMarketId - marketsToScrape + 1)}`);
         console.log('');
 
         // Generate list of markets to check (in descending order)
         console.log(`🎯 Starting from market ${startingMarketId} as requested`);
-        const marketIds = Array.from({ length: BOT_CONFIG.MAX_MARKETS_TO_CHECK }, (_, i) => startingMarketId - i)
+        const marketIds = Array.from({ length: marketsToScrape }, (_, i) => startingMarketId - i)
             .filter(id => id > 0); // Ensure no negative IDs
         
         // ALWAYS shuffle markets for completely random processing - never process in order
@@ -778,19 +806,25 @@ async function arbitrageBot() {
         console.log(`✅ Found ${activeMarkets.length} active markets from specified list`);
     }
 
-    // Create a copy of active markets for random selection
-    const availableMarkets = [...activeMarkets];
-
-    // Process markets in RANDOM order by picking random indices
-    while (availableMarkets.length > 0 && consecutiveErrors < maxConsecutiveErrors) {
-        // Check if session time has expired (1 hour timeout)
-        const currentTime = new Date();
-        if (currentTime.getTime() >= sessionEndTime.getTime()) {
-            console.log(`\n⏰ Session timeout reached (1 hour duration). Stopping bot...`);
-            console.log(`📅 Session started at: ${sessionStartTime.toLocaleString()}`);
-            console.log(`📅 Session ended at: ${currentTime.toLocaleString()}`);
-            break;
-        }
+    // Continuous loop - process markets until manually stopped
+    let iterationCount = 0;
+    let marketsProcessed = 0;
+    let marketsWithOrders = 0;
+    let consecutiveErrors = 0;
+    const maxConsecutiveErrors = 5;
+    
+    while (true) {
+        iterationCount++;
+        console.log(`\n🔄 Starting iteration ${iterationCount}...`);
+        
+        // Reset available markets for each iteration
+        let availableMarkets = [...activeMarkets];
+        consecutiveErrors = 0;
+        marketsProcessed = 0;
+        marketsWithOrders = 0;
+        
+        // Process markets in RANDOM order by picking random indices
+        while (availableMarkets.length > 0 && consecutiveErrors < maxConsecutiveErrors) {
         
         // Pick a RANDOM market from the available ones
         const randomIndex = Math.floor(Math.random() * availableMarkets.length);
@@ -886,37 +920,43 @@ async function arbitrageBot() {
             console.log(`   ⏳ Waiting ${errorDelay}ms before continuing...`);
             await new Promise(resolve => setTimeout(resolve, errorDelay));
         }
+        }
+        
+        // Iteration summary
+        const iterationEndTime = new Date();
+        const iterationDuration = iterationEndTime.getTime() - sessionStartTime.getTime();
+        const iterationMinutes = Math.floor(iterationDuration / 60000);
+        const iterationSeconds = Math.floor((iterationDuration % 60000) / 1000);
+
+        console.log('\n' + '='.repeat(50));
+        console.log(`🔄 ITERATION ${iterationCount} COMPLETE`);
+        console.log('='.repeat(50));
+        console.log(`📅 Iteration started at: ${sessionStartTime.toLocaleString()}`);
+        console.log(`📅 Iteration ended at: ${iterationEndTime.toLocaleString()}`);
+        console.log(`⏱️  Duration: ${iterationMinutes}m ${iterationSeconds}s`);
+        console.log(`🔍 Markets Processed: ${marketsProcessed}/${activeMarkets.length}`);
+        console.log(`📈 Markets with Orders: ${marketsWithOrders}`);
+        console.log(`📊 Success Rate: ${marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) : 0}%`);
+        console.log(`🌐 Network: ${NETWORK}`);
+        console.log(`🎲 Random Selection: ${BOT_CONFIG.RANDOM_MARKET_SELECTION ? 'Yes' : 'No'}`);
+        console.log('='.repeat(50));
+
+        logger.log(`Iteration ${iterationCount} completed`, {
+            iterationNumber: iterationCount,
+            iterationStartTime: sessionStartTime.toISOString(),
+            iterationEndTime: iterationEndTime.toISOString(),
+            iterationDuration: iterationDuration,
+            marketsProcessed,
+            marketsWithOrders,
+            successRate: marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) + '%' : '0%',
+            randomSelection: BOT_CONFIG.RANDOM_MARKET_SELECTION,
+            activeMarketsFound: activeMarkets.length
+        });
+        
+        // Wait before starting next iteration
+        console.log(`\n⏳ Waiting 30 seconds before starting next iteration...`);
+        await new Promise(resolve => setTimeout(resolve, 30000));
     }
-
-    // Session summary
-    const actualSessionEndTime = new Date();
-    const sessionDuration = actualSessionEndTime.getTime() - sessionStartTime.getTime();
-    const sessionMinutes = Math.floor(sessionDuration / 60000);
-    const sessionSeconds = Math.floor((sessionDuration % 60000) / 1000);
-
-    console.log('\n' + '='.repeat(60));
-    console.log('🎯 ARBITRAGE BOT SESSION COMPLETE');
-    console.log('='.repeat(60));
-    console.log(`📅 Session Start: ${sessionStartTime.toLocaleString()}`);
-    console.log(`📅 Session End: ${actualSessionEndTime.toLocaleString()}`);
-    console.log(`⏱️  Duration: ${sessionMinutes}m ${sessionSeconds}s`);
-    console.log(`🔍 Markets Processed: ${marketsProcessed}/${activeMarkets.length}`);
-    console.log(`📈 Markets with Orders: ${marketsWithOrders}`);
-    console.log(`📊 Success Rate: ${marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) : 0}%`);
-    console.log(`🌐 Network: ${NETWORK}`);
-    console.log(`🎲 Random Selection: ${BOT_CONFIG.RANDOM_MARKET_SELECTION ? 'Yes' : 'No'}`);
-    console.log('='.repeat(60));
-
-    logger.log('Session completed', {
-        sessionStartTime: sessionStartTime.toISOString(),
-        sessionEndTime: actualSessionEndTime.toISOString(),
-        sessionDuration: sessionDuration,
-        marketsProcessed,
-        marketsWithOrders,
-        successRate: marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) + '%' : '0%',
-        randomSelection: BOT_CONFIG.RANDOM_MARKET_SELECTION,
-        activeMarketsFound: activeMarkets.length
-    });
 }
 
 // Graceful shutdown

@@ -85,6 +85,14 @@ const ORDER_BOOK_API_URL = CONFIG[NETWORK].ORDER_BOOK_API_URL;
 // Import readline for user input
 import * as readline from 'readline';
 
+// Helper to clamp and round prices to exactly two decimals within [0.01, 0.99]
+function toCents(value: number): number {
+    const rounded = Math.round(value * 100) / 100;
+    if (rounded < 0.01) return 0.01;
+    if (rounded > 0.99) return 0.99;
+    return rounded;
+}
+
 // Function to randomly select a wallet from wallets 3, 4, 5, 6, 7, 8, 9, 10, and 11
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
     const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -151,6 +159,36 @@ async function getLatestMarketIdFromUser(): Promise<number> {
     });
 }
 
+// Function to get number of markets to check from user input
+async function getMarketsToCheckFromUser(): Promise<number> {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    const defaultCount = ORDER_BOOK_CONFIG.MAX_MARKETS_TO_CHECK || 50;
+
+    return new Promise((resolve) => {
+        rl.question(`🔢 How many markets to check? (default ${defaultCount}): `, (answer) => {
+            rl.close();
+
+            const count = parseInt(answer.trim());
+            if (isNaN(count) || count <= 0) {
+                console.log(`⚠️  Invalid input. Using default: ${defaultCount}`);
+                resolve(defaultCount);
+            } else {
+                // clamp to a reasonable max to avoid accidental huge runs
+                const clamped = Math.min(count, 500);
+                if (clamped !== count) {
+                    console.log(`⚠️  Limiting markets to check to ${clamped} (max allowed 500)`);
+                }
+                console.log(`✅ Will check ${clamped} markets`);
+                resolve(clamped);
+            }
+        });
+    });
+}
+
 // Order book filling configuration with enhanced rate limiting
 const ORDER_BOOK_CONFIG = {
     TARGET_SPREAD: 0.01, // Target spread between our orders
@@ -160,13 +198,13 @@ const ORDER_BOOK_CONFIG = {
     MIN_PRICE_GAP: 0.05, // Minimum price gap to fill (significant gaps only)
     MIN_ACCEPTABLE_PRICE: 0.06, // Minimum price we're willing to place orders at (avoid very low prices)
     MONITORING_INTERVAL: 3600000, // 1 hour between iterations (changed from 30 seconds)
-    MAX_MARKETS_TO_CHECK: 10, // Check last 10 markets
+    MAX_MARKETS_TO_CHECK: 50, // Check last 10 markets
     MAX_RETRIES: 5, // Increased retry attempts for failed operations
     COOLDOWN_PERIOD: 15000, // 15 seconds cooldown after placing orders
-    DELAY_BETWEEN_MARKETS: 20000, // 20 seconds delay between processing each market
+    DELAY_BETWEEN_MARKETS: 2000, // 2 seconds delay between processing each market
     RATE_LIMIT_DELAY: 15000, // 15 seconds delay when rate limited
     MAX_CONSECUTIVE_429: 5, // Maximum consecutive 429 errors before increasing delay
-    ITERATION_DELAY: 3600000, // 1 hour delay between iterations (24 iterations per day)
+    ITERATION_DELAY: 15000, // 15 seconds delay between iterations
     // Enhanced rate limiting configuration
     REQUEST_DELAY: 2000, // 2 seconds between individual API requests
     EXPONENTIAL_BACKOFF_BASE: 2000, // Base delay for exponential backoff
@@ -652,7 +690,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO' | 'TEAM1' | 'TEAM2'
             // For YES/Team1 side: place order below the best ask to maintain tight spread
             if (parsedAsks.length > 0) {
                 // Place order at bestAsk - 0.01 to maintain 0.01 spread
-                const strategicPrice = parseFloat((bestAsk - 0.01).toFixed(4));
+                const strategicPrice = toCents(bestAsk - 0.01);
                 if (strategicPrice > 0.01) {
                     suggestedOrders.push({ 
                         price: strategicPrice, 
@@ -676,7 +714,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO' | 'TEAM1' | 'TEAM2'
                 
                 // Only place orders if there's a significant gap (0.05 or more)
                 if (nextPrice - currentPrice > 0.05) {
-                    const gapPrice = parseFloat((currentPrice + 0.01).toFixed(4));
+                    const gapPrice = toCents(currentPrice + 0.01);
                     gaps.push({ price: gapPrice, size: ORDER_BOOK_CONFIG.ORDER_AMOUNT });
                     suggestedOrders.push({ 
                         price: gapPrice, 
@@ -706,7 +744,7 @@ function analyzeOrderBook(orderBook: any, side: 'YES' | 'NO' | 'TEAM1' | 'TEAM2'
                 
                 // Only place orders if there's a significant gap (0.05 or more)
                 if (nextPrice - currentPrice > 0.05) {
-                    const gapPrice = parseFloat((currentPrice + 0.01).toFixed(4));
+                    const gapPrice = toCents(currentPrice + 0.01);
                     gaps.push({ price: gapPrice, size: ORDER_BOOK_CONFIG.ORDER_AMOUNT });
                     suggestedOrders.push({ 
                         price: gapPrice, 
@@ -940,10 +978,10 @@ async function monitorOrderBooks() {
     console.log(`💰 Order Amount: ${ORDER_BOOK_CONFIG.ORDER_AMOUNT} shares`);
     console.log(`📊 Multiple Order Strategy: ${ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.join(', ')} shares with 0.05 gaps down to best bid`);
     console.log(`🚫 Min Acceptable Price: $${ORDER_BOOK_CONFIG.MIN_ACCEPTABLE_PRICE} (skip orders ≤ $0.05)`);
-    console.log(`⏱️  Iteration Interval: ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minutes (1 hour)`);
+    console.log(`⏱️  Iteration Interval: ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 1000} seconds`);
     console.log(`🐌 Market Processing: ${ORDER_BOOK_CONFIG.DELAY_BETWEEN_MARKETS / 1000}s delay between markets`);
     console.log(`⏳ Cooldown Period: ${ORDER_BOOK_CONFIG.COOLDOWN_PERIOD / 1000}s after placing orders`);
-    console.log(`📅 Daily Iterations: 24 iterations per day (every hour)`);
+    console.log(`📅 Iteration Frequency: Every ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 1000} seconds`);
     console.log(`🌐 Network: ${NETWORK}`);
     console.log('='.repeat(70));
     
@@ -955,7 +993,7 @@ async function monitorOrderBooks() {
 
     // Get latest market ID from user input
     const startingMarketId = await getLatestMarketIdFromUser();
-    const marketsToCheck = ORDER_BOOK_CONFIG.MAX_MARKETS_TO_CHECK;
+    const marketsToCheck = await getMarketsToCheckFromUser();
     const endingMarketId = Math.max(1, startingMarketId - marketsToCheck + 1);
     
     // Validate that the starting market ID is reasonable
@@ -1252,7 +1290,7 @@ async function monitorOrderBooks() {
                             const outcome2Orders: Array<{price: number, amount: number}> = [];
                             
                             // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
-                            let currentPrice = parseFloat((outcome2BestAsk - 0.01).toFixed(4));
+                            let currentPrice = toCents(outcome2BestAsk - 0.01);
                             let orderIndex = 0;
                             
                             while (currentPrice >= outcome2BestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
@@ -1263,20 +1301,20 @@ async function monitorOrderBooks() {
                                     });
                                 }
                                 // Move down by 0.05 for next order
-                                currentPrice = parseFloat((currentPrice - 0.05).toFixed(4));
+                                currentPrice = toCents(currentPrice - 0.05);
                                 orderIndex++;
                             }
                             
                             // Add final order at best bid if we haven't reached it yet
                             if (outcome2Orders.length > 0 && outcome2Orders[outcome2Orders.length - 1].price > outcome2BestBid && outcome2BestBid >= minAcceptablePrice) {
                                 outcome2Orders.push({
-                                    price: outcome2BestBid,
+                                    price: toCents(outcome2BestBid),
                                     amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[outcome2Orders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                 });
                             }
                             
                             // Outcome 1 order at current best bid
-                            const outcome1Price = outcome1Analysis.bestBid;
+                            const outcome1Price = toCents(outcome1Analysis.bestBid);
                             
                             // Add Outcome 2 orders
                             outcome2Orders.forEach(order => {
@@ -1298,7 +1336,7 @@ async function monitorOrderBooks() {
                             const outcome1Orders: Array<{price: number, amount: number}> = [];
                             
                             // Start from best ask - 0.01 and go down in 0.05 increments until reaching best bid
-                            let currentPrice = parseFloat((outcome1BestAsk - 0.01).toFixed(4));
+                            let currentPrice = toCents(outcome1BestAsk - 0.01);
                             let orderIndex = 0;
                             
                             while (currentPrice >= outcome1BestBid && orderIndex < ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS.length) {
@@ -1309,20 +1347,20 @@ async function monitorOrderBooks() {
                                     });
                                 }
                                 // Move down by 0.05 for next order
-                                currentPrice = parseFloat((currentPrice - 0.05).toFixed(4));
+                                currentPrice = toCents(currentPrice - 0.05);
                                 orderIndex++;
                             }
                             
                             // Add final order at best bid if we haven't reached it yet
                             if (outcome1Orders.length > 0 && outcome1Orders[outcome1Orders.length - 1].price > outcome1BestBid && outcome1BestBid >= minAcceptablePrice) {
                                 outcome1Orders.push({
-                                    price: outcome1BestBid,
+                                    price: toCents(outcome1BestBid),
                                     amount: ORDER_BOOK_CONFIG.MULTIPLE_ORDER_AMOUNTS[outcome1Orders.length] || ORDER_BOOK_CONFIG.ORDER_AMOUNT
                                 });
                             }
                             
                             // Outcome 2 order at current best bid
-                            const outcome2Price = outcome2Analysis.bestBid;
+                            const outcome2Price = toCents(outcome2Analysis.bestBid);
                             
                             // Add Outcome 1 orders
                             outcome1Orders.forEach(order => {
@@ -1338,8 +1376,8 @@ async function monitorOrderBooks() {
                             // Equal prices - place single orders on both sides (original strategy)
                             console.log(`   🎯 Equal prices strategy: Single orders on both sides`);
                             
-                            const outcome1Price = outcome1Analysis.suggestedOrders[0].price;
-                            const outcome2Price = parseFloat((0.99 - outcome1Price).toFixed(4));
+                            const outcome1Price = toCents(outcome1Analysis.suggestedOrders[0].price);
+                            const outcome2Price = toCents(0.99 - outcome1Price);
                             
                             if (outcome1Price >= minAcceptablePrice && outcome2Price >= minAcceptablePrice) {
                                 ordersToPlace = [
@@ -1467,21 +1505,20 @@ async function monitorOrderBooks() {
             // Calculate next iteration time
             const nextIterationTime = new Date(Date.now() + ORDER_BOOK_CONFIG.ITERATION_DELAY);
             console.log(`\n⏰ Next iteration scheduled for: ${nextIterationTime.toLocaleString()}`);
-            console.log(`🔄 Waiting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minutes before next iteration...`);
+            console.log(`🔄 Waiting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 1000} seconds before next iteration...`);
             
-            // Wait 1 hour before next iteration with progress indicator
+            // Wait 15 seconds before next iteration with progress indicator
             const totalWaitTime = ORDER_BOOK_CONFIG.ITERATION_DELAY;
-            const progressInterval = 300000; // Show progress every 5 minutes
+            const progressInterval = 5000; // Show progress every 5 seconds
             let elapsedTime = 0;
             
-            console.log(`\n⏳ Starting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 60000} minute wait...`);
+            console.log(`\n⏳ Starting ${ORDER_BOOK_CONFIG.ITERATION_DELAY / 1000} second wait...`);
             
             while (elapsedTime < totalWaitTime) {
                 const remainingTime = totalWaitTime - elapsedTime;
-                const remainingMinutes = Math.floor(remainingTime / 60000);
-                const remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
+                const remainingSeconds = Math.floor(remainingTime / 1000);
                 
-                console.log(`   ⏰ Waiting: ${remainingMinutes}m ${remainingSeconds}s remaining...`);
+                console.log(`   ⏰ Waiting: ${remainingSeconds}s remaining...`);
                 
                 // Wait for progress interval or remaining time, whichever is shorter
                 const waitTime = Math.min(progressInterval, remainingTime);

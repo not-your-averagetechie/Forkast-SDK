@@ -1,0 +1,182 @@
+[
+  {
+    "timestamp": "2025-09-23T08:11:15.362Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.41,
+      "outcome1BestAsk": 0.42,
+      "outcome2BestBid": 0.58,
+      "outcome2BestAsk": 0.59,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:11:15.363Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:11:15.364Z",
+    "message": "   ⏭️  Skipping market 1140 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:15.364Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-23T08:10:29.995Z",
+      "iterationEndTime": "2025-09-23T08:11:15.364Z",
+      "iterationDuration": 45369,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 0,
+      "successRate": "0.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:11:46.882Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.42,
+      "outcome2BestBid": 0.58,
+      "outcome2BestAsk": 0.6,
+      "combinedBestBidSum": "0.9800",
+      "combinedBestAskSum": "1.0200",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:11:46.889Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9800",
+      "combinedAskSum": "1.0200",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0200",
+      "oneMinusBidSum": "0.0200",
+      "arbitrageSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:11:46.890Z",
+    "message": "   🎯 Spread 0.0200 > 0.015 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:47.688Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Arizona Diamondbacks order: 5 shares at $0.41",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:47.690Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Arizona Diamondbacks) + 11 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:50.457Z",
+    "message": "   📉 Trade 1: Wallet 11 placing Los Angeles Dodgers order: 5 shares at $0.59",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:51.459Z",
+    "message": "   🎯 Trade 1 complete: Arizona Diamondbacks at $0.41 + Los Angeles Dodgers at $0.59 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:56.580Z",
+    "message": "   📈 Trade 2: Wallet 4 placing Arizona Diamondbacks order: 5 shares at $0.41",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:56.583Z",
+    "message": "   🎲 Trade 2 wallet pair: 4 (Arizona Diamondbacks) + 6 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:11:59.413Z",
+    "message": "   📉 Trade 2: Wallet 6 placing Los Angeles Dodgers order: 1 shares at $0.59",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:12:00.487Z",
+    "message": "   🎯 Trade 2 complete: Arizona Diamondbacks at $0.41 + Los Angeles Dodgers at $0.59 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:12:00.488Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1140 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:12:00.489Z",
+    "message": "Iteration 2 completed",
+    "data": {
+      "iterationNumber": 2,
+      "iterationStartTime": "2025-09-23T08:10:29.995Z",
+      "iterationEndTime": "2025-09-23T08:12:00.488Z",
+      "iterationDuration": 90493,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:12:31.379Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.41,
+      "outcome1BestAsk": 0.42,
+      "outcome2BestBid": 0.58,
+      "outcome2BestAsk": 0.59,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:12:31.380Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-23T08:12:31.381Z",
+    "message": "   ⏭️  Skipping market 1140 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-23T08:12:31.382Z",
+    "message": "Iteration 3 completed",
+    "data": {
+      "iterationNumber": 3,
+      "iterationStartTime": "2025-09-23T08:10:29.995Z",
+      "iterationEndTime": "2025-09-23T08:12:31.381Z",
+      "iterationDuration": 121386,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 0,
+      "successRate": "0.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]
