@@ -1,0 +1,5016 @@
+[
+  {
+    "timestamp": "2025-09-24T11:55:03.128Z",
+    "message": "   📊 Market 1144 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:55:03.129Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:55:03.130Z",
+    "message": "   ⏭️  Skipping market 1144 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:55:36.633Z",
+    "message": "   📊 Market 1153 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:55:36.634Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:55:36.635Z",
+    "message": "   ⏭️  Skipping market 1153 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:06.965Z",
+    "message": "   📊 Market 1167 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:06.966Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:06.967Z",
+    "message": "   ⏭️  Skipping market 1167 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:29.878Z",
+    "message": "   📊 Market 1159 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.74,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.26,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:29.879Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:29.880Z",
+    "message": "   ⏭️  Skipping market 1159 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.374Z",
+    "message": "   📊 Market 1142 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.41,
+      "outcome1BestAsk": 0.44,
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.59,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.376Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.377Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.848Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.849Z",
+    "message": "      Arizona Diamondbacks: $0.42 (bid 0.41 / ask 0.44)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.850Z",
+    "message": "      Los Angeles Dodgers: $0.58 (bid 0.56 / ask 0.59)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:57.850Z",
+    "message": "   🛒 Placing BUY on Arizona Diamondbacks at $0.42 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:56:58.899Z",
+    "message": "   ✅ BUY placed on Arizona Diamondbacks",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:00.900Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.58 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:01.933Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:02.307Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:02.308Z",
+    "message": "      Arizona Diamondbacks: $0.42 (bid 0.41 / ask 0.44)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:02.309Z",
+    "message": "      Los Angeles Dodgers: $0.58 (bid 0.56 / ask 0.59)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:02.309Z",
+    "message": "   🛒 Placing BUY on Arizona Diamondbacks at $0.42 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:03.268Z",
+    "message": "   ✅ BUY placed on Arizona Diamondbacks",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:05.271Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.58 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:06.258Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:06.259Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1142 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:57:41.807Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.54,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.46,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:41.825Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:57:41.831Z",
+    "message": "   ⏭️  Skipping market 1152 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:05.460Z",
+    "message": "   📊 Market 1160 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:05.461Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:05.462Z",
+    "message": "   ⏭️  Skipping market 1160 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.089Z",
+    "message": "   📊 Market 1168 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.57,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.43,
+      "combinedBestBidSum": "0.8200",
+      "combinedBestAskSum": "1.1800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.090Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.8200",
+      "combinedAskSum": "1.1800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.1800",
+      "oneMinusBidSum": "0.1800",
+      "arbitrageSpread": "0.1800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.090Z",
+    "message": "   🎯 Spread 0.1800 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.475Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.476Z",
+    "message": "      Yes: $0.65 (bid 0.57 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.477Z",
+    "message": "      No: $0.35 (bid 0.25 / ask 0.43)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:27.479Z",
+    "message": "   🛒 Placing BUY on Yes at $0.65 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:28.462Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:30.465Z",
+    "message": "   🛒 Placing BUY on No at $0.35 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:58:31.461Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:58:31.462Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1168 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:03.420Z",
+    "message": "   📊 Market 1163 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:03.422Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:03.423Z",
+    "message": "   ⏭️  Skipping market 1163 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.168Z",
+    "message": "   📊 Market 1150 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.42,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.58,
+      "combinedBestBidSum": "0.9100",
+      "combinedBestAskSum": "1.0900",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.169Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9100",
+      "combinedAskSum": "1.0900",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0900",
+      "oneMinusBidSum": "0.0900",
+      "arbitrageSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.170Z",
+    "message": "   🎯 Spread 0.0900 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.556Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.557Z",
+    "message": "      Kansas City Chiefs: $0.46 (bid 0.42 / ask 0.51)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.558Z",
+    "message": "      Baltimore Ravens: $0.54 (bid 0.49 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:31.558Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.46 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:32.498Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:34.501Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.54 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:35.439Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:35.844Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:35.846Z",
+    "message": "      Kansas City Chiefs: $0.46 (bid 0.42 / ask 0.51)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:35.847Z",
+    "message": "      Baltimore Ravens: $0.54 (bid 0.49 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:35.847Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.46 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:36.789Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:38.791Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.54 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T11:59:39.724Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T11:59:39.725Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1150 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:04.996Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.99,
+      "outcome1BestAsk": 1,
+      "outcome2BestBid": 0,
+      "outcome2BestAsk": 0.01,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:05.000Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:05.001Z",
+    "message": "   ⏭️  Skipping market 1140 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.535Z",
+    "message": "   📊 Market 1149 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.38,
+      "outcome2BestBid": 0.62,
+      "outcome2BestAsk": 0.65,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.536Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.537Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.917Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.918Z",
+    "message": "      Tampa Bay Buccaneers: $0.36 (bid 0.35 / ask 0.38)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.919Z",
+    "message": "      Philadelphia Eagles: $0.64 (bid 0.62 / ask 0.65)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:37.919Z",
+    "message": "   🛒 Placing BUY on Tampa Bay Buccaneers at $0.36 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:38.894Z",
+    "message": "   ✅ BUY placed on Tampa Bay Buccaneers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:40.896Z",
+    "message": "   🛒 Placing BUY on Philadelphia Eagles at $0.64 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:41.889Z",
+    "message": "   ✅ BUY placed on Philadelphia Eagles",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:42.263Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:42.265Z",
+    "message": "      Tampa Bay Buccaneers: $0.36 (bid 0.35 / ask 0.38)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:42.265Z",
+    "message": "      Philadelphia Eagles: $0.64 (bid 0.62 / ask 0.65)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:42.266Z",
+    "message": "   🛒 Placing BUY on Tampa Bay Buccaneers at $0.36 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:43.210Z",
+    "message": "   ✅ BUY placed on Tampa Bay Buccaneers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:45.212Z",
+    "message": "   🛒 Placing BUY on Philadelphia Eagles at $0.64 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:00:46.159Z",
+    "message": "   ✅ BUY placed on Philadelphia Eagles",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:00:46.160Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1149 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:19.133Z",
+    "message": "   📊 Market 1158 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:19.134Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:19.134Z",
+    "message": "   ⏭️  Skipping market 1158 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.210Z",
+    "message": "   📊 Market 1143 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.212Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.213Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.596Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.597Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.598Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:42.598Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:43.744Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:45.746Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:46.760Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:47.139Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:47.140Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:47.142Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:47.144Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:48.180Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:50.186Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:51.128Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:51.554Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:51.555Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:51.556Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:51.556Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:52.650Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:54.651Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:01:55.824Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:01:55.825Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1143 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.157Z",
+    "message": "   📊 Market 1147 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.9,
+      "outcome2BestBid": 0.1,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9200",
+      "combinedBestAskSum": "1.0800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.161Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9200",
+      "combinedAskSum": "1.0800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0800",
+      "oneMinusBidSum": "0.0800",
+      "arbitrageSpread": "0.0800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.162Z",
+    "message": "   🎯 Spread 0.0800 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.569Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.569Z",
+    "message": "      Buffalo Bills: $0.86 (bid 0.82 / ask 0.9)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.570Z",
+    "message": "      New Orleans Saints: $0.14 (bid 0.1 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:17.571Z",
+    "message": "   🛒 Placing BUY on Buffalo Bills at $0.86 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:18.661Z",
+    "message": "   ✅ BUY placed on Buffalo Bills",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:20.664Z",
+    "message": "   🛒 Placing BUY on New Orleans Saints at $0.14 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:21.518Z",
+    "message": "   ✅ BUY placed on New Orleans Saints",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:21.519Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1147 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:02:44.470Z",
+    "message": "   📊 Market 1139 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.03,
+      "outcome1BestAsk": 0.09,
+      "outcome2BestBid": 0.91,
+      "outcome2BestAsk": 0.97,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:44.472Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:02:44.473Z",
+    "message": "   ⚠️  Market 1139 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:03:11.802Z",
+    "message": "   📊 Market 1156 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.53,
+      "outcome2BestBid": 0.47,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:03:11.805Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:03:11.806Z",
+    "message": "   ⏭️  Skipping market 1156 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:03:36.097Z",
+    "message": "   📊 Market 1155 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.84,
+      "outcome1BestAsk": 0.85,
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.16,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:03:36.099Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:03:36.103Z",
+    "message": "   ⏭️  Skipping market 1155 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.350Z",
+    "message": "   📊 Market 1146 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.351Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.352Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.732Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.732Z",
+    "message": "      Yes: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.733Z",
+    "message": "      No: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:02.734Z",
+    "message": "   🛒 Placing BUY on Yes at $0.53 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:03.699Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:05.702Z",
+    "message": "   🛒 Placing BUY on No at $0.47 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:06.664Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:06.665Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1146 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:40.737Z",
+    "message": "   📊 Market 1151 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.25,
+      "outcome1BestAsk": 0.31,
+      "outcome2BestBid": 0.69,
+      "outcome2BestAsk": 0.75,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:40.738Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:40.739Z",
+    "message": "   🎯 Spread 0.0600 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:41.117Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:41.118Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:41.119Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:41.120Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:42.124Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:44.127Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:45.118Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:45.487Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:45.489Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:45.490Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:45.491Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:46.428Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:48.430Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:04:49.489Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:04:49.490Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1151 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:05:16.363Z",
+    "message": "   📊 Market 1141 Analysis:",
+    "data": {
+      "outcome1BestBid": 0,
+      "outcome1BestAsk": 0.01,
+      "outcome2BestBid": 0.99,
+      "outcome2BestAsk": 1,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:05:16.366Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:05:16.367Z",
+    "message": "   ⏭️  Skipping market 1141 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:05:38.527Z",
+    "message": "   📊 Market 1148 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:05:38.542Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:05:38.543Z",
+    "message": "   ⏭️  Skipping market 1148 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:03.391Z",
+    "message": "   📊 Market 1166 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:03.393Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:03.394Z",
+    "message": "   ⏭️  Skipping market 1166 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.607Z",
+    "message": "   📊 Market 1145 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.65,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.35,
+      "combinedBestBidSum": "0.9500",
+      "combinedBestAskSum": "1.0500",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.609Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9500",
+      "combinedAskSum": "1.0500",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0500",
+      "oneMinusBidSum": "0.0500",
+      "arbitrageSpread": "0.0500"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.610Z",
+    "message": "   🎯 Spread 0.0500 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.982Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.984Z",
+    "message": "      Seattle Mariners: $0.67 (bid 0.65 / ask 0.7)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.985Z",
+    "message": "      Colorado Rockies: $0.32 (bid 0.3 / ask 0.35)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:30.988Z",
+    "message": "   🛒 Placing BUY on Seattle Mariners at $0.67 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:32.101Z",
+    "message": "   ✅ BUY placed on Seattle Mariners",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:34.102Z",
+    "message": "   🛒 Placing BUY on Colorado Rockies at $0.32 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:06:35.019Z",
+    "message": "   ✅ BUY placed on Colorado Rockies",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:06:35.021Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1145 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:07.987Z",
+    "message": "   📊 Market 1161 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.46,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.54,
+      "combinedBestBidSum": "0.9100",
+      "combinedBestAskSum": "1.0900",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.035Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9100",
+      "combinedAskSum": "1.0900",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0900",
+      "oneMinusBidSum": "0.0900",
+      "arbitrageSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.036Z",
+    "message": "   🎯 Spread 0.0900 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.416Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.418Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.420Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:08.420Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:09.296Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:11.299Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:12.331Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:12.776Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:12.778Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:12.780Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:12.783Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:13.799Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:15.802Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:16.980Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:17.370Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:17.372Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:17.374Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:17.374Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:18.489Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:20.491Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:21.458Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:21.459Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1161 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:55.646Z",
+    "message": "   📊 Market 1164 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.85,
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:55.647Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:55.648Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:56.016Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:56.018Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:56.019Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:56.019Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:07:57.093Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:07:59.095Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:00.036Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:08:00.413Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:00.415Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:00.417Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:00.417Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:01.357Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:08:03.360Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:04.308Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:08:04.310Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1164 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:08:34.676Z",
+    "message": "   📊 Market 1157 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:08:34.678Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:08:34.679Z",
+    "message": "   ⏭️  Skipping market 1157 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:09:08.000Z",
+    "message": "   📊 Market 1162 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.41,
+      "outcome2BestBid": 0.59,
+      "outcome2BestAsk": 0.6,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:09:08.002Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:09:08.003Z",
+    "message": "   ⏭️  Skipping market 1162 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:09:36.935Z",
+    "message": "   📊 Market 1165 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.67,
+      "outcome1BestAsk": 0.68,
+      "outcome2BestBid": 0.32,
+      "outcome2BestAsk": 0.33,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:09:36.938Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:09:36.940Z",
+    "message": "   ⏭️  Skipping market 1165 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:06.808Z",
+    "message": "   📊 Market 1154 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.6,
+      "outcome2BestBid": 0.4,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9000",
+      "combinedBestAskSum": "1.1000",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:06.813Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9000",
+      "combinedAskSum": "1.1000",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.1000",
+      "oneMinusBidSum": "0.1000",
+      "arbitrageSpread": "0.1000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:06.816Z",
+    "message": "   🎯 Spread 0.1000 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:07.227Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:07.228Z",
+    "message": "      Yes: $0.55 (bid 0.5 / ask 0.6)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:07.230Z",
+    "message": "      No: $0.44 (bid 0.4 / ask 0.5)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:07.231Z",
+    "message": "   🛒 Placing BUY on Yes at $0.55 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:08.194Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:10.196Z",
+    "message": "   🛒 Placing BUY on No at $0.44 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:11.132Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:11.520Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:11.522Z",
+    "message": "      Yes: $0.55 (bid 0.5 / ask 0.6)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:11.525Z",
+    "message": "      No: $0.44 (bid 0.4 / ask 0.5)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:11.526Z",
+    "message": "   🛒 Placing BUY on Yes at $0.55 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:12.571Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:14.574Z",
+    "message": "   🛒 Placing BUY on No at $0.44 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:15.643Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:16.030Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:16.032Z",
+    "message": "      Yes: $0.55 (bid 0.5 / ask 0.6)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:16.034Z",
+    "message": "      No: $0.44 (bid 0.4 / ask 0.5)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:16.035Z",
+    "message": "   🛒 Placing BUY on Yes at $0.55 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:17.076Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:19.078Z",
+    "message": "   🛒 Placing BUY on No at $0.44 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:20.149Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:20.151Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1154 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:20.153Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-24T11:54:36.447Z",
+      "iterationEndTime": "2025-09-24T12:10:20.152Z",
+      "iterationDuration": 943705,
+      "marketsProcessed": 30,
+      "marketsWithOrders": 12,
+      "successRate": "40.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 30
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.116Z",
+    "message": "   📊 Market 1142 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.42,
+      "outcome1BestAsk": 0.44,
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.58,
+      "combinedBestBidSum": "0.9800",
+      "combinedBestAskSum": "1.0200",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.120Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9800",
+      "combinedAskSum": "1.0200",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0200",
+      "oneMinusBidSum": "0.0200",
+      "arbitrageSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.123Z",
+    "message": "   🎯 Spread 0.0200 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.500Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.502Z",
+    "message": "      Arizona Diamondbacks: $0.43 (bid 0.42 / ask 0.44)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.503Z",
+    "message": "      Los Angeles Dodgers: $0.57 (bid 0.56 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:51.504Z",
+    "message": "   🛒 Placing BUY on Arizona Diamondbacks at $0.43 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:52.467Z",
+    "message": "   ✅ BUY placed on Arizona Diamondbacks",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:54.470Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.57 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:55.476Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:55.847Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:55.849Z",
+    "message": "      Arizona Diamondbacks: $0.43 (bid 0.42 / ask 0.44)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:55.850Z",
+    "message": "      Los Angeles Dodgers: $0.57 (bid 0.56 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:55.851Z",
+    "message": "   🛒 Placing BUY on Arizona Diamondbacks at $0.43 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:56.910Z",
+    "message": "   ✅ BUY placed on Arizona Diamondbacks",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:10:58.912Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.57 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:10:59.982Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:11:00.390Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:00.391Z",
+    "message": "      Arizona Diamondbacks: $0.43 (bid 0.42 / ask 0.44)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:00.393Z",
+    "message": "      Los Angeles Dodgers: $0.57 (bid 0.56 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:00.394Z",
+    "message": "   🛒 Placing BUY on Arizona Diamondbacks at $0.43 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:01.326Z",
+    "message": "   ✅ BUY placed on Arizona Diamondbacks",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:11:03.328Z",
+    "message": "   🛒 Placing BUY on Los Angeles Dodgers at $0.57 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:04.241Z",
+    "message": "   ✅ BUY placed on Los Angeles Dodgers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:11:04.242Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1142 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:11:30.033Z",
+    "message": "   📊 Market 1155 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.84,
+      "outcome1BestAsk": 0.85,
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.16,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:11:30.038Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:11:30.041Z",
+    "message": "   ⏭️  Skipping market 1155 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:00.943Z",
+    "message": "   📊 Market 1147 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.9,
+      "outcome2BestBid": 0.1,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9200",
+      "combinedBestAskSum": "1.0800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:00.949Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9200",
+      "combinedAskSum": "1.0800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0800",
+      "oneMinusBidSum": "0.0800",
+      "arbitrageSpread": "0.0800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:00.956Z",
+    "message": "   🎯 Spread 0.0800 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:01.364Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:01.366Z",
+    "message": "      Buffalo Bills: $0.86 (bid 0.82 / ask 0.9)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:01.368Z",
+    "message": "      New Orleans Saints: $0.14 (bid 0.1 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:01.369Z",
+    "message": "   🛒 Placing BUY on Buffalo Bills at $0.86 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:02.306Z",
+    "message": "   ✅ BUY placed on Buffalo Bills",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:04.309Z",
+    "message": "   🛒 Placing BUY on New Orleans Saints at $0.14 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:05.317Z",
+    "message": "   ✅ BUY placed on New Orleans Saints",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:05.319Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1147 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:28.205Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.99,
+      "outcome1BestAsk": 1,
+      "outcome2BestBid": 0,
+      "outcome2BestAsk": 0.01,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:28.210Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:28.216Z",
+    "message": "   ⏭️  Skipping market 1140 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:12:59.714Z",
+    "message": "   📊 Market 1139 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.03,
+      "outcome1BestAsk": 0.09,
+      "outcome2BestBid": 0.91,
+      "outcome2BestAsk": 0.97,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:59.719Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:12:59.722Z",
+    "message": "   ⚠️  Market 1139 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.252Z",
+    "message": "   📊 Market 1164 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.85,
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.257Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.260Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.636Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.638Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.640Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:20.641Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:21.602Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:23.605Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:24.566Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:24.931Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:24.933Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:24.934Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:24.936Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:26.006Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:28.009Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:28.971Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:29.333Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:29.334Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:29.337Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:29.343Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:30.435Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:32.438Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:13:33.358Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:13:33.359Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1164 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:03.593Z",
+    "message": "   📊 Market 1148 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:03.598Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:03.602Z",
+    "message": "   ⏭️  Skipping market 1148 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:34.536Z",
+    "message": "   📊 Market 1154 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.55,
+      "outcome1BestAsk": 0.56,
+      "outcome2BestBid": 0.44,
+      "outcome2BestAsk": 0.45,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:34.542Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:34.545Z",
+    "message": "   ⏭️  Skipping market 1154 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:51.917Z",
+    "message": "   📊 Market 1146 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:51.923Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:51.926Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:52.721Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:52.724Z",
+    "message": "      Yes: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:52.732Z",
+    "message": "      No: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:52.735Z",
+    "message": "   🛒 Placing BUY on Yes at $0.53 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:53.869Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:55.877Z",
+    "message": "   🛒 Placing BUY on No at $0.47 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:14:56.948Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:14:56.951Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1146 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:18.003Z",
+    "message": "   📊 Market 1156 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.53,
+      "outcome2BestBid": 0.47,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:18.006Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:18.008Z",
+    "message": "   ⏭️  Skipping market 1156 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:52.991Z",
+    "message": "   📊 Market 1149 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.38,
+      "outcome2BestBid": 0.62,
+      "outcome2BestAsk": 0.65,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:52.995Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:52.997Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:53.382Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:53.384Z",
+    "message": "      Tampa Bay Buccaneers: $0.36 (bid 0.35 / ask 0.38)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:53.386Z",
+    "message": "      Philadelphia Eagles: $0.64 (bid 0.62 / ask 0.65)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:53.388Z",
+    "message": "   🛒 Placing BUY on Tampa Bay Buccaneers at $0.36 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:54.491Z",
+    "message": "   ✅ BUY placed on Tampa Bay Buccaneers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:56.494Z",
+    "message": "   🛒 Placing BUY on Philadelphia Eagles at $0.64 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:57.857Z",
+    "message": "   ✅ BUY placed on Philadelphia Eagles",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:15:58.235Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:58.237Z",
+    "message": "      Tampa Bay Buccaneers: $0.36 (bid 0.35 / ask 0.38)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:58.238Z",
+    "message": "      Philadelphia Eagles: $0.64 (bid 0.62 / ask 0.65)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:58.239Z",
+    "message": "   🛒 Placing BUY on Tampa Bay Buccaneers at $0.36 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:15:59.250Z",
+    "message": "   ✅ BUY placed on Tampa Bay Buccaneers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:01.254Z",
+    "message": "   🛒 Placing BUY on Philadelphia Eagles at $0.64 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:16:02.187Z",
+    "message": "   ✅ BUY placed on Philadelphia Eagles",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:02.191Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1149 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:16:27.024Z",
+    "message": "   📊 Market 1162 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.41,
+      "outcome2BestBid": 0.59,
+      "outcome2BestAsk": 0.6,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:27.028Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:27.034Z",
+    "message": "   ⏭️  Skipping market 1162 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:16:51.071Z",
+    "message": "   📊 Market 1141 Analysis:",
+    "data": {
+      "outcome1BestBid": 0,
+      "outcome1BestAsk": 0.01,
+      "outcome2BestBid": 0.99,
+      "outcome2BestAsk": 1,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:51.078Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:16:51.087Z",
+    "message": "   ⏭️  Skipping market 1141 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:17:25.162Z",
+    "message": "   📊 Market 1145 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.67,
+      "outcome1BestAsk": 0.68,
+      "outcome2BestBid": 0.32,
+      "outcome2BestAsk": 0.33,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:17:25.165Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:17:25.167Z",
+    "message": "   ⏭️  Skipping market 1145 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:17:48.992Z",
+    "message": "   📊 Market 1163 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:17:48.995Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:17:48.996Z",
+    "message": "   ⏭️  Skipping market 1163 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:07.788Z",
+    "message": "   📊 Market 1151 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.25,
+      "outcome1BestAsk": 0.31,
+      "outcome2BestBid": 0.69,
+      "outcome2BestAsk": 0.75,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:07.790Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:07.791Z",
+    "message": "   🎯 Spread 0.0600 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:08.171Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:08.173Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:08.176Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:08.178Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:09.196Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:11.205Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:12.251Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:12.253Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1151 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.105Z",
+    "message": "   📊 Market 1161 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.46,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.54,
+      "combinedBestBidSum": "0.9100",
+      "combinedBestAskSum": "1.0900",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.126Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9100",
+      "combinedAskSum": "1.0900",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0900",
+      "oneMinusBidSum": "0.0900",
+      "arbitrageSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.130Z",
+    "message": "   🎯 Spread 0.0900 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.534Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.536Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.537Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:42.538Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:43.758Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:45.763Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:46.829Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:47.215Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:47.217Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:47.219Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:47.220Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:48.254Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:50.262Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:51.301Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:51.679Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:51.681Z",
+    "message": "      Yes: $0.5 (bid 0.46 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:51.682Z",
+    "message": "      No: $0.5 (bid 0.45 / ask 0.54)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:51.683Z",
+    "message": "   🛒 Placing BUY on Yes at $0.5 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:52.632Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:54.643Z",
+    "message": "   🛒 Placing BUY on No at $0.5 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:18:55.645Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:18:55.647Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1161 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:18.211Z",
+    "message": "   📊 Market 1158 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:18.215Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:18.218Z",
+    "message": "   ⏭️  Skipping market 1158 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:41.578Z",
+    "message": "   📊 Market 1143 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:41.580Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:41.583Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:41.997Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:41.999Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:42.000Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:42.002Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:43.044Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:45.047Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:45.981Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:46.378Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:46.381Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:46.383Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:46.384Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:47.400Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:49.403Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:50.381Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:50.762Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:50.764Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:50.766Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:50.768Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:51.741Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:53.744Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:19:54.717Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:19:54.719Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1143 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:15.647Z",
+    "message": "   📊 Market 1157 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:15.649Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:15.651Z",
+    "message": "   ⏭️  Skipping market 1157 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.128Z",
+    "message": "   📊 Market 1150 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.42,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.58,
+      "combinedBestBidSum": "0.9600",
+      "combinedBestAskSum": "1.0400",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.129Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9600",
+      "combinedAskSum": "1.0400",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0400",
+      "oneMinusBidSum": "0.0400",
+      "arbitrageSpread": "0.0400"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.130Z",
+    "message": "   🎯 Spread 0.0400 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.528Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.530Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.532Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:43.533Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:44.691Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:46.695Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:47.820Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:48.216Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:48.217Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:48.219Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:48.220Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:49.134Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:51.136Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:52.117Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:52.500Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:52.502Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:52.504Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:52.506Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:53.478Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:55.481Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:20:56.520Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:20:56.522Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1150 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.418Z",
+    "message": "   📊 Market 1168 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.57,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.43,
+      "combinedBestBidSum": "0.8200",
+      "combinedBestAskSum": "1.1800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.421Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.8200",
+      "combinedAskSum": "1.1800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.1800",
+      "oneMinusBidSum": "0.1800",
+      "arbitrageSpread": "0.1800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.423Z",
+    "message": "   🎯 Spread 0.1800 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.792Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.795Z",
+    "message": "      Yes: $0.65 (bid 0.57 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.797Z",
+    "message": "      No: $0.35 (bid 0.25 / ask 0.43)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:26.802Z",
+    "message": "   🛒 Placing BUY on Yes at $0.65 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:27.905Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:29.908Z",
+    "message": "   🛒 Placing BUY on No at $0.35 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:30.939Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:30.942Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1168 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:21:52.711Z",
+    "message": "   📊 Market 1153 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:52.714Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:21:52.715Z",
+    "message": "   ⏭️  Skipping market 1153 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:22:14.018Z",
+    "message": "   📊 Market 1166 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:14.020Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:14.021Z",
+    "message": "   ⏭️  Skipping market 1166 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:22:36.969Z",
+    "message": "   📊 Market 1159 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.74,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.26,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:36.972Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:36.974Z",
+    "message": "   ⏭️  Skipping market 1159 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:22:58.329Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.54,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.46,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:58.331Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:22:58.333Z",
+    "message": "   ⏭️  Skipping market 1152 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:23:19.402Z",
+    "message": "   📊 Market 1165 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.67,
+      "outcome1BestAsk": 0.68,
+      "outcome2BestBid": 0.32,
+      "outcome2BestAsk": 0.33,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:23:19.404Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:23:19.407Z",
+    "message": "   ⏭️  Skipping market 1165 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:23:40.975Z",
+    "message": "   📊 Market 1160 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:23:40.979Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:23:40.981Z",
+    "message": "   ⏭️  Skipping market 1160 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:24:14.294Z",
+    "message": "   📊 Market 1144 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:24:14.297Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:24:14.299Z",
+    "message": "   ⏭️  Skipping market 1144 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:24:34.487Z",
+    "message": "   📊 Market 1167 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:24:34.490Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:24:34.491Z",
+    "message": "   ⏭️  Skipping market 1167 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:24:34.500Z",
+    "message": "Iteration 2 completed",
+    "data": {
+      "iterationNumber": 2,
+      "iterationStartTime": "2025-09-24T11:54:36.447Z",
+      "iterationEndTime": "2025-09-24T12:24:34.494Z",
+      "iterationDuration": 1798047,
+      "marketsProcessed": 30,
+      "marketsWithOrders": 10,
+      "successRate": "33.3%",
+      "randomSelection": true,
+      "activeMarketsFound": 30
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:25:05.095Z",
+    "message": "   📊 Market 1160 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:25:05.099Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:25:05.102Z",
+    "message": "   ⏭️  Skipping market 1160 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:25:32.145Z",
+    "message": "   📊 Market 1159 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.74,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.26,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:25:32.149Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:25:32.151Z",
+    "message": "   ⏭️  Skipping market 1159 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:07.631Z",
+    "message": "   📊 Market 1168 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.57,
+      "outcome1BestAsk": 0.75,
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.43,
+      "combinedBestBidSum": "0.8200",
+      "combinedBestAskSum": "1.1800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:07.635Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.8200",
+      "combinedAskSum": "1.1800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.1800",
+      "oneMinusBidSum": "0.1800",
+      "arbitrageSpread": "0.1800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:07.637Z",
+    "message": "   🎯 Spread 0.1800 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:08.015Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:08.018Z",
+    "message": "      Yes: $0.65 (bid 0.57 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:08.019Z",
+    "message": "      No: $0.35 (bid 0.25 / ask 0.43)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:08.022Z",
+    "message": "   🛒 Placing BUY on Yes at $0.65 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:09.117Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:11.120Z",
+    "message": "   🛒 Placing BUY on No at $0.35 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:12.166Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:12.168Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1168 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.544Z",
+    "message": "   📊 Market 1150 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.42,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.58,
+      "combinedBestBidSum": "0.9600",
+      "combinedBestAskSum": "1.0400",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.550Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9600",
+      "combinedAskSum": "1.0400",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0400",
+      "oneMinusBidSum": "0.0400",
+      "arbitrageSpread": "0.0400"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.553Z",
+    "message": "   🎯 Spread 0.0400 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.922Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.925Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.927Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:42.930Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:43.908Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:45.911Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:46.929Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:47.313Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:47.316Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:47.319Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:47.322Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:48.518Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:50.521Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:51.494Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:51.868Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:51.870Z",
+    "message": "      Kansas City Chiefs: $0.44 (bid 0.42 / ask 0.46)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:51.871Z",
+    "message": "      Baltimore Ravens: $0.56 (bid 0.54 / ask 0.58)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:51.874Z",
+    "message": "   🛒 Placing BUY on Kansas City Chiefs at $0.44 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:52.805Z",
+    "message": "   ✅ BUY placed on Kansas City Chiefs",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:54.808Z",
+    "message": "   🛒 Placing BUY on Baltimore Ravens at $0.56 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:26:55.809Z",
+    "message": "   ✅ BUY placed on Baltimore Ravens",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:26:55.811Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1150 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:17.948Z",
+    "message": "   📊 Market 1143 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:17.952Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:17.954Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:18.365Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:18.367Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:18.369Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:18.373Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:19.617Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:21.620Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 4",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:22.566Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:22.933Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:22.935Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:22.937Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:22.941Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:23.949Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:25.953Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:27.022Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:27.430Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:27.432Z",
+    "message": "      San Francisco Giants: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:27.434Z",
+    "message": "      St. Louis Cardinals: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:27.437Z",
+    "message": "   🛒 Placing BUY on San Francisco Giants at $0.53 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:28.406Z",
+    "message": "   ✅ BUY placed on San Francisco Giants",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:30.410Z",
+    "message": "   🛒 Placing BUY on St. Louis Cardinals at $0.47 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:31.309Z",
+    "message": "   ✅ BUY placed on St. Louis Cardinals",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:31.312Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1143 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:27:59.009Z",
+    "message": "   📊 Market 1166 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:59.012Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:27:59.014Z",
+    "message": "   ⏭️  Skipping market 1166 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:28:27.397Z",
+    "message": "   📊 Market 1140 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.99,
+      "outcome1BestAsk": 1,
+      "outcome2BestBid": 0,
+      "outcome2BestAsk": 0.01,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:28:27.400Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:28:27.404Z",
+    "message": "   ⏭️  Skipping market 1140 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:28:59.400Z",
+    "message": "   📊 Market 1162 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.41,
+      "outcome2BestBid": 0.59,
+      "outcome2BestAsk": 0.6,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:28:59.406Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:28:59.409Z",
+    "message": "   ⏭️  Skipping market 1162 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:26.713Z",
+    "message": "   📊 Market 1167 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:26.716Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:26.720Z",
+    "message": "   ⏭️  Skipping market 1167 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.432Z",
+    "message": "   📊 Market 1147 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.9,
+      "outcome2BestBid": 0.1,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9200",
+      "combinedBestAskSum": "1.0800",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.436Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9200",
+      "combinedAskSum": "1.0800",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0800",
+      "oneMinusBidSum": "0.0800",
+      "arbitrageSpread": "0.0800"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.438Z",
+    "message": "   🎯 Spread 0.0800 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.827Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.829Z",
+    "message": "      Buffalo Bills: $0.86 (bid 0.82 / ask 0.9)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.831Z",
+    "message": "      New Orleans Saints: $0.14 (bid 0.1 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:45.838Z",
+    "message": "   🛒 Placing BUY on Buffalo Bills at $0.86 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:47.002Z",
+    "message": "   ✅ BUY placed on Buffalo Bills",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:49.007Z",
+    "message": "   🛒 Placing BUY on New Orleans Saints at $0.14 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:49.930Z",
+    "message": "   ✅ BUY placed on New Orleans Saints",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:50.309Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:50.312Z",
+    "message": "      Buffalo Bills: $0.86 (bid 0.82 / ask 0.9)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:50.314Z",
+    "message": "      New Orleans Saints: $0.14 (bid 0.1 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:50.318Z",
+    "message": "   🛒 Placing BUY on Buffalo Bills at $0.86 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:51.406Z",
+    "message": "   ✅ BUY placed on Buffalo Bills",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:53.412Z",
+    "message": "   🛒 Placing BUY on New Orleans Saints at $0.14 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:29:54.374Z",
+    "message": "   ✅ BUY placed on New Orleans Saints",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:29:54.377Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1147 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:30:14.082Z",
+    "message": "   📊 Market 1158 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:30:14.085Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:30:14.087Z",
+    "message": "   ⏭️  Skipping market 1158 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:30:33.698Z",
+    "message": "   📊 Market 1144 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:30:33.701Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:30:33.705Z",
+    "message": "   ⏭️  Skipping market 1144 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:31:06.061Z",
+    "message": "   📊 Market 1139 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.03,
+      "outcome1BestAsk": 0.09,
+      "outcome2BestBid": 0.91,
+      "outcome2BestAsk": 0.97,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:31:06.065Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:31:06.067Z",
+    "message": "   ⚠️  Market 1139 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:31:36.610Z",
+    "message": "   📊 Market 1156 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.53,
+      "outcome2BestBid": 0.47,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:31:36.614Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:31:36.617Z",
+    "message": "   ⏭️  Skipping market 1156 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:32:07.235Z",
+    "message": "   📊 Market 1153 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:07.237Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:07.239Z",
+    "message": "   ⏭️  Skipping market 1153 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:32:32.168Z",
+    "message": "   📊 Market 1154 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.55,
+      "outcome1BestAsk": 0.56,
+      "outcome2BestBid": 0.44,
+      "outcome2BestAsk": 0.45,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:32.171Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:32.175Z",
+    "message": "   ⏭️  Skipping market 1154 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:32:57.550Z",
+    "message": "   📊 Market 1152 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.54,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.46,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:57.554Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:32:57.556Z",
+    "message": "   ⏭️  Skipping market 1152 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.462Z",
+    "message": "   📊 Market 1146 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.52,
+      "outcome1BestAsk": 0.55,
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.48,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.465Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.467Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 2 internal-match trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.852Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.854Z",
+    "message": "      Yes: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.856Z",
+    "message": "      No: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:24.858Z",
+    "message": "   🛒 Placing BUY on Yes at $0.53 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:26.820Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:28.825Z",
+    "message": "   🛒 Placing BUY on No at $0.47 from wallet 9",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:30.854Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:31.247Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:31.250Z",
+    "message": "      Yes: $0.53 (bid 0.52 / ask 0.55)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:31.251Z",
+    "message": "      No: $0.47 (bid 0.45 / ask 0.48)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:31.255Z",
+    "message": "   🛒 Placing BUY on Yes at $0.53 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:33.128Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:35.132Z",
+    "message": "   🛒 Placing BUY on No at $0.47 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:33:37.124Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:33:37.127Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1146 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.347Z",
+    "message": "   📊 Market 1164 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.82,
+      "outcome1BestAsk": 0.85,
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.18,
+      "combinedBestBidSum": "0.9700",
+      "combinedBestAskSum": "1.0300",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.351Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9700",
+      "combinedAskSum": "1.0300",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0300",
+      "oneMinusBidSum": "0.0300",
+      "arbitrageSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.352Z",
+    "message": "   🎯 Spread 0.0300 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.726Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.728Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.730Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:08.733Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:10.685Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:12.689Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:15.414Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:15.798Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:15.801Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:15.803Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:15.805Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:17.794Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:19.797Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 8",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:21.776Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:22.154Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:22.156Z",
+    "message": "      Yes: $0.83 (bid 0.82 / ask 0.85)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:22.158Z",
+    "message": "      No: $0.17 (bid 0.15 / ask 0.18)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:22.162Z",
+    "message": "   🛒 Placing BUY on Yes at $0.83 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:24.220Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:26.225Z",
+    "message": "   🛒 Placing BUY on No at $0.17 from wallet 5",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:28.299Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:28.301Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1164 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:34:52.825Z",
+    "message": "   📊 Market 1141 Analysis:",
+    "data": {
+      "outcome1BestBid": 0,
+      "outcome1BestAsk": 0.01,
+      "outcome2BestBid": 0.99,
+      "outcome2BestAsk": 1,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:52.828Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:34:52.830Z",
+    "message": "   ⏭️  Skipping market 1141 - spread 0.0100 ≤ 0.015",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.373Z",
+    "message": "   📊 Market 1151 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.25,
+      "outcome1BestAsk": 0.31,
+      "outcome2BestBid": 0.69,
+      "outcome2BestAsk": 0.75,
+      "combinedBestBidSum": "0.9400",
+      "combinedBestAskSum": "1.0600",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.377Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9400",
+      "combinedAskSum": "1.0600",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0600",
+      "oneMinusBidSum": "0.0600",
+      "arbitrageSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.380Z",
+    "message": "   🎯 Spread 0.0600 > 0.015 - placing 3 internal-match trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.749Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.752Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.754Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:21.758Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:22.698Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:24.702Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:25.735Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:26.133Z",
+    "message": "   🔁 Trade 2: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:26.136Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:26.140Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:26.145Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 11",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:27.131Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:29.136Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:30.125Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:30.500Z",
+    "message": "   🔁 Trade 3: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:30.502Z",
+    "message": "      Dallas Cowboys: $0.28 (bid 0.25 / ask 0.31)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:30.506Z",
+    "message": "      Green Bay Packers: $0.72 (bid 0.69 / ask 0.75)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:30.509Z",
+    "message": "   🛒 Placing BUY on Dallas Cowboys at $0.28 from wallet 10",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:31.513Z",
+    "message": "   ✅ BUY placed on Dallas Cowboys",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:33.518Z",
+    "message": "   🛒 Placing BUY on Green Bay Packers at $0.72 from wallet 7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:35:34.495Z",
+    "message": "   ✅ BUY placed on Green Bay Packers",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:35:34.497Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1151 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-24T12:36:02.299Z",
+    "message": "   📊 Market 1163 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.6,
+      "outcome1BestAsk": 0.61,
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.4,
+      "combinedBestBidSum": "0.9900",
+      "combinedBestAskSum": "1.0100",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:36:02.340Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9900",
+      "combinedAskSum": "1.0100",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0100",
+      "oneMinusBidSum": "0.0100",
+      "arbitrageSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-24T12:36:02.359Z",
+    "message": "   ⏭️  Skipping market 1163 - spread 0.0100 ≤ 0.015",
+    "data": null
+  }
+]

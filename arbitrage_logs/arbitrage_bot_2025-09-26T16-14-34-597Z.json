@@ -1,0 +1,1296 @@
+[
+  {
+    "timestamp": "2025-09-26T16:15:11.245Z",
+    "message": "   📊 Market 1156 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.48,
+      "outcome1Spread": "-0.0200",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.48,
+      "outcome2Spread": "-0.0200",
+      "totalSpread": "-0.0200"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:15:11.247Z",
+    "message": "   📊 Market 1156 has tight spread (-0.0200), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:11.248Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:11.248Z",
+    "message": "   🎯 Market 1156 - placing 2 trades (4 orders) despite tight spread (-0.0200)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:11.927Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Seattle Mariners order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:11.928Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Seattle Mariners) + 3 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:16.346Z",
+    "message": "   📉 Trade 1: Wallet 3 placing Los Angeles Dodgers order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:18.330Z",
+    "message": "   🎯 Trade 1 complete: Seattle Mariners at $0.51 + Los Angeles Dodgers at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:23.445Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Seattle Mariners order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:23.446Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Seattle Mariners) + 11 (Los Angeles Dodgers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:27.417Z",
+    "message": "   📉 Trade 2: Wallet 11 placing Los Angeles Dodgers order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:29.629Z",
+    "message": "   🎯 Trade 2 complete: Seattle Mariners at $0.51 + Los Angeles Dodgers at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:29.629Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1156 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:50.328Z",
+    "message": "   📊 Market 1147 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.14,
+      "outcome1Spread": "-0.3600",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.14,
+      "outcome2Spread": "-0.3600",
+      "totalSpread": "-0.3600"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:15:50.329Z",
+    "message": "   📊 Market 1147 has tight spread (-0.3600), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:50.330Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:50.330Z",
+    "message": "   🎯 Market 1147 - placing 2 trades (4 orders) despite tight spread (-0.3600)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:51.221Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Buffalo Bills order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:51.222Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Buffalo Bills) + 8 (New Orleans Saints)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:56.422Z",
+    "message": "   📉 Trade 1: Wallet 8 placing New Orleans Saints order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:15:58.586Z",
+    "message": "   🎯 Trade 1 complete: Buffalo Bills at $0.51 + New Orleans Saints at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:01.894Z",
+    "message": "   📈 Trade 2: Wallet 10 placing Buffalo Bills order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:01.894Z",
+    "message": "   🎲 Trade 2 wallet pair: 10 (Buffalo Bills) + 4 (New Orleans Saints)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:06.372Z",
+    "message": "   📉 Trade 2: Wallet 4 placing New Orleans Saints order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:09.325Z",
+    "message": "   🎯 Trade 2 complete: Buffalo Bills at $0.51 + New Orleans Saints at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:09.326Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1147 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:32.777Z",
+    "message": "   📊 Market 1148 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.31,
+      "outcome1Spread": "-0.1900",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.31,
+      "outcome2Spread": "-0.1900",
+      "totalSpread": "-0.1900"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:16:32.779Z",
+    "message": "   📊 Market 1148 has tight spread (-0.1900), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:32.779Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:32.780Z",
+    "message": "   🎯 Market 1148 - placing 1 trade (2 orders) despite tight spread (-0.1900)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:33.401Z",
+    "message": "   📈 Trade 1: Wallet 3 placing New England Patriots order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:33.402Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (New England Patriots) + 9 (Carolina Panthers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:38.376Z",
+    "message": "   📉 Trade 1: Wallet 9 placing Carolina Panthers order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:41.252Z",
+    "message": "   🎯 Trade 1 complete: New England Patriots at $0.51 + Carolina Panthers at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:16:41.254Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1148 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:08.418Z",
+    "message": "   📊 Market 1153 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0600",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0600",
+      "totalSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:17:08.419Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:08.420Z",
+    "message": "   🎯 Spread 0.0600 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:09.711Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:09.712Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 9 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:12.922Z",
+    "message": "   📉 Trade 1: Wallet 9 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:14.970Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:20.337Z",
+    "message": "   📈 Trade 2: Wallet 9 placing Yes order: 5 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:20.338Z",
+    "message": "   🎲 Trade 2 wallet pair: 9 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:25.291Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:27.363Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:34.324Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:34.326Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:38.878Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 3 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:41.027Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:17:41.028Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1153 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:10.286Z",
+    "message": "   📊 Market 1149 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.65,
+      "outcome1Spread": "0.1500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.1500",
+      "totalSpread": "0.1500"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:18:10.289Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:10.290Z",
+    "message": "   🎯 Spread 0.1500 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:11.135Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Tampa Bay Buccaneers order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:11.136Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Tampa Bay Buccaneers) + 9 (Philadelphia Eagles)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:16.883Z",
+    "message": "   📉 Trade 1: Wallet 9 placing Philadelphia Eagles order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:20.506Z",
+    "message": "   🎯 Trade 1 complete: Tampa Bay Buccaneers at $0.51 + Philadelphia Eagles at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:20.508Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1149 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:55.537Z",
+    "message": "   📊 Market 1166 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.69,
+      "outcome1BestAsk": 0.7,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.31,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:18:55.539Z",
+    "message": "   📊 Market 1166 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:55.540Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:55.540Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:56.202Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.7",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:18:56.203Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:01.342Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 4 shares at $0.3",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:03.317Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.7 + No at $0.3 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:03.318Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1166 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.088Z",
+    "message": "   📊 Market 1159 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.26,
+      "outcome1Spread": "-0.2400",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.26,
+      "outcome2Spread": "-0.2400",
+      "totalSpread": "-0.2400"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.089Z",
+    "message": "   📊 Market 1159 has tight spread (-0.2400), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.090Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.090Z",
+    "message": "   🎯 Market 1159 - placing 3 trades (6 orders) despite tight spread (-0.2400)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.677Z",
+    "message": "   📈 Trade 1: Wallet 9 placing Denver Broncos order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:34.678Z",
+    "message": "   🎲 Trade 1 wallet pair: 9 (Denver Broncos) + 8 (Cincinnati Bengals)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:40.180Z",
+    "message": "   📉 Trade 1: Wallet 8 placing Cincinnati Bengals order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:41.814Z",
+    "message": "   🎯 Trade 1 complete: Denver Broncos at $0.51 + Cincinnati Bengals at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:45.266Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Denver Broncos order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:45.267Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Denver Broncos) + 9 (Cincinnati Bengals)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:48.461Z",
+    "message": "   📉 Trade 2: Wallet 9 placing Cincinnati Bengals order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:50.378Z",
+    "message": "   🎯 Trade 2 complete: Denver Broncos at $0.51 + Cincinnati Bengals at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:53.534Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Denver Broncos order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:53.534Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Denver Broncos) + 7 (Cincinnati Bengals)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:57.795Z",
+    "message": "   📉 Trade 3: Wallet 7 placing Cincinnati Bengals order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:59.524Z",
+    "message": "   🎯 Trade 3 complete: Denver Broncos at $0.51 + Cincinnati Bengals at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:19:59.525Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1159 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:33.677Z",
+    "message": "   📊 Market 1146 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.65,
+      "outcome1Spread": "0.3000",
+      "outcome2BestBid": 0.35,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.3000",
+      "totalSpread": "0.3000"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:20:33.679Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:33.680Z",
+    "message": "   🎯 Spread 0.3000 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:34.649Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 3 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:34.650Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:37.884Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 4 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:39.564Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:45.892Z",
+    "message": "   📈 Trade 2: Wallet 9 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:45.893Z",
+    "message": "   🎲 Trade 2 wallet pair: 9 (Yes) + 11 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:50.562Z",
+    "message": "   📉 Trade 2: Wallet 11 placing No order: 3 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:52.774Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:20:52.775Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1146 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:21.622Z",
+    "message": "   📊 Market 1138 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.1,
+      "outcome1Spread": "-0.4000",
+      "outcome2BestBid": 0.9,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "-0.4000",
+      "totalSpread": "-0.4000"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:21:21.624Z",
+    "message": "   📊 Market 1138 has tight spread (-0.4000), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:21.625Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:21.627Z",
+    "message": "   🎯 Market 1138 - placing 2 trades (4 orders) despite tight spread (-0.4000)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:22.324Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:22.326Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:29.029Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:30.889Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:33.734Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:33.735Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 11 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:38.491Z",
+    "message": "   📉 Trade 2: Wallet 11 placing No order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:40.421Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:21:40.422Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1138 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:09.510Z",
+    "message": "   📊 Market 1163 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.85,
+      "outcome1Spread": "0.4000",
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.4000",
+      "totalSpread": "0.4000"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:22:09.513Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:09.515Z",
+    "message": "   🎯 Spread 0.4000 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:10.089Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:10.091Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:14.466Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 1 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:19.283Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:23.200Z",
+    "message": "   📈 Trade 2: Wallet 9 placing Yes order: 5 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:23.202Z",
+    "message": "   🎲 Trade 2 wallet pair: 9 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:26.091Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 5 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:28.246Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:22:28.247Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1163 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:01.760Z",
+    "message": "   📊 Market 1167 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:23:01.761Z",
+    "message": "   📊 Market 1167 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:01.762Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:01.763Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:03.634Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 4 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:03.635Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 9 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:08.799Z",
+    "message": "   📉 Trade 1: Wallet 9 placing No order: 1 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:10.463Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:10.464Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1167 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:48.508Z",
+    "message": "   📊 Market 1151 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.2500",
+      "totalSpread": "0.2500"
+    }
+  },
+  {
+    "timestamp": "2025-09-26T16:23:48.509Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:48.512Z",
+    "message": "   🎯 Spread 0.2500 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:49.407Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Dallas Cowboys order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T16:23:49.407Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Dallas Cowboys) + 11 (Green Bay Packers)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T18:55:41.167Z",
+    "message": "   📉 Trade 1: Wallet 11 placing Green Bay Packers order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T18:55:41.177Z",
+    "message": "   🎯 Trade 1 complete: Dallas Cowboys at $0.51 + Green Bay Packers at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-26T18:55:46.090Z",
+    "message": "   ❌ Error processing market 1151:",
+    "data": "getaddrinfo ENOTFOUND api.forkast.gg"
+  },
+  {
+    "timestamp": "2025-09-26T20:31:46.099Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T20:31:46.099Z",
+      "iterationDuration": 15431502,
+      "marketsProcessed": 12,
+      "marketsWithOrders": 11,
+      "successRate": "91.7%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T21:46:08.845Z",
+    "message": "Iteration 2 completed",
+    "data": {
+      "iterationNumber": 2,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T21:46:08.845Z",
+      "iterationDuration": 19894248,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T21:58:39.609Z",
+    "message": "Iteration 3 completed",
+    "data": {
+      "iterationNumber": 3,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T21:58:39.609Z",
+      "iterationDuration": 20645012,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T22:16:09.389Z",
+    "message": "Iteration 4 completed",
+    "data": {
+      "iterationNumber": 4,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T22:16:09.389Z",
+      "iterationDuration": 21694792,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T22:16:39.440Z",
+    "message": "Iteration 5 completed",
+    "data": {
+      "iterationNumber": 5,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T22:16:39.440Z",
+      "iterationDuration": 21724843,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T23:17:38.680Z",
+    "message": "Iteration 6 completed",
+    "data": {
+      "iterationNumber": 6,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T23:17:38.680Z",
+      "iterationDuration": 25384083,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T23:34:07.415Z",
+    "message": "Iteration 7 completed",
+    "data": {
+      "iterationNumber": 7,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T23:34:07.415Z",
+      "iterationDuration": 26372818,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-26T23:49:10.160Z",
+    "message": "Iteration 8 completed",
+    "data": {
+      "iterationNumber": 8,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-26T23:49:10.160Z",
+      "iterationDuration": 27275563,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T00:00:37.910Z",
+    "message": "Iteration 9 completed",
+    "data": {
+      "iterationNumber": 9,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T00:00:37.910Z",
+      "iterationDuration": 27963313,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T01:01:43.777Z",
+    "message": "Iteration 10 completed",
+    "data": {
+      "iterationNumber": 10,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T01:01:43.777Z",
+      "iterationDuration": 31629180,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T01:17:22.154Z",
+    "message": "Iteration 11 completed",
+    "data": {
+      "iterationNumber": 11,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T01:17:22.154Z",
+      "iterationDuration": 32567557,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T01:32:53.882Z",
+    "message": "Iteration 12 completed",
+    "data": {
+      "iterationNumber": 12,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T01:32:53.882Z",
+      "iterationDuration": 33499285,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T02:54:31.785Z",
+    "message": "Iteration 13 completed",
+    "data": {
+      "iterationNumber": 13,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T02:54:31.785Z",
+      "iterationDuration": 38397188,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T03:19:57.587Z",
+    "message": "Iteration 14 completed",
+    "data": {
+      "iterationNumber": 14,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T03:19:57.587Z",
+      "iterationDuration": 39922990,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T03:20:27.638Z",
+    "message": "Iteration 15 completed",
+    "data": {
+      "iterationNumber": 15,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T03:20:27.637Z",
+      "iterationDuration": 39953040,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T03:20:57.681Z",
+    "message": "Iteration 16 completed",
+    "data": {
+      "iterationNumber": 16,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T03:20:57.681Z",
+      "iterationDuration": 39983084,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T03:21:27.731Z",
+    "message": "Iteration 17 completed",
+    "data": {
+      "iterationNumber": 17,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T03:21:27.731Z",
+      "iterationDuration": 40013134,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T04:04:36.398Z",
+    "message": "Iteration 18 completed",
+    "data": {
+      "iterationNumber": 18,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T04:04:36.398Z",
+      "iterationDuration": 42601801,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T05:05:41.187Z",
+    "message": "Iteration 19 completed",
+    "data": {
+      "iterationNumber": 19,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T05:05:41.187Z",
+      "iterationDuration": 46266590,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T05:22:35.679Z",
+    "message": "Iteration 20 completed",
+    "data": {
+      "iterationNumber": 20,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T05:22:35.679Z",
+      "iterationDuration": 47281082,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T05:40:06.446Z",
+    "message": "Iteration 21 completed",
+    "data": {
+      "iterationNumber": 21,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T05:40:06.446Z",
+      "iterationDuration": 48331849,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T05:57:41.214Z",
+    "message": "Iteration 22 completed",
+    "data": {
+      "iterationNumber": 22,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T05:57:41.214Z",
+      "iterationDuration": 49386617,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T06:06:35.966Z",
+    "message": "Iteration 23 completed",
+    "data": {
+      "iterationNumber": 23,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T06:06:35.966Z",
+      "iterationDuration": 49921369,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T06:21:39.888Z",
+    "message": "Iteration 24 completed",
+    "data": {
+      "iterationNumber": 24,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T06:21:39.888Z",
+      "iterationDuration": 50825291,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T06:38:50.620Z",
+    "message": "Iteration 25 completed",
+    "data": {
+      "iterationNumber": 25,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T06:38:50.619Z",
+      "iterationDuration": 51856022,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T07:58:07.110Z",
+    "message": "Iteration 26 completed",
+    "data": {
+      "iterationNumber": 26,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T07:58:07.110Z",
+      "iterationDuration": 56612513,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T08:08:32.913Z",
+    "message": "Iteration 27 completed",
+    "data": {
+      "iterationNumber": 27,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T08:08:32.913Z",
+      "iterationDuration": 57238316,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:09:37.838Z",
+    "message": "Iteration 28 completed",
+    "data": {
+      "iterationNumber": 28,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T09:09:37.838Z",
+      "iterationDuration": 60903241,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:25:05.336Z",
+    "message": "Iteration 29 completed",
+    "data": {
+      "iterationNumber": 29,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T09:25:05.336Z",
+      "iterationDuration": 61830739,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:40:21.666Z",
+    "message": "Iteration 30 completed",
+    "data": {
+      "iterationNumber": 30,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T09:40:21.666Z",
+      "iterationDuration": 62747069,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:40:51.718Z",
+    "message": "Iteration 31 completed",
+    "data": {
+      "iterationNumber": 31,
+      "iterationStartTime": "2025-09-26T16:14:34.597Z",
+      "iterationEndTime": "2025-09-27T09:40:51.718Z",
+      "iterationDuration": 62777121,
+      "marketsProcessed": 0,
+      "marketsWithOrders": 0,
+      "successRate": "0%",
+      "randomSelection": true,
+      "activeMarketsFound": 27
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:41:24.569Z",
+    "message": "   📊 Market 1168 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.74,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.25,
+      "outcome2BestAsk": 0.26,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2025-09-27T09:41:24.574Z",
+    "message": "   📊 Market 1168 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-27T09:41:24.575Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-27T09:41:24.576Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-27T09:41:25.561Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 2 shares at $0.75",
+    "data": null
+  },
+  {
+    "timestamp": "2025-09-27T09:41:25.562Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 11 (No)",
+    "data": null
+  }
+]

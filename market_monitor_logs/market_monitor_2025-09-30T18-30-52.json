@@ -1,0 +1,161 @@
+{
+  "session_info": {
+    "start_time": "2025-09-30T18:30:52.692Z",
+    "network": "mainnet"
+  },
+  "total_money_spent": 134.61,
+  "total_orders_placed": 78,
+  "total_markets_processed": 41,
+  "operation_summaries": [
+    {
+      "timestamp": "2025-09-30T18:31:58.007Z",
+      "marketId": 860,
+      "totalCost": 8.09,
+      "ordersCount": 5
+    },
+    {
+      "timestamp": "2025-09-30T18:33:05.598Z",
+      "marketId": 859,
+      "totalCost": 4.01,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:34:53.557Z",
+      "marketId": 853,
+      "totalCost": 4.16,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:36:31.005Z",
+      "marketId": 849,
+      "totalCost": 4.13,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:38:05.570Z",
+      "marketId": 844,
+      "totalCost": 4.22,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:39:12.358Z",
+      "marketId": 843,
+      "totalCost": 4.18,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-09-30T18:40:17.265Z",
+      "marketId": 842,
+      "totalCost": 4,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:41:33.385Z",
+      "marketId": 840,
+      "totalCost": 3.9800000000000004,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:42:47.860Z",
+      "marketId": 837,
+      "totalCost": 2.9699999999999998,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-09-30T18:44:04.591Z",
+      "marketId": 835,
+      "totalCost": 3.9600000000000004,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:45:11.493Z",
+      "marketId": 834,
+      "totalCost": 3.9600000000000004,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:46:21.683Z",
+      "marketId": 833,
+      "totalCost": 3.99,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:47:58.246Z",
+      "marketId": 826,
+      "totalCost": 4.62,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T18:50:01.420Z",
+      "marketId": 817,
+      "totalCost": 11.28,
+      "ordersCount": 6
+    },
+    {
+      "timestamp": "2025-09-30T18:53:11.092Z",
+      "marketId": 846,
+      "totalCost": 4.16,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-09-30T23:51:59.987Z",
+      "marketId": 828,
+      "totalCost": 4.22,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-10-01T00:21:29.308Z",
+      "marketId": 827,
+      "totalCost": 4.03,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-10-01T01:38:55.745Z",
+      "marketId": 818,
+      "totalCost": 10.97,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-10-01T03:25:29.442Z",
+      "marketId": 858,
+      "totalCost": 11.89,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-10-01T04:10:56.595Z",
+      "marketId": 857,
+      "totalCost": 4.02,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-10-01T04:48:58.113Z",
+      "marketId": 848,
+      "totalCost": 2.97,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-10-01T05:40:47.191Z",
+      "marketId": 832,
+      "totalCost": 4.32,
+      "ordersCount": 2
+    },
+    {
+      "timestamp": "2025-10-01T08:55:47.496Z",
+      "marketId": 845,
+      "totalCost": 9.84,
+      "ordersCount": 4
+    },
+    {
+      "timestamp": "2025-10-01T09:02:27.288Z",
+      "marketId": 821,
+      "totalCost": 6.08,
+      "ordersCount": 3
+    },
+    {
+      "timestamp": "2025-10-01T10:43:29.378Z",
+      "marketId": 836,
+      "totalCost": 4.5600000000000005,
+      "ordersCount": 3
+    }
+  ]
+}
