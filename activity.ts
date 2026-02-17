@@ -1,3 +1,27 @@
+// Use mainnet endpoint for event API only
+const EVENT_API_URL = process.env.MAINNET_MARKET_API_URL;
+// Utility: Find eventId for a given marketId
+async function findEventIdForMarket(marketId: number, accessToken?: string): Promise<number | null> {
+    try {
+        // Fetch all events (markets endpoint returns events with markets array)
+        const params: any = {};
+        if (accessToken) params.accessToken = accessToken;
+        const response = await axios.get(EVENT_API_URL, { params, timeout: 30000 });
+        const events = response.data?.data;
+        if (!Array.isArray(events)) return null;
+        for (const event of events) {
+            if (event.markets && Array.isArray(event.markets)) {
+                if (event.markets.some((m: any) => String(m.id) === String(marketId))) {
+                    return event.id;
+                }
+            }
+        }
+        return null;
+    } catch (error) {
+        console.error(`Error finding eventId for market ${marketId}:`, error.message);
+        return null;
+    }
+}
 import axios from 'axios';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
@@ -10,47 +34,47 @@ dotenv.config();
 // Configuration
 const CONFIG = {
     testnet: {
-           WALLET_ADDRESS_3: process.env.TESTNET_WALLET_ADDRESS_3,
-           PRIVATE_KEY_3: process.env.TESTNET_PRIVATE_KEY_3,
-           PROXY_WALLET_3: process.env.TESTNET_PROXY_WALLET_3,
-           WALLET_ADDRESS_4: process.env.TESTNET_WALLET_ADDRESS_4,
-           PRIVATE_KEY_4: process.env.TESTNET_PRIVATE_KEY_4,
-           PROXY_WALLET_4: process.env.TESTNET_PROXY_WALLET_4,
-           WALLET_ADDRESS_5: process.env.TESTNET_WALLET_ADDRESS_5,
-           PRIVATE_KEY_5: process.env.TESTNET_PRIVATE_KEY_5,
-           PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5,
-           WALLET_ADDRESS_6: process.env.TESTNET_WALLET_ADDRESS_6,
-           PRIVATE_KEY_6: process.env.TESTNET_PRIVATE_KEY_6,
-           PROXY_WALLET_6: process.env.TESTNET_PROXY_WALLET_6,
-           WALLET_ADDRESS_7: process.env.TESTNET_WALLET_ADDRESS_7,
-           PRIVATE_KEY_7: process.env.TESTNET_PRIVATE_KEY_7,
-           PROXY_WALLET_7: process.env.TESTNET_PROXY_WALLET_7,
-           WALLET_ADDRESS_8: process.env.TESTNET_WALLET_ADDRESS_8,
-           PRIVATE_KEY_8: process.env.TESTNET_PRIVATE_KEY_8,
-           PROXY_WALLET_8: process.env.TESTNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_3: process.env.TESTNET_WALLET_ADDRESS_3,
+        PRIVATE_KEY_3: process.env.TESTNET_PRIVATE_KEY_3,
+        PROXY_WALLET_3: process.env.TESTNET_PROXY_WALLET_3,
+        WALLET_ADDRESS_4: process.env.TESTNET_WALLET_ADDRESS_4,
+        PRIVATE_KEY_4: process.env.TESTNET_PRIVATE_KEY_4,
+        PROXY_WALLET_4: process.env.TESTNET_PROXY_WALLET_4,
+        WALLET_ADDRESS_5: process.env.TESTNET_WALLET_ADDRESS_5,
+        PRIVATE_KEY_5: process.env.TESTNET_PRIVATE_KEY_5,
+        PROXY_WALLET_5: process.env.TESTNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.TESTNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.TESTNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.TESTNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.TESTNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.TESTNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.TESTNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.TESTNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.TESTNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.TESTNET_PROXY_WALLET_8,
         MARKET_API_URL: process.env.TESTNET_MARKET_API_URL,
         ACCOUNT_API_URL: process.env.TESTNET_ACCOUNT_API_URL,
         ORDER_API_URL: process.env.TESTNET_ORDER_API_URL
     },
     mainnet: {
-           WALLET_ADDRESS_3: process.env.MAINNET_WALLET_ADDRESS_3,
-           PRIVATE_KEY_3: process.env.MAINNET_PRIVATE_KEY_3,
-           PROXY_WALLET_3: process.env.MAINNET_PROXY_WALLET_3,
-           WALLET_ADDRESS_4: process.env.MAINNET_WALLET_ADDRESS_4,
-           PRIVATE_KEY_4: process.env.MAINNET_PRIVATE_KEY_4,
-           PROXY_WALLET_4: process.env.MAINNET_PROXY_WALLET_4,
-           WALLET_ADDRESS_5: process.env.MAINNET_WALLET_ADDRESS_5,
-           PRIVATE_KEY_5: process.env.MAINNET_PRIVATE_KEY_5,
-           PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5,
-           WALLET_ADDRESS_6: process.env.MAINNET_WALLET_ADDRESS_6,
-           PRIVATE_KEY_6: process.env.MAINNET_PRIVATE_KEY_6,
-           PROXY_WALLET_6: process.env.MAINNET_PROXY_WALLET_6,
-           WALLET_ADDRESS_7: process.env.MAINNET_WALLET_ADDRESS_7,
-           PRIVATE_KEY_7: process.env.MAINNET_PRIVATE_KEY_7,
-           PROXY_WALLET_7: process.env.MAINNET_PROXY_WALLET_7,
-           WALLET_ADDRESS_8: process.env.MAINNET_WALLET_ADDRESS_8,
-           PRIVATE_KEY_8: process.env.MAINNET_PRIVATE_KEY_8,
-           PROXY_WALLET_8: process.env.MAINNET_PROXY_WALLET_8,
+        WALLET_ADDRESS_3: process.env.MAINNET_WALLET_ADDRESS_3,
+        PRIVATE_KEY_3: process.env.MAINNET_PRIVATE_KEY_3,
+        PROXY_WALLET_3: process.env.MAINNET_PROXY_WALLET_3,
+        WALLET_ADDRESS_4: process.env.MAINNET_WALLET_ADDRESS_4,
+        PRIVATE_KEY_4: process.env.MAINNET_PRIVATE_KEY_4,
+        PROXY_WALLET_4: process.env.MAINNET_PROXY_WALLET_4,
+        WALLET_ADDRESS_5: process.env.MAINNET_WALLET_ADDRESS_5,
+        PRIVATE_KEY_5: process.env.MAINNET_PRIVATE_KEY_5,
+        PROXY_WALLET_5: process.env.MAINNET_PROXY_WALLET_5,
+        WALLET_ADDRESS_6: process.env.MAINNET_WALLET_ADDRESS_6,
+        PRIVATE_KEY_6: process.env.MAINNET_PRIVATE_KEY_6,
+        PROXY_WALLET_6: process.env.MAINNET_PROXY_WALLET_6,
+        WALLET_ADDRESS_7: process.env.MAINNET_WALLET_ADDRESS_7,
+        PRIVATE_KEY_7: process.env.MAINNET_PRIVATE_KEY_7,
+        PROXY_WALLET_7: process.env.MAINNET_PROXY_WALLET_7,
+        WALLET_ADDRESS_8: process.env.MAINNET_WALLET_ADDRESS_8,
+        PRIVATE_KEY_8: process.env.MAINNET_PRIVATE_KEY_8,
+        PROXY_WALLET_8: process.env.MAINNET_PROXY_WALLET_8,
         MARKET_API_URL: process.env.MAINNET_MARKET_API_URL,
         ACCOUNT_API_URL: process.env.MAINNET_ACCOUNT_API_URL,
         ORDER_API_URL: process.env.MAINNET_ORDER_API_URL
@@ -58,7 +82,6 @@ const CONFIG = {
 };
 
 const NETWORK = (process.env.NETWORK as 'testnet' | 'mainnet') || 'mainnet';
-const EVENT_API_URL = 'https://mgapi.forkast.gg/api/v1/markets';
 const ORDER_BOOK_API_URL = 'https://mgapi.forkast.gg/api/v1/orderbook';
 
 // Initialize ForkastSDK for authentication
@@ -275,19 +298,22 @@ async function humanLikeDelay(min: number, max: number, reason: string) {
 
 // Wallet management
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
-    const walletNumbers = [3, 4, 5, 6, 7, 8];
+    const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
     const randomWalletNumber = getRandomElement(walletNumbers);
+    
     const walletConfig = {
         WALLET_ADDRESS: CONFIG[NETWORK][`WALLET_ADDRESS_${randomWalletNumber}`],
         PRIVATE_KEY: CONFIG[NETWORK][`PRIVATE_KEY_${randomWalletNumber}`],
         PROXY_WALLET: CONFIG[NETWORK][`PROXY_WALLET_${randomWalletNumber}`]
     };
+    
     return { walletNumber: randomWalletNumber, walletConfig };
 }
 
 function validateWalletConfig(): boolean {
     const requiredWallets = [3, 4, 5, 6, 7, 8];
     const missingWallets = [];
+    
     for (const walletNum of requiredWallets) {
         if (!CONFIG[NETWORK][`WALLET_ADDRESS_${walletNum}`] || 
             !CONFIG[NETWORK][`PRIVATE_KEY_${walletNum}`] || 
@@ -295,11 +321,13 @@ function validateWalletConfig(): boolean {
             missingWallets.push(walletNum);
         }
     }
+    
     if (missingWallets.length > 0) {
         console.error(`❌ Missing configuration for wallets: ${missingWallets.join(', ')}`);
         return false;
     }
-    console.log(`✅ All six wallets (3, 4, 5, 6, 7, 8) are properly configured`);
+    
+    console.log(`✅ All nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11) are properly configured`);
     return true;
 }
 
@@ -337,60 +365,87 @@ async function getLatestMarketId(): Promise<number> {
     }
 }
 
-async function fetchMarketById(marketId: number) {
+// Fetch event by eventId, then select market by marketId from event.markets
+async function fetchMarketByEventAndMarketId(eventId: number, marketId: number, accessToken?: string) {
     try {
-        const response = await axios.get(`${EVENT_API_URL}/${marketId}`, { 
+        const params: any = { id: eventId };
+        if (accessToken) params.accessToken = accessToken;
+        const response = await axios.get(EVENT_API_URL, {
+            params,
             timeout: 30000
         });
         const event = response.data;
-        
-        if (!event || !event.data || !Array.isArray(event.data.markets) || event.data.markets.length === 0) {
-            return null;
+        console.log(`[DEBUG] Local endpoint raw response for eventId ${eventId}:`, JSON.stringify(event, null, 2));
+        if (event && event.data && Array.isArray(event.data.markets) && event.data.markets.length > 0) {
+            let market = event.data.markets.find((m: any) => String(m.id) === String(marketId));
+            if (!market) {
+                // Fallback: use the first market in the array
+                market = event.data.markets[0];
+                console.log(`[DEBUG] Market ${marketId} not found in event ${eventId}, using first market:`, JSON.stringify(market, null, 2));
+            } else {
+                console.log(`[DEBUG] Event ${eventId} Market ${marketId} object:`, JSON.stringify(market, null, 2));
+            }
+            console.log(`[DEBUG] Selected market status:`, market?.status);
+            return market;
         }
-        
-        const market = event.data.markets.find((m: any) => m.id === marketId) || event.data.markets[0];
-        
-        if (market) {
-            const activeLike = ['active', 'open', 'trading', 'live'];
-            const inactiveLike = ['resolved', 'closed', 'settled', 'cancelled', 'expired'];
-            const status = String(market?.status || '').toLowerCase();
-            
-            if (status && inactiveLike.includes(status)) {
-                console.log(`   ⏭️  Market ${marketId} is not active (status: ${status}), skipping...`);
-                return null;
-            }
-            
-            if (status && !activeLike.includes(status) && !inactiveLike.includes(status)) {
-                console.log(`   ⏭️  Market ${marketId} has unknown status (${status}), skipping...`);
-                return null;
-            }
-            
-            if (market.title) {
-                console.log(`   📋 Market: ${market.title}`);
-            }
-        }
-        
-        return market;
     } catch (error: any) {
-        if (error.response?.status === 404) {
-            return null;
-        } else if (error.response?.status === 429) {
-            throw error;
-        } else {
-            console.log(`   ⚠️  Error fetching market ${marketId}: ${error.message}`);
+        const status = error?.response?.status;
+        if (status === 404) {
+            console.log(`⏭️  Event ${eventId} not found (404) on local endpoint, skipping`);
             return null;
         }
+        if (status === 429) {
+            console.log(`⏳ Rate limited on local endpoint for event ${eventId}, retrying after delay...`);
+            await new Promise(res => setTimeout(res, 2000));
+            return fetchMarketByEventAndMarketId(eventId, marketId, accessToken);
+        }
+        console.log(`⚠️  Local endpoint failed for event ${eventId}: ${error?.message || 'unknown error'}${status ? ` (status ${status})` : ''} — trying public API`);
+    }
+
+    // 2) Fallback to public Forkast API and normalize shape
+    try {
+        const PUBLIC_EVENT_API_BASE = 'https://api.forkast.gg/api/v1/markets';
+        const resp = await axios.get(`${PUBLIC_EVENT_API_BASE}/${eventId}`, { timeout: 30000 });
+        const event = resp?.data;
+        const data = event?.data;
+        if (!data || !Array.isArray(data.markets) || data.markets.length === 0) {
+            return null;
+        }
+        const market = data.markets.find((m: any) => String(m.id) === String(marketId));
+        if (market) {
+            console.log(`[DEBUG] Event ${eventId} Market ${marketId} object (public):`, JSON.stringify(market, null, 2));
+            console.log(`[DEBUG] Event ${eventId} Market ${marketId} status (public):`, market?.status);
+            return market;
+        } else {
+            console.log(`[DEBUG] Market ${marketId} not found in event ${eventId} (public)`);
+            return null;
+        }
+    } catch (error: any) {
+        const status = error?.response?.status;
+        if (status === 404) {
+            console.log(`⏭️  Event ${eventId} not found (404) on public API, skipping`);
+            return null;
+        }
+        if (status === 429) {
+            console.log(`⏳ Rate limited on public API for event ${eventId}, retrying after delay...`);
+            await new Promise(res => setTimeout(res, 2000));
+            return fetchMarketByEventAndMarketId(eventId, marketId, accessToken);
+        }
+        console.log(`⚠️  Failed to fetch event ${eventId} from public API: ${error?.message || 'unknown error'}${status ? ` (status ${status})` : ''}`);
+        return null;
     }
 }
 
 async function fetchOrderBook(marketId: number, outcomeId: number, outcomeType: number) {
     try {
+        console.log(`[DEBUG] Fetching order book: marketId=${marketId}, outcomeId=${outcomeId}, outcomeType=${outcomeType}`);
         const response = await axios.get(ORDER_BOOK_API_URL, {
             params: { marketId, outcomeId, outcomeType }
         });
+        console.log(`[DEBUG] Order book response for marketId=${marketId}, outcomeId=${outcomeId}, outcomeType=${outcomeType}:`, JSON.stringify(response.data));
         return response.data;
     } catch (error: any) {
-        console.error(`❌ Failed to fetch order book for market ${marketId}:`, error.message);
+        console.error(`❌ Failed to fetch order book for market ${marketId}, outcomeId=${outcomeId}, outcomeType=${outcomeType}:`, error.message);
         return null;
     }
 }
@@ -457,43 +512,17 @@ async function loginAndGetAccessToken(privateKey: string): Promise<string> {
 
 async function placeOrder(orderBody: any): Promise<any> {
     try {
-        // Generate a unique random salt for every order
-        const crypto = require('crypto');
-        const salt = '0x' + crypto.randomBytes(32).toString('hex');
-
-        const originalConsoleLog = console.log;
-        const originalConsoleError = console.error;
-        const originalConsoleInfo = console.info;
-        const originalConsoleDebug = console.debug;
-        console.log = () => {};
-        console.error = () => {};
-        console.info = () => {};
-        console.debug = () => {};
-
-        // Always add salt to token and account objects
-        if (orderBody.token && typeof orderBody.token === 'object') {
-            orderBody.token.salt = salt;
-        }
-        if (orderBody.account && typeof orderBody.account === 'object') {
-            orderBody.account.salt = salt;
-        }
-
-        const response = await sdk.getOrderService().placeSingleOrder(
-            orderBody.marketId,
-            orderBody.token,
-            orderBody.account,
-            orderBody.price,
-            orderBody.amount,
-            orderBody.side
-        );
-
-        console.log = originalConsoleLog;
-        console.error = originalConsoleError;
-        console.info = originalConsoleInfo;
-        console.debug = originalConsoleDebug;
-
-        // Use order.id instead of orders_id
-        return { success: true, data: response };
+        // Use direct HTTP POST to match mmil.ts
+        const ORDER_API_URL = process.env.MAINNET_ORDER_API_URL;
+        const response = await axios.post(ORDER_API_URL, orderBody, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${orderBody.accessToken}`
+            }
+        });
+            // Debug: print full response from order API
+            console.log('Order API response:', JSON.stringify(response.data, null, 2));
+        return { success: true, data: response.data };
     } catch (error: any) {
         if (error.response?.data?.message?.includes('salt or signature already exists')) {
             console.log('   ⚠️  Duplicate order detected, skipping...');
@@ -673,12 +702,12 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
                 accessToken: wallet1AccessToken
             };
             const buyRes1 = await placeOrder(buyOrder1);
-            if (buyRes1 && buyRes1.success === true) {
-                ordersPlaced++;
-                logger.log(`   ✅ BUY placed on ${outcome1.title}`, { orderId: buyRes1?.data?.orderId || buyRes1?.data?.id || null });
-            } else {
-                logger.log(`   ⚠️  BUY failed on ${outcome1.title}`, buyRes1);
-            }
+                if (buyRes1 && buyRes1.success === true) {
+                    ordersPlaced++;
+                    logger.log(`   ✅ BUY placed on ${outcome1.title}`, { orderId: buyRes1?.data?.orderResult?.response?.data?.id || null });
+                } else {
+                    logger.log(`   ⚠️  BUY failed on ${outcome1.title}`, buyRes1);
+                }
 
             // Fixed delay to ensure on-chain/orderbook visibility before placing the complementary order
             console.log('   ⏳ Waiting 2000ms before complementary buy to ensure matching');
@@ -700,12 +729,12 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
                 accessToken: wallet2AccessToken
             };
             const buyRes2 = await placeOrder(buyOrder2);
-            if (buyRes2 && buyRes2.success === true) {
-                ordersPlaced++;
-                logger.log(`   ✅ BUY placed on ${outcome2.title}`, { orderId: buyRes2?.data?.orderId || buyRes2?.data?.id || null });
-            } else {
-                logger.log(`   ⚠️  BUY failed on ${outcome2.title}`, buyRes2);
-            }
+                if (buyRes2 && buyRes2.success === true) {
+                    ordersPlaced++;
+                    logger.log(`   ✅ BUY placed on ${outcome2.title}`, { orderId: buyRes2?.data?.orderResult?.response?.data?.id || null });
+                } else {
+                    logger.log(`   ⚠️  BUY failed on ${outcome2.title}`, buyRes2);
+                }
         }
 
         if (ordersPlaced > 0) {
@@ -722,6 +751,7 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
 
 // Main bot function
 async function arbitrageBot() {
+        console.log(`🟢 EVENT_API_URL in use: ${EVENT_API_URL}`);
     const logger = new ArbitrageLogger();
     const sessionStartTime = logger.getSessionStartTime();
     
@@ -740,221 +770,84 @@ async function arbitrageBot() {
         return;
     }
 
-    const marketChoice = await getUserMarketChoice();
-    console.log('');
 
-    let activeMarkets: number[] = [];
+    // Always process market 349 for debugging
+    // Login and get accessToken from one of the configured wallets
+    const walletConfig = {
+        WALLET_ADDRESS: CONFIG[NETWORK].WALLET_ADDRESS_3,
+        PRIVATE_KEY: CONFIG[NETWORK].PRIVATE_KEY_3,
+        PROXY_WALLET: CONFIG[NETWORK].PROXY_WALLET_3
+    };
+    const accessToken = await loginAndGetAccessToken(walletConfig.PRIVATE_KEY);
 
-    if (marketChoice === 'all') {
-        const startingMarketId = await getLatestMarketIdFromUser();
-        const marketsToScrape = await getMarketsToScrape();
-        
-        console.log(`🎯 Using market ${startingMarketId} as the starting point`);
-        console.log(`📋 Will check ${marketsToScrape} markets from ${startingMarketId} down to ${Math.max(1, startingMarketId - marketsToScrape + 1)}`);
-        console.log('');
-
-        console.log(`🎯 Starting from market ${startingMarketId} as requested`);
-        const marketIds = Array.from({ length: marketsToScrape }, (_, i) => startingMarketId - i)
-            .filter(id => id > 0);
-        
-        shuffleArray(marketIds);
-        console.log('🎲 Random market selection enabled - processing markets in COMPLETELY RANDOM order');
-        console.log(`📊 Sample of shuffled market IDs: ${marketIds.slice(0, 10).join(', ')}...`);
-        console.log('');
-
-        console.log(`🔍 Fetching active markets from ${marketIds.length} potential markets...`);
-        console.log(`📊 This may take a few minutes as we check each market's status...`);
-        console.log('');
-        
-        let marketsChecked = 0;
-        
-        for (const marketId of marketIds) {
-            try {
-                const market = await fetchMarketById(marketId);
-                if (market && market.status === 'ACTIVE') {
-                    activeMarkets.push(marketId);
-                    console.log(`   ✅ Market ${marketId} is ACTIVE - added to processing queue`);
-                }
-            
-                marketsChecked++;
-                if (marketsChecked % 50 === 0) {
-                    console.log(`   📊 Progress: ${marketsChecked}/${marketIds.length} markets checked, ${activeMarkets.length} active found`);
-                }
-                
-                await new Promise(resolve => setTimeout(resolve, 100));
-                
-            } catch (error) {
-                continue;
-            }
-        }
-        
-        console.log(`\n🎯 Found ${activeMarkets.length} active markets out of ${marketsChecked} checked`);
-        
-        if (activeMarkets.length === 0) {
-            console.log('❌ No active markets found. Exiting...');
-            return;
-        }
-        
-        shuffleArray(activeMarkets);
-        console.log('🎲 Random market selection enabled - processing ONLY ACTIVE markets in COMPLETELY RANDOM order');
-        console.log(`📊 Sample of shuffled ACTIVE market IDs: ${activeMarkets.slice(0, 10).join(', ')}...`);
-        console.log('');
-
-    } else {
-        const specificMarketIds = await getSpecificMarketIds();
-        console.log(`🎯 Processing specific markets: ${specificMarketIds.join(', ')}`);
-        
-        for (const marketId of specificMarketIds) {
-            try {
-                const market = await fetchMarketById(marketId);
-                if (market && market.status === 'ACTIVE') {
-                    activeMarkets.push(marketId);
-                    console.log(`   ✅ Market ${marketId} is ACTIVE`);
-                } else {
-                    console.log(`   ⚠️  Market ${marketId} is not active (${market?.status || 'not found'})`);
-                }
-            } catch (error) {
-                console.log(`   ❌ Error fetching market ${marketId}`);
-            }
-        }
-        
-        if (activeMarkets.length === 0) {
-            console.log('❌ No active markets found in the specified list. Exiting...');
-            return;
-        }
-        
-        console.log(`✅ Found ${activeMarkets.length} active markets from specified list`);
+    // Refactored: Always fetch event by marketId and process all submarkets
+    const latestMarketIdStr = await getLatestMarketIdFromUser();
+    const selectedMarketId = parseInt(String(latestMarketIdStr));
+    if (isNaN(selectedMarketId) || selectedMarketId <= 0) {
+        console.error('❌ Invalid market ID. Exiting...');
+        return;
     }
 
-    let iterationCount = 0;
-    let marketsProcessed = 0;
-    let marketsWithOrders = 0;
-    let consecutiveErrors = 0;
-    const maxConsecutiveErrors = 5;
-    
-    while (true) {
-        iterationCount++;
-        console.log(`\n🔄 Starting iteration ${iterationCount}...`);
-        
-        let availableMarkets = [...activeMarkets];
-        consecutiveErrors = 0;
-        marketsProcessed = 0;
-        marketsWithOrders = 0;
-        
-        while (availableMarkets.length > 0 && consecutiveErrors < maxConsecutiveErrors) {
-        
-        const randomIndex = Math.floor(Math.random() * availableMarkets.length);
-        const marketId = availableMarkets[randomIndex];
-        
-        availableMarkets.splice(randomIndex, 1);
-        
-        try {
-            console.log(`\n🔍 Processing Market ${marketId} (${marketsProcessed + 1}/${activeMarkets.length})`);
-            console.log(`   🎲 Randomly selected from ${availableMarkets.length + 1} available markets`);
-            
-            const market = await fetchMarketById(marketId);
-            if (!market) {
-                console.log(`   ⏭️  Market ${marketId} not found or inactive, skipping`);
-                continue;
-            }
+    // Login and get accessToken from one of the configured wallets
+    const arbitrageWalletConfig = {
+        WALLET_ADDRESS: CONFIG[NETWORK].WALLET_ADDRESS_3,
+        PRIVATE_KEY: CONFIG[NETWORK].PRIVATE_KEY_3,
+        PROXY_WALLET: CONFIG[NETWORK].PROXY_WALLET_3
+    };
+    const arbitrageAccessToken = await loginAndGetAccessToken(arbitrageWalletConfig.PRIVATE_KEY);
 
-            if (!market.outcomes || market.outcomes.length === 0) {
-                console.log(`   ⏭️  Market ${marketId} has no outcomes, skipping`);
-                continue;
-            }
-
-            const yesOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'yes');
-            const noOutcome = market.outcomes.find((o: any) => o.title.trim().toLowerCase() === 'no');
-            
-            const team1Outcome = market.outcomes[0];
-            const team2Outcome = market.outcomes[1];
-            
-            if (!yesOutcome || !noOutcome) {
-                if (!team1Outcome || !team2Outcome || market.outcomes.length !== 2) {
-                    console.log(`   ⏭️  Market ${marketId} has invalid outcome structure, skipping`);
-                    continue;
-                }
-                
-                console.log(`   🏈 NFL/Team Market: ${team1Outcome.title} vs ${team2Outcome.title}`);
-            } else {
-                console.log(`   📊 YES/NO Market: ${market.title}`);
-            }
-
-            console.log(`   📝 Market: ${market.title}`);
-            console.log(`   📊 Status: ${market.status}`);
-            
-            if (yesOutcome && noOutcome) {
-                console.log(`   🎯 Outcomes: YES (${yesOutcome.id}), NO (${noOutcome.id})`);
-            } else {
-                console.log(`   🎯 Outcomes: ${team1Outcome.title} (${team1Outcome.id}), ${team2Outcome.title} (${team2Outcome.id})`);
-            }
-
-            const ordersPlaced = await executeArbitrageStrategy(market, logger, marketChoice === 'specific');
-            if (ordersPlaced) {
-                marketsWithOrders++;
-                consecutiveErrors = 0;
-            }
-
-            marketsProcessed++;
-            
-            if (marketsProcessed < activeMarkets.length) {
-                const delay = getRandomDelay(BOT_CONFIG.MIN_DELAY_BETWEEN_MARKETS, BOT_CONFIG.MAX_DELAY_BETWEEN_MARKETS);
-                console.log(`   ⏳ Processing next market in ${delay}ms (${Math.round(delay/1000)}s)...`);
-                
-                const microDelay = getRandomDelay(1000, 5000);
-                console.log(`   🎲 Additional random micro-delay: ${microDelay}ms`);
-                
-                await new Promise(resolve => setTimeout(resolve, delay + microDelay));
-            }
-
-        } catch (error: any) {
-            consecutiveErrors++;
-            console.error(`   ❌ Error processing market ${marketId}:`, error.message);
-            
-            if (consecutiveErrors >= maxConsecutiveErrors) {
-                console.error(`   🚨 Too many consecutive errors (${consecutiveErrors}), stopping bot`);
-                break;
-            }
-
-            const errorDelay = BOT_CONFIG.RATE_LIMIT_DELAY * Math.pow(2, consecutiveErrors);
-            console.log(`   ⏳ Waiting ${errorDelay}ms before continuing...`);
-            await new Promise(resolve => setTimeout(resolve, errorDelay));
-        }
-        }
-        
-        const iterationEndTime = new Date();
-        const iterationDuration = iterationEndTime.getTime() - sessionStartTime.getTime();
-        const iterationMinutes = Math.floor(iterationDuration / 60000);
-        const iterationSeconds = Math.floor((iterationDuration % 60000) / 1000);
-
-        console.log('\n' + '='.repeat(50));
-        console.log(`🔄 ITERATION ${iterationCount} COMPLETE`);
-        console.log('='.repeat(50));
-        console.log(`📅 Iteration started at: ${sessionStartTime.toLocaleString()}`);
-        console.log(`📅 Iteration ended at: ${iterationEndTime.toLocaleString()}`);
-        console.log(`⏱️  Duration: ${iterationMinutes}m ${iterationSeconds}s`);
-        console.log(`🔍 Markets Processed: ${marketsProcessed}/${activeMarkets.length}`);
-        console.log(`📈 Markets with Orders: ${marketsWithOrders}`);
-        console.log(`📊 Success Rate: ${marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) : 0}%`);
-        console.log(`🌐 Network: ${NETWORK}`);
-        console.log(`🎲 Random Selection: ${BOT_CONFIG.RANDOM_MARKET_SELECTION ? 'Yes' : 'No'}`);
-        console.log('='.repeat(50));
-
-        logger.log(`Iteration ${iterationCount} completed`, {
-            iterationNumber: iterationCount,
-            iterationStartTime: sessionStartTime.toISOString(),
-            iterationEndTime: iterationEndTime.toISOString(),
-            iterationDuration: iterationDuration,
-            marketsProcessed,
-            marketsWithOrders,
-            successRate: marketsProcessed > 0 ? ((marketsWithOrders / marketsProcessed) * 100).toFixed(1) + '%' : '0%',
-            randomSelection: BOT_CONFIG.RANDOM_MARKET_SELECTION,
-            activeMarketsFound: activeMarkets.length
-        });
-        
-        console.log(`\n⏳ Waiting 30 seconds before starting next iteration...`);
-        await new Promise(resolve => setTimeout(resolve, 30000));
+    // Fetch event by marketId
+    const eventParams = { id: selectedMarketId, accessToken: arbitrageAccessToken };
+    let event;
+    try {
+        const response = await axios.get(EVENT_API_URL, { params: eventParams, timeout: 30000 });
+        event = response.data?.data || response.data;
+    } catch (error) {
+        console.error(`❌ Failed to fetch event for marketId ${selectedMarketId}:`, error.message);
+        return;
     }
+    let submarketsArr = [];
+    if (event && Array.isArray(event.markets)) {
+        submarketsArr = event.markets;
+    } else if (event && event.data && Array.isArray(event.data.markets)) {
+        submarketsArr = event.data.markets;
+    }
+    if (submarketsArr.length === 0) {
+        console.log(`❌ No submarkets found for marketId ${selectedMarketId}. Exiting...`);
+        return;
+    }
+
+    console.log(`\nEvent ${selectedMarketId} contains the following submarkets:`);
+    submarketsArr.forEach((m, idx) => {
+        console.log(` ${idx + 1}. ${m.title} (ID: ${m.id})`);
+    });
+    console.log('='.repeat(40));
+
+    // Loop through all submarkets/events inside this marketId
+    for (const market of submarketsArr) {
+        // Get YES/NO outcomes (for YES/NO markets) or Team outcomes (for NFL/MLB markets)
+        let outcome1, outcome2, marketType;
+        if (market.outcomes.find((o) => o.title.trim().toLowerCase() === 'yes') && market.outcomes.find((o) => o.title.trim().toLowerCase() === 'no')) {
+            outcome1 = market.outcomes.find((o) => o.title.trim().toLowerCase() === 'yes');
+            outcome2 = market.outcomes.find((o) => o.title.trim().toLowerCase() === 'no');
+            marketType = 'YES/NO';
+            console.log(`📊 YES/NO Market: ${market.title}`);
+        } else if (market.outcomes[0] && market.outcomes[1]) {
+            outcome1 = market.outcomes[0];
+            outcome2 = market.outcomes[1];
+            marketType = 'TEAM';
+            console.log(`🏈 NFL/Team Market: ${market.outcomes[0].title} vs ${market.outcomes[1].title}`);
+        } else {
+            console.error(`Submarket '${market.title}' does not have valid outcomes (need YES/NO or 2 teams), skipping.`);
+            continue;
+        }
+
+        // ...existing order book and order placement logic for each submarket...
+        // You can prompt for odds, budgets, and place orders here as needed
+        // For example, call executeArbitrageStrategy(market, logger, false);
+        await executeArbitrageStrategy(market, logger, false);
+    }
+    console.log('🏁 All submarkets processed.');
 }
 
 // Graceful shutdown

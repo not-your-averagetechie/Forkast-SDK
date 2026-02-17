@@ -1,0 +1,6242 @@
+[
+  {
+    "timestamp": "2026-02-10T19:22:08.714Z",
+    "message": "   ❌ Error processing market 1502:",
+    "data": "Cannot read properties of null (reading 'asks')"
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.512Z",
+    "message": "   📊 Market 1546 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.65,
+      "outcome1BestAsk": 0.66,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.34,
+      "outcome2BestAsk": 0.35,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.515Z",
+    "message": "   📊 Market 1546 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.516Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.517Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.924Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 5 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:32.925Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:34.934Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 4 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:34.937Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:38.264Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 1 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:38.266Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:40.235Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 1 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:40.238Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:22:40.239Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1546 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:06.764Z",
+    "message": "   📊 Market 1547 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.65,
+      "outcome1BestAsk": 0.66,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.34,
+      "outcome2BestAsk": 0.35,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:23:06.766Z",
+    "message": "   📊 Market 1547 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:06.766Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:06.767Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:07.907Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 2 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:07.909Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:10.838Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 5 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:10.839Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:14.349Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 2 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:14.351Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:15.982Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 2 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:15.984Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:15.985Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1547 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.117Z",
+    "message": "   📊 Market 1505 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.15,
+      "outcome1BestAsk": 0.16,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.84,
+      "outcome2BestAsk": 0.85,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.120Z",
+    "message": "   📊 Market 1505 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.121Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.123Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.504Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 2 shares at $0.16",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:44.506Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:47.350Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 5 shares at $0.84",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:47.353Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.16 + No at $0.84 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:23:47.355Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1505 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:11.950Z",
+    "message": "   📊 Market 1544 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.52,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.48,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:24:11.953Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:11.955Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:12.328Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:12.330Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:14.854Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:14.856Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:18.940Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:18.943Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:20.525Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:20.527Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:24.623Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:24.625Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:27.315Z",
+    "message": "   📉 Trade 3: Wallet 6 placing No order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:27.318Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:27.320Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1544 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:58.964Z",
+    "message": "   📊 Market 580 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.15,
+      "outcome1BestAsk": 0.61,
+      "outcome1Spread": "0.4600",
+      "outcome2BestBid": 0.39,
+      "outcome2BestAsk": 0.85,
+      "outcome2Spread": "0.4600",
+      "totalSpread": "0.4600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:24:58.967Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:58.968Z",
+    "message": "   🎯 Spread 0.4600 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:59.342Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 3 shares at $0.16",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:24:59.344Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:01.149Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 2 shares at $0.84",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:01.151Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.16 + No at $0.84 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:05.544Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 4 shares at $0.16",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:05.545Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:08.225Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 4 shares at $0.84",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:08.226Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.16 + No at $0.84 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:11.824Z",
+    "message": "   📈 Trade 3: Wallet 6 placing Yes order: 3 shares at $0.16",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:11.826Z",
+    "message": "   🎲 Trade 3 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:14.635Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 4 shares at $0.84",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:14.637Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.16 + No at $0.84 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:14.638Z",
+    "message": "   ✅ Successfully placed 6 orders on market 580 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.127Z",
+    "message": "   📊 Market 1513 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.41,
+      "outcome1Spread": "-0.0900",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.41,
+      "outcome2Spread": "-0.0900",
+      "totalSpread": "-0.0900"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.130Z",
+    "message": "   📊 Market 1513 has tight spread (-0.0900), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.131Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.132Z",
+    "message": "   🎯 Market 1513 - placing 3 trades (6 orders) despite tight spread (-0.0900)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.974Z",
+    "message": "   📈 Trade 1: Wallet 6 placing OKC order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:36.975Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (OKC) + 7 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:39.675Z",
+    "message": "   📉 Trade 1: Wallet 7 placing PHX order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:39.676Z",
+    "message": "   🎯 Trade 1 complete: OKC at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:44.244Z",
+    "message": "   📈 Trade 2: Wallet 8 placing OKC order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:44.247Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (OKC) + 5 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:45.667Z",
+    "message": "   📉 Trade 2: Wallet 5 placing PHX order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:45.670Z",
+    "message": "   🎯 Trade 2 complete: OKC at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:48.451Z",
+    "message": "   📈 Trade 3: Wallet 7 placing OKC order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:48.454Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (OKC) + 6 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:50.237Z",
+    "message": "   📉 Trade 3: Wallet 6 placing PHX order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:50.238Z",
+    "message": "   🎯 Trade 3 complete: OKC at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:25:50.239Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1513 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.012Z",
+    "message": "   📊 Market 1514 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.45,
+      "outcome1Spread": "-0.0500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.45,
+      "outcome2Spread": "-0.0500",
+      "totalSpread": "-0.0500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.015Z",
+    "message": "   📊 Market 1514 has tight spread (-0.0500), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.016Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.017Z",
+    "message": "   🎯 Market 1514 - placing 4 trades (8 orders) despite tight spread (-0.0500)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.387Z",
+    "message": "   📈 Trade 1: Wallet 6 placing SAS order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:20.389Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (SAS) + 4 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:22.686Z",
+    "message": "   📉 Trade 1: Wallet 4 placing GSW order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:22.689Z",
+    "message": "   🎯 Trade 1 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:25.949Z",
+    "message": "   📈 Trade 2: Wallet 7 placing SAS order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:25.950Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (SAS) + 4 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:28.234Z",
+    "message": "   📉 Trade 2: Wallet 4 placing GSW order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:28.237Z",
+    "message": "   🎯 Trade 2 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:33.724Z",
+    "message": "   📈 Trade 3: Wallet 4 placing SAS order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:33.726Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (SAS) + 6 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:35.989Z",
+    "message": "   📉 Trade 3: Wallet 6 placing GSW order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:35.992Z",
+    "message": "   🎯 Trade 3 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:40.082Z",
+    "message": "   📈 Trade 4: Wallet 4 placing SAS order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:40.085Z",
+    "message": "   🎲 Trade 4 wallet pair: 4 (SAS) + 3 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:43.020Z",
+    "message": "   📉 Trade 4: Wallet 3 placing GSW order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:43.023Z",
+    "message": "   🎯 Trade 4 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:26:43.025Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1514 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.457Z",
+    "message": "   📊 Market 1521 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.79,
+      "outcome1BestAsk": 0.8,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.2,
+      "outcome2BestAsk": 0.21,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.460Z",
+    "message": "   📊 Market 1521 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.462Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.463Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.832Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 4 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:02.833Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:05.534Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 1 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:05.536Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:08.464Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:08.467Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:10.703Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:10.706Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:14.864Z",
+    "message": "   📈 Trade 3: Wallet 7 placing Yes order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:14.866Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:17.199Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 1 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:17.203Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:22.247Z",
+    "message": "   📈 Trade 4: Wallet 6 placing Yes order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:22.249Z",
+    "message": "   🎲 Trade 4 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:23.357Z",
+    "message": "   📉 Trade 4: Wallet 3 placing No order: 1 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:23.360Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:23.361Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1521 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:43.900Z",
+    "message": "   📊 Market 1503 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.31,
+      "outcome1BestAsk": 0.32,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.68,
+      "outcome2BestAsk": 0.69,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:27:43.903Z",
+    "message": "   📊 Market 1503 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:43.904Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:43.906Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:44.284Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 3 shares at $0.32",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:44.286Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:46.881Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 4 shares at $0.68",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:46.884Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.32 + No at $0.68 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:27:46.886Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1503 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:10.673Z",
+    "message": "   📊 Market 1531 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.36,
+      "outcome1BestAsk": 0.38,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.62,
+      "outcome2BestAsk": 0.64,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:28:10.675Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:10.676Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:11.435Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.37",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:11.437Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:14.211Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.63",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:14.213Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.37 + No at $0.63 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:14.215Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1531 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:36.693Z",
+    "message": "   📊 Market 1543 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.48,
+      "outcome1BestAsk": 0.49,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.51,
+      "outcome2BestAsk": 0.52,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:28:36.696Z",
+    "message": "   📊 Market 1543 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:36.697Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:36.698Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:37.065Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:37.067Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:38.680Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:38.684Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.49 + No at $0.51 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:28:38.685Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1543 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.130Z",
+    "message": "   📊 Market 1494 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.133Z",
+    "message": "   📊 Market 1494 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.135Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.136Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.495Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:02.495Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:04.787Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:04.789Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:08.079Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:08.082Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:10.699Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:10.702Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:14.906Z",
+    "message": "   📈 Trade 3: Wallet 7 placing Yes order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:14.909Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:16.124Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:16.127Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:16.128Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1494 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.528Z",
+    "message": "   📊 Market 1495 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.41,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.59,
+      "outcome2BestAsk": 0.6,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.531Z",
+    "message": "   📊 Market 1495 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.532Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.533Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.916Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 4 shares at $0.41",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:39.919Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:41.684Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 5 shares at $0.59",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:41.686Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.41 + No at $0.59 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:29:41.688Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1495 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.003Z",
+    "message": "   📊 Market 1511 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.46,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.54,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.006Z",
+    "message": "   📊 Market 1511 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.007Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.009Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.377Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 4 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:03.379Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:06.071Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:06.073Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:10.921Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 5 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:10.923Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:12.086Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 1 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:12.088Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:12.090Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1511 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.233Z",
+    "message": "   📊 Market 1510 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.39,
+      "outcome1BestAsk": 0.4,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.6,
+      "outcome2BestAsk": 0.61,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.236Z",
+    "message": "   📊 Market 1510 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.237Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.238Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.640Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 1 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:33.642Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:35.900Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:35.902Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:38.509Z",
+    "message": "   📈 Trade 2: Wallet 4 placing Yes order: 5 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:38.511Z",
+    "message": "   🎲 Trade 2 wallet pair: 4 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:40.493Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 1 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:40.496Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:43.444Z",
+    "message": "   📈 Trade 3: Wallet 4 placing Yes order: 1 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:43.447Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:44.751Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 4 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:44.753Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:49.661Z",
+    "message": "   📈 Trade 4: Wallet 6 placing Yes order: 2 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:49.664Z",
+    "message": "   🎲 Trade 4 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:51.462Z",
+    "message": "   📉 Trade 4: Wallet 4 placing No order: 5 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:51.465Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:30:51.467Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1510 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:19.753Z",
+    "message": "   📊 Market 1523 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.54,
+      "outcome1BestAsk": 0.6,
+      "outcome1Spread": "0.0600",
+      "outcome2BestBid": 0.4,
+      "outcome2BestAsk": 0.46,
+      "outcome2Spread": "0.0600",
+      "totalSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:31:19.757Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:19.758Z",
+    "message": "   🎯 Spread 0.0600 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:20.122Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 1 shares at $0.55",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:20.125Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:22.383Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.45",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:22.387Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.55 + No at $0.45 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:26.736Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 5 shares at $0.55",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:26.738Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:29.096Z",
+    "message": "   📉 Trade 2: Wallet 6 placing No order: 4 shares at $0.45",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:29.098Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.55 + No at $0.45 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:34.229Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 3 shares at $0.55",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:34.231Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:36.304Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 1 shares at $0.45",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:36.308Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.55 + No at $0.45 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:31:36.310Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1523 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:05.882Z",
+    "message": "   📊 Market 1542 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.57,
+      "outcome1BestAsk": 0.59,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.41,
+      "outcome2BestAsk": 0.43,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:32:05.884Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:05.887Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:06.261Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 4 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:06.263Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:08.969Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:08.972Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:13.212Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 1 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:13.214Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:15.647Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 1 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:15.651Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:20.831Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 4 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:20.835Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:22.289Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 1 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:22.293Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:26.375Z",
+    "message": "   📈 Trade 4: Wallet 7 placing Yes order: 3 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:26.376Z",
+    "message": "   🎲 Trade 4 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:29.215Z",
+    "message": "   📉 Trade 4: Wallet 8 placing No order: 3 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:29.219Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:29.223Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1542 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.599Z",
+    "message": "   📊 Market 1522 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.84,
+      "outcome1BestAsk": 0.85,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.16,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.604Z",
+    "message": "   📊 Market 1522 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.605Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.607Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.980Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 2 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:52.983Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:54.350Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 3 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:54.355Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:59.165Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 1 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:32:59.168Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:01.372Z",
+    "message": "   📉 Trade 2: Wallet 5 placing No order: 2 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:01.375Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:04.573Z",
+    "message": "   📈 Trade 3: Wallet 6 placing Yes order: 5 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:04.577Z",
+    "message": "   🎲 Trade 3 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:06.675Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 2 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:06.678Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:06.680Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1522 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:35.651Z",
+    "message": "   📊 Market 1507 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.24,
+      "outcome1BestAsk": 0.26,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.24,
+      "outcome2BestAsk": 0.26,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:33:35.655Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:35.658Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:36.030Z",
+    "message": "   📈 Trade 1: Wallet 7 placing SAS order: 2 shares at $0.25",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:36.032Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (SAS) + 4 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:37.431Z",
+    "message": "   📉 Trade 1: Wallet 4 placing LAL order: 4 shares at $0.75",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:37.433Z",
+    "message": "   🎯 Trade 1 complete: SAS at $0.25 + LAL at $0.75 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:37.435Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1507 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:57.570Z",
+    "message": "   📊 Market 1524 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.49,
+      "outcome1Spread": "0.0400",
+      "outcome2BestBid": 0.51,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0400",
+      "totalSpread": "0.0400"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:33:57.574Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:57.577Z",
+    "message": "   🎯 Spread 0.0400 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:57.939Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:57.940Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:59.295Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 1 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:59.298Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:33:59.300Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1524 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.252Z",
+    "message": "   📊 Market 1520 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.77,
+      "outcome1BestAsk": 0.78,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.22,
+      "outcome2BestAsk": 0.23,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.256Z",
+    "message": "   📊 Market 1520 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.258Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.260Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.642Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 4 shares at $0.78",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:30.645Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:33.178Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 4 shares at $0.22",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:33.180Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.78 + No at $0.22 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:39.389Z",
+    "message": "   📈 Trade 2: Wallet 4 placing Yes order: 1 shares at $0.78",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:39.392Z",
+    "message": "   🎲 Trade 2 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:41.729Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 4 shares at $0.22",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:41.731Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.78 + No at $0.22 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:46.933Z",
+    "message": "   📈 Trade 3: Wallet 4 placing Yes order: 1 shares at $0.78",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:46.936Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:48.327Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 2 shares at $0.22",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:48.331Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.78 + No at $0.22 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:34:48.333Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1520 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:10.945Z",
+    "message": "   📊 Market 1493 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.25,
+      "outcome1BestAsk": 0.39,
+      "outcome1Spread": "0.1400",
+      "outcome2BestBid": 0.61,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.1400",
+      "totalSpread": "0.1400"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:35:10.949Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:10.950Z",
+    "message": "   🎯 Spread 0.1400 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:11.318Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 1 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:11.321Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:13.417Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 5 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:13.421Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:18.237Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 2 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:18.240Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:20.722Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:20.727Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:24.181Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 1 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:24.185Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:27.159Z",
+    "message": "   📉 Trade 3: Wallet 6 placing No order: 4 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:27.163Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:27.167Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1493 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:54.203Z",
+    "message": "   📊 Market 1496 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.44,
+      "outcome1Spread": "0.0900",
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.0900",
+      "totalSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:35:54.207Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:54.209Z",
+    "message": "   🎯 Spread 0.0900 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:54.570Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:54.572Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:56.598Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 5 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:35:56.601Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:01.831Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:01.835Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:04.765Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 1 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:04.766Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:08.159Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 3 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:08.163Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:09.398Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 2 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:09.400Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:11.907Z",
+    "message": "   📈 Trade 4: Wallet 6 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:11.912Z",
+    "message": "   🎲 Trade 4 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:14.866Z",
+    "message": "   📉 Trade 4: Wallet 8 placing No order: 4 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:14.871Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:14.872Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1496 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:39.566Z",
+    "message": "   📊 Market 1512 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.38,
+      "outcome1BestAsk": 0.4,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.6,
+      "outcome2BestAsk": 0.62,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:36:39.571Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:39.573Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:39.937Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 5 shares at $0.39",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:39.941Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:42.637Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 1 shares at $0.61",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:42.640Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.39 + No at $0.61 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:47.105Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 1 shares at $0.39",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:47.107Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:49.272Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.61",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:49.275Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.39 + No at $0.61 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:36:49.277Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1512 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:11.910Z",
+    "message": "   📊 Market 1538 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.28,
+      "outcome1BestAsk": 0.29,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.71,
+      "outcome2BestAsk": 0.72,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:37:11.914Z",
+    "message": "   📊 Market 1538 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:11.916Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:11.918Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:12.285Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.29",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:12.287Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:13.425Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 4 shares at $0.71",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:13.428Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.29 + No at $0.71 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:17.472Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 2 shares at $0.29",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:17.475Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:18.647Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 3 shares at $0.71",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:18.651Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.29 + No at $0.71 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:21.264Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 3 shares at $0.29",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:21.267Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:22.830Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 3 shares at $0.71",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:22.833Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.29 + No at $0.71 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:22.835Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1538 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:46.702Z",
+    "message": "   📊 Market 1036 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.47,
+      "outcome1BestAsk": 0.48,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.52,
+      "outcome2BestAsk": 0.53,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:37:46.707Z",
+    "message": "   📊 Market 1036 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:46.708Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:46.711Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:47.078Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 4 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:47.081Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:48.439Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 3 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:48.443Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.48 + No at $0.52 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:54.082Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 1 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:54.086Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:56.548Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 4 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:56.551Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.48 + No at $0.52 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:37:56.552Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1036 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:28.187Z",
+    "message": "   📊 Market 1534 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.48,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0300",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.52,
+      "outcome2Spread": "0.0300",
+      "totalSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:38:28.191Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:28.194Z",
+    "message": "   🎯 Spread 0.0300 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:28.558Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:28.563Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:30.588Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:30.593Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.49 + No at $0.51 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:34.648Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:34.652Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:36.048Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:36.051Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.49 + No at $0.51 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:40.096Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:40.101Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:42.894Z",
+    "message": "   📉 Trade 3: Wallet 5 placing No order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:42.898Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.49 + No at $0.51 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:38:42.900Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1534 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:07.455Z",
+    "message": "   📊 Market 1506 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.2500",
+      "totalSpread": "0.2500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:39:07.459Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:07.461Z",
+    "message": "   🎯 Spread 0.2500 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:07.823Z",
+    "message": "   📈 Trade 1: Wallet 8 placing DAL order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:07.826Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (DAL) + 3 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:09.443Z",
+    "message": "   📉 Trade 1: Wallet 3 placing PHX order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:09.447Z",
+    "message": "   🎯 Trade 1 complete: DAL at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:09.449Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1506 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:37.098Z",
+    "message": "   📊 Market 839 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.01,
+      "outcome1BestAsk": 0.02,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.98,
+      "outcome2BestAsk": 0.99,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:39:37.102Z",
+    "message": "   📊 Market 839 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:39:37.104Z",
+    "message": "   ⚠️  Market 839 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:04.713Z",
+    "message": "   📊 Market 1537 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.46,
+      "outcome1BestAsk": 0.47,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.53,
+      "outcome2BestAsk": 0.54,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:40:04.718Z",
+    "message": "   📊 Market 1537 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:04.720Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:04.722Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:05.091Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 1 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:05.093Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:07.248Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:07.252Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.47 + No at $0.53 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:11.967Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 1 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:11.970Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:14.448Z",
+    "message": "   📉 Trade 2: Wallet 5 placing No order: 1 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:14.451Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.47 + No at $0.53 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:14.453Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1537 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:40.137Z",
+    "message": "   📊 Market 1539 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.82,
+      "outcome1Spread": "0.3200",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.82,
+      "outcome2Spread": "0.3200",
+      "totalSpread": "0.3200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:40:40.143Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:40.145Z",
+    "message": "   🎯 Spread 0.3200 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:40.515Z",
+    "message": "   📈 Trade 1: Wallet 7 placing MIL order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:40.517Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (MIL) + 3 (OKC)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:42.237Z",
+    "message": "   📉 Trade 1: Wallet 3 placing OKC order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:42.241Z",
+    "message": "   🎯 Trade 1 complete: MIL at $0.51 + OKC at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:47.486Z",
+    "message": "   📈 Trade 2: Wallet 3 placing MIL order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:47.490Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (MIL) + 5 (OKC)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:49.535Z",
+    "message": "   📉 Trade 2: Wallet 5 placing OKC order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:49.539Z",
+    "message": "   🎯 Trade 2 complete: MIL at $0.51 + OKC at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:40:49.543Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1539 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.054Z",
+    "message": "   📊 Market 1545 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.26,
+      "outcome1BestAsk": 0.27,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.73,
+      "outcome2BestAsk": 0.74,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.058Z",
+    "message": "   📊 Market 1545 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.060Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.063Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.434Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.27",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:10.438Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:11.939Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.73",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:11.944Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.27 + No at $0.73 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:17.424Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 4 shares at $0.27",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:17.427Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:19.548Z",
+    "message": "   📉 Trade 2: Wallet 6 placing No order: 4 shares at $0.73",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:19.552Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.27 + No at $0.73 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:22.327Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 4 shares at $0.27",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:22.331Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:24.493Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 1 shares at $0.73",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:24.498Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.27 + No at $0.73 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:24.501Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1545 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:55.779Z",
+    "message": "   📊 Market 1536 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.18,
+      "outcome1BestAsk": 0.19,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.81,
+      "outcome2BestAsk": 0.82,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:41:55.785Z",
+    "message": "   📊 Market 1536 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:55.787Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:55.791Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:56.156Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 3 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:56.159Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:58.992Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 5 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:41:58.995Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:03.658Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 1 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:03.661Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:06.471Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 4 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:06.475Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:08.882Z",
+    "message": "   📈 Trade 3: Wallet 6 placing Yes order: 1 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:08.887Z",
+    "message": "   🎲 Trade 3 wallet pair: 6 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:10.700Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 4 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:10.704Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:13.172Z",
+    "message": "   📈 Trade 4: Wallet 7 placing Yes order: 5 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:13.176Z",
+    "message": "   🎲 Trade 4 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:16.055Z",
+    "message": "   📉 Trade 4: Wallet 8 placing No order: 1 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:16.059Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:16.061Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1536 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:44.575Z",
+    "message": "   📊 Market 1532 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.76,
+      "outcome1BestAsk": 0.77,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.23,
+      "outcome2BestAsk": 0.24,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:42:44.578Z",
+    "message": "   📊 Market 1532 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:44.582Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:44.583Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:45.355Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 2 shares at $0.77",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:45.359Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:47.191Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 1 shares at $0.23",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:47.195Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.77 + No at $0.23 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:50.937Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 5 shares at $0.77",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:50.940Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:53.436Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 2 shares at $0.23",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:53.440Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.77 + No at $0.23 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:58.581Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 4 shares at $0.77",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:42:58.585Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:01.365Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 1 shares at $0.23",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:01.369Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.77 + No at $0.23 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:04.792Z",
+    "message": "   📈 Trade 4: Wallet 4 placing Yes order: 4 shares at $0.77",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:04.795Z",
+    "message": "   🎲 Trade 4 wallet pair: 4 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:05.973Z",
+    "message": "   📉 Trade 4: Wallet 3 placing No order: 4 shares at $0.23",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:05.977Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.77 + No at $0.23 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:05.979Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1532 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.157Z",
+    "message": "   📊 Market 1533 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.81,
+      "outcome1BestAsk": 0.82,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.18,
+      "outcome2BestAsk": 0.19,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.162Z",
+    "message": "   📊 Market 1533 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.166Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.168Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.541Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 5 shares at $0.82",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:32.544Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:35.460Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 2 shares at $0.18",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:35.464Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.82 + No at $0.18 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:38.894Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 4 shares at $0.82",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:38.897Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:40.313Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.18",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:40.314Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.82 + No at $0.18 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:43.125Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 4 shares at $0.82",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:43.129Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:46.104Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 2 shares at $0.18",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:46.107Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.82 + No at $0.18 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:43:46.111Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1533 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:12.993Z",
+    "message": "   📊 Market 1452 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0600",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0600",
+      "totalSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:44:12.998Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:13.009Z",
+    "message": "   🎯 Spread 0.0600 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:13.382Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 2 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:13.385Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:14.769Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:14.772Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:18.888Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 1 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:18.892Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:20.694Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:20.698Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:26.060Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 1 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:26.064Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:28.040Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:28.044Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:28.047Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1452 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:56.754Z",
+    "message": "   📊 Market 1540 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.2500",
+      "totalSpread": "0.2500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:44:56.759Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:56.762Z",
+    "message": "   🎯 Spread 0.2500 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:57.135Z",
+    "message": "   📈 Trade 1: Wallet 5 placing DAL order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:57.143Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (DAL) + 3 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:58.848Z",
+    "message": "   📉 Trade 1: Wallet 3 placing LAL order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:44:58.853Z",
+    "message": "   🎯 Trade 1 complete: DAL at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:01.707Z",
+    "message": "   📈 Trade 2: Wallet 6 placing DAL order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:01.710Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (DAL) + 4 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:04.675Z",
+    "message": "   📉 Trade 2: Wallet 4 placing LAL order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:04.679Z",
+    "message": "   🎯 Trade 2 complete: DAL at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:04.683Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1540 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:28.580Z",
+    "message": "   📊 Market 1504 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.2,
+      "outcome1BestAsk": 0.21,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.79,
+      "outcome2BestAsk": 0.8,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:45:28.585Z",
+    "message": "   📊 Market 1504 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:28.589Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:28.591Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:29.033Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.21",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:29.038Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:31.549Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 5 shares at $0.79",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:31.553Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.21 + No at $0.79 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:35.274Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 2 shares at $0.21",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:35.277Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:37.200Z",
+    "message": "   📉 Trade 2: Wallet 6 placing No order: 3 shares at $0.79",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:37.204Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.21 + No at $0.79 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:39.571Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 2 shares at $0.21",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:39.575Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:42.326Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 4 shares at $0.79",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:42.332Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.21 + No at $0.79 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:45:42.335Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1504 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:13.975Z",
+    "message": "   📊 Market 1541 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.68,
+      "outcome1BestAsk": 0.69,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.31,
+      "outcome2BestAsk": 0.32,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:46:13.980Z",
+    "message": "   📊 Market 1541 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:13.983Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:13.986Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:14.456Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 3 shares at $0.69",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:14.457Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:17.422Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 3 shares at $0.31",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:17.427Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.69 + No at $0.31 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:21.605Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 4 shares at $0.69",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:21.609Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:24.605Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 3 shares at $0.31",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:24.610Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.69 + No at $0.31 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:29.620Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 1 shares at $0.69",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:29.624Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:31.534Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 5 shares at $0.31",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:31.538Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.69 + No at $0.31 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:31.541Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1541 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:57.439Z",
+    "message": "   📊 Market 1440 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0600",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0600",
+      "totalSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:46:57.443Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:57.446Z",
+    "message": "   🎯 Spread 0.0600 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:57.815Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 2 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:57.818Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:59.651Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:46:59.656Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:04.923Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 5 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:04.927Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:06.163Z",
+    "message": "   📉 Trade 2: Wallet 6 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:06.168Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:11.530Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:11.534Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:14.406Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:14.410Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:14.414Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1440 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:40.657Z",
+    "message": "   📊 Market 1497 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.44,
+      "outcome1Spread": "0.0900",
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.0900",
+      "totalSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:47:40.662Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:40.665Z",
+    "message": "   🎯 Spread 0.0900 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:41.097Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 2 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:41.100Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:42.452Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 3 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:42.457Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:47:42.460Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1497 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.389Z",
+    "message": "   📊 Market 1525 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.34,
+      "outcome1Spread": "-0.1600",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.34,
+      "outcome2Spread": "-0.1600",
+      "totalSpread": "-0.1600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.393Z",
+    "message": "   📊 Market 1525 has tight spread (-0.1600), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.396Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.400Z",
+    "message": "   🎯 Market 1525 - placing 1 trade (2 orders) despite tight spread (-0.1600)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.771Z",
+    "message": "   📈 Trade 1: Wallet 5 placing DK order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:11.775Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (DK) + 7 (DRX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:13.012Z",
+    "message": "   📉 Trade 1: Wallet 7 placing DRX order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:13.016Z",
+    "message": "   🎯 Trade 1 complete: DK at $0.51 + DRX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:13.019Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1525 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.486Z",
+    "message": "   📊 Market 1441 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.490Z",
+    "message": "   📊 Market 1441 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.493Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.497Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.909Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:41.911Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:44.174Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:44.179Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:48.801Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:48.806Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:51.431Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:51.435Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:56.263Z",
+    "message": "   📈 Trade 3: Wallet 4 placing Yes order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:56.267Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:57.407Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:57.412Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:48:57.415Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1441 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:18.626Z",
+    "message": "   📊 Market 1453 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.55,
+      "outcome1Spread": "0.1000",
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.1000",
+      "totalSpread": "0.1000"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:49:18.632Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:18.635Z",
+    "message": "   🎯 Spread 0.1000 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:19.003Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:19.006Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:21.764Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:21.769Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:26.012Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 2 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:26.017Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:28.411Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:28.416Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:31.427Z",
+    "message": "   📈 Trade 3: Wallet 7 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:31.430Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:33.579Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 2 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:33.583Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:49:33.586Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1453 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.575Z",
+    "message": "   📊 Market 1526 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.14,
+      "outcome1BestAsk": 0.15,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.85,
+      "outcome2BestAsk": 0.86,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.581Z",
+    "message": "   📊 Market 1526 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.583Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.586Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.962Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 1 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:00.965Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:03.959Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:03.963Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.15 + No at $0.85 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:03.966Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1526 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:25.987Z",
+    "message": "   📊 Market 1508 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.71,
+      "outcome1BestAsk": 0.72,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.28,
+      "outcome2BestAsk": 0.29,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:50:25.990Z",
+    "message": "   📊 Market 1508 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:25.993Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:25.997Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:26.358Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 4 shares at $0.72",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:26.362Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:27.479Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 3 shares at $0.28",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:27.484Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.72 + No at $0.28 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:30.778Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 5 shares at $0.72",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:30.782Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:32.921Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 4 shares at $0.28",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:32.924Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.72 + No at $0.28 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:37.723Z",
+    "message": "   📈 Trade 3: Wallet 6 placing Yes order: 1 shares at $0.72",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:37.728Z",
+    "message": "   🎲 Trade 3 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:39.745Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 3 shares at $0.28",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:39.751Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.72 + No at $0.28 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:50:39.754Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1508 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:00.235Z",
+    "message": "   📊 Market 1535 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.49,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.51,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:51:00.239Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:00.241Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:00.611Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:00.615Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:01.956Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 2 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:01.961Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.5 + No at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:01.965Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1535 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:27.842Z",
+    "message": "   📊 Market 1509 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.19,
+      "outcome1BestAsk": 0.2,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.8,
+      "outcome2BestAsk": 0.81,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:51:27.849Z",
+    "message": "   📊 Market 1509 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:27.853Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:27.856Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:28.284Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 4 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:28.287Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:30.844Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 2 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:30.849Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.2 + No at $0.8 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:30.852Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1509 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:58.505Z",
+    "message": "   📊 Market 1060 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.49,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.51,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:51:58.510Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:58.514Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:58.881Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 5 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:51:58.885Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:01.713Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:01.717Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.5 + No at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:06.372Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 4 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:06.376Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:08.572Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 3 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:08.578Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.5 + No at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:13.217Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:13.222Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:15.651Z",
+    "message": "   📉 Trade 3: Wallet 5 placing No order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:15.657Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.5 + No at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:19.945Z",
+    "message": "   📈 Trade 4: Wallet 4 placing Yes order: 1 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:19.950Z",
+    "message": "   🎲 Trade 4 wallet pair: 4 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:21.792Z",
+    "message": "   📉 Trade 4: Wallet 5 placing No order: 3 shares at $0.5",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:21.798Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.5 + No at $0.5 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:21.801Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1060 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:21.805Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2026-02-10T19:20:00.767Z",
+      "iterationEndTime": "2026-02-10T19:52:21.804Z",
+      "iterationDuration": 1941037,
+      "marketsProcessed": 50,
+      "marketsWithOrders": 48,
+      "successRate": "96.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 50
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:52:52.433Z",
+    "message": "   📊 Market 1540 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.2500",
+      "totalSpread": "0.2500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:52:52.438Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:52.441Z",
+    "message": "   🎯 Spread 0.2500 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:52.813Z",
+    "message": "   📈 Trade 1: Wallet 5 placing DAL order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:52.818Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (DAL) + 6 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:53.868Z",
+    "message": "   📉 Trade 1: Wallet 6 placing LAL order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:53.873Z",
+    "message": "   🎯 Trade 1 complete: DAL at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:58.051Z",
+    "message": "   📈 Trade 2: Wallet 7 placing DAL order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:58.055Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (DAL) + 3 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:59.375Z",
+    "message": "   📉 Trade 2: Wallet 3 placing LAL order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:52:59.380Z",
+    "message": "   🎯 Trade 2 complete: DAL at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:04.055Z",
+    "message": "   📈 Trade 3: Wallet 4 placing DAL order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:04.058Z",
+    "message": "   🎲 Trade 3 wallet pair: 4 (DAL) + 8 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:06.815Z",
+    "message": "   📉 Trade 3: Wallet 8 placing LAL order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:06.821Z",
+    "message": "   🎯 Trade 3 complete: DAL at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:06.824Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1540 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:34.553Z",
+    "message": "   📊 Market 1513 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.34,
+      "outcome1Spread": "-0.1600",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.34,
+      "outcome2Spread": "-0.1600",
+      "totalSpread": "-0.1600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:53:34.558Z",
+    "message": "   📊 Market 1513 has tight spread (-0.1600), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:34.562Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:34.565Z",
+    "message": "   🎯 Market 1513 - placing 1 trade (2 orders) despite tight spread (-0.1600)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:35.001Z",
+    "message": "   📈 Trade 1: Wallet 5 placing OKC order: 4 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:35.002Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (OKC) + 3 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:37.670Z",
+    "message": "   📉 Trade 1: Wallet 3 placing PHX order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:37.675Z",
+    "message": "   🎯 Trade 1 complete: OKC at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:53:37.678Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1513 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:07.758Z",
+    "message": "   📊 Market 1531 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.39,
+      "outcome1Spread": "0.0400",
+      "outcome2BestBid": 0.61,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.0400",
+      "totalSpread": "0.0400"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:54:07.764Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:07.768Z",
+    "message": "   🎯 Spread 0.0400 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:08.140Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 3 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:08.145Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:09.476Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 3 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:09.482Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:09.485Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1531 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:28.812Z",
+    "message": "   📊 Market 839 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.01,
+      "outcome1BestAsk": 0.02,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.98,
+      "outcome2BestAsk": 0.99,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:54:28.819Z",
+    "message": "   📊 Market 839 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:28.824Z",
+    "message": "   ⚠️  Market 839 has very high prices (≥ $0.95), skipping",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:54.702Z",
+    "message": "   📊 Market 1509 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.19,
+      "outcome1BestAsk": 0.2,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.8,
+      "outcome2BestAsk": 0.81,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:54:54.714Z",
+    "message": "   📊 Market 1509 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:54.717Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:54.722Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:55.084Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 5 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:55.088Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:57.467Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:54:57.472Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.2 + No at $0.8 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:02.507Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 4 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:02.511Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:05.262Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:05.264Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.2 + No at $0.8 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:10.469Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 5 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:10.474Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:11.804Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 3 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:11.809Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.2 + No at $0.8 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:16.070Z",
+    "message": "   📈 Trade 4: Wallet 8 placing Yes order: 1 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:16.074Z",
+    "message": "   🎲 Trade 4 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:17.424Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 2 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:17.430Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.2 + No at $0.8 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:17.433Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1509 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.161Z",
+    "message": "   📊 Market 1510 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.39,
+      "outcome1BestAsk": 0.4,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.6,
+      "outcome2BestAsk": 0.61,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.166Z",
+    "message": "   📊 Market 1510 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.170Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.172Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.540Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 5 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:43.545Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:46.143Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 2 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:46.148Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:51.289Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 3 shares at $0.4",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:51.293Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:52.804Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 5 shares at $0.6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:52.809Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.4 + No at $0.6 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:55:52.812Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1510 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.380Z",
+    "message": "   📊 Market 1508 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.71,
+      "outcome1BestAsk": 0.72,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.28,
+      "outcome2BestAsk": 0.29,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.384Z",
+    "message": "   📊 Market 1508 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.389Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.392Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.824Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 1 shares at $0.72",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:14.827Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:16.184Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.28",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:16.190Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.72 + No at $0.28 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:19.888Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 3 shares at $0.72",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:19.889Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:21.114Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 1 shares at $0.28",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:21.118Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.72 + No at $0.28 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:21.121Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1508 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:48.262Z",
+    "message": "   📊 Market 1542 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.57,
+      "outcome1BestAsk": 0.6,
+      "outcome1Spread": "0.0300",
+      "outcome2BestBid": 0.4,
+      "outcome2BestAsk": 0.43,
+      "outcome2Spread": "0.0300",
+      "totalSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:56:48.267Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:48.271Z",
+    "message": "   🎯 Spread 0.0300 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:48.755Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 4 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:48.756Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:51.443Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 5 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:51.448Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:55.497Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 3 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:55.501Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:58.474Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 4 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:56:58.477Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:01.811Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 3 shares at $0.58",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:01.815Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:02.963Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 1 shares at $0.42",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:02.969Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.58 + No at $0.42 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:02.972Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1542 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:35.841Z",
+    "message": "   📊 Market 1533 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.81,
+      "outcome1BestAsk": 0.82,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.18,
+      "outcome2BestAsk": 0.19,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:57:35.847Z",
+    "message": "   📊 Market 1533 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:35.851Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:35.854Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:36.226Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.82",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:36.232Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:38.734Z",
+    "message": "   📉 Trade 1: Wallet 7 placing No order: 5 shares at $0.18",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:38.740Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.82 + No at $0.18 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:57:38.743Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1533 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.270Z",
+    "message": "   📊 Market 1507 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.25,
+      "outcome1Spread": "-0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.25,
+      "outcome2Spread": "-0.2500",
+      "totalSpread": "-0.2500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.276Z",
+    "message": "   📊 Market 1507 has tight spread (-0.2500), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.280Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.283Z",
+    "message": "   🎯 Market 1507 - placing 1 trade (2 orders) despite tight spread (-0.2500)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.651Z",
+    "message": "   📈 Trade 1: Wallet 3 placing SAS order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:04.655Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (SAS) + 7 (LAL)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:07.015Z",
+    "message": "   📉 Trade 1: Wallet 7 placing LAL order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:07.020Z",
+    "message": "   🎯 Trade 1 complete: SAS at $0.51 + LAL at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:07.025Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1507 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:36.959Z",
+    "message": "   📊 Market 1536 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.18,
+      "outcome1BestAsk": 0.19,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.81,
+      "outcome2BestAsk": 0.82,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:58:36.967Z",
+    "message": "   📊 Market 1536 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:36.972Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:36.976Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:37.358Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 2 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:37.364Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:40.225Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 4 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:40.229Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:43.027Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 4 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:43.032Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:44.112Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 1 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:44.118Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:49.501Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 1 shares at $0.19",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:49.505Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:51.037Z",
+    "message": "   📉 Trade 3: Wallet 5 placing No order: 5 shares at $0.81",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:51.042Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.19 + No at $0.81 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:58:51.046Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1536 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:11.776Z",
+    "message": "   📊 Market 1506 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.75,
+      "outcome1Spread": "0.2500",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.2500",
+      "totalSpread": "0.2500"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:59:11.781Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:11.785Z",
+    "message": "   🎯 Spread 0.2500 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:12.162Z",
+    "message": "   📈 Trade 1: Wallet 8 placing DAL order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:12.165Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (DAL) + 3 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:14.554Z",
+    "message": "   📉 Trade 1: Wallet 3 placing PHX order: 5 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:14.559Z",
+    "message": "   🎯 Trade 1 complete: DAL at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:19.301Z",
+    "message": "   📈 Trade 2: Wallet 3 placing DAL order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:19.305Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (DAL) + 8 (PHX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:21.622Z",
+    "message": "   📉 Trade 2: Wallet 8 placing PHX order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:21.629Z",
+    "message": "   🎯 Trade 2 complete: DAL at $0.51 + PHX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:21.634Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1506 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.472Z",
+    "message": "   📊 Market 1525 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.34,
+      "outcome1Spread": "-0.1600",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.34,
+      "outcome2Spread": "-0.1600",
+      "totalSpread": "-0.1600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.479Z",
+    "message": "   📊 Market 1525 has tight spread (-0.1600), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.483Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.487Z",
+    "message": "   🎯 Market 1525 - placing 2 trades (4 orders) despite tight spread (-0.1600)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.895Z",
+    "message": "   📈 Trade 1: Wallet 5 placing DK order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:52.898Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (DK) + 4 (DRX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:54.763Z",
+    "message": "   📉 Trade 1: Wallet 4 placing DRX order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:54.768Z",
+    "message": "   🎯 Trade 1 complete: DK at $0.51 + DRX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:59.770Z",
+    "message": "   📈 Trade 2: Wallet 8 placing DK order: 2 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T19:59:59.775Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (DK) + 4 (DRX)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:00.988Z",
+    "message": "   📉 Trade 2: Wallet 4 placing DRX order: 1 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:00.995Z",
+    "message": "   🎯 Trade 2 complete: DK at $0.51 + DRX at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:01.000Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1525 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:33.613Z",
+    "message": "   📊 Market 1496 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.44,
+      "outcome1Spread": "0.0900",
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.0900",
+      "totalSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:00:33.619Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:33.623Z",
+    "message": "   🎯 Spread 0.0900 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:33.987Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 1 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:33.990Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:36.551Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 4 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:36.556Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:41.556Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 4 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:41.562Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:44.477Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 5 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:44.482Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:49.476Z",
+    "message": "   📈 Trade 3: Wallet 5 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:49.481Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:51.019Z",
+    "message": "   📉 Trade 3: Wallet 7 placing No order: 2 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:51.025Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:55.258Z",
+    "message": "   📈 Trade 4: Wallet 5 placing Yes order: 1 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:55.262Z",
+    "message": "   🎲 Trade 4 wallet pair: 5 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:56.466Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 2 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:56.473Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:00:56.477Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1496 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:23.755Z",
+    "message": "   📊 Market 1535 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.47,
+      "outcome1BestAsk": 0.5,
+      "outcome1Spread": "0.0300",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.53,
+      "outcome2Spread": "0.0300",
+      "totalSpread": "0.0300"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:01:23.762Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:23.766Z",
+    "message": "   🎯 Spread 0.0300 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:24.143Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 1 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:24.147Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:25.389Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 5 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:25.394Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.48 + No at $0.52 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:28.994Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 5 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:28.998Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:30.711Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 2 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:30.717Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.48 + No at $0.52 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:35.851Z",
+    "message": "   📈 Trade 3: Wallet 6 placing Yes order: 4 shares at $0.48",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:35.856Z",
+    "message": "   🎲 Trade 3 wallet pair: 6 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:38.524Z",
+    "message": "   📉 Trade 3: Wallet 5 placing No order: 2 shares at $0.52",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:38.530Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.48 + No at $0.52 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:01:38.537Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1535 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:08.762Z",
+    "message": "   📊 Market 1493 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.25,
+      "outcome1BestAsk": 0.39,
+      "outcome1Spread": "0.1400",
+      "outcome2BestBid": 0.61,
+      "outcome2BestAsk": 0.75,
+      "outcome2Spread": "0.1400",
+      "totalSpread": "0.1400"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:02:08.770Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:08.773Z",
+    "message": "   🎯 Spread 0.1400 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:11.775Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:11.779Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:12.914Z",
+    "message": "   📉 Trade 1: Wallet 5 placing No order: 2 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:12.918Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:17.104Z",
+    "message": "   📈 Trade 2: Wallet 8 placing Yes order: 5 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:17.108Z",
+    "message": "   🎲 Trade 2 wallet pair: 8 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:19.896Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 3 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:19.902Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:24.415Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 1 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:24.419Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:26.772Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 1 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:26.779Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:31.937Z",
+    "message": "   📈 Trade 4: Wallet 8 placing Yes order: 1 shares at $0.26",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:31.942Z",
+    "message": "   🎲 Trade 4 wallet pair: 8 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:33.282Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 5 shares at $0.74",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:33.288Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.26 + No at $0.74 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:02:33.292Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1493 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:00.951Z",
+    "message": "   📊 Market 1453 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.55,
+      "outcome1Spread": "0.1000",
+      "outcome2BestBid": 0.45,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.1000",
+      "totalSpread": "0.1000"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:03:00.957Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:00.961Z",
+    "message": "   🎯 Spread 0.1000 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:01.341Z",
+    "message": "   📈 Trade 1: Wallet 4 placing Yes order: 5 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:01.345Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:02.564Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 3 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:02.568Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:04.986Z",
+    "message": "   📈 Trade 2: Wallet 3 placing Yes order: 3 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:04.991Z",
+    "message": "   🎲 Trade 2 wallet pair: 3 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:07.804Z",
+    "message": "   📉 Trade 2: Wallet 4 placing No order: 3 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:07.810Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:07.813Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1453 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:37.978Z",
+    "message": "   📊 Market 1521 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.79,
+      "outcome1BestAsk": 0.8,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.2,
+      "outcome2BestAsk": 0.21,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:03:37.984Z",
+    "message": "   📊 Market 1521 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:37.988Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:37.991Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:38.361Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 4 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:38.367Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:39.767Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:39.771Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:44.412Z",
+    "message": "   📈 Trade 2: Wallet 5 placing Yes order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:44.417Z",
+    "message": "   🎲 Trade 2 wallet pair: 5 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:46.865Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 5 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:46.870Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:51.448Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 5 shares at $0.8",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:51.453Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:52.560Z",
+    "message": "   📉 Trade 3: Wallet 6 placing No order: 3 shares at $0.2",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:52.566Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.8 + No at $0.2 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:03:52.570Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1521 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.124Z",
+    "message": "   📊 Market 1522 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.84,
+      "outcome1BestAsk": 0.85,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.15,
+      "outcome2BestAsk": 0.16,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.129Z",
+    "message": "   📊 Market 1522 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.133Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.137Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.507Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 4 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:16.513Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:18.218Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 5 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:18.223Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:21.358Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 4 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:21.362Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:24.110Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 5 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:24.115Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:28.570Z",
+    "message": "   📈 Trade 3: Wallet 8 placing Yes order: 5 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:28.574Z",
+    "message": "   🎲 Trade 3 wallet pair: 8 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:30.011Z",
+    "message": "   📉 Trade 3: Wallet 3 placing No order: 1 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:30.016Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:34.845Z",
+    "message": "   📈 Trade 4: Wallet 7 placing Yes order: 3 shares at $0.85",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:34.850Z",
+    "message": "   🎲 Trade 4 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:37.324Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 3 shares at $0.15",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:37.328Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.85 + No at $0.15 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:04:37.333Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1522 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:00.669Z",
+    "message": "   📊 Market 1440 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.45,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0600",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.55,
+      "outcome2Spread": "0.0600",
+      "totalSpread": "0.0600"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:05:00.676Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:00.681Z",
+    "message": "   🎯 Spread 0.0600 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:01.106Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 2 shares at $0.46",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:01.111Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:02.820Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 4 shares at $0.54",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:02.827Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.46 + No at $0.54 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:02.830Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1440 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:31.624Z",
+    "message": "   📊 Market 1505 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.15,
+      "outcome1BestAsk": 0.16,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.84,
+      "outcome2BestAsk": 0.85,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:05:31.634Z",
+    "message": "   📊 Market 1505 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:31.638Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:31.641Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:32.024Z",
+    "message": "   📈 Trade 1: Wallet 8 placing Yes order: 4 shares at $0.16",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:32.030Z",
+    "message": "   🎲 Trade 1 wallet pair: 8 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:34.673Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 3 shares at $0.84",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:34.680Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.16 + No at $0.84 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:34.684Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1505 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.383Z",
+    "message": "   📊 Market 1538 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.28,
+      "outcome1BestAsk": 0.29,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.71,
+      "outcome2BestAsk": 0.72,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.409Z",
+    "message": "   📊 Market 1538 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.412Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.417Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.792Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 4 shares at $0.29",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:05:57.794Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:00.791Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 5 shares at $0.71",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:00.798Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.29 + No at $0.71 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:04.392Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 3 shares at $0.29",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:04.398Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 7 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:05.867Z",
+    "message": "   📉 Trade 2: Wallet 7 placing No order: 5 shares at $0.71",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:05.872Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.29 + No at $0.71 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:05.876Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1538 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:37.640Z",
+    "message": "   📊 Market 1545 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.26,
+      "outcome1BestAsk": 0.27,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.73,
+      "outcome2BestAsk": 0.74,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:06:37.648Z",
+    "message": "   📊 Market 1545 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:37.654Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:37.659Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:38.425Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 1 shares at $0.27",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:38.437Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:39.543Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 3 shares at $0.73",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:39.549Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.27 + No at $0.73 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:06:39.553Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1545 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.230Z",
+    "message": "   📊 Market 1541 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.68,
+      "outcome1BestAsk": 0.69,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.31,
+      "outcome2BestAsk": 0.32,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.237Z",
+    "message": "   📊 Market 1541 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.240Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.245Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.616Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 3 shares at $0.69",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:04.621Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:07.144Z",
+    "message": "   📉 Trade 1: Wallet 3 placing No order: 2 shares at $0.31",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:07.149Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.69 + No at $0.31 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:11.641Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 5 shares at $0.69",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:11.646Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:13.526Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 4 shares at $0.31",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:13.530Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.69 + No at $0.31 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:13.533Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1541 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:40.909Z",
+    "message": "   📊 Market 1534 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.4,
+      "outcome1BestAsk": 0.47,
+      "outcome1Spread": "0.0700",
+      "outcome2BestBid": 0.53,
+      "outcome2BestAsk": 0.6,
+      "outcome2Spread": "0.0700",
+      "totalSpread": "0.0700"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:07:40.915Z",
+    "message": "   🎲 Placing 2 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:40.920Z",
+    "message": "   🎯 Spread 0.0700 > 0.01 - placing 2 trades (4 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:41.370Z",
+    "message": "   📈 Trade 1: Wallet 7 placing Yes order: 1 shares at $0.41",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:41.377Z",
+    "message": "   🎲 Trade 1 wallet pair: 7 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:42.430Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 2 shares at $0.59",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:42.436Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.41 + No at $0.59 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:46.850Z",
+    "message": "   📈 Trade 2: Wallet 6 placing Yes order: 4 shares at $0.41",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:46.855Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:48.651Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 5 shares at $0.59",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:48.657Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.41 + No at $0.59 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:07:48.663Z",
+    "message": "   ✅ Successfully placed 4 orders on market 1534 (2 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:10.741Z",
+    "message": "   📊 Market 1497 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.35,
+      "outcome1BestAsk": 0.44,
+      "outcome1Spread": "0.0900",
+      "outcome2BestBid": 0.56,
+      "outcome2BestAsk": 0.65,
+      "outcome2Spread": "0.0900",
+      "totalSpread": "0.0900"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:08:10.747Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:10.752Z",
+    "message": "   🎯 Spread 0.0900 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:11.129Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 3 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:11.135Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:12.383Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 2 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:12.387Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:14.877Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 1 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:14.883Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 3 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:15.971Z",
+    "message": "   📉 Trade 2: Wallet 3 placing No order: 3 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:15.973Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:21.115Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:21.120Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:23.163Z",
+    "message": "   📉 Trade 3: Wallet 8 placing No order: 5 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:23.168Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:26.876Z",
+    "message": "   📈 Trade 4: Wallet 4 placing Yes order: 5 shares at $0.36",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:26.881Z",
+    "message": "   🎲 Trade 4 wallet pair: 4 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:28.954Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 3 shares at $0.64",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:28.960Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.36 + No at $0.64 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:28.966Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1497 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.294Z",
+    "message": "   📊 Market 1537 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.46,
+      "outcome1BestAsk": 0.47,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.53,
+      "outcome2BestAsk": 0.54,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.297Z",
+    "message": "   📊 Market 1537 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.300Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.304Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.678Z",
+    "message": "   📈 Trade 1: Wallet 5 placing Yes order: 5 shares at $0.47",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:50.684Z",
+    "message": "   🎲 Trade 1 wallet pair: 5 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:52.105Z",
+    "message": "   📉 Trade 1: Wallet 8 placing No order: 4 shares at $0.53",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:52.110Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.47 + No at $0.53 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:08:52.114Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1537 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:22.778Z",
+    "message": "   📊 Market 1512 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.38,
+      "outcome1BestAsk": 0.4,
+      "outcome1Spread": "0.0200",
+      "outcome2BestBid": 0.6,
+      "outcome2BestAsk": 0.62,
+      "outcome2Spread": "0.0200",
+      "totalSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:09:22.785Z",
+    "message": "   🎲 Placing 1 trade using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:22.790Z",
+    "message": "   🎯 Spread 0.0200 > 0.01 - placing 1 trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:23.159Z",
+    "message": "   📈 Trade 1: Wallet 6 placing Yes order: 1 shares at $0.39",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:23.165Z",
+    "message": "   🎲 Trade 1 wallet pair: 6 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:25.029Z",
+    "message": "   📉 Trade 1: Wallet 4 placing No order: 3 shares at $0.61",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:25.033Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.39 + No at $0.61 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:25.038Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1512 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:55.748Z",
+    "message": "   📊 Market 1546 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.65,
+      "outcome1BestAsk": 0.66,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.34,
+      "outcome2BestAsk": 0.35,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:09:55.755Z",
+    "message": "   📊 Market 1546 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:55.759Z",
+    "message": "   🎲 Placing 4 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:55.764Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 4 trades (8 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:56.138Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:56.144Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:58.749Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:09:58.755Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:03.513Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 2 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:03.518Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:05.316Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 5 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:05.320Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:08.123Z",
+    "message": "   📈 Trade 3: Wallet 3 placing Yes order: 5 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:08.128Z",
+    "message": "   🎲 Trade 3 wallet pair: 3 (Yes) + 5 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:09.363Z",
+    "message": "   📉 Trade 3: Wallet 5 placing No order: 2 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:09.370Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:12.447Z",
+    "message": "   📈 Trade 4: Wallet 4 placing Yes order: 2 shares at $0.66",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:12.452Z",
+    "message": "   🎲 Trade 4 wallet pair: 4 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:15.083Z",
+    "message": "   📉 Trade 4: Wallet 6 placing No order: 3 shares at $0.34",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:15.089Z",
+    "message": "   🎯 Trade 4 complete: Yes at $0.66 + No at $0.34 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:15.094Z",
+    "message": "   ✅ Successfully placed 8 orders on market 1546 (4 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.242Z",
+    "message": "   📊 Market 1514 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.36,
+      "outcome1Spread": "-0.1400",
+      "outcome2BestBid": 0.5,
+      "outcome2BestAsk": 0.36,
+      "outcome2Spread": "-0.1400",
+      "totalSpread": "-0.1400"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.251Z",
+    "message": "   📊 Market 1514 has tight spread (-0.1400), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.256Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.259Z",
+    "message": "   🎯 Market 1514 - placing 3 trades (6 orders) despite tight spread (-0.1400)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.628Z",
+    "message": "   📈 Trade 1: Wallet 4 placing SAS order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:36.634Z",
+    "message": "   🎲 Trade 1 wallet pair: 4 (SAS) + 5 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:38.870Z",
+    "message": "   📉 Trade 1: Wallet 5 placing GSW order: 4 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:38.875Z",
+    "message": "   🎯 Trade 1 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:42.957Z",
+    "message": "   📈 Trade 2: Wallet 6 placing SAS order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:42.963Z",
+    "message": "   🎲 Trade 2 wallet pair: 6 (SAS) + 7 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:45.091Z",
+    "message": "   📉 Trade 2: Wallet 7 placing GSW order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:45.095Z",
+    "message": "   🎯 Trade 2 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:48.451Z",
+    "message": "   📈 Trade 3: Wallet 5 placing SAS order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:48.456Z",
+    "message": "   🎲 Trade 3 wallet pair: 5 (SAS) + 6 (GSW)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:50.393Z",
+    "message": "   📉 Trade 3: Wallet 6 placing GSW order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:50.399Z",
+    "message": "   🎯 Trade 3 complete: SAS at $0.51 + GSW at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:10:50.403Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1514 (3 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:15.808Z",
+    "message": "   📊 Market 1441 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.5,
+      "outcome1BestAsk": 0.51,
+      "outcome1Spread": "0.0100",
+      "outcome2BestBid": 0.49,
+      "outcome2BestAsk": 0.5,
+      "outcome2Spread": "0.0100",
+      "totalSpread": "0.0100"
+    }
+  },
+  {
+    "timestamp": "2026-02-10T20:11:15.816Z",
+    "message": "   📊 Market 1441 has tight spread (0.0100), placing orders at top of book for immediate matching",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:15.821Z",
+    "message": "   🎲 Placing 3 trades using random wallet pairs",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:15.825Z",
+    "message": "   🎯 Spread 0.0100 > 0.01 - placing 3 trades (6 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:16.195Z",
+    "message": "   📈 Trade 1: Wallet 3 placing Yes order: 3 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:16.200Z",
+    "message": "   🎲 Trade 1 wallet pair: 3 (Yes) + 6 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:17.371Z",
+    "message": "   📉 Trade 1: Wallet 6 placing No order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:17.379Z",
+    "message": "   🎯 Trade 1 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:21.943Z",
+    "message": "   📈 Trade 2: Wallet 7 placing Yes order: 1 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:21.949Z",
+    "message": "   🎲 Trade 2 wallet pair: 7 (Yes) + 8 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:23.637Z",
+    "message": "   📉 Trade 2: Wallet 8 placing No order: 3 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:23.642Z",
+    "message": "   🎯 Trade 2 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:28.388Z",
+    "message": "   📈 Trade 3: Wallet 7 placing Yes order: 5 shares at $0.51",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:28.394Z",
+    "message": "   🎲 Trade 3 wallet pair: 7 (Yes) + 4 (No)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:29.582Z",
+    "message": "   📉 Trade 3: Wallet 4 placing No order: 2 shares at $0.49",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:29.590Z",
+    "message": "   🎯 Trade 3 complete: Yes at $0.51 + No at $0.49 = $1.0000",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-10T20:11:29.595Z",
+    "message": "   ✅ Successfully placed 6 orders on market 1441 (3 trades)",
+    "data": null
+  }
+]

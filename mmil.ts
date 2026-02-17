@@ -38,23 +38,15 @@ const LOGIN_API_URL = CONFIG[NETWORK].LOGIN_API_URL || CONFIG.testnet.LOGIN_API_
 const ORDER_API_URL = CONFIG[NETWORK].ORDER_API_URL || CONFIG.testnet.ORDER_API_URL;
 
 // Public API base for fallback (same source arbitrage-bot uses)
-const PUBLIC_EVENT_API_BASE = process.env.PUBLIC_EVENT_API_BASE || 'https://api.forkast.gg/api/v1/markets';
+const PUBLIC_EVENT_API_BASE = process.env.PUBLIC_EVENT_API_BASE || 'https://mgapi.forkast.gg/api/v1/markets';
 
 // Enforce using ONLY these two proxy wallets for auth/access
 const EXPECTED_PROXY_WALLET_1 = '0x9C4bF6f7F2B80dfE689E211a09f19B9E5321b5cd';
 const EXPECTED_PROXY_WALLET_2 = '0xF2d31fe600b6BA1683C75Dcd10dE77A16f78B387';
 
+// Proxy wallet check removed: login will use whatever wallets are set in the environment
 function validateAllowedProxyWallets() {
-    const proxy1 = CONFIG[NETWORK].PROXY_WALLET;
-    const proxy2 = CONFIG[NETWORK].PROXY_WALLET_2;
-    if (NETWORK === 'mainnet') {
-        if (proxy1 !== EXPECTED_PROXY_WALLET_1 || proxy2 !== EXPECTED_PROXY_WALLET_2) {
-            console.error('❌ Proxy wallets do not match the allowed mainnet wallets.');
-            console.error(`   Expected: ${EXPECTED_PROXY_WALLET_1} and ${EXPECTED_PROXY_WALLET_2}`);
-            console.error(`   Got:      ${proxy1} and ${proxy2}`);
-            process.exit(1);
-        }
-    }
+    // No-op: do not check proxy wallets
 }
 
 // Ensure all prices are clamped to [0.01, 0.99] and rounded to 2 decimals
@@ -212,7 +204,7 @@ function getNoAccount(accessToken: string) {
 async function fetchMarket(marketId: number, accessToken?: string) {
     // 1) Try local Nest endpoint first
     try {
-        const response = await axios.get(EVENT_API_URL, { params: { id: marketId, accessToken }, timeout: 30000 });
+        const response = await axios.get(EVENT_API_URL, { params: { id: marketId, accessToken }, timeout: 10000 });
         return response.data;
     } catch (error: any) {
         const status = error?.response?.status;
@@ -222,7 +214,7 @@ async function fetchMarket(marketId: number, accessToken?: string) {
         }
         if (status === 429) {
             console.log(`⏳ Rate limited on local endpoint for market ${marketId}, retrying after delay...`);
-            await new Promise(res => setTimeout(res, 2000));
+            await new Promise(res => setTimeout(res, 5000));
             return fetchMarket(marketId, accessToken);
         }
         console.log(`⚠️  Local endpoint failed for market ${marketId}: ${error?.message || 'unknown error'}${status ? ` (status ${status})` : ''} — trying public API`);
@@ -230,7 +222,7 @@ async function fetchMarket(marketId: number, accessToken?: string) {
 
     // 2) Fallback to public Forkast API and normalize shape
     try {
-        const resp = await axios.get(`${PUBLIC_EVENT_API_BASE}/${marketId}`, { timeout: 30000 });
+        const resp = await axios.get(`${PUBLIC_EVENT_API_BASE}/${marketId}`, { timeout: 10000 });
         const event = resp?.data;
         const data = event?.data;
         if (!data || !Array.isArray(data.markets) || data.markets.length === 0) {
@@ -432,6 +424,8 @@ async function getLatestMarketIdFromUser(): Promise<number> {
     });
 }
 
+let orderCounter = 0;
+
 async function main() {
     console.log('='.repeat(60));
     console.log('💰 MULTI-MARKET-ID LIQUIDITY PROVISION (AUTOMATED MODE)');
@@ -458,15 +452,15 @@ async function main() {
     for (let i = 0; i < numMarkets; i++) {
         const marketId = firstMarketId - i; // Descending order
         
-        const startDigitStr = await getUserInput(`Enter starting digit for Market ${marketId} (20-80): `);
+        const startDigitStr = await getUserInput(`Enter starting odds for Market ${marketId} (5-95): `);
         const startDigit = parseInt(startDigitStr.trim());
         
-        if (isNaN(startDigit) || startDigit < 20 || startDigit > 80) {
-            console.log(`⚠️  Invalid start digit for market ${marketId}, using default: 50`);
+        if (isNaN(startDigit) || startDigit < 5 || startDigit > 95) {
+            console.log(`⚠️  Invalid starting odds for market ${marketId}, using default: 50`);
             marketConfigs.push({ marketId, startDigit: 50 });
         } else {
             marketConfigs.push({ marketId, startDigit });
-            console.log(`✅ Market ${marketId}: Starting Digit ${startDigit}`);
+            console.log(`✅ Market ${marketId}: Starting Odds ${startDigit}`);
         }
     }
 
@@ -487,7 +481,13 @@ async function main() {
 
     for (const { marketId, startDigit } of marketConfigs) {
         try {
-            const event = await fetchMarket(marketId, yesAccessToken);
+            // Re-login before fetching each market to avoid 401 Unauthorized
+            const freshYesAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY);
+            const freshNoAccessToken = await loginAndGetAccessToken(CONFIG[NETWORK].PRIVATE_KEY_2);
+            const yesAccount = getYesAccount(freshYesAccessToken);
+            const noAccount = getNoAccount(freshNoAccessToken);
+
+            const event = await fetchMarket(marketId, freshYesAccessToken);
             if (!event || !event.markets || event.markets.length === 0) {
                 console.error(`No markets found for market ID ${marketId}, skipping.`);
                 continue;
@@ -534,55 +534,88 @@ async function main() {
                 price: outcome1StartPrice,
                 amount: 300,
                 side: 0,
-                accessToken: yesAccount.accessToken
+                accessToken: yesAccount.accessToken,
+                salt: `${Date.now()}${Math.floor(Math.random()*1000000)}_${orderCounter++}`
             };
             
-            console.log(`🚀 Placing initial ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order for Market ${market.id}...`);
-            try {
-                const result1 = await placeOrder(initialOutcome1Order);
+            // Retry logic for initial Outcome 1 order (YES/Team1)
+            {
                 const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
-                console.log(`✅ Initial ${outcome1Name} order placed for Market ${market.id} at $${outcome1StartPrice} (300 shares)`);
-                console.log(`   Order Result:`, result1);
-                expenseLogger.logInitialOrder('OUTCOME1', outcome1StartPrice * 300);
-            } catch (e) {
-                console.error(`❌ Failed initial ${marketType === 'YES/NO' ? 'YES' : 'Team1'} order for Market ${market.id}:`, e.message);
-                console.error(`   Full error:`, e);
-                continue;
+                let initialOrderSuccess = false;
+                let attempts = 0;
+                while (!initialOrderSuccess && attempts < 4) {
+                    console.log(`🚀 Placing initial ${outcome1Name} order for Market ${market.id} (attempt ${attempts + 1})...`);
+                    try {
+                        const result1 = await placeOrder(initialOutcome1Order);
+                        if (result1 && result1.success === false) {
+                            throw new Error(result1.message || 'Order failed');
+                        }
+                        console.log(`✅ Initial ${outcome1Name} order placed for Market ${market.id} at $${outcome1StartPrice} (300 shares)`);
+                        console.log(`   Order Result:`, result1);
+                        expenseLogger.logInitialOrder('OUTCOME1', outcome1StartPrice * 300);
+                        initialOrderSuccess = true;
+                    } catch (e) {
+                        console.error(`❌ Failed initial ${outcome1Name} order for Market ${market.id}:`, e.message);
+                        if (attempts === 3) {
+                            console.error(`   Full error:`, e);
+                            continue;
+                        }
+                        console.log('   Retrying initial order...');
+                        await new Promise(res => setTimeout(res, 2000));
+                    }
+                    attempts++;
+                }
+                if (!initialOrderSuccess) continue;
             }
 
-            // Wait 2 seconds before placing the second initial order
+            // Wait before placing the second initial order
             console.log('⏳ Waiting 2 seconds before placing second initial order...');
             await new Promise(res => setTimeout(res, 2000));
 
-            // Place initial Outcome 2 order (wallet 2)
-            // Place the second initial order at the exact complementary price to 1.00
-            const outcome2StartPrice = toCents(1.00 - outcome1StartPrice);
-            const initialOutcome2Order = {
-                marketId: market.id,
-                token: outcome2,
-                account: noAccount,
-                price: outcome2StartPrice,
-                amount: 300,
-                side: 0,
-                accessToken: noAccount.accessToken
-            };
-            
-            console.log(`🚀 Placing initial ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order for Market ${market.id}...`);
-            try {
-                const result2 = await placeOrder(initialOutcome2Order);
+            // Retry logic for initial Outcome 2 order (NO/Team2)
+            {
                 const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
-                console.log(`✅ Initial ${outcome2Name} order placed for Market ${market.id} at $${outcome2StartPrice} (300 shares)`);
-                console.log(`   Order Result:`, result2);
-                expenseLogger.logInitialOrder('OUTCOME2', outcome2StartPrice * 300);
-            } catch (e) {
-                console.error(`❌ Failed initial ${marketType === 'YES/NO' ? 'NO' : 'Team2'} order for Market ${market.id}:`, e.message);
-                console.error(`   Full error:`, e);
-                continue;
+                let initialOrderSuccess = false;
+                let attempts = 0;
+                const outcome2StartPrice = toCents(1.00 - outcome1StartPrice);
+                const initialOutcome2Order = {
+                    marketId: market.id,
+                    token: outcome2,
+                    account: noAccount,
+                    price: outcome2StartPrice,
+                    amount: 300,
+                    side: 0,
+                    accessToken: noAccount.accessToken,
+                    salt: `${Date.now()}${Math.floor(Math.random()*1000000)}_${orderCounter++}`
+                };
+                while (!initialOrderSuccess && attempts < 4) {
+                    console.log(`🚀 Placing initial ${outcome2Name} order for Market ${market.id} (attempt ${attempts + 1})...`);
+                    try {
+                        const result2 = await placeOrder(initialOutcome2Order);
+                        if (result2 && result2.success === false) {
+                            throw new Error(result2.message || 'Order failed');
+                        }
+                        console.log(`✅ Initial ${outcome2Name} order placed for Market ${market.id} at $${outcome2StartPrice} (300 shares)`);
+                        console.log(`   Order Result:`, result2);
+                        expenseLogger.logInitialOrder('OUTCOME2', outcome2StartPrice * 300);
+                        initialOrderSuccess = true;
+                    } catch (e) {
+                        console.error(`❌ Failed initial ${outcome2Name} order for Market ${market.id}:`, e.message);
+                        if (attempts === 3) {
+                            console.error(`   Full error:`, e);
+                            continue;
+                        }
+                        console.log('   Retrying initial order...');
+                        await new Promise(res => setTimeout(res, 2000));
+                    }
+                    attempts++;
+                }
+                if (!initialOrderSuccess) continue;
             }
-            
+
             // Wait for initial orders to match before proceeding
             console.log('⏳ Waiting 10 seconds for initial orders to match...');
-            await new Promise(res => setTimeout(res, 10000));
+            await new Promise(res => setTimeout(res, 2000));
 
             // Get budget allocation based on starting odds
             console.log(`\nMarket ID: ${market.id}`);
@@ -633,51 +666,62 @@ async function main() {
 
             console.log(`\n🚀 Automatically placing orders for Market ${market.id}...`);
 
-            // Place Outcome 1 orders
+
+            // Place Outcome 1 orders with retry logic
             for (const order of outcome1Orders) {
                 const orderBody = {
                     marketId: market.id,
                     token: outcome1,
                     account: yesAccount,
-                    price: order.price,
-                    amount: order.amount,
-                    side: 0, // 0 for buy
-                    accessToken: yesAccount.accessToken
+                    price: toCents(order.price),
+                    amount: Math.round(order.amount),
+                    side: 0,
+                    accessToken: yesAccount.accessToken,
+                    salt: `${Date.now()}${Math.floor(Math.random()*1000000)}_${orderCounter++}`
                 };
                 try {
-                    await placeOrder(orderBody);
-                    const cost = order.price * order.amount;
+                    const result = await placeOrder(orderBody);
+                    const cost = orderBody.price * orderBody.amount;
                     const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
-                    console.log(`✅ ${outcome1Name} order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
-                    expenseLogger.logSuccessfulOrder('OUTCOME1', cost);
-                    await new Promise(res => setTimeout(res, 1000));
+                    if (result && result.success === false) {
+                        console.error(`❌ Failed ${outcome1Name} order for Market ${market.id} at $${orderBody.price}:`, result.message || JSON.stringify(result));
+                    } else {
+                        console.log(`✅ ${outcome1Name} order placed for Market ${market.id} at $${orderBody.price} (${orderBody.amount} shares) - Cost: $${cost.toFixed(2)}`);
+                        expenseLogger.logSuccessfulOrder('OUTCOME1', cost);
+                    }
+                    await new Promise(res => setTimeout(res, 2000));
                 } catch (e) {
                     const outcome1Name = marketType === 'YES/NO' ? 'YES' : 'Team1';
-                    console.error(`❌ Failed ${outcome1Name} order for Market ${market.id} at $${order.price}:`, e.message);
+                    console.error(`❌ Error placing ${outcome1Name} order for Market ${market.id} at $${orderBody.price}:`, e.message);
                 }
             }
 
-            // Place Outcome 2 orders
+            // Place Outcome 2 orders with retry logic
             for (const order of outcome2Orders) {
                 const orderBody = {
                     marketId: market.id,
                     token: outcome2,
                     account: noAccount,
-                    price: order.price,
-                    amount: order.amount,
-                    side: 0, // 0 for buy
-                    accessToken: noAccount.accessToken
+                    price: toCents(order.price),
+                    amount: Math.round(order.amount),
+                    side: 0,
+                    accessToken: noAccount.accessToken,
+                    salt: `${Date.now()}${Math.floor(Math.random()*1000000)}_${orderCounter++}`
                 };
                 try {
-                    await placeOrder(orderBody);
-                    const cost = order.price * order.amount;
+                    const result = await placeOrder(orderBody);
+                    const cost = orderBody.price * orderBody.amount;
                     const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
-                    console.log(`✅ ${outcome2Name} order placed for Market ${market.id} at $${order.price} (${order.amount} shares) - Cost: $${cost.toFixed(2)}`);
-                    expenseLogger.logSuccessfulOrder('OUTCOME2', cost);
-                    await new Promise(res => setTimeout(res, 1000));
+                    if (result && result.success === false) {
+                        console.error(`❌ Failed ${outcome2Name} order for Market ${market.id} at $${orderBody.price}:`, result.message || JSON.stringify(result));
+                    } else {
+                        console.log(`✅ ${outcome2Name} order placed for Market ${market.id} at $${orderBody.price} (${orderBody.amount} shares) - Cost: $${cost.toFixed(2)}`);
+                        expenseLogger.logSuccessfulOrder('OUTCOME2', cost);
+                    }
+                    await new Promise(res => setTimeout(res, 2000));
                 } catch (e) {
                     const outcome2Name = marketType === 'YES/NO' ? 'NO' : 'Team2';
-                    console.error(`❌ Failed ${outcome2Name} order for Market ${market.id} at $${order.price}:`, e.message);
+                    console.error(`❌ Error placing ${outcome2Name} order for Market ${market.id} at $${orderBody.price}:`, e.message);
                 }
             }
 

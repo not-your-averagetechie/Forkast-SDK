@@ -1,0 +1,91 @@
+[
+  {
+    "timestamp": "2026-02-09T16:27:28.555Z",
+    "message": "   📊 Market 1480 Analysis:",
+    "data": {
+      "outcome1BestBid": 0.68,
+      "outcome1BestAsk": 0.7,
+      "outcome2BestBid": 0.3,
+      "outcome2BestAsk": 0.32,
+      "combinedBestBidSum": "0.9800",
+      "combinedBestAskSum": "1.0200",
+      "totalSpread": "0.0000"
+    }
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.555Z",
+    "message": "   📐 Spread metrics:",
+    "data": {
+      "combinedBidSum": "0.9800",
+      "combinedAskSum": "1.0200",
+      "combinedBidMinusAsk": "0.0000",
+      "askSumMinusOne": "0.0200",
+      "oneMinusBidSum": "0.0200",
+      "arbitrageSpread": "0.0200"
+    }
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.555Z",
+    "message": "   🎯 Spread 0.0200 > 0.015 - placing 1 internal-match trade (2 orders)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.939Z",
+    "message": "   🔁 Trade 1: Internal match at midpoint prices",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.940Z",
+    "message": "      Yes: $0.69 (bid 0.68 / ask 0.7)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.940Z",
+    "message": "      No: $0.31 (bid 0.3 / ask 0.32)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.941Z",
+    "message": "   🛒 Placing BUY on Yes at $0.69 from wallet 6",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:28.942Z",
+    "message": "   ✅ BUY placed on Yes",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2026-02-09T16:27:30.944Z",
+    "message": "   🛒 Placing BUY on No at $0.31 from wallet 3",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:30.945Z",
+    "message": "   ✅ BUY placed on No",
+    "data": {
+      "orderId": null
+    }
+  },
+  {
+    "timestamp": "2026-02-09T16:27:30.946Z",
+    "message": "   ✅ Successfully placed 2 orders on market 1480 (1 trades)",
+    "data": null
+  },
+  {
+    "timestamp": "2026-02-09T16:27:30.946Z",
+    "message": "Iteration 1 completed",
+    "data": {
+      "iterationNumber": 1,
+      "iterationStartTime": "2026-02-09T16:27:25.264Z",
+      "iterationEndTime": "2026-02-09T16:27:30.946Z",
+      "iterationDuration": 5682,
+      "marketsProcessed": 1,
+      "marketsWithOrders": 1,
+      "successRate": "100.0%",
+      "randomSelection": true,
+      "activeMarketsFound": 1
+    }
+  }
+]

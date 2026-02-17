@@ -79,8 +79,8 @@ const CONFIG = {
 };
 
 const NETWORK = (process.env.NETWORK as 'testnet' | 'mainnet') || 'mainnet';
-const EVENT_API_URL = 'https://api.forkast.gg/api/v1/markets';
-const ORDER_BOOK_API_URL = 'https://api.forkast.gg/api/v1/orderbook';
+const EVENT_API_URL = 'https://mgapi.forkast.gg/api/v1/markets';
+const ORDER_BOOK_API_URL = 'https://mgapi.forkast.gg/api/v1/orderbook';
 
 // Initialize ForkastSDK for authentication
 const sdk = new ForkastSDK(Network.MAINNET, process.env.API_KEY);
@@ -286,7 +286,7 @@ async function humanLikeDelay(min: number, max: number, reason: string) {
 
 // Wallet management
 function getRandomWallet(): { walletNumber: number, walletConfig: any } {
-    const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+    const walletNumbers = [3, 4, 5, 6, 7, 8, ];
     const randomWalletNumber = getRandomElement(walletNumbers);
     
     const walletConfig = {
@@ -299,7 +299,7 @@ function getRandomWallet(): { walletNumber: number, walletConfig: any } {
 }
 
 function validateWalletConfig(): boolean {
-    const requiredWallets = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+    const requiredWallets = [3, 4, 5, 6, 7, 8, ];
     const missingWallets = [];
     
     for (const walletNum of requiredWallets) {
@@ -315,7 +315,7 @@ function validateWalletConfig(): boolean {
         return false;
     }
     
-    console.log(`✅ All nine wallets (3, 4, 5, 6, 7, 8, 9, 10, 11) are properly configured`);
+    console.log(`✅ All nine wallets (3, 4, 5, 6, 7, 8, ) are properly configured`);
     return true;
 }
 
@@ -465,8 +465,7 @@ async function placeOrder(orderBody: any): Promise<any> {
             orderBody.account,
             orderBody.price,
             orderBody.amount,
-            orderBody.side,
-            orderBody.accessToken
+            orderBody.side
         );
         
         // Restore console output
@@ -565,7 +564,7 @@ async function executeArbitrageStrategy(market: any, logger: ArbitrageLogger, is
         }
 
         // Select multiple random wallets for this market (1-4 trades max)
-        const walletNumbers = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+        const walletNumbers = [3, 4, 5, 6, 7, 8, ];
         const numTrades = Math.floor(Math.random() * 4) + 1; // 1-4 trades (2-8 orders total)
         
         logger.log(`   🎲 Placing ${numTrades} trade${numTrades === 1 ? '' : 's'} using random wallet pairs`);

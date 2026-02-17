@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { OrderService } from './orders.service';
-import { OrderResponse } from '@forkastgg/client/dist/src/types/orders';
+import { GetOrdersResponse, OrderResponse } from '@forkastgg/client/dist/src/types/orders';
 import { CancelOrderDto, PlaceOrderDto } from './order.types';
 
 @Controller('orders')
@@ -15,7 +15,7 @@ export class OrderController {
     @Query('status') status?: number,
     @Query('limit') limit?: number,
     @Query('page') page?: number
-  ): Promise<OrderResponse> {
+  ): Promise<GetOrdersResponse> {
 
     return this.orderService.getAllOrders(address, Number(outcomeId), accessToken, status, limit, page);
   }

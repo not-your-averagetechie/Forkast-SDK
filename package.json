@@ -21,14 +21,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@forkastgg/client": "0.0.1-beta.8",
+    "@forkastgg/client": "0.0.1-beta-arb.6",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "aws-kms-provider": "^0.9.0",
     "axios": "^1.11.0",
-    "dotenv": "^17.2.1",
+    "csv-parse": "^6.1.0",
     "ethers": "^5.7",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
@@ -37,6 +37,7 @@
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
+    "@types/csv-parse": "^1.1.12",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",

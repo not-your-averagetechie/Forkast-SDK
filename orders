@@ -1,0 +1,427 @@
+
+if i put odds as 09
+
+Initial Matching Orders (price x shares):
+  YES @ $0.09 x 300
+  NO @ $0.91 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+        {0.09, amount: getRandomAmount(32, 34, 38, 40) },
+        { price: 0.08, amount: getRandomAmount(30, 34, 38, 40) },
+        { price: 0.07, amount: getRandomAmount(30, 55, 60, 65, 45, 64, 40) },
+        { price: 0.06, amount: getRandomAmount(80, 85, 95, 70, 65, 60) },
+        { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.91 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+if i put odds as 08
+
+Initial Matching Orders (price x shares):
+  YES @ $0.08 x 300
+  NO @ $0.92 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        { price: 0.08, amount: getRandomAmount(30, 34, 38, 40) },
+        { price: 0.07, amount: getRandomAmount(30, 55, 60, 65, 45, 64, 40) },
+        { price: 0.06, amount: getRandomAmount(80, 85, 95, 70, 65, 60) },
+        { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.91 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+if i put odds as 07
+
+Initial Matching Orders (price x shares):
+  YES @ $0.07 x 300
+  NO @ $0.93 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        { price: 0.07, amount: getRandomAmount(30, 55, 60, 65, 45, 64, 40) },
+        { price: 0.06, amount: getRandomAmount(80, 85, 95, 70, 65, 60) },
+        { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.92 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+if i put odds as 06
+
+Initial Matching Orders (price x shares):
+  YES @ $0.06 x 300
+  NO @ $0.94 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        { price: 0.06, amount: getRandomAmount(80, 85, 95, 70, 65, 60) },
+        { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.93 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+
+if i put odds as 05
+
+Initial Matching Orders (price x shares):
+  YES @ $0.05 x 300
+  NO @ $0.95 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+       
+        { price: 0.05, amount: getRandomAmount(80, 85, 95, 105, 90, 100, 110) },
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.94 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+
+if i put odds as 04
+
+Initial Matching Orders (price x shares):
+  YES @ $0.04 x 300
+  NO @ $0.96 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+       
+        
+        { price: 0.04, amount: getRandomAmount(105, 100, 90, 85, 102, 110) },
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.95 x 30
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+
+if i put odds as 03
+
+Initial Matching Orders (price x shares):
+  YES @ $0.03 x 300
+  NO @ $0.97 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        
+        { price: 0.03, amount: getRandomAmount(150, 140, 120, 125, 130, 110, 105, 100) },
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.96 x 30
+   $0.95 x 1
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+if i put odds as 02
+
+Initial Matching Orders (price x shares):
+  YES @ $0.02 x 300
+  NO @ $0.98 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        
+       
+        { price: 0.02, amount: getRandomAmount(150, 160, 175, 165, 155, 170, 185, 145, 140) },
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.97 x 30
+   $0.95 x 1
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
+
+if i put odds as 01
+
+Initial Matching Orders (price x shares):
+  YES @ $0.01 x 300
+  NO @ $0.99 x 300
+so in this case it will place on yes order as 
+it should place shares according to the below table price: 
+       
+        
+       
+       
+        { price: 0.01, amount: getRandomAmount(250, 280, 300, 350, 380, 350, 320, 310, 345, 340) }
+
+
+NO Side Open Orders (price x shares):
+  $0.98 x 30
+   $0.95 x 1
+  $0.90 x 1
+  $0.85 x 2
+  $0.80 x 2
+  $0.75 x 1
+  $0.70 x 1
+  $0.65 x 2
+  $0.60 x 2
+  $0.55 x 2
+  $0.50 x 2
+  $0.45 x 3
+  $0.40 x 3
+  $0.35 x 3
+  $0.30 x 3
+  $0.25 x 3
+  $0.2 x 10
+  $0.15 x 20
+  $0.1 x 30
+  $0.09 x 40
+  $0.08 x 40
+  $0.07 x 60
+  $0.06 x 65
+  $0.05 x 80
+  $0.04 x 110
+  $0.03 x 130
+  $0.02 x 145
+  $0.01 x 310
+
+
